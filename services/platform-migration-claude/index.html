@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Platform Migration to Claude | Claude Services | Prism Automate</title>
-  <meta name="description" content="Contracted migration of a workload from another model or provider onto Claude, without breaking what already works. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia." />
+  <meta name="description" content="Contracted migration of a production workload from another model or provider onto Claude, run by an Anthropic partner: baselined, proven in parallel, cut over without breaking what already works. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia." />
   <!-- TODO: add canonical once the production domain is confirmed -->
   <link rel="icon" type="image/png" href="../../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,7 @@
         "@type": "Service",
         "name": "Platform Migration to Claude",
         "serviceType": "Platform Migration to Claude",
-        "description": "Contracted migration of a workload from another model or provider onto Claude, without breaking what already works. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia.",
+        "description": "Contracted migration of a production workload from another model or provider onto Claude, run by an Anthropic partner: baselined, proven in parallel, cut over without breaking what already works. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia.",
         "provider": { "@type": "Organization", "name": "Prism Automate" },
         "areaServed": ["India", "United Arab Emirates", "Australia"]
       },
@@ -53,6 +53,7 @@
     .nav .wrap { width: 100%; display: flex; align-items: center; gap: 2rem; }
     .brand { font-size: 1.15rem; font-weight: 700; text-decoration: none; }
     .brand b { color: var(--gold); font-weight: 700; }
+    .brand img { height: 26px; width: auto; display: block; }
     .nav a.back { margin-left: auto; text-decoration: none; opacity: 0.75; font-size: 0.93rem; }
     .nav a.back:hover { opacity: 1; }
     .nav-cta { border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
@@ -61,6 +62,9 @@
     .hero .eyebrow { color: var(--violet-lo); }
     .hero h1 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: 1.02; margin-top: 1.1rem; max-width: 15ch; }
     .hero .lede { margin-top: 1.5rem; color: var(--cream-dim); font-size: clamp(1.05rem, 1.7vw, 1.25rem); max-width: 46ch; }
+    .media-band { background: linear-gradient(#050408 0 55%, var(--paper) 55% 100%); }
+    .media-band figure { margin: 0; border-radius: 18px; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }
+    .media-band img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .arrow-link { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 2rem; text-decoration: none; font-weight: 600; color: var(--gold); }
     .arrow-link svg { transition: transform 0.25s var(--ease); }
     .arrow-link:hover svg { transform: translateX(6px); }
@@ -110,7 +114,7 @@
 <body>
   <nav class="nav" aria-label="Main">
     <div class="wrap">
-      <a class="brand" href="../../">Prism<b>Automate</b></a>
+      <a class="brand" href="../../"><img src="../../assets/logo-wordmark.png" alt="Prism Automate" width="115" height="30" /></a>
       <a class="back" href="../">← All services</a>
       <a class="nav-cta" href="../../#contact">Start a project</a>
     </div>
@@ -120,21 +124,25 @@
     <div class="wrap">
       <p class="eyebrow">Implementation &amp; Deployment</p>
       <h1>Platform Migration to Claude</h1>
-      <p class="lede">Contracted migration of a workload from another model or provider onto Claude, without breaking what already works.</p>
+      <p class="lede">Contracted migration of a production workload from another model or provider onto Claude, run by an Anthropic partner: baselined, proven in parallel, cut over without breaking what already works.</p>
       <a class="arrow-link" href="../../#contact">Scope this with us
         <svg width="22" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
       </a>
     </div>
   </header>
 
+  <div class="media-band" aria-hidden="false">
+    <div class="wrap"><figure><img src="https://images.unsplash.com/photo-1774388013568-abdb1eb1ad68?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Abstract metallic tunnel of repeating ribbed lines converging toward a bright light at the far end" loading="lazy" /></figure></div>
+  </div>
+
   <section>
     <div class="wrap">
       <span class="sec-label">What's included</span>
       <h2>What you get</h2>
       <div class="inc-grid">
-        <div class="inc"><h3>Prompt &amp; eval translation</h3><p>Your prompts, chains, and eval suites rebuilt for Claude's strengths.</p></div>
-        <div class="inc"><h3>Side-by-side proof</h3><p>Old and new run in parallel until the numbers say switch.</p></div>
-        <div class="inc"><h3>Zero-drama cutover</h3><p>Staged traffic shift with rollback ready at every step.</p></div>
+        <div class="inc"><h3>Prompt &amp; eval translation</h3><p>Your prompts, chains, and eval suites rewritten for how Claude reasons — a proper port, not find-and-replace on the model name.</p></div>
+        <div class="inc"><h3>Side-by-side proof</h3><p>Old and new run in parallel on live traffic until the numbers say switch. You keep the scorecard.</p></div>
+        <div class="inc"><h3>Zero-drama cutover</h3><p>Staged traffic shift with a rehearsed rollback at every gate; one regression and you're back on the old path.</p></div>
       </div>
     </div>
   </section>
@@ -144,9 +152,9 @@
       <span class="sec-label">How it runs</span>
       <h2>Three moves, no mystery</h2>
       <div class="step-grid">
-        <div class="step"><h3>Baseline</h3><p>Current behaviour measured so 'as good or better' is provable.</p></div>
-        <div class="step"><h3>Port</h3><p>Prompts, tools, and guardrails migrated and tuned.</p></div>
-        <div class="step"><h3>Cutover</h3><p>Traffic shifts gradually; the old path retires only when beaten.</p></div>
+        <div class="step"><h3>Baseline</h3><p>Accuracy, latency, and cost measured on your current stack, so 'as good or better' has numbers behind it.</p></div>
+        <div class="step"><h3>Port</h3><p>Prompts, tools, and guardrails rebuilt for Claude, then scored against the baseline until they clear it.</p></div>
+        <div class="step"><h3>Cutover</h3><p>Traffic shifts in stages with rollback armed; the old path retires only when Claude has beaten it.</p></div>
       </div>
     </div>
   </section>
@@ -156,9 +164,9 @@
       <span class="sec-label">Is this you?</span>
       <h2>A good fit if</h2>
       <ul>
-        <li>Your current provider's costs or limits stopped making sense.</li>
-        <li>You want Claude's reasoning on a workload built elsewhere.</li>
-        <li>Compliance needs the switch handled contractually, with evidence.</li>
+        <li>Your provider's costs or limits stopped making sense, but nobody wants to break production.</li>
+        <li>You built this on another model and want Claude's reasoning without a ground-up rewrite.</li>
+        <li>Compliance wants the switch contracted, documented, and provable — not a weekend experiment.</li>
       </ul>
     </div>
   </section>

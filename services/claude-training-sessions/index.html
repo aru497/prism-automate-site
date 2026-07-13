@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claude Training Sessions | Claude Services | Prism Automate</title>
-  <meta name="description" content="Structured training on Claude, Claude Code, or Cowork, delivered as a defined curriculum with clear learning outcomes. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia." />
+  <meta name="description" content="Live, role-based Claude, Claude Code, and Cowork training from an Anthropic Claude partner. Built on your real workflows, measured before and after, so the effect shows up in the work, not the feedback form. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia." />
   <!-- TODO: add canonical once the production domain is confirmed -->
   <link rel="icon" type="image/png" href="../../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,7 @@
         "@type": "Service",
         "name": "Claude Training Sessions",
         "serviceType": "Claude Training Sessions",
-        "description": "Structured training on Claude, Claude Code, or Cowork, delivered as a defined curriculum with clear learning outcomes. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia.",
+        "description": "Live, role-based Claude, Claude Code, and Cowork training from an Anthropic Claude partner. Built on your real workflows, measured before and after, so the effect shows up in the work, not the feedback form. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia.",
         "provider": { "@type": "Organization", "name": "Prism Automate" },
         "areaServed": ["India", "United Arab Emirates", "Australia"]
       },
@@ -53,6 +53,7 @@
     .nav .wrap { width: 100%; display: flex; align-items: center; gap: 2rem; }
     .brand { font-size: 1.15rem; font-weight: 700; text-decoration: none; }
     .brand b { color: var(--gold); font-weight: 700; }
+    .brand img { height: 26px; width: auto; display: block; }
     .nav a.back { margin-left: auto; text-decoration: none; opacity: 0.75; font-size: 0.93rem; }
     .nav a.back:hover { opacity: 1; }
     .nav-cta { border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
@@ -61,6 +62,9 @@
     .hero .eyebrow { color: var(--violet-lo); }
     .hero h1 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: 1.02; margin-top: 1.1rem; max-width: 15ch; }
     .hero .lede { margin-top: 1.5rem; color: var(--cream-dim); font-size: clamp(1.05rem, 1.7vw, 1.25rem); max-width: 46ch; }
+    .media-band { background: linear-gradient(#050408 0 55%, var(--paper) 55% 100%); }
+    .media-band figure { margin: 0; border-radius: 18px; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }
+    .media-band img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .arrow-link { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 2rem; text-decoration: none; font-weight: 600; color: var(--gold); }
     .arrow-link svg { transition: transform 0.25s var(--ease); }
     .arrow-link:hover svg { transform: translateX(6px); }
@@ -110,7 +114,7 @@
 <body>
   <nav class="nav" aria-label="Main">
     <div class="wrap">
-      <a class="brand" href="../../">Prism<b>Automate</b></a>
+      <a class="brand" href="../../"><img src="../../assets/logo-wordmark.png" alt="Prism Automate" width="115" height="30" /></a>
       <a class="back" href="../">← All services</a>
       <a class="nav-cta" href="../../#contact">Start a project</a>
     </div>
@@ -120,21 +124,25 @@
     <div class="wrap">
       <p class="eyebrow">Ongoing &amp; Managed Services</p>
       <h1>Claude Training Sessions</h1>
-      <p class="lede">Structured training on Claude, Claude Code, or Cowork, delivered as a defined curriculum with clear learning outcomes.</p>
+      <p class="lede">Live, role-based Claude, Claude Code, and Cowork training from an Anthropic Claude partner. Built on your real workflows, measured before and after, so the effect shows up in the work, not the feedback form.</p>
       <a class="arrow-link" href="../../#contact">Scope this with us
         <svg width="22" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
       </a>
     </div>
   </header>
 
+  <div class="media-band" aria-hidden="false">
+    <div class="wrap"><figure><img src="https://images.unsplash.com/photo-1677536849474-2819061389ed?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Empty theatre auditorium in near darkness, rows of seats facing a stage under a rig of warm spotlights, shot on film" loading="lazy" /></figure></div>
+  </div>
+
   <section>
     <div class="wrap">
       <span class="sec-label">What's included</span>
       <h2>What you get</h2>
       <div class="inc-grid">
-        <div class="inc"><h3>Role-based curriculum</h3><p>Different tracks for builders, analysts, and leaders; nobody sits through the wrong course.</p></div>
-        <div class="inc"><h3>Hands-on by design</h3><p>Exercises on your real workflows, not toy prompts.</p></div>
-        <div class="inc"><h3>Measured outcomes</h3><p>Pre/post assessment so the training's effect is visible.</p></div>
+        <div class="inc"><h3>Role-based curriculum</h3><p>Separate tracks for builders, analysts, and leaders, each with its own exercises; nobody sits through the wrong course.</p></div>
+        <div class="inc"><h3>Hands-on by design</h3><p>Exercises run on your real documents, code, and tickets; people leave with finished work and prompts they'll reuse on Monday.</p></div>
+        <div class="inc"><h3>Proof it worked</h3><p>Pre- and post-assessment scores, reported in writing: you see what changed, by team, and where a refresher is worth it.</p></div>
       </div>
     </div>
   </section>
@@ -144,9 +152,9 @@
       <span class="sec-label">How it runs</span>
       <h2>Three moves, no mystery</h2>
       <div class="step-grid">
-        <div class="step"><h3>Tailor</h3><p>Curriculum shaped to your tools, data, and policies.</p></div>
-        <div class="step"><h3>Teach</h3><p>Live cohorts, capped size, everything hands-on.</p></div>
-        <div class="step"><h3>Certify</h3><p>Assessment, materials, and a refresher path.</p></div>
+        <div class="step"><h3>Tailor</h3><p>Curriculum built around your tools, data rules, and policies; every exercise uses work your teams actually do.</p></div>
+        <div class="step"><h3>Teach</h3><p>Live cohorts, capped at a size where everyone gets stuck and unstuck; no webinars, no recordings-as-training.</p></div>
+        <div class="step"><h3>Certify</h3><p>Final assessment, take-home materials, and a refresher path so skills survive the next model release.</p></div>
       </div>
     </div>
   </section>
@@ -156,9 +164,9 @@
       <span class="sec-label">Is this you?</span>
       <h2>A good fit if</h2>
       <ul>
-        <li>Licences are live but usage is shallow and repetitive.</li>
-        <li>New joiners need a consistent AI onboarding.</li>
-        <li>You'd rather grow skills than rent them indefinitely.</li>
+        <li>Everyone has a Claude licence; most people use it like a smarter search box.</li>
+        <li>Every new joiner learns Claude by rumour; onboarding should be the same course every time.</li>
+        <li>You'd rather build this skill in-house than rent consultants indefinitely.</li>
       </ul>
     </div>
   </section>

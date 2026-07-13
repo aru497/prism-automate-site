@@ -53,6 +53,7 @@
     .nav .wrap { width: 100%; display: flex; align-items: center; gap: 2rem; }
     .brand { font-size: 1.15rem; font-weight: 700; text-decoration: none; }
     .brand b { color: var(--gold); font-weight: 700; }
+    .brand img { height: 26px; width: auto; display: block; }
     .nav a.back { margin-left: auto; text-decoration: none; opacity: 0.75; font-size: 0.93rem; }
     .nav a.back:hover { opacity: 1; }
     .nav-cta { border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
@@ -61,6 +62,9 @@
     .hero .eyebrow { color: var(--violet-lo); }
     .hero h1 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: 1.02; margin-top: 1.1rem; max-width: 15ch; }
     .hero .lede { margin-top: 1.5rem; color: var(--cream-dim); font-size: clamp(1.05rem, 1.7vw, 1.25rem); max-width: 46ch; }
+    .media-band { background: linear-gradient(#050408 0 55%, var(--paper) 55% 100%); }
+    .media-band figure { margin: 0; border-radius: 18px; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }
+    .media-band img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .arrow-link { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 2rem; text-decoration: none; font-weight: 600; color: var(--gold); }
     .arrow-link svg { transition: transform 0.25s var(--ease); }
     .arrow-link:hover svg { transform: translateX(6px); }
@@ -110,7 +114,7 @@
 <body>
   <nav class="nav" aria-label="Main">
     <div class="wrap">
-      <a class="brand" href="../../">Prism<b>Automate</b></a>
+      <a class="brand" href="../../"><img src="../../assets/logo-wordmark.png" alt="Prism Automate" width="115" height="30" /></a>
       <a class="back" href="../">← All services</a>
       <a class="nav-cta" href="../../#contact">Start a project</a>
     </div>
@@ -127,13 +131,17 @@
     </div>
   </header>
 
+  <div class="media-band" aria-hidden="false">
+    <div class="wrap"><figure><img src="https://images.unsplash.com/photo-1541428213843-059f9be2dbae?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Long-exposure golden spark trails looping and scattering through a dark concrete tunnel" loading="lazy" /></figure></div>
+  </div>
+
   <section>
     <div class="wrap">
       <span class="sec-label">What's included</span>
       <h2>What you get</h2>
       <div class="inc-grid">
-        <div class="inc"><h3>A working system</h3><p>Real integration against your data, not a slideware mock.</p></div>
-        <div class="inc"><h3>Honest findings</h3><p>What worked, what didn't, and what production would actually cost.</p></div>
+        <div class="inc"><h3>Working software</h3><p>Real integration against your data, not a slideware mock — something your team can try to break.</p></div>
+        <div class="inc"><h3>Honest findings</h3><p>A written record of what worked, what failed, and what production would actually cost in money, time, and risk.</p></div>
         <div class="inc"><h3>A go/no-go you can trust</h3><p>Evidence strong enough to kill the idea or fund it properly.</p></div>
       </div>
     </div>
@@ -144,9 +152,9 @@
       <span class="sec-label">How it runs</span>
       <h2>Three moves, no mystery</h2>
       <div class="step-grid">
-        <div class="step"><h3>Frame</h3><p>One use case, one success metric, agreed up front.</p></div>
-        <div class="step"><h3>Prove</h3><p>Two to four weeks of focused build against real inputs.</p></div>
-        <div class="step"><h3>Decide</h3><p>Demo, findings, and a costed path to production.</p></div>
+        <div class="step"><h3>Frame</h3><p>One use case, one success metric, agreed in writing up front.</p></div>
+        <div class="step"><h3>Prove</h3><p>Two to four weeks of focused build against your real inputs. Short enough to stay honest.</p></div>
+        <div class="step"><h3>Decide</h3><p>A live demo, written findings, and a costed path to production. Or a clear reason to stop.</p></div>
       </div>
     </div>
   </section>
@@ -156,8 +164,8 @@
       <span class="sec-label">Is this you?</span>
       <h2>A good fit if</h2>
       <ul>
-        <li>Stakeholders disagree about whether AI can do the job.</li>
-        <li>You need evidence before a bigger budget unlocks.</li>
+        <li>Half the room says AI can do the job; the other half wants proof.</li>
+        <li>The bigger budget is there, but it won't move without evidence.</li>
         <li>The use case is novel enough that nobody can quote it blind.</li>
       </ul>
     </div>
