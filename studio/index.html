@@ -99,21 +99,27 @@
     .scrub .word { color: color-mix(in oklab, var(--ink) 20%, var(--paper)); }
     .scrub em.word { color: color-mix(in oklab, var(--violet) 26%, var(--paper)); }
 
-    /* ---- Pinned chapters ---- */
-    .chapters { position: relative; border-block: 1px solid var(--line); background: var(--paper); }
+    /* ---- Pinned chapters: blackish-purple interlude ---- */
+    .chapters {
+      position: relative;
+      border-block: 1px solid var(--line-dk);
+      background: radial-gradient(120% 100% at 72% 12%, #221443 0%, #150d28 48%, #0d0a15 100%);
+      color: var(--paper);
+    }
     .chapters .stage { position: sticky; top: 0; height: 100dvh; overflow: clip; display: flex; align-items: center; }
     .chapters .stage .wrap { width: 100%; display: grid; grid-template-columns: 92px 1fr; gap: clamp(1.5rem, 5vw, 5rem); align-items: center; }
     .rail { display: grid; gap: 1.1rem; align-content: center; }
-    .rail .num { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.18em; color: var(--ink-soft); opacity: 0.45; transition: opacity 0.3s, color 0.3s; }
-    .rail .num.on { opacity: 1; color: var(--violet); }
-    .rail .track { width: 2px; height: 120px; background: var(--line); border-radius: 2px; overflow: hidden; justify-self: start; margin-left: 4px; }
-    .rail .track i { display: block; width: 100%; height: 100%; background: var(--violet); transform: scaleY(0); transform-origin: top; }
+    .rail .num { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.18em; color: var(--cream-dim); opacity: 0.4; transition: opacity 0.3s, color 0.3s; }
+    .rail .num.on { opacity: 1; color: var(--violet-lo); }
+    .rail .track { width: 2px; height: 120px; background: var(--line-dk); border-radius: 2px; overflow: hidden; justify-self: start; margin-left: 4px; }
+    .rail .track i { display: block; width: 100%; height: 100%; background: var(--violet-lo); transform: scaleY(0); transform-origin: top; }
     .panels { position: relative; min-height: 62vh; }
     .panel { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; }
     .panel h2 { font-size: clamp(3.4rem, 12vw, 10rem); font-weight: 400; line-height: 0.92; letter-spacing: -0.04em; }
     .panel .desc { margin-top: 1.5rem; max-width: 46ch; }
-    .panel .desc .ser { display: block; font-size: clamp(1.2rem, 2.2vw, 1.7rem); color: var(--ink); }
-    .panel .desc p { margin-top: 0.8rem; color: var(--ink-soft); }
+    .panel .desc .ser { display: block; font-size: clamp(1.2rem, 2.2vw, 1.7rem); color: var(--violet-lo); }
+    .panel .desc p { margin-top: 0.8rem; color: var(--cream-dim); }
+    .ch-icon { width: 44px; height: 44px; fill: var(--gold); margin-bottom: 1.3rem; opacity: 0.95; }
     .no-motion .panel { position: relative; inset: auto; padding-block: 3.5rem; }
     .no-motion .chapters .stage { position: static; height: auto; }
     .no-motion .panels { min-height: 0; }
@@ -248,7 +254,7 @@
       </h1>
       <p class="hero-sub">A senior studio that advises, builds, deploys, and runs AI, from the boardroom strategy to the workloads running in production.</p>
       <a class="arrow-link" href="../#contact">Start a project
-        <svg width="24" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        <svg width="24" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
       </a>
     </div>
     <div class="hero-foot" aria-hidden="true">
@@ -277,6 +283,7 @@
         </div>
         <div class="panels">
           <div class="panel" data-panel="0">
+            <svg class="ch-icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="m300-300 280-80 80-280-280 80-80 280Zm180-120q-25 0-42.5-17.5T420-480q0-25 17.5-42.5T480-540q25 0 42.5 17.5T540-480q0 25-17.5 42.5T480-420Zm0 340q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Zm0-320Z"/></svg>
             <h2>Advise</h2>
             <div class="desc">
               <span class="ser">Start with the business case, not the hype.</span>
@@ -284,6 +291,7 @@
             </div>
           </div>
           <div class="panel" data-panel="1">
+            <svg class="ch-icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="M440-183v-274L200-596v274l240 139Zm80 0 240-139v-274L520-457v274Zm-40-343 237-137-237-137-237 137 237 137ZM160-252q-19-11-29.5-29T120-321v-318q0-22 10.5-40t29.5-29l280-161q19-11 40-11t40 11l280 161q19 11 29.5 29t10.5 40v318q0 22-10.5 40T800-252L520-91q-19 11-40 11t-40-11L160-252Zm320-228Z"/></svg>
             <h2>Build</h2>
             <div class="desc">
               <span class="ser">Agents that reach production, not another pilot.</span>
@@ -291,6 +299,7 @@
             </div>
           </div>
           <div class="panel" data-panel="2">
+            <svg class="ch-icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="m226-559 78 33q14-28 29-54t33-52l-56-11-84 84Zm142 83 114 113q42-16 90-49t90-75q70-70 109.5-155.5T806-800q-72-5-158 34.5T492-656q-42 42-75 90t-49 90Zm155-121.5q0-33.5 23-56.5t57-23q34 0 57 23t23 56.5q0 33.5-23 56.5t-57 23q-34 0-57-23t-23-56.5ZM565-220l84-84-11-56q-26 18-52 32.5T532-299l33 79Zm313-653q19 121-23.5 235.5T708-419l20 99q4 20-2 39t-20 33L538-80l-84-197-171-171-197-84 167-168q14-14 33.5-20t39.5-2l99 20q104-104 218-147t235-24ZM157-321q35-35 85.5-35.5T328-322q35 35 34.5 85.5T327-151q-25 25-83.5 43T82-76q14-103 32-161.5t43-83.5Zm57 56q-10 10-20 36.5T180-175q27-4 53.5-13.5T270-208q12-12 13-29t-11-29q-12-12-29-11.5T214-265Z"/></svg>
             <h2>Deploy</h2>
             <div class="desc">
               <span class="ser">Rollout that survives the demo.</span>
@@ -298,6 +307,7 @@
             </div>
           </div>
           <div class="panel" data-panel="3">
+            <svg class="ch-icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="M120-120v-80l80-80v160h-80Zm160 0v-240l80-80v320h-80Zm160 0v-320l80 81v239h-80Zm160 0v-239l80-80v319h-80Zm160 0v-400l80-80v480h-80ZM120-327v-113l280-280 160 160 280-280v113L560-447 400-607 120-327Z"/></svg>
             <h2>Run</h2>
             <div class="desc">
               <span class="ser">Someone owns it after launch.</span>
@@ -379,7 +389,7 @@
       </span>
       <blockquote>Your partner for <b>everything Claude</b>, from the first roadmap to the last invoice.</blockquote>
       <a class="arrow-link" href="../#solutions">Explore all fourteen services
-        <svg width="20" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        <svg width="20" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
       </a>
     </div>
   </section>
