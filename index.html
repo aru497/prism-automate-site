@@ -340,6 +340,32 @@
     .partner blockquote b { font-style: normal; font-weight: 300; color: var(--violet); }
     .partner .arrow-link { color: var(--violet); margin-top: 2rem; justify-content: center; }
 
+    /* ---- Our story ---- */
+    .story { background: #000; color: var(--paper); padding-block: clamp(5.5rem, 14vh, 9.5rem); overflow: clip; }
+    .story-grid { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: clamp(2.6rem, 6vw, 5.5rem); align-items: center; }
+    .story h2 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(3.4rem, 8.5vw, 7.5rem); line-height: 0.98; letter-spacing: -0.02em; }
+    .story-copy p { margin: 1.9rem 0 0; color: rgba(241, 240, 246, 0.76); font-size: clamp(1.02rem, 1.4vw, 1.22rem); line-height: 1.7; max-width: 50ch; }
+    .story-copy b { color: var(--paper); font-weight: 600; }
+    .story-copy a { color: var(--paper); text-underline-offset: 3px; }
+    .story-copy em { color: var(--violet-lo); }
+    .btn-line { display: inline-flex; align-items: center; gap: 0.7rem; margin-top: 2.4rem; padding: 0.95rem 1.9rem; border: 1px solid rgba(241, 240, 246, 0.32); border-radius: 999px; color: var(--paper); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: border-color 0.2s, background 0.2s; }
+    .btn-line:hover { border-color: var(--paper); background: rgba(241, 240, 246, 0.07); }
+    .story-visual { position: relative; aspect-ratio: 1; width: 100%; max-width: 560px; justify-self: end; }
+    .story-visual video { width: 100%; height: 100%; object-fit: cover; }
+    .story .chip { position: absolute; display: flex; align-items: center; gap: 0.7rem; padding: 0.7rem 1rem; border-radius: 12px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.16); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); animation: chip-float 5.2s ease-in-out infinite alternate; }
+    .story .chip b { font-family: "Hanken Grotesk", var(--font); font-weight: 300; font-size: 1.7rem; line-height: 1; }
+    .story .chip span { font-size: 0.8rem; line-height: 1.35; color: rgba(241, 240, 246, 0.72); max-width: 13ch; }
+    .story .chip-a { top: 16%; left: -3%; }
+    .story .chip-b { bottom: 15%; right: -2%; animation-duration: 6.6s; animation-delay: -2.4s; }
+    @keyframes chip-float { from { transform: translateY(-7px); } to { transform: translateY(9px); } }
+    @media (prefers-reduced-motion: reduce) { .story .chip { animation: none; } }
+    @media (max-width: 860px) {
+      .story-grid { grid-template-columns: 1fr; }
+      .story-visual { justify-self: center; max-width: 460px; }
+      .story .chip-a { left: 2%; }
+      .story .chip-b { right: 2%; }
+    }
+
     /* ---- Humans strip ---- */
     .humans { padding-block: clamp(4rem, 10vh, 7rem); border-top: 1px solid var(--line); overflow: clip; }
     .humans .wrap > p.eyebrow { text-align: center; }
@@ -441,6 +467,7 @@
         <li><a href="#chapters">What we do</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#partner">Claude</a></li>
+        <li><a href="#story">Story</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
       <a class="nav-cta" href="#contact">Start a project</a>
@@ -654,7 +681,24 @@
     </div>
   </section>
 
-  <section class="humans" aria-label="The team">
+  <section class="story" id="story" aria-label="Our story">
+    <div class="wrap story-grid">
+      <div class="story-copy">
+        <h2 class="gr">Our story</h2>
+        <p class="gr">Prism Automate grew out of the <b>Prism family</b>, the Bengaluru crew behind <a href="https://prismscale.com" target="_blank" rel="noopener">Prismscale</a> and <a href="https://www.designhq.io" target="_blank" rel="noopener">DesignHQ</a>, the design headquarters that ships for Amazon, Accenture, and Air India Express on a 24-hour clock. A thousand projects through that studio taught us one thing: the teams that pull ahead are the teams that <em>automate</em>. So we became that company, an Anthropic Claude partner that turns everyday operations into intelligent machines, from Bengaluru to Dubai to Sydney.</p>
+        <a class="btn-line gr" href="#team">Meet the humans
+          <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+      </div>
+      <div class="story-visual gr">
+        <video src="assets/ring-a.webm" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+        <div class="chip chip-a"><b>1k+</b><span>projects across the Prism family</span></div>
+        <div class="chip chip-b"><b>24h</b><span>design turnaround at DesignHQ</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="humans" id="team" aria-label="The team">
     <div class="wrap">
       <p class="eyebrow">The humans behind it</p>
       <div class="human-row">
