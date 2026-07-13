@@ -6,36 +6,36 @@
   <title>Prism Automate — AI Automation Studio &amp; Anthropic Claude Partner</title>
   <meta name="description" content="Prism Automate is an AI automation studio and Anthropic Claude partner. We advise, build, deploy, and run AI for teams across India, the Middle East, and Australia. Makers of Prism Events and virtual try-on." />
   <meta name="robots" content="noindex" />
-  <!-- Editorial design register for Prism Automate. Craft borrowed from webandcrafts.com
-       (italic-serif accents, kinetic display words, scroll rhythm) but a distinct
-       identity: Prism violet + gold, Spectral serif, own layout and content.
+  <!-- Editorial-cinematic design register for Prism Automate.
+       Motion engine matches webandcrafts.com's real stack (GSAP ScrollTrigger + Lenis,
+       pinned scrubbed sequences) but the identity, layout, and choreography are Prism's
+       own: violet + gold, Spectral italic, asymmetric pinned chapters.
        noindex until the client picks a primary design. -->
   <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Spectral:ital,wght@0,300;1,300;1,400&display=swap" rel="stylesheet" />
   <style>
-    /* ============ Prism Automate · editorial studio ============
-       Palette: cool near-white paper + deep ink-violet; ONE accent (Prism violet),
-       gold used only as a rare spark. Type: Familjen Grotesk + Spectral italic. */
     :root {
-      --paper: #f1f0f6;         /* cool off-white, whisper of violet (not warm cream) */
-      --paper-2: #e9e7f1;
-      --ink: #16121f;           /* near-black violet-ink */
-      --ink-deep: #0d0a15;      /* darkest section bg */
-      --ink-soft: #6b6579;      /* muted body on light */
+      --paper: #f1f0f6;
+      --paper-2: #e7e5f0;
+      --ink: #16121f;
+      --ink-deep: #0d0a15;
+      --ink-soft: #6b6579;
       --line: rgba(22, 18, 31, 0.12);
       --line-dk: rgba(255, 255, 255, 0.14);
-      --violet: #6a5ae0;        /* primary accent */
-      --violet-lo: #a89ef1;     /* accent on dark */
-      --gold: #d9a86a;          /* rare spark */
-      --cream-dim: rgba(255,255,255,0.6);
+      --violet: #6a5ae0;
+      --violet-lo: #a89ef1;
+      --gold: #d9a86a;
+      --cream-dim: rgba(255, 255, 255, 0.6);
       --font: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
       --serif: "Spectral", Georgia, serif;
       --ease: cubic-bezier(0.16, 1, 0.3, 1);
     }
     * { box-sizing: border-box; }
+    html.inertia-scroll { scroll-behavior: auto; }
     html { scroll-behavior: smooth; }
+    html.lenis, html.lenis body { height: auto; }
     body {
       margin: 0;
       background: var(--paper);
@@ -43,6 +43,7 @@
       font: 400 1.0625rem/1.6 var(--font);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
+      overflow-x: clip;
     }
     img, video { max-width: 100%; display: block; }
     h1, h2, h3 { margin: 0; text-wrap: balance; letter-spacing: -0.02em; }
@@ -51,9 +52,6 @@
     em, .ser { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--violet); }
     .wrap { max-width: 1280px; margin: 0 auto; padding-inline: clamp(1.25rem, 5vw, 3.5rem); }
     .eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); }
-    section { position: relative; }
-
-    /* ---- sections invert: dark chapters carry the ink bg ---- */
     .dark { background: var(--ink-deep); color: var(--paper); }
     .dark .eyebrow { color: var(--violet-lo); }
     .dark em, .dark .ser { color: var(--violet-lo); }
@@ -62,7 +60,7 @@
     .nav {
       position: fixed; inset: 0 0 auto 0; z-index: 40; height: 74px;
       display: flex; align-items: center; color: var(--paper);
-      transition: background 0.35s var(--ease), color 0.35s var(--ease), border-color 0.35s var(--ease);
+      transition: background 0.35s var(--ease), border-color 0.35s var(--ease);
       border-bottom: 1px solid transparent;
     }
     .nav.is-solid { background: rgba(13, 10, 21, 0.72); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border-color: var(--line-dk); }
@@ -76,62 +74,56 @@
     .nav-cta:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
 
     /* ---- Hero ---- */
-    .hero { position: relative; min-height: 100dvh; display: flex; align-items: flex-end; overflow: hidden; background: var(--ink-deep); color: var(--paper); }
-    .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.72; pointer-events: none; }
+    .hero { position: relative; min-height: 100dvh; display: flex; align-items: flex-end; overflow: clip; background: var(--ink-deep); color: var(--paper); }
+    .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.72; pointer-events: none; will-change: transform; }
     .hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 90% at 78% 30%, rgba(106,90,224,0.18), transparent 55%), linear-gradient(transparent 32%, rgba(13,10,21,0.82) 88%); }
     .hero .wrap { position: relative; z-index: 1; padding-bottom: clamp(3rem, 8vh, 5.5rem); padding-top: 120px; }
     .hero .eyebrow { color: var(--violet-lo); }
-    .hero h1 {
-      margin-top: 1.4rem;
-      font-size: clamp(2.5rem, 6.4vw, 5.4rem);
-      font-weight: 500;
-      line-height: 1.02;
-      max-width: 15ch;
-    }
+    .hero h1 { margin-top: 1.4rem; font-size: clamp(2.5rem, 6.4vw, 5.4rem); font-weight: 500; line-height: 1.02; max-width: 15ch; }
     .hero h1 em { color: var(--gold); }
+    .hero h1 .line { display: block; overflow: clip; }
+    .hero h1 .line > span { display: block; }
     .hero-sub { margin-top: 1.6rem; max-width: 42ch; color: var(--cream-dim); font-size: clamp(1rem, 1.6vw, 1.2rem); }
     .arrow-link { display: inline-flex; align-items: center; gap: 0.65rem; margin-top: 2rem; text-decoration: none; font-weight: 600; color: var(--paper); }
     .arrow-link svg { transition: transform 0.28s var(--ease); }
     .arrow-link:hover svg { transform: translateX(7px); }
     .hero .arrow-link { color: var(--gold); }
+    .hero-foot { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; border-top: 1px solid var(--line-dk); }
+    .hero-foot .wrap { display: flex; justify-content: space-between; align-items: center; padding-block: 0.9rem; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-dim); }
 
-    /* ---- Intro / manifesto: scroll-brightening editorial statement ---- */
-    .intro { padding-block: clamp(6rem, 16vh, 12rem); }
-    .intro .wrap { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+    /* ---- Manifesto (GSAP word scrub) ---- */
+    .intro { padding-block: clamp(7rem, 18vh, 13rem); }
+    .intro .wrap { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
     .intro .lead-label { position: sticky; top: 120px; }
-    .scrub { font-size: clamp(1.5rem, 3vw, 2.35rem); font-weight: 500; line-height: 1.4; letter-spacing: -0.015em; }
-    .scrub .word { color: color-mix(in oklab, var(--ink) 22%, var(--paper)); transition: color 0.2s; }
-    @supports (animation-timeline: view()) {
-      @media (prefers-reduced-motion: no-preference) {
-        .scrub .word { animation: lighten 1ms linear both; animation-timeline: view(); }
-      }
-    }
-    @keyframes lighten { to { color: var(--ink); } }
-    .scrub em { color: var(--violet); }
+    .scrub { font-size: clamp(1.55rem, 3.1vw, 2.45rem); font-weight: 500; line-height: 1.42; letter-spacing: -0.015em; }
+    .scrub .word { color: color-mix(in oklab, var(--ink) 20%, var(--paper)); }
+    .scrub em.word { color: color-mix(in oklab, var(--violet) 26%, var(--paper)); }
 
-    /* ---- Service chapters: one huge word per viewport, asymmetric ---- */
-    .chapter { min-height: 88vh; display: flex; align-items: center; border-top: 1px solid var(--line); }
-    .chapter .wrap { width: 100%; display: grid; grid-template-columns: auto 1fr; gap: clamp(1.5rem, 5vw, 5rem); align-items: center; }
-    .chapter .idx { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--violet); align-self: start; padding-top: 0.9rem; }
-    .chapter h2 { font-size: clamp(3.4rem, 12vw, 10rem); font-weight: 400; line-height: 0.92; letter-spacing: -0.04em; }
-    .chapter .desc { margin-top: 1.4rem; display: grid; gap: 1rem; max-width: 46ch; }
-    .chapter .desc .ser { display: block; font-size: clamp(1.2rem, 2.2vw, 1.7rem); color: var(--ink); font-style: italic; }
-    .chapter .desc p { color: var(--ink-soft); }
-    .chapter .desc .arrow-link { color: var(--violet); font-size: 0.95rem; margin-top: 0.4rem; }
-    @supports (animation-timeline: view()) {
-      @media (prefers-reduced-motion: no-preference) {
-        .chapter h2, .chapter .desc, .chapter .idx { animation: rise 1ms ease-out both; animation-timeline: view(); animation-range: entry 12% cover 40%; }
-        .chapter .desc { animation-delay: 60ms; }
-      }
-    }
-    @keyframes rise { from { opacity: 0; transform: translateY(46px); } }
+    /* ---- Pinned chapters ---- */
+    .chapters { position: relative; border-block: 1px solid var(--line); background: var(--paper); }
+    .chapters .stage { position: sticky; top: 0; height: 100dvh; overflow: clip; display: flex; align-items: center; }
+    .chapters .stage .wrap { width: 100%; display: grid; grid-template-columns: 92px 1fr; gap: clamp(1.5rem, 5vw, 5rem); align-items: center; }
+    .rail { display: grid; gap: 1.1rem; align-content: center; }
+    .rail .num { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.18em; color: var(--ink-soft); opacity: 0.45; transition: opacity 0.3s, color 0.3s; }
+    .rail .num.on { opacity: 1; color: var(--violet); }
+    .rail .track { width: 2px; height: 120px; background: var(--line); border-radius: 2px; overflow: hidden; justify-self: start; margin-left: 4px; }
+    .rail .track i { display: block; width: 100%; height: 100%; background: var(--violet); transform: scaleY(0); transform-origin: top; }
+    .panels { position: relative; min-height: 62vh; }
+    .panel { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; }
+    .panel h2 { font-size: clamp(3.4rem, 12vw, 10rem); font-weight: 400; line-height: 0.92; letter-spacing: -0.04em; }
+    .panel .desc { margin-top: 1.5rem; max-width: 46ch; }
+    .panel .desc .ser { display: block; font-size: clamp(1.2rem, 2.2vw, 1.7rem); color: var(--ink); }
+    .panel .desc p { margin-top: 0.8rem; color: var(--ink-soft); }
+    .no-motion .panel { position: relative; inset: auto; padding-block: 3.5rem; }
+    .no-motion .chapters .stage { position: static; height: auto; }
+    .no-motion .panels { min-height: 0; }
 
-    /* ---- Kinetic services marquee (a move WAC does not do) ---- */
-    .ticker { padding-block: clamp(3rem, 7vh, 5rem); overflow: hidden; border-block: 1px solid var(--line); }
+    /* ---- Services ticker ---- */
+    .ticker { padding-block: clamp(2.6rem, 6vh, 4.2rem); overflow: clip; border-bottom: 1px solid var(--line); }
     .ticker-row { display: flex; gap: 2.5rem; white-space: nowrap; width: max-content; }
-    .ticker-row span { font-size: clamp(1.4rem, 3.5vw, 2.6rem); font-weight: 500; letter-spacing: -0.02em; color: var(--ink); display: inline-flex; align-items: center; gap: 2.5rem; }
+    .ticker-row span { font-size: clamp(1.4rem, 3.5vw, 2.6rem); font-weight: 500; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 2.5rem; }
     .ticker-row span::after { content: "✳"; color: var(--gold); font-size: 0.7em; }
-    @media (prefers-reduced-motion: no-preference) { .ticker-row { animation: slide 40s linear infinite; } }
+    @media (prefers-reduced-motion: no-preference) { .ticker-row { animation: slide 42s linear infinite; } }
     @keyframes slide { to { transform: translateX(-50%); } }
 
     /* ---- Selected work ---- */
@@ -139,12 +131,11 @@
     .work-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
     .work-head h2 { font-size: clamp(2.2rem, 4.6vw, 3.9rem); font-weight: 500; }
     .work-head h2 em { color: var(--violet); }
-    .case { margin-top: clamp(3rem, 6vh, 5rem); display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
-    .case:nth-child(even) .case-media { order: 2; }
-    .case-media { border-radius: 16px; overflow: hidden; aspect-ratio: 4 / 3; background: var(--paper-2); position: relative; }
-    .case-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
-    .case:hover .case-media img { transform: scale(1.04); }
-    .case-media .tag { position: absolute; top: 1rem; left: 1rem; background: rgba(13,10,21,0.72); color: var(--paper); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.4rem 0.85rem; border-radius: 999px; backdrop-filter: blur(6px); }
+    .case { margin-top: clamp(3.5rem, 8vh, 6rem); display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+    .case:nth-of-type(odd) .case-media { order: 2; }
+    .case-media { border-radius: 18px; overflow: clip; aspect-ratio: 4 / 3; background: var(--paper-2); position: relative; }
+    .case-media img { width: 100%; height: 118%; object-fit: cover; will-change: transform; }
+    .case-media .tag { position: absolute; top: 1rem; left: 1rem; z-index: 1; background: rgba(13,10,21,0.72); color: var(--paper); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.4rem 0.85rem; border-radius: 999px; backdrop-filter: blur(6px); }
     .case-body .kind { color: var(--violet); font-weight: 600; font-size: 0.9rem; }
     .case-body h3 { margin-top: 0.7rem; font-size: clamp(1.5rem, 2.8vw, 2.2rem); font-weight: 500; line-height: 1.2; }
     .case-body h3 em { color: var(--violet); }
@@ -153,14 +144,14 @@
     .case-body .feat li { display: flex; gap: 0.6rem; color: var(--ink-soft); font-size: 0.97rem; }
     .case-body .feat b { color: var(--ink); font-weight: 600; }
     .case-body .feat svg { flex: none; margin-top: 0.35rem; color: var(--violet); }
-    .case-body .arrow-link { color: var(--violet); font-size: 0.95rem; margin-top: 1.4rem; }
 
-    /* ---- Stats (dark) ---- */
+    /* ---- Stats ---- */
     .stats { padding-block: clamp(4.5rem, 11vh, 7.5rem); }
     .stats .lead { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 500; max-width: 20ch; line-height: 1.25; }
     .stats .lead em { color: var(--violet-lo); }
     .stat-grid { margin-top: clamp(2.5rem, 6vh, 4rem); display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-    .stat b { display: block; font-size: clamp(2.6rem, 5.5vw, 4.4rem); font-weight: 400; line-height: 1; }
+    .stat { border-top: 1px solid var(--line-dk); padding-top: 1.3rem; }
+    .stat b { display: block; font-size: clamp(2.6rem, 5.5vw, 4.4rem); font-weight: 400; line-height: 1; font-variant-numeric: tabular-nums; }
     .stat b.spark { color: var(--gold); }
     .stat span { display: block; margin-top: 0.7rem; color: var(--cream-dim); font-size: 0.95rem; line-height: 1.4; }
 
@@ -168,24 +159,33 @@
     .partner { padding-block: clamp(5rem, 13vh, 9rem); text-align: center; }
     .partner .badge { display: inline-flex; align-items: center; gap: 0.55rem; border: 1px solid var(--line); border-radius: 999px; padding: 0.45rem 1.1rem; font-size: 0.82rem; font-weight: 600; color: var(--ink-soft); }
     .partner .badge img { height: 15px; width: 15px; }
-    .partner blockquote { margin: 1.8rem auto 0; max-width: 20ch; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.18; letter-spacing: -0.01em; }
+    .partner blockquote { margin: 1.8rem auto 0; max-width: 20ch; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.18; }
     .partner blockquote b { font-style: normal; font-weight: 300; color: var(--violet); }
     .partner .arrow-link { color: var(--violet); margin-top: 2rem; justify-content: center; }
 
+    /* ---- Humans strip ---- */
+    .humans { padding-block: clamp(4rem, 10vh, 7rem); border-top: 1px solid var(--line); overflow: clip; }
+    .humans .wrap > p.eyebrow { text-align: center; }
+    .human-row { margin-top: 2.6rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2.5vw, 2rem); align-items: start; }
+    .human-row figure { margin: 0; border-radius: 14px; overflow: clip; aspect-ratio: 4 / 5; }
+    .human-row figure:nth-child(2) { margin-top: 3rem; }
+    .human-row img { width: 100%; height: 116%; object-fit: cover; will-change: transform; }
+    .humans .caption { margin: 2.2rem auto 0; text-align: center; color: var(--ink-soft); max-width: 46ch; }
+    .humans .caption b { color: var(--ink); font-weight: 600; }
+
     /* ---- Clients ---- */
-    .clients { padding-block: clamp(4rem, 10vh, 7rem); border-top: 1px solid var(--line); text-align: center; }
-    .clients p { margin: 0.7rem auto 0; color: var(--ink-soft); }
-    .logo-row { margin-top: 2.6rem; display: flex; justify-content: center; align-items: center; gap: clamp(2.5rem, 7vw, 5.5rem); flex-wrap: wrap; }
+    .clients { padding-block: clamp(4rem, 9vh, 6rem); border-top: 1px solid var(--line); text-align: center; }
+    .logo-row { margin-top: 2.4rem; display: flex; justify-content: center; align-items: center; gap: clamp(2.5rem, 7vw, 5.5rem); flex-wrap: wrap; }
     .logo-row img { height: 28px; }
     .logo-row .word { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.02em; color: var(--ink); }
 
-    /* ---- Contact CTA (dark) ---- */
+    /* ---- CTA ---- */
     .cta { padding-block: clamp(5.5rem, 14vh, 9rem); }
     .cta .wrap { display: grid; grid-template-columns: 1fr auto; gap: 2.5rem; align-items: center; }
     .cta h2 { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 500; line-height: 1.05; max-width: 16ch; }
     .cta h2 em { color: var(--violet-lo); }
     .cta small { display: block; margin-top: 1rem; color: var(--cream-dim); font-size: 1rem; }
-    .btn-solid { background: var(--paper); color: var(--ink); text-decoration: none; padding: 1.05rem 2.3rem; border-radius: 999px; font-weight: 600; white-space: nowrap; transition: transform 0.15s var(--ease); display: inline-block; }
+    .btn-solid { background: var(--paper); color: var(--ink); text-decoration: none; padding: 1.05rem 2.3rem; border-radius: 999px; font-weight: 600; white-space: nowrap; transition: transform 0.15s var(--ease), background 0.2s; display: inline-block; }
     .btn-solid:active { transform: scale(0.97); }
     .btn-solid:hover { background: var(--violet-lo); }
 
@@ -199,33 +199,27 @@
     .foot .t { color: var(--paper); font-weight: 600; margin-bottom: 0.3rem; }
     .legal { margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--line-dk); color: var(--cream-dim); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 
-    /* ---- Reveals for standard blocks ---- */
-    @supports (animation-timeline: view()) {
-      @media (prefers-reduced-motion: no-preference) {
-        .reveal { animation: rise 1ms ease-out both; animation-timeline: view(); animation-range: entry 6% cover 30%; }
-      }
-    }
+    /* ---- Generic reveal targets (GSAP sets initial state; static without JS) ---- */
+    .gr { will-change: transform, opacity; }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .ticker-row { animation: none; }
-    }
-
-    /* ---- Responsive ---- */
     @media (min-height: 1400px) {
       .hero { min-height: 940px; }
-      .chapter { min-height: 680px; }
+      .chapters .stage { height: auto; position: static; }
+      .no-pin-fallback { display: block; }
     }
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .intro .wrap { grid-template-columns: 1fr; }
       .intro .lead-label { position: static; }
-      .chapter .wrap { grid-template-columns: 1fr; gap: 1rem; }
-      .chapter { min-height: auto; padding-block: 4rem; }
-      .case, .case:nth-child(even) .case-media { grid-template-columns: 1fr; order: 0; }
+      .chapters .stage .wrap { grid-template-columns: 1fr; }
+      .rail { grid-auto-flow: column; justify-content: start; gap: 1.4rem; }
+      .rail .track { display: none; }
+      .panel h2 { font-size: clamp(3rem, 16vw, 5rem); }
+      .case, .case:nth-of-type(odd) .case-media { grid-template-columns: 1fr; order: 0; }
       .case-media { order: -1 !important; }
       .stat-grid { grid-template-columns: 1fr 1fr; }
       .cta .wrap { grid-template-columns: 1fr; }
+      .human-row figure:nth-child(2) { margin-top: 0; }
     }
   </style>
 </head>
@@ -234,7 +228,7 @@
     <div class="wrap">
       <a class="brand" href="#top">Prism<span class="a">Automate</span></a>
       <ul class="nav-links">
-        <li><a href="#work">What we do</a></li>
+        <li><a href="#chapters">What we do</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#partner">Claude</a></li>
         <li><a href="../">Main site</a></li>
@@ -244,85 +238,76 @@
   </nav>
 
   <header class="hero" id="top">
-    <video src="../assets/ring-b.webm" autoplay muted loop playsinline preload="auto"></video>
-    <div class="wrap">
+    <video id="hero-video" src="../assets/ring-b.webm" autoplay muted loop playsinline preload="auto"></video>
+    <div class="wrap" id="hero-inner">
       <p class="eyebrow">AI Automation Studio · Anthropic Claude Partner</p>
-      <h1>We turn businesses into <em>intelligent</em> machines.</h1>
+      <h1>
+        <span class="line"><span>We turn businesses</span></span>
+        <span class="line"><span>into <em>intelligent</em></span></span>
+        <span class="line"><span>machines.</span></span>
+      </h1>
       <p class="hero-sub">A senior studio that advises, builds, deploys, and runs AI, from the boardroom strategy to the workloads running in production.</p>
       <a class="arrow-link" href="../#contact">Start a project
         <svg width="24" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
       </a>
+    </div>
+    <div class="hero-foot" aria-hidden="true">
+      <div class="wrap"><span>Bengaluru · Dubai · Sydney</span><span>Est. with Google &amp; Unisys deliveries</span></div>
     </div>
   </header>
 
   <section class="intro" aria-label="What we believe">
     <div class="wrap">
       <p class="eyebrow lead-label">What we believe</p>
-      <p class="scrub">
-        <span class="word">Most</span> <span class="word">companies</span> <span class="word">don't</span> <span class="word">need</span> <span class="word">more</span> <span class="word">AI</span> <span class="word">demos.</span>
-        <span class="word">They</span> <span class="word">need</span> <span class="word">one</span> <span class="word">workflow</span> <span class="word">that</span> <span class="word">actually</span> <span class="word">ships,</span>
-        <span class="word">then</span> <span class="word">another,</span> <span class="word">until</span> <span class="word">the</span> <span class="word">business</span> <span class="word">runs</span> <span class="word ser" style="color:var(--violet)">on its own intelligence.</span>
-        <span class="word">That</span> <span class="word">is</span> <span class="word">the</span> <span class="word">whole</span> <span class="word">job.</span>
+      <p class="scrub" id="scrub">
+        Most companies don't need more AI demos. They need one workflow that actually ships, then another, until the business runs <em>on its own intelligence.</em> That is the whole job.
       </p>
     </div>
   </section>
 
-  <div id="work">
-    <section class="chapter">
+  <section class="chapters" id="chapters">
+    <div class="stage">
       <div class="wrap">
-        <div class="idx">01</div>
-        <div>
-          <h2>Advise</h2>
-          <div class="desc">
-            <span class="ser">Start with the business case, not the hype.</span>
-            <p>AI strategy and roadmap, readiness and governance assessment, and a use-case portfolio with the numbers behind it.</p>
-            <a class="arrow-link" href="../#solutions">See the catalogue
-              <svg width="20" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
-            </a>
+        <div class="rail" aria-hidden="true">
+          <span class="num on" data-i="0">01</span>
+          <span class="num" data-i="1">02</span>
+          <span class="num" data-i="2">03</span>
+          <span class="num" data-i="3">04</span>
+          <span class="track"><i id="rail-fill"></i></span>
+        </div>
+        <div class="panels">
+          <div class="panel" data-panel="0">
+            <h2>Advise</h2>
+            <div class="desc">
+              <span class="ser">Start with the business case, not the hype.</span>
+              <p>AI strategy and roadmap, readiness and governance assessment, and a use-case portfolio with the numbers behind it.</p>
+            </div>
+          </div>
+          <div class="panel" data-panel="1">
+            <h2>Build</h2>
+            <div class="desc">
+              <span class="ser">Agents that reach production, not another pilot.</span>
+              <p>Internal agentic platforms, customer-facing AI products, and proofs of concept, engineered on Claude and wired into your stack.</p>
+            </div>
+          </div>
+          <div class="panel" data-panel="2">
+            <h2>Deploy</h2>
+            <div class="desc">
+              <span class="ser">Rollout that survives the demo.</span>
+              <p>Activation and enablement, industry accelerator deployment, and contracted migration of workloads onto Claude.</p>
+            </div>
+          </div>
+          <div class="panel" data-panel="3">
+            <h2>Run</h2>
+            <div class="desc">
+              <span class="ser">Someone owns it after launch.</span>
+              <p>Managed AI operations under SLAs, Claude FinOps and consumption tuning, plus Cowork and Claude Code enablement.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="chapter">
-      <div class="wrap">
-        <div class="idx">02</div>
-        <div>
-          <h2>Build</h2>
-          <div class="desc">
-            <span class="ser">Agents that reach production, not another pilot.</span>
-            <p>Internal agentic platforms, customer-facing AI products, and proofs of concept, engineered on Claude and wired into the stack you already run.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter">
-      <div class="wrap">
-        <div class="idx">03</div>
-        <div>
-          <h2>Deploy</h2>
-          <div class="desc">
-            <span class="ser">Rollout that survives the demo.</span>
-            <p>Activation and enablement, industry accelerator deployment, and contracted migration of workloads from other models onto Claude.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter">
-      <div class="wrap">
-        <div class="idx">04</div>
-        <div>
-          <h2>Run</h2>
-          <div class="desc">
-            <span class="ser">Someone owns it after launch.</span>
-            <p>Managed AI operations under SLAs, Claude FinOps and consumption tuning, plus Cowork and Claude Code enablement for your builders.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
   <section class="ticker" aria-hidden="true">
     <div class="ticker-row">
@@ -331,9 +316,9 @@
     </div>
   </section>
 
-  <section class="work">
+  <section class="work" id="work">
     <div class="wrap">
-      <div class="work-head">
+      <div class="work-head gr">
         <h2>Built, shipped, <em>running live.</em></h2>
         <p class="eyebrow">Selected work</p>
       </div>
@@ -342,9 +327,9 @@
         <div class="case-media">
           <span class="tag">Events · Bengaluru</span>
           <!-- TODO: swap for real Prism Events app screenshots from the UIP 17 build -->
-          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1100&q=80" alt="Delegates at a large corporate innovation summit, the kind Prism Events guides" loading="lazy" />
+          <img data-parallax src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1100&q=80" alt="Delegates at a large corporate innovation summit, the kind Prism Events guides" loading="lazy" />
         </div>
-        <div class="case-body">
+        <div class="case-body gr">
           <span class="kind">Prism Events</span>
           <h3>The companion app for the <em>Unisys Innovation Program</em></h3>
           <p>For UIP Y17 2026 at RGA Tech Park, Bengaluru, we shipped the full event companion: a personalised home, a live agenda, wayfinding, and a shared photo archive, white-labelled to the event's own brand.</p>
@@ -359,9 +344,9 @@
       <article class="case">
         <div class="case-media">
           <span class="tag">Retail</span>
-          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1100&q=80" alt="A shopper layering a bright top under a jacket, the kind of look the try-on previews" loading="lazy" />
+          <img data-parallax src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1100&q=80" alt="A shopper layering a bright top under a jacket, the kind of look the try-on previews" loading="lazy" />
         </div>
-        <div class="case-body">
+        <div class="case-body gr">
           <span class="kind">Virtual try-on</span>
           <h3>Shoppers see it on <em>themselves</em> before they buy</h3>
           <p>A browser-based try-on module we developed and executed for retail, rendering fit, drape, and colour on the shopper's own photo, straight from the product page.</p>
@@ -376,18 +361,18 @@
 
   <section class="stats dark" aria-label="By the numbers">
     <div class="wrap">
-      <p class="lead">A small studio with a <em>full</em> service surface.</p>
+      <p class="lead gr">A small studio with a <em>full</em> service surface.</p>
       <div class="stat-grid">
-        <div class="stat"><b>14</b><span>Recognised Claude services</span></div>
-        <div class="stat"><b>2</b><span>Products shipped and live</span></div>
-        <div class="stat"><b>3</b><span>Regions: India, the GCC, Australia</span></div>
-        <div class="stat"><b class="spark">1</b><span>Senior team that owns the outcome</span></div>
+        <div class="stat gr"><b><span data-count="14">14</span></b><span>Recognised Claude services</span></div>
+        <div class="stat gr"><b><span data-count="2">2</span></b><span>Products shipped and live</span></div>
+        <div class="stat gr"><b><span data-count="3">3</span></b><span>Regions: India, the GCC, Australia</span></div>
+        <div class="stat gr"><b class="spark"><span data-count="1">1</span></b><span>Senior team that owns the outcome</span></div>
       </div>
     </div>
   </section>
 
   <section class="partner" id="partner">
-    <div class="wrap">
+    <div class="wrap gr">
       <span class="badge">
         <img src="https://cdn.simpleicons.org/anthropic/6b6579" alt="" width="15" height="15" loading="lazy" />
         Anthropic Claude Partner
@@ -396,6 +381,19 @@
       <a class="arrow-link" href="../#solutions">Explore all fourteen services
         <svg width="20" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
       </a>
+    </div>
+  </section>
+
+  <section class="humans" aria-label="The team">
+    <div class="wrap">
+      <p class="eyebrow">The humans behind it</p>
+      <div class="human-row">
+        <!-- TODO: replace with real photos of Dharam Vir, Arun, and Varad at work -->
+        <figure><img data-drift="-8" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" alt="Two colleagues working through a problem at a whiteboard" loading="lazy" /></figure>
+        <figure><img data-drift="10" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="The team gathered around one laptop, mid-debate" loading="lazy" /></figure>
+        <figure><img data-drift="-6" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="A late working session over coffee and sticky notes" loading="lazy" /></figure>
+      </div>
+      <p class="caption"><b>Dharam Vir Singh</b> (Founder), <b>Arun Kumar</b> (Partner, Delivery), and <b>Varad Joshi</b> (Partner, Engineering). You talk to the people who build.</p>
     </div>
   </section>
 
@@ -412,7 +410,7 @@
 
   <section class="cta dark">
     <div class="wrap">
-      <div>
+      <div class="gr">
         <h2>Let's build your <em>AI core.</em></h2>
         <small>Tell us what slows your team down. A real person replies within one business day.</small>
       </div>
@@ -427,7 +425,7 @@
         <div class="cols">
           <div>
             <span class="t">Studio</span>
-            <a href="#work">What we do</a>
+            <a href="#chapters">What we do</a>
             <a href="#work">Work</a>
             <a href="../#faq">FAQ</a>
           </div>
@@ -445,17 +443,138 @@
     </div>
   </footer>
 
+  <script src="../assets/lenis.min.js" defer></script>
+  <script src="../assets/vendor/gsap.min.js" defer></script>
+  <script src="../assets/vendor/ScrollTrigger.min.js" defer></script>
   <script>
-    // Nav turns solid once the hero passes; theme-aware via a sentinel.
+  window.addEventListener('DOMContentLoaded', () => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Nav goes solid after the hero.
     const nav = document.querySelector('.nav');
     const sentinel = document.createElement('div');
     Object.assign(sentinel.style, { position: 'absolute', top: '0', height: '70vh', width: '1px', pointerEvents: 'none' });
     document.body.appendChild(sentinel);
     new IntersectionObserver(([e]) => nav.classList.toggle('is-solid', !e.isIntersecting)).observe(sentinel);
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (reduce || typeof gsap === 'undefined') {
+      document.documentElement.classList.add('no-motion');
       document.querySelectorAll('video').forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
+      return; // fully static page: everything already visible in the markup
     }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Lenis drives the scroll; ScrollTrigger listens to it (the WAC recipe).
+    document.documentElement.classList.add('inertia-scroll');
+    const lenis = new Lenis({ lerp: 0.09 });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        lenis.scrollTo(target, { offset: 0, duration: 1.3 });
+      });
+    });
+
+    // Hero: lines rise on load; content parallaxes away on scroll; video breathes.
+    gsap.from('.hero h1 .line > span', { yPercent: 110, duration: 1.1, ease: 'power4.out', stagger: 0.09, delay: 0.15 });
+    gsap.from('.hero .eyebrow, .hero-sub, .hero .arrow-link, .hero-foot', { autoAlpha: 0, y: 24, duration: 0.9, ease: 'power3.out', stagger: 0.08, delay: 0.5 });
+    gsap.to('#hero-inner', {
+      yPercent: 22, autoAlpha: 0.1, ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
+    });
+    gsap.fromTo('#hero-video', { scale: 1 }, {
+      scale: 1.1, ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.8 }
+    });
+
+    // Manifesto: words brighten one by one, scrubbed.
+    const scrubEl = document.getElementById('scrub');
+    const walker = document.createTreeWalker(scrubEl, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+    textNodes.forEach(node => {
+      const frag = document.createDocumentFragment();
+      node.textContent.split(/(\s+)/).forEach(part => {
+        if (/^\s+$/.test(part) || part === '') { frag.appendChild(document.createTextNode(part)); return; }
+        const s = document.createElement('span');
+        s.className = 'word';
+        s.textContent = part;
+        frag.appendChild(s);
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+    const inkColor = getComputedStyle(document.documentElement).getPropertyValue('--ink').trim();
+    const violet = getComputedStyle(document.documentElement).getPropertyValue('--violet').trim();
+    gsap.to('#scrub .word', {
+      color: i => (scrubEl.querySelectorAll('.word')[i].closest('em') ? violet : inkColor),
+      stagger: 0.06, ease: 'none',
+      scrollTrigger: { trigger: '.intro', start: 'top 72%', end: 'bottom 55%', scrub: 0.5 }
+    });
+
+    // Pinned chapters: the WAC pin-and-swap, with Prism's own left rail.
+    const panels = gsap.utils.toArray('.panel');
+    const nums = gsap.utils.toArray('.rail .num');
+    gsap.set(panels.slice(1), { autoAlpha: 0, y: 80 });
+    const chTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.chapters', start: 'top top', end: '+=' + (panels.length * 90) + '%',
+        pin: '.chapters .stage', scrub: 0.6, pinSpacing: true,
+        onUpdate: self => {
+          const idx = Math.min(panels.length - 1, Math.floor(self.progress * panels.length));
+          nums.forEach((n, i) => n.classList.toggle('on', i === idx));
+        }
+      }
+    });
+    panels.forEach((p, i) => {
+      if (i === 0) return;
+      chTl.to(panels[i - 1], { autoAlpha: 0, y: -80, duration: 1, ease: 'power2.in' }, (i - 1) + 0.15)
+          .to(p, { autoAlpha: 1, y: 0, duration: 1, ease: 'power2.out' }, (i - 1) + 0.55);
+    });
+    gsap.to('#rail-fill', {
+      scaleY: 1, ease: 'none',
+      scrollTrigger: { trigger: '.chapters', start: 'top top', end: '+=' + (panels.length * 90) + '%', scrub: 0.6 }
+    });
+
+    // Case media parallax + soft reveals.
+    document.querySelectorAll('[data-parallax]').forEach(img => {
+      gsap.fromTo(img, { yPercent: -9 }, {
+        yPercent: 9, ease: 'none',
+        scrollTrigger: { trigger: img.closest('.case-media'), start: 'top bottom', end: 'bottom top', scrub: 0.8 }
+      });
+    });
+    gsap.utils.toArray('.gr').forEach(el => {
+      gsap.from(el, {
+        autoAlpha: 0, y: 44, duration: 1, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 82%', once: true }
+      });
+    });
+
+    // Stats count up once.
+    document.querySelectorAll('[data-count]').forEach(el => {
+      const target = parseInt(el.dataset.count, 10);
+      const obj = { v: 0 };
+      ScrollTrigger.create({
+        trigger: el, start: 'top 85%', once: true,
+        onEnter: () => gsap.to(obj, {
+          v: target, duration: 1.4, ease: 'power2.out',
+          onUpdate: () => { el.textContent = Math.round(obj.v); }
+        })
+      });
+    });
+
+    // Humans strip: photos drift at different speeds.
+    document.querySelectorAll('[data-drift]').forEach(img => {
+      gsap.fromTo(img, { yPercent: parseFloat(img.dataset.drift) }, {
+        yPercent: -parseFloat(img.dataset.drift), ease: 'none',
+        scrollTrigger: { trigger: img.closest('.human-row'), start: 'top bottom', end: 'bottom top', scrub: 0.9 }
+      });
+    });
+  });
   </script>
 </body>
 </html>
