@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate one page per Claude service under site/studio/services/<slug>/index.html.
 Content sourced from the recognised 14-service catalogue; design = studio identity."""
-import os, html
+import os, html, json
 
 BASE = "/Users/arunkumar/Documents/Claude/Projects/PrismEvents/site/services"
 
@@ -12,203 +12,7 @@ CATS = {
     "run": "Ongoing & Managed Services",
 }
 
-S = [
- dict(slug="ai-strategy-roadmap", cat="strategy", name="AI Strategy & Roadmap",
-  definition="A paid engagement that scopes your whole Claude program: where AI earns its keep, what ships first, and in what order.",
-  included=[
-    ("Priorities and sequencing", "A ranked program: which workflows to automate first and why, with dependencies mapped."),
-    ("Model and platform choices", "Where Claude fits, which tier, and how it sits alongside the systems you already run."),
-    ("A defensible roadmap", "Quarter-by-quarter plan your board can read, with costs and owners against every step."),
-  ],
-  steps=[("Listen", "Workshops with the people who own the workflows, not just the org chart."),
-         ("Map", "Every candidate use case scored for value, effort, and risk."),
-         ("Commit", "A sequenced roadmap with the first build scoped to start immediately.")],
-  fit=["You know AI matters but the path from here to there is fog.",
-       "Different teams are running uncoordinated AI experiments.",
-       "The board wants a plan with numbers, not enthusiasm."]),
-
- dict(slug="ai-readiness-governance", cat="strategy", name="AI Readiness & Governance Assessment",
-  definition="A paid assessment of your readiness, governance, and risk posture for adopting Claude across the organisation.",
-  included=[
-    ("Readiness scorecard", "Data, security, skills, and process maturity, measured against what adoption actually needs."),
-    ("Governance framework", "Usage policies, review gates, and escalation paths that satisfy legal without strangling teams."),
-    ("Risk register", "The failure modes that matter for your industry, each with a mitigation owner."),
-  ],
-  steps=[("Audit", "Interviews and systems review across security, data, and the teams who'll use AI daily."),
-         ("Assess", "Findings scored against adoption-readiness criteria proven on real rollouts."),
-         ("Equip", "Policies, gates, and a remediation plan you can hand to compliance.")],
-  fit=["Legal or security keeps pausing your AI initiatives.",
-       "You operate in a regulated industry and need the paper trail.",
-       "Adoption is growing bottom-up with no guardrails."]),
-
- dict(slug="use-case-portfolio", cat="strategy", name="Use-Case Portfolio & Business Case",
-  definition="A paid engagement that prioritises your Claude use cases and builds the business case behind each one.",
-  included=[
-    ("Use-case inventory", "Every candidate captured from the floor up, not invented in a slide deck."),
-    ("Value modelling", "Hours saved, revenue protected, and cost avoided, quantified per use case."),
-    ("Investment case", "A portfolio view finance can approve: quick wins funding the deeper builds."),
-  ],
-  steps=[("Harvest", "Shadow the teams and collect where hours actually go."),
-         ("Model", "Attach honest numbers to each candidate, with assumptions written down."),
-         ("Rank", "A portfolio ordered by return, ready to fund.")],
-  fit=["You have twenty AI ideas and budget for three.",
-       "Finance wants proof before the program grows.",
-       "You need quick wins that pay for the long game."]),
-
- dict(slug="internal-agentic-platform", cat="build", name="Internal Agentic Platform Build",
-  definition="We build your internal agentic platform or framework with Claude as the core model: the foundation every team builds on.",
-  included=[
-    ("Platform architecture", "Agent orchestration, tool access, memory, and guardrails designed for your stack."),
-    ("Connectors that matter", "Your CRM, ERP, help desk, and data warehouse wired in with proper auth."),
-    ("Paved-road templates", "Patterns your own developers reuse, so agent two ships faster than agent one."),
-  ],
-  steps=[("Design", "Architecture sized to your workloads, security model first."),
-         ("Build", "The platform core plus your first production agent, shipped together."),
-         ("Enable", "Your engineers onboarded; the platform becomes theirs.")],
-  fit=["Multiple teams want agents and each is reinventing plumbing.",
-       "Security demands one governed gateway to the model.",
-       "You want AI capability in-house, not rented forever."]),
-
- dict(slug="customer-facing-ai-product", cat="build", name="Customer-Facing AI Product Build",
-  definition="We build Claude into your external-facing product or service, from concierge experiences to entirely new AI features.",
-  included=[
-    ("Product-grade AI UX", "Latency, streaming, fallbacks, and tone handled so it feels like product, not demo."),
-    ("Safety for strangers", "Prompt-injection defence, content filtering, and rate controls for the open internet."),
-    ("Analytics loop", "Usage instrumented from day one so the feature earns its roadmap slot."),
-  ],
-  steps=[("Shape", "The feature scoped around one user job, with quality bars set."),
-         ("Ship", "Production build behind flags, tested against adversarial inputs."),
-         ("Sharpen", "Post-launch tuning against real conversations.")],
-  fit=["Your customers are asking where your AI features are.",
-       "A competitor just shipped theirs.",
-       "You have the product team but not the applied-AI depth."]),
-
- dict(slug="prototype-poc", cat="build", name="Prototype & Proof of Concept",
-  definition="A contracted prototype or proof of concept delivered against a defined use case, so decisions get made on evidence.",
-  included=[
-    ("A working system", "Real integration against your data, not a slideware mock."),
-    ("Honest findings", "What worked, what didn't, and what production would actually cost."),
-    ("A go/no-go you can trust", "Evidence strong enough to kill the idea or fund it properly."),
-  ],
-  steps=[("Frame", "One use case, one success metric, agreed up front."),
-         ("Prove", "Two to four weeks of focused build against real inputs."),
-         ("Decide", "Demo, findings, and a costed path to production.")],
-  fit=["Stakeholders disagree about whether AI can do the job.",
-       "You need evidence before a bigger budget unlocks.",
-       "The use case is novel enough that nobody can quote it blind."]),
-
- dict(slug="rollout-activation", cat="deploy", name="Rollout & Activation",
-  definition="SSO and tenant setup, seat provisioning, champion training, and go-live support: adoption treated as a project, not an email.",
-  included=[
-    ("Tenant done right", "SSO, workspace structure, and permissions matched to how your org actually works."),
-    ("Champions programme", "Power users trained first, so help lives inside every team."),
-    ("Go-live support", "We sit with you through launch week and the wobbles after it."),
-  ],
-  steps=[("Prepare", "Tenant, security review, and seat plan signed off."),
-         ("Activate", "Staged rollout by team, champions ahead of each wave."),
-         ("Embed", "Usage reviewed at 30 days; laggard teams get direct help.")],
-  fit=["You bought the licences and adoption is stuck at 20%.",
-       "IT wants a controlled rollout, not a free-for-all.",
-       "You want employees using AI safely by next quarter."]),
-
- dict(slug="industry-accelerator-deployment", cat="deploy", name="Industry Solution Accelerator Deployment",
-  definition="A pre-built, industry-specific Claude accelerator deployed into your environment, so you start weeks ahead instead of from zero.",
-  included=[
-    ("Accelerator fit-out", "The pre-built solution configured to your data, workflows, and brand."),
-    ("Environment integration", "Deployed inside your cloud and security perimeter, not ours."),
-    ("Handover with keys", "Your team owns and operates it; we document everything."),
-  ],
-  steps=[("Select", "The right accelerator matched to your industry problem."),
-         ("Adapt", "Configuration and integration sprint in your environment."),
-         ("Launch", "Production cutover with your operators trained.")],
-  fit=["Your problem is common in your industry; no need to build bespoke.",
-       "Time-to-value matters more than owning every design choice.",
-       "Procurement prefers configured products over custom builds."]),
-
- dict(slug="platform-migration-claude", cat="deploy", name="Platform Migration to Claude",
-  definition="Contracted migration of a workload from another model or provider onto Claude, without breaking what already works.",
-  included=[
-    ("Prompt & eval translation", "Your prompts, chains, and eval suites rebuilt for Claude's strengths."),
-    ("Side-by-side proof", "Old and new run in parallel until the numbers say switch."),
-    ("Zero-drama cutover", "Staged traffic shift with rollback ready at every step."),
-  ],
-  steps=[("Baseline", "Current behaviour measured so 'as good or better' is provable."),
-         ("Port", "Prompts, tools, and guardrails migrated and tuned."),
-         ("Cutover", "Traffic shifts gradually; the old path retires only when beaten.")],
-  fit=["Your current provider's costs or limits stopped making sense.",
-       "You want Claude's reasoning on a workload built elsewhere.",
-       "Compliance needs the switch handled contractually, with evidence."]),
-
- dict(slug="sustained-adoption-coe", cat="run", name="Sustained Adoption & CoE Program",
-  definition="We run your AI Centre of Excellence: driving usage, enablement, and governance long after the launch excitement fades.",
-  included=[
-    ("CoE operating rhythm", "Intake, prioritisation, and review cycles that keep the pipeline moving."),
-    ("Enablement calendar", "Training, office hours, and internal showcases that keep skills compounding."),
-    ("Governance in motion", "Policies enforced and updated as usage and models evolve."),
-  ],
-  steps=[("Stand up", "CoE structure, roles, and intake defined with your leads."),
-         ("Operate", "We run the rhythm with you, quarter by quarter."),
-         ("Transfer", "Your people take the chairs as capability matures.")],
-  fit=["Adoption spiked at launch and slid back within months.",
-       "AI requests arrive everywhere and nowhere; nobody triages.",
-       "Leadership wants sustained capability, not a one-off project."]),
-
- dict(slug="managed-ai-operations", cat="run", name="Managed AI Operations",
-  definition="Your Claude workloads operated in production as a managed service: run, monitoring, and SLAs owned by us.",
-  included=[
-    ("24/7-grade operations", "Monitoring, alerting, and incident response with agreed SLAs."),
-    ("Quality watch", "Output drift and regression caught by evals before users notice."),
-    ("Monthly ops review", "Usage, cost, incidents, and improvements in one honest report."),
-  ],
-  steps=[("Onboard", "Runbooks, dashboards, and alert thresholds stood up."),
-         ("Operate", "We carry the pager; you get the report."),
-         ("Improve", "Every incident becomes a hardening item, tracked to done.")],
-  fit=["The workload matters but ops isn't your core business.",
-       "You need SLAs a vendor actually signs.",
-       "Your team built it and shouldn't be stuck running it."]),
-
- dict(slug="cowork-claude-code-support", cat="run", name="Cowork & Claude Code Support",
-  definition="Ongoing tier-1/2 support and enablement for your Cowork or Claude Code user base, so builders never stall.",
-  included=[
-    ("Named support channel", "Real answers on Slack or Teams, with response-time commitments."),
-    ("Patterns library", "Working examples for your stack, curated and kept current."),
-    ("Usage clinics", "Regular sessions turning stuck users into power users."),
-  ],
-  steps=[("Baseline", "Where your builders are strong and where they stall."),
-         ("Support", "Tier-1/2 questions handled; escalations owned to resolution."),
-         ("Level up", "Clinic themes driven by the actual ticket log.")],
-  fit=["Developers adopted Claude Code unevenly and momentum is patchy.",
-       "Internal IT can't answer model-specific questions.",
-       "You want enablement running without hiring for it."]),
-
- dict(slug="claude-finops-optimisation", cat="run", name="Claude Consumption & FinOps Optimisation",
-  definition="Ongoing cost and consumption optimisation: model selection, caching, and rightsizing, so the bill grows slower than the value.",
-  included=[
-    ("Consumption map", "Who spends what, on which workloads, and which spend earns nothing."),
-    ("Optimisation levers", "Model-tier fits, prompt caching, batching, and context diets applied where safe."),
-    ("Guardrails on spend", "Budgets, alerts, and per-team limits before the surprise invoice."),
-  ],
-  steps=[("Measure", "Full consumption baseline across teams and workloads."),
-         ("Optimise", "Levers applied in order of savings-to-risk."),
-         ("Hold", "Monthly reviews keep efficiency from decaying.")],
-  fit=["The Claude invoice doubled and nobody can say exactly why.",
-       "Different teams pay different effective rates for the same work.",
-       "Finance wants a forecast that survives contact with reality."]),
-
- dict(slug="claude-training-sessions", cat="run", name="Claude Training Sessions",
-  definition="Structured training on Claude, Claude Code, or Cowork, delivered as a defined curriculum with clear learning outcomes.",
-  included=[
-    ("Role-based curriculum", "Different tracks for builders, analysts, and leaders; nobody sits through the wrong course."),
-    ("Hands-on by design", "Exercises on your real workflows, not toy prompts."),
-    ("Measured outcomes", "Pre/post assessment so the training's effect is visible."),
-  ],
-  steps=[("Tailor", "Curriculum shaped to your tools, data, and policies."),
-         ("Teach", "Live cohorts, capped size, everything hands-on."),
-         ("Certify", "Assessment, materials, and a refresher path.")],
-  fit=["Licences are live but usage is shallow and repetitive.",
-       "New joiners need a consistent AI onboarding.",
-       "You'd rather grow skills than rent them indefinitely."]),
-]
+S = json.load(open(os.path.join(os.path.dirname(__file__), "services-data.json"), encoding="utf-8"))
 
 def esc(t): return html.escape(t, quote=False)
 
@@ -274,6 +78,7 @@ PAGE = """<!DOCTYPE html>
     .nav .wrap {{ width: 100%; display: flex; align-items: center; gap: 2rem; }}
     .brand {{ font-size: 1.15rem; font-weight: 700; text-decoration: none; }}
     .brand b {{ color: var(--gold); font-weight: 700; }}
+    .brand img {{ height: 26px; width: auto; display: block; }}
     .nav a.back {{ margin-left: auto; text-decoration: none; opacity: 0.75; font-size: 0.93rem; }}
     .nav a.back:hover {{ opacity: 1; }}
     .nav-cta {{ border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }}
@@ -282,6 +87,9 @@ PAGE = """<!DOCTYPE html>
     .hero .eyebrow {{ color: var(--violet-lo); }}
     .hero h1 {{ font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: 1.02; margin-top: 1.1rem; max-width: 15ch; }}
     .hero .lede {{ margin-top: 1.5rem; color: var(--cream-dim); font-size: clamp(1.05rem, 1.7vw, 1.25rem); max-width: 46ch; }}
+    .media-band {{ background: linear-gradient(#050408 0 55%, var(--paper) 55% 100%); }}
+    .media-band figure {{ margin: 0; border-radius: 18px; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }}
+    .media-band img {{ width: 100%; height: 100%; object-fit: cover; display: block; }}
     .arrow-link {{ display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 2rem; text-decoration: none; font-weight: 600; color: var(--gold); }}
     .arrow-link svg {{ transition: transform 0.25s var(--ease); }}
     .arrow-link:hover svg {{ transform: translateX(6px); }}
@@ -331,7 +139,7 @@ PAGE = """<!DOCTYPE html>
 <body>
   <nav class="nav" aria-label="Main">
     <div class="wrap">
-      <a class="brand" href="../../">Prism<b>Automate</b></a>
+      <a class="brand" href="../../"><img src="../../assets/logo-wordmark.png" alt="Prism Automate" width="115" height="30" /></a>
       <a class="back" href="../">← All services</a>
       <a class="nav-cta" href="../../#contact">Start a project</a>
     </div>
@@ -347,7 +155,7 @@ PAGE = """<!DOCTYPE html>
       </a>
     </div>
   </header>
-
+{media_html}
   <section>
     <div class="wrap">
       <span class="sec-label">What's included</span>
@@ -417,10 +225,18 @@ for svc in S:
         for t, d in svc["steps"])
     fit = "\n".join(f'        <li>{esc(x)}</li>' for x in svc["fit"])
     meta = svc["definition"] + " Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia."
+    media = ""
+    if svc.get("img"):
+        media = (
+            '\n  <div class="media-band" aria-hidden="false">\n'
+            f'    <div class="wrap"><figure><img src="{html.escape(svc["img"], quote=True)}" '
+            f'alt="{html.escape(svc.get("img_alt", svc["name"]), quote=True)}" loading="lazy" /></figure></div>\n'
+            '  </div>\n')
     page = PAGE.format(
         name=esc(svc["name"]), name_lower=esc(svc["name"][0].lower() + svc["name"][1:]),
         cat_name=esc(CATS[svc["cat"]]), definition=esc(svc["definition"]),
         meta_desc=esc(meta.replace('"', "'")),
+        media_html=media,
         included_html=inc, steps_html=steps, fit_html=fit, related_html=related(svc))
     outdir = os.path.join(BASE, svc["slug"])
     os.makedirs(outdir, exist_ok=True)
@@ -441,7 +257,7 @@ cat_order = ["strategy", "build", "deploy", "run"]
 cat_blurbs = {
     "strategy": "Start with the business case, not the hype.",
     "build": "Agents that reach production, not another pilot.",
-    "deploy": "Rollout that survives the demo.",
+    "deploy": "Rollout that survives contact with real users.",
     "run": "Someone owns it after launch.",
 }
 groups = ""
@@ -493,6 +309,10 @@ OVERVIEW = """<!DOCTYPE html>
     .nav .wrap { width: 100%; display: flex; align-items: center; gap: 2rem; }
     .brand { font-size: 1.15rem; font-weight: 700; text-decoration: none; }
     .brand b { color: var(--gold); }
+    .brand img { height: 26px; width: auto; display: block; }
+    .media-band { background: linear-gradient(#050408 0 55%, var(--paper) 55% 100%); }
+    .media-band figure { margin: 0; border-radius: 18px; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }
+    .media-band img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .nav a.back { margin-left: auto; text-decoration: none; opacity: 0.75; font-size: 0.93rem; }
     .nav a.back:hover { opacity: 1; }
     .nav-cta { border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
@@ -530,7 +350,7 @@ OVERVIEW = """<!DOCTYPE html>
 <body>
   <nav class="nav" aria-label="Main">
     <div class="wrap">
-      <a class="brand" href="../">Prism<b>Automate</b></a>
+      <a class="brand" href="../"><img src="../assets/logo-wordmark.png" alt="Prism Automate" width="115" height="30" /></a>
       <a class="back" href="../">← Home</a>
       <a class="nav-cta" href="../#contact">Start a project</a>
     </div>
@@ -539,9 +359,10 @@ OVERVIEW = """<!DOCTYPE html>
     <div class="wrap">
       <p class="eyebrow">Anthropic Claude Partner</p>
       <h1>Fourteen services. One studio.</h1>
-      <p class="lede">The full recognised Claude catalogue, from the first roadmap to workloads running under SLAs, delivered for teams across India, the Middle East, and Australia.</p>
+      <p class="lede">The full recognised Claude catalogue across strategy, build, deploy, and run: from the first roadmap to workloads running under SLAs, delivered by an Anthropic partner to teams in India, the GCC, and Australia.</p>
     </div>
   </header>
+OV_MEDIA_TOKEN
 GROUPS_TOKEN
   <section class="cta">
     <div class="wrap">
@@ -559,5 +380,14 @@ GROUPS_TOKEN
 </html>
 """
 
-open(os.path.join(BASE, "index.html"), "w").write(OVERVIEW.replace("GROUPS_TOKEN", groups))
+OV_IMG = None  # set to dict(url=..., alt=...) to show a hero image band on the overview
+ov_media = ""
+if OV_IMG:
+    ov_media = (
+        '  <div class="media-band">\n'
+        f'    <div class="wrap"><figure><img src="{html.escape(OV_IMG["url"], quote=True)}" '
+        f'alt="{html.escape(OV_IMG["alt"], quote=True)}" loading="lazy" /></figure></div>\n'
+        '  </div>')
+open(os.path.join(BASE, "index.html"), "w").write(
+    OVERVIEW.replace("OV_MEDIA_TOKEN", ov_media).replace("GROUPS_TOKEN", groups))
 print("wrote services overview index")

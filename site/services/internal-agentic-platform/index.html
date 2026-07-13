@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Internal Agentic Platform Build | Claude Services | Prism Automate</title>
-  <meta name="description" content="We build your internal agentic platform or framework with Claude as the core model: the foundation every team builds on. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia." />
+  <meta name="description" content="We design and build your internal agentic platform on Claude: orchestration, governed connectors, and paved-road templates your engineers own. One set of rails, and every team ships agents on it. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia." />
   <!-- TODO: add canonical once the production domain is confirmed -->
   <link rel="icon" type="image/png" href="../../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,7 @@
         "@type": "Service",
         "name": "Internal Agentic Platform Build",
         "serviceType": "Internal Agentic Platform Build",
-        "description": "We build your internal agentic platform or framework with Claude as the core model: the foundation every team builds on. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia.",
+        "description": "We design and build your internal agentic platform on Claude: orchestration, governed connectors, and paved-road templates your engineers own. One set of rails, and every team ships agents on it. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia.",
         "provider": { "@type": "Organization", "name": "Prism Automate" },
         "areaServed": ["India", "United Arab Emirates", "Australia"]
       },
@@ -53,6 +53,7 @@
     .nav .wrap { width: 100%; display: flex; align-items: center; gap: 2rem; }
     .brand { font-size: 1.15rem; font-weight: 700; text-decoration: none; }
     .brand b { color: var(--gold); font-weight: 700; }
+    .brand img { height: 26px; width: auto; display: block; }
     .nav a.back { margin-left: auto; text-decoration: none; opacity: 0.75; font-size: 0.93rem; }
     .nav a.back:hover { opacity: 1; }
     .nav-cta { border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
@@ -61,6 +62,9 @@
     .hero .eyebrow { color: var(--violet-lo); }
     .hero h1 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: 1.02; margin-top: 1.1rem; max-width: 15ch; }
     .hero .lede { margin-top: 1.5rem; color: var(--cream-dim); font-size: clamp(1.05rem, 1.7vw, 1.25rem); max-width: 46ch; }
+    .media-band { background: linear-gradient(#050408 0 55%, var(--paper) 55% 100%); }
+    .media-band figure { margin: 0; border-radius: 18px; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }
+    .media-band img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .arrow-link { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 2rem; text-decoration: none; font-weight: 600; color: var(--gold); }
     .arrow-link svg { transition: transform 0.25s var(--ease); }
     .arrow-link:hover svg { transform: translateX(6px); }
@@ -110,7 +114,7 @@
 <body>
   <nav class="nav" aria-label="Main">
     <div class="wrap">
-      <a class="brand" href="../../">Prism<b>Automate</b></a>
+      <a class="brand" href="../../"><img src="../../assets/logo-wordmark.png" alt="Prism Automate" width="115" height="30" /></a>
       <a class="back" href="../">← All services</a>
       <a class="nav-cta" href="../../#contact">Start a project</a>
     </div>
@@ -120,21 +124,25 @@
     <div class="wrap">
       <p class="eyebrow">Build &amp; Engineering</p>
       <h1>Internal Agentic Platform Build</h1>
-      <p class="lede">We build your internal agentic platform or framework with Claude as the core model: the foundation every team builds on.</p>
+      <p class="lede">We design and build your internal agentic platform on Claude: orchestration, governed connectors, and paved-road templates your engineers own. One set of rails, and every team ships agents on it.</p>
       <a class="arrow-link" href="../../#contact">Scope this with us
         <svg width="22" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
       </a>
     </div>
   </header>
 
+  <div class="media-band" aria-hidden="false">
+    <div class="wrap"><figure><img src="https://images.unsplash.com/photo-1741524916134-48f00f42d925?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Interlocking concrete ramps and walkways inside a dark brutalist building, lit by warm golden recessed lights" loading="lazy" /></figure></div>
+  </div>
+
   <section>
     <div class="wrap">
       <span class="sec-label">What's included</span>
       <h2>What you get</h2>
       <div class="inc-grid">
-        <div class="inc"><h3>Platform architecture</h3><p>Agent orchestration, tool access, memory, and guardrails designed for your stack.</p></div>
-        <div class="inc"><h3>Connectors that matter</h3><p>Your CRM, ERP, help desk, and data warehouse wired in with proper auth.</p></div>
-        <div class="inc"><h3>Paved-road templates</h3><p>Patterns your own developers reuse, so agent two ships faster than agent one.</p></div>
+        <div class="inc"><h3>Platform architecture</h3><p>Agent orchestration, tool permissions, memory, and guardrails, designed around your security model and documented so your engineers can extend it.</p></div>
+        <div class="inc"><h3>Connectors that matter</h3><p>Your CRM, ERP, help desk, and data warehouse wired in with scoped credentials and audit logs — not API keys pasted into config files.</p></div>
+        <div class="inc"><h3>Paved-road templates</h3><p>Working patterns your developers clone and adapt, so agent two ships faster than agent one — and agent ten ships without us.</p></div>
       </div>
     </div>
   </section>
@@ -144,9 +152,9 @@
       <span class="sec-label">How it runs</span>
       <h2>Three moves, no mystery</h2>
       <div class="step-grid">
-        <div class="step"><h3>Design</h3><p>Architecture sized to your workloads, security model first.</p></div>
-        <div class="step"><h3>Build</h3><p>The platform core plus your first production agent, shipped together.</p></div>
-        <div class="step"><h3>Enable</h3><p>Your engineers onboarded; the platform becomes theirs.</p></div>
+        <div class="step"><h3>Design</h3><p>Security model first, then architecture sized to your actual workloads, agreed with infosec before code.</p></div>
+        <div class="step"><h3>Build</h3><p>Platform core and your first production agent, shipped together — rails proven before other teams arrive.</p></div>
+        <div class="step"><h3>Handover</h3><p>Pairing sessions, runbooks, and a documented core until your engineers own the roadmap.</p></div>
       </div>
     </div>
   </section>
@@ -156,9 +164,9 @@
       <span class="sec-label">Is this you?</span>
       <h2>A good fit if</h2>
       <ul>
-        <li>Multiple teams want agents and each is reinventing plumbing.</li>
+        <li>Every team wants agents; every team is rebuilding the same auth, memory, and logging.</li>
         <li>Security demands one governed gateway to the model.</li>
-        <li>You want AI capability in-house, not rented forever.</li>
+        <li>You want the capability in-house, not rented from a vendor forever.</li>
       </ul>
     </div>
   </section>

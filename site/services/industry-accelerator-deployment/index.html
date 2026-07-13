@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Industry Solution Accelerator Deployment | Claude Services | Prism Automate</title>
-  <meta name="description" content="A pre-built, industry-specific Claude accelerator deployed into your environment, so you start weeks ahead instead of from zero. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia." />
+  <meta name="description" content="A pre-built Claude accelerator for your industry, configured to your data and deployed inside your own cloud. You start from working software, not a blank page. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia." />
   <!-- TODO: add canonical once the production domain is confirmed -->
   <link rel="icon" type="image/png" href="../../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,7 @@
         "@type": "Service",
         "name": "Industry Solution Accelerator Deployment",
         "serviceType": "Industry Solution Accelerator Deployment",
-        "description": "A pre-built, industry-specific Claude accelerator deployed into your environment, so you start weeks ahead instead of from zero. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia.",
+        "description": "A pre-built Claude accelerator for your industry, configured to your data and deployed inside your own cloud. You start from working software, not a blank page. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia.",
         "provider": { "@type": "Organization", "name": "Prism Automate" },
         "areaServed": ["India", "United Arab Emirates", "Australia"]
       },
@@ -53,6 +53,7 @@
     .nav .wrap { width: 100%; display: flex; align-items: center; gap: 2rem; }
     .brand { font-size: 1.15rem; font-weight: 700; text-decoration: none; }
     .brand b { color: var(--gold); font-weight: 700; }
+    .brand img { height: 26px; width: auto; display: block; }
     .nav a.back { margin-left: auto; text-decoration: none; opacity: 0.75; font-size: 0.93rem; }
     .nav a.back:hover { opacity: 1; }
     .nav-cta { border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
@@ -61,6 +62,9 @@
     .hero .eyebrow { color: var(--violet-lo); }
     .hero h1 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: 1.02; margin-top: 1.1rem; max-width: 15ch; }
     .hero .lede { margin-top: 1.5rem; color: var(--cream-dim); font-size: clamp(1.05rem, 1.7vw, 1.25rem); max-width: 46ch; }
+    .media-band { background: linear-gradient(#050408 0 55%, var(--paper) 55% 100%); }
+    .media-band figure { margin: 0; border-radius: 18px; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }
+    .media-band img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .arrow-link { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 2rem; text-decoration: none; font-weight: 600; color: var(--gold); }
     .arrow-link svg { transition: transform 0.25s var(--ease); }
     .arrow-link:hover svg { transform: translateX(6px); }
@@ -110,7 +114,7 @@
 <body>
   <nav class="nav" aria-label="Main">
     <div class="wrap">
-      <a class="brand" href="../../">Prism<b>Automate</b></a>
+      <a class="brand" href="../../"><img src="../../assets/logo-wordmark.png" alt="Prism Automate" width="115" height="30" /></a>
       <a class="back" href="../">← All services</a>
       <a class="nav-cta" href="../../#contact">Start a project</a>
     </div>
@@ -120,21 +124,25 @@
     <div class="wrap">
       <p class="eyebrow">Implementation &amp; Deployment</p>
       <h1>Industry Solution Accelerator Deployment</h1>
-      <p class="lede">A pre-built, industry-specific Claude accelerator deployed into your environment, so you start weeks ahead instead of from zero.</p>
+      <p class="lede">A pre-built Claude accelerator for your industry, configured to your data and deployed inside your own cloud. You start from working software, not a blank page.</p>
       <a class="arrow-link" href="../../#contact">Scope this with us
         <svg width="22" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
       </a>
     </div>
   </header>
 
+  <div class="media-band" aria-hidden="false">
+    <div class="wrap"><figure><img src="https://images.unsplash.com/photo-1761509813751-383d689461da?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Geometric grid of warmly illuminated square windows on a dark building facade at night" loading="lazy" /></figure></div>
+  </div>
+
   <section>
     <div class="wrap">
       <span class="sec-label">What's included</span>
       <h2>What you get</h2>
       <div class="inc-grid">
-        <div class="inc"><h3>Accelerator fit-out</h3><p>The pre-built solution configured to your data, workflows, and brand.</p></div>
-        <div class="inc"><h3>Environment integration</h3><p>Deployed inside your cloud and security perimeter, not ours.</p></div>
-        <div class="inc"><h3>Handover with keys</h3><p>Your team owns and operates it; we document everything.</p></div>
+        <div class="inc"><h3>Accelerator fit-out</h3><p>Prompts, retrieval, and workflows tuned to your terminology, documents, and brand — not a vanilla demo wearing your logo.</p></div>
+        <div class="inc"><h3>Runs where your data lives</h3><p>Installed in your cloud account, behind your SSO and network controls. Your perimeter, not ours.</p></div>
+        <div class="inc"><h3>Handover with keys</h3><p>Admin access, runbooks, and architecture docs: everything your team needs to run it without ringing us.</p></div>
       </div>
     </div>
   </section>
@@ -145,8 +153,8 @@
       <h2>Three moves, no mystery</h2>
       <div class="step-grid">
         <div class="step"><h3>Select</h3><p>The right accelerator matched to your industry problem.</p></div>
-        <div class="step"><h3>Adapt</h3><p>Configuration and integration sprint in your environment.</p></div>
-        <div class="step"><h3>Launch</h3><p>Production cutover with your operators trained.</p></div>
+        <div class="step"><h3>Adapt</h3><p>A configuration and integration sprint in your environment, on your data, under your controls.</p></div>
+        <div class="step"><h3>Launch</h3><p>Production cutover with your operators trained and a documented handover. No standing dependency on us.</p></div>
       </div>
     </div>
   </section>

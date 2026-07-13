@@ -30,6 +30,10 @@
     .nav .wrap { width: 100%; display: flex; align-items: center; gap: 2rem; }
     .brand { font-size: 1.15rem; font-weight: 700; text-decoration: none; }
     .brand b { color: var(--gold); }
+    .brand img { height: 26px; width: auto; display: block; }
+    .media-band { background: linear-gradient(#050408 0 55%, var(--paper) 55% 100%); }
+    .media-band figure { margin: 0; border-radius: 18px; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }
+    .media-band img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .nav a.back { margin-left: auto; text-decoration: none; opacity: 0.75; font-size: 0.93rem; }
     .nav a.back:hover { opacity: 1; }
     .nav-cta { border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
@@ -67,7 +71,7 @@
 <body>
   <nav class="nav" aria-label="Main">
     <div class="wrap">
-      <a class="brand" href="../">Prism<b>Automate</b></a>
+      <a class="brand" href="../"><img src="../assets/logo-wordmark.png" alt="Prism Automate" width="115" height="30" /></a>
       <a class="back" href="../">← Home</a>
       <a class="nav-cta" href="../#contact">Start a project</a>
     </div>
@@ -76,9 +80,10 @@
     <div class="wrap">
       <p class="eyebrow">Anthropic Claude Partner</p>
       <h1>Fourteen services. One studio.</h1>
-      <p class="lede">The full recognised Claude catalogue, from the first roadmap to workloads running under SLAs, delivered for teams across India, the Middle East, and Australia.</p>
+      <p class="lede">The full recognised Claude catalogue across strategy, build, deploy, and run: from the first roadmap to workloads running under SLAs, delivered by an Anthropic partner to teams in India, the GCC, and Australia.</p>
     </div>
   </header>
+
 
     <section class="cat">
       <div class="wrap">
@@ -89,17 +94,17 @@
         <div class="svc-grid">
         <a class="svc" href="ai-strategy-roadmap/">
           <span class="svc-name">AI Strategy &amp; Roadmap</span>
-          <span class="svc-def">A paid engagement that scopes your whole Claude program: where AI earns its keep, what ships first, and in what order.</span>
+          <span class="svc-def">A paid engagement that scopes your whole Claude programme: where AI earns its keep, what ships first, and what each step costs. You leave with a roadmap your board can fund — or kill with a clear conscience.</span>
           <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         <a class="svc" href="ai-readiness-governance/">
           <span class="svc-name">AI Readiness &amp; Governance Assessment</span>
-          <span class="svc-def">A paid assessment of your readiness, governance, and risk posture for adopting Claude across the organisation.</span>
+          <span class="svc-def">A paid assessment of how ready your organisation is for Claude — data, security, skills, and governance. You leave with a scored verdict, a risk register, and a plan to close the gaps.</span>
           <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         <a class="svc" href="use-case-portfolio/">
           <span class="svc-name">Use-Case Portfolio &amp; Business Case</span>
-          <span class="svc-def">A paid engagement that prioritises your Claude use cases and builds the business case behind each one.</span>
+          <span class="svc-def">A paid engagement that ranks your Claude use cases by return and builds the business case behind each one. You leave with numbers finance can interrogate and a portfolio ready to fund.</span>
           <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         </div>
@@ -115,12 +120,12 @@
         <div class="svc-grid">
         <a class="svc" href="internal-agentic-platform/">
           <span class="svc-name">Internal Agentic Platform Build</span>
-          <span class="svc-def">We build your internal agentic platform or framework with Claude as the core model: the foundation every team builds on.</span>
+          <span class="svc-def">We design and build your internal agentic platform on Claude: orchestration, governed connectors, and paved-road templates your engineers own. One set of rails, and every team ships agents on it.</span>
           <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         <a class="svc" href="customer-facing-ai-product/">
           <span class="svc-name">Customer-Facing AI Product Build</span>
-          <span class="svc-def">We build Claude into your external-facing product or service, from concierge experiences to entirely new AI features.</span>
+          <span class="svc-def">We build Claude into the product your customers use: production-grade AI features that hold up on the open internet. We've shipped this before — indoor event wayfinding and retail virtual try-on.</span>
           <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         <a class="svc" href="prototype-poc/">
@@ -136,22 +141,22 @@
       <div class="wrap">
         <div class="cat-head">
           <h2>Implementation &amp; Deployment</h2>
-          <p class="ser">Rollout that survives the demo.</p>
+          <p class="ser">Rollout that survives contact with real users.</p>
         </div>
         <div class="svc-grid">
         <a class="svc" href="rollout-activation/">
           <span class="svc-name">Rollout &amp; Activation</span>
-          <span class="svc-def">SSO and tenant setup, seat provisioning, champion training, and go-live support: adoption treated as a project, not an email.</span>
+          <span class="svc-def">We roll out Claude across your organisation: SSO and tenant setup, seat provisioning, champion training, and go-live support. Adoption treated as a project, not an email.</span>
           <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         <a class="svc" href="industry-accelerator-deployment/">
           <span class="svc-name">Industry Solution Accelerator Deployment</span>
-          <span class="svc-def">A pre-built, industry-specific Claude accelerator deployed into your environment, so you start weeks ahead instead of from zero.</span>
+          <span class="svc-def">A pre-built Claude accelerator for your industry, configured to your data and deployed inside your own cloud. You start from working software, not a blank page.</span>
           <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         <a class="svc" href="platform-migration-claude/">
           <span class="svc-name">Platform Migration to Claude</span>
-          <span class="svc-def">Contracted migration of a workload from another model or provider onto Claude, without breaking what already works.</span>
+          <span class="svc-def">Contracted migration of a production workload from another model or provider onto Claude, run by an Anthropic partner: baselined, proven in parallel, cut over without breaking what already works.</span>
           <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         </div>
@@ -167,27 +172,27 @@
         <div class="svc-grid">
         <a class="svc" href="sustained-adoption-coe/">
           <span class="svc-name">Sustained Adoption &amp; CoE Program</span>
-          <span class="svc-def">We run your AI Centre of Excellence: driving usage, enablement, and governance long after the launch excitement fades.</span>
+          <span class="svc-def">We run your AI Centre of Excellence: triage, training, and governance, quarter after quarter, so adoption compounds instead of fading. Then we work ourselves out of the job.</span>
           <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         <a class="svc" href="managed-ai-operations/">
           <span class="svc-name">Managed AI Operations</span>
-          <span class="svc-def">Your Claude workloads operated in production as a managed service: run, monitoring, and SLAs owned by us.</span>
+          <span class="svc-def">Your Claude workloads run as a managed service: monitoring, incident response, and quality evals under SLAs we sign. We own production; your engineers get back to building.</span>
           <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         <a class="svc" href="cowork-claude-code-support/">
           <span class="svc-name">Cowork &amp; Claude Code Support</span>
-          <span class="svc-def">Ongoing tier-1/2 support and enablement for your Cowork or Claude Code user base, so builders never stall.</span>
+          <span class="svc-def">Tier-1/2 support and enablement for Cowork and Claude Code, from an Anthropic Claude partner: a named channel with response-time commitments, patterns for your stack, and clinics that unstick builders.</span>
           <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         <a class="svc" href="claude-finops-optimisation/">
           <span class="svc-name">Claude Consumption &amp; FinOps Optimisation</span>
-          <span class="svc-def">Ongoing cost and consumption optimisation: model selection, caching, and rightsizing, so the bill grows slower than the value.</span>
+          <span class="svc-def">Ongoing Claude cost and consumption optimisation: spend mapped per team and workload, levers applied in savings-to-risk order, budgets enforced — so the bill grows slower than the value it buys.</span>
           <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         <a class="svc" href="claude-training-sessions/">
           <span class="svc-name">Claude Training Sessions</span>
-          <span class="svc-def">Structured training on Claude, Claude Code, or Cowork, delivered as a defined curriculum with clear learning outcomes.</span>
+          <span class="svc-def">Live, role-based Claude, Claude Code, and Cowork training from an Anthropic Claude partner. Built on your real workflows, measured before and after, so the effect shows up in the work, not the feedback form.</span>
           <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         </div>

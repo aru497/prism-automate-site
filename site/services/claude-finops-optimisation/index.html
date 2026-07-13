@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claude Consumption &amp; FinOps Optimisation | Claude Services | Prism Automate</title>
-  <meta name="description" content="Ongoing cost and consumption optimisation: model selection, caching, and rightsizing, so the bill grows slower than the value. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia." />
+  <meta name="description" content="Ongoing Claude cost and consumption optimisation: spend mapped per team and workload, levers applied in savings-to-risk order, budgets enforced — so the bill grows slower than the value it buys. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia." />
   <!-- TODO: add canonical once the production domain is confirmed -->
   <link rel="icon" type="image/png" href="../../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,7 @@
         "@type": "Service",
         "name": "Claude Consumption &amp; FinOps Optimisation",
         "serviceType": "Claude Consumption &amp; FinOps Optimisation",
-        "description": "Ongoing cost and consumption optimisation: model selection, caching, and rightsizing, so the bill grows slower than the value. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia.",
+        "description": "Ongoing Claude cost and consumption optimisation: spend mapped per team and workload, levers applied in savings-to-risk order, budgets enforced — so the bill grows slower than the value it buys. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia.",
         "provider": { "@type": "Organization", "name": "Prism Automate" },
         "areaServed": ["India", "United Arab Emirates", "Australia"]
       },
@@ -53,6 +53,7 @@
     .nav .wrap { width: 100%; display: flex; align-items: center; gap: 2rem; }
     .brand { font-size: 1.15rem; font-weight: 700; text-decoration: none; }
     .brand b { color: var(--gold); font-weight: 700; }
+    .brand img { height: 26px; width: auto; display: block; }
     .nav a.back { margin-left: auto; text-decoration: none; opacity: 0.75; font-size: 0.93rem; }
     .nav a.back:hover { opacity: 1; }
     .nav-cta { border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
@@ -61,6 +62,9 @@
     .hero .eyebrow { color: var(--violet-lo); }
     .hero h1 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: 1.02; margin-top: 1.1rem; max-width: 15ch; }
     .hero .lede { margin-top: 1.5rem; color: var(--cream-dim); font-size: clamp(1.05rem, 1.7vw, 1.25rem); max-width: 46ch; }
+    .media-band { background: linear-gradient(#050408 0 55%, var(--paper) 55% 100%); }
+    .media-band figure { margin: 0; border-radius: 18px; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }
+    .media-band img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .arrow-link { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 2rem; text-decoration: none; font-weight: 600; color: var(--gold); }
     .arrow-link svg { transition: transform 0.25s var(--ease); }
     .arrow-link:hover svg { transform: translateX(6px); }
@@ -110,7 +114,7 @@
 <body>
   <nav class="nav" aria-label="Main">
     <div class="wrap">
-      <a class="brand" href="../../">Prism<b>Automate</b></a>
+      <a class="brand" href="../../"><img src="../../assets/logo-wordmark.png" alt="Prism Automate" width="115" height="30" /></a>
       <a class="back" href="../">← All services</a>
       <a class="nav-cta" href="../../#contact">Start a project</a>
     </div>
@@ -120,21 +124,25 @@
     <div class="wrap">
       <p class="eyebrow">Ongoing &amp; Managed Services</p>
       <h1>Claude Consumption &amp; FinOps Optimisation</h1>
-      <p class="lede">Ongoing cost and consumption optimisation: model selection, caching, and rightsizing, so the bill grows slower than the value.</p>
+      <p class="lede">Ongoing Claude cost and consumption optimisation: spend mapped per team and workload, levers applied in savings-to-risk order, budgets enforced — so the bill grows slower than the value it buys.</p>
       <a class="arrow-link" href="../../#contact">Scope this with us
         <svg width="22" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
       </a>
     </div>
   </header>
 
+  <div class="media-band" aria-hidden="false">
+    <div class="wrap"><figure><img src="https://images.unsplash.com/photo-1768203552123-2862dc0cf6fa?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Abstract golden light trails streaking across a pure black background in a long-exposure sweep of fine luminous lines" loading="lazy" /></figure></div>
+  </div>
+
   <section>
     <div class="wrap">
       <span class="sec-label">What's included</span>
       <h2>What you get</h2>
       <div class="inc-grid">
-        <div class="inc"><h3>Consumption map</h3><p>Who spends what, on which workloads, and which spend earns nothing.</p></div>
-        <div class="inc"><h3>Optimisation levers</h3><p>Model-tier fits, prompt caching, batching, and context diets applied where safe.</p></div>
-        <div class="inc"><h3>Guardrails on spend</h3><p>Budgets, alerts, and per-team limits before the surprise invoice.</p></div>
+        <div class="inc"><h3>Consumption map</h3><p>A per-team, per-workload ledger: who spends what, on which models, and which spend earns nothing.</p></div>
+        <div class="inc"><h3>Optimisation levers</h3><p>Model-tier fits, prompt caching, batching, and context diets — each checked against output quality before it ships.</p></div>
+        <div class="inc"><h3>Guardrails on spend</h3><p>Hard budgets, spend alerts, and per-team limits — wired into your console before the surprise invoice.</p></div>
       </div>
     </div>
   </section>
@@ -144,9 +152,9 @@
       <span class="sec-label">How it runs</span>
       <h2>Three moves, no mystery</h2>
       <div class="step-grid">
-        <div class="step"><h3>Measure</h3><p>Full consumption baseline across teams and workloads.</p></div>
-        <div class="step"><h3>Optimise</h3><p>Levers applied in order of savings-to-risk.</p></div>
-        <div class="step"><h3>Hold</h3><p>Monthly reviews keep efficiency from decaying.</p></div>
+        <div class="step"><h3>Measure</h3><p>A full baseline: every request attributed to a team, a workload, and a model tier.</p></div>
+        <div class="step"><h3>Optimise</h3><p>Levers applied in strict savings-to-risk order; output quality checked before each change ships.</p></div>
+        <div class="step"><h3>Hold</h3><p>Monthly reviews and a rolling forecast. Efficiency decays when nobody is watching; we watch.</p></div>
       </div>
     </div>
   </section>
@@ -157,7 +165,7 @@
       <h2>A good fit if</h2>
       <ul>
         <li>The Claude invoice doubled and nobody can say exactly why.</li>
-        <li>Different teams pay different effective rates for the same work.</li>
+        <li>Two teams buy the same outcome at wildly different effective rates.</li>
         <li>Finance wants a forecast that survives contact with reality.</li>
       </ul>
     </div>

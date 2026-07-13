@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rollout &amp; Activation | Claude Services | Prism Automate</title>
-  <meta name="description" content="SSO and tenant setup, seat provisioning, champion training, and go-live support: adoption treated as a project, not an email. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia." />
+  <meta name="description" content="We roll out Claude across your organisation: SSO and tenant setup, seat provisioning, champion training, and go-live support. Adoption treated as a project, not an email. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia." />
   <!-- TODO: add canonical once the production domain is confirmed -->
   <link rel="icon" type="image/png" href="../../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,7 @@
         "@type": "Service",
         "name": "Rollout &amp; Activation",
         "serviceType": "Rollout &amp; Activation",
-        "description": "SSO and tenant setup, seat provisioning, champion training, and go-live support: adoption treated as a project, not an email. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia.",
+        "description": "We roll out Claude across your organisation: SSO and tenant setup, seat provisioning, champion training, and go-live support. Adoption treated as a project, not an email. Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia.",
         "provider": { "@type": "Organization", "name": "Prism Automate" },
         "areaServed": ["India", "United Arab Emirates", "Australia"]
       },
@@ -53,6 +53,7 @@
     .nav .wrap { width: 100%; display: flex; align-items: center; gap: 2rem; }
     .brand { font-size: 1.15rem; font-weight: 700; text-decoration: none; }
     .brand b { color: var(--gold); font-weight: 700; }
+    .brand img { height: 26px; width: auto; display: block; }
     .nav a.back { margin-left: auto; text-decoration: none; opacity: 0.75; font-size: 0.93rem; }
     .nav a.back:hover { opacity: 1; }
     .nav-cta { border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
@@ -61,6 +62,9 @@
     .hero .eyebrow { color: var(--violet-lo); }
     .hero h1 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: 1.02; margin-top: 1.1rem; max-width: 15ch; }
     .hero .lede { margin-top: 1.5rem; color: var(--cream-dim); font-size: clamp(1.05rem, 1.7vw, 1.25rem); max-width: 46ch; }
+    .media-band { background: linear-gradient(#050408 0 55%, var(--paper) 55% 100%); }
+    .media-band figure { margin: 0; border-radius: 18px; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }
+    .media-band img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .arrow-link { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 2rem; text-decoration: none; font-weight: 600; color: var(--gold); }
     .arrow-link svg { transition: transform 0.25s var(--ease); }
     .arrow-link:hover svg { transform: translateX(6px); }
@@ -110,7 +114,7 @@
 <body>
   <nav class="nav" aria-label="Main">
     <div class="wrap">
-      <a class="brand" href="../../">Prism<b>Automate</b></a>
+      <a class="brand" href="../../"><img src="../../assets/logo-wordmark.png" alt="Prism Automate" width="115" height="30" /></a>
       <a class="back" href="../">← All services</a>
       <a class="nav-cta" href="../../#contact">Start a project</a>
     </div>
@@ -120,21 +124,25 @@
     <div class="wrap">
       <p class="eyebrow">Implementation &amp; Deployment</p>
       <h1>Rollout &amp; Activation</h1>
-      <p class="lede">SSO and tenant setup, seat provisioning, champion training, and go-live support: adoption treated as a project, not an email.</p>
+      <p class="lede">We roll out Claude across your organisation: SSO and tenant setup, seat provisioning, champion training, and go-live support. Adoption treated as a project, not an email.</p>
       <a class="arrow-link" href="../../#contact">Scope this with us
         <svg width="22" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
       </a>
     </div>
   </header>
 
+  <div class="media-band" aria-hidden="false">
+    <div class="wrap"><figure><img src="https://images.unsplash.com/photo-1755811717097-23fba595025d?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Long-exposure light trails from vehicles streaking through a dark night road, warm streaks cutting across black" loading="lazy" /></figure></div>
+  </div>
+
   <section>
     <div class="wrap">
       <span class="sec-label">What's included</span>
       <h2>What you get</h2>
       <div class="inc-grid">
-        <div class="inc"><h3>Tenant done right</h3><p>SSO, workspace structure, and permissions matched to how your org actually works.</p></div>
-        <div class="inc"><h3>Champions programme</h3><p>Power users trained first, so help lives inside every team.</p></div>
-        <div class="inc"><h3>Go-live support</h3><p>We sit with you through launch week and the wobbles after it.</p></div>
+        <div class="inc"><h3>Tenant done right</h3><p>SSO wired to your identity provider, workspaces mapped to how you actually work, permissions your security team has already signed off.</p></div>
+        <div class="inc"><h3>A champion in every team</h3><p>Power users trained before their team's wave lands, so help is in the room, not a ticket queue.</p></div>
+        <div class="inc"><h3>Launch week, staffed</h3><p>We sit with you through go-live and the wobbles after it, fixing problems before they become tickets.</p></div>
       </div>
     </div>
   </section>
@@ -144,8 +152,8 @@
       <span class="sec-label">How it runs</span>
       <h2>Three moves, no mystery</h2>
       <div class="step-grid">
-        <div class="step"><h3>Prepare</h3><p>Tenant, security review, and seat plan signed off.</p></div>
-        <div class="step"><h3>Activate</h3><p>Staged rollout by team, champions ahead of each wave.</p></div>
+        <div class="step"><h3>Prepare</h3><p>Tenant built, security review passed, seat plan signed off — before anyone gets a login.</p></div>
+        <div class="step"><h3>Activate</h3><p>Rollout in waves, team by team, with a trained champion already in the room when each goes live.</p></div>
         <div class="step"><h3>Embed</h3><p>Usage reviewed at 30 days; laggard teams get direct help.</p></div>
       </div>
     </div>
@@ -156,9 +164,9 @@
       <span class="sec-label">Is this you?</span>
       <h2>A good fit if</h2>
       <ul>
-        <li>You bought the licences and adoption is stuck at 20%.</li>
-        <li>IT wants a controlled rollout, not a free-for-all.</li>
-        <li>You want employees using AI safely by next quarter.</li>
+        <li>You bought the licences six months ago and adoption is stuck at 20%.</li>
+        <li>IT will only sign off on a staged rollout with SSO and audit trails, not a free-for-all.</li>
+        <li>The board wants an AI progress update next quarter, and 'we bought licences' won't cut it.</li>
       </ul>
     </div>
   </section>

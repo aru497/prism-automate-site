@@ -1,0 +1,576 @@
+[
+ {
+  "slug": "ai-strategy-roadmap",
+  "cat": "strategy",
+  "name": "AI Strategy & Roadmap",
+  "definition": "A paid engagement that scopes your whole Claude programme: where AI earns its keep, what ships first, and what each step costs. You leave with a roadmap your board can fund — or kill with a clear conscience.",
+  "included": [
+   [
+    "The build order, ranked",
+    "Which workflows to automate first, which to park, and why — with dependencies mapped so the second build never stalls waiting on the first."
+   ],
+   [
+    "Model and platform calls",
+    "Where Claude fits, which tier, and how it sits alongside the systems you already run — settled in writing before procurement asks."
+   ],
+   [
+    "A defensible roadmap",
+    "Quarter-by-quarter, with a cost, an owner, and a kill criterion against every step. Your board can read it without a translator."
+   ]
+  ],
+  "steps": [
+   [
+    "Listen",
+    "Workshops with the people who own the workflows, not just the org chart."
+   ],
+   [
+    "Map",
+    "Every candidate use case scored for value, effort, and risk. Most won't make the cut; that's the point."
+   ],
+   [
+    "Commit",
+    "A sequenced, costed roadmap with the first build scoped to start on sign-off, not next quarter."
+   ]
+  ],
+  "fit": [
+   "You know AI matters but the path from here to there is fog.",
+   "Every team is running its own AI experiment and nobody is comparing notes.",
+   "The board wants a plan with numbers, not enthusiasm."
+  ],
+  "img": "https://images.unsplash.com/photo-1501290301209-7a0323622985?auto=format&fit=crop&w=1600&q=80",
+  "img_alt": "Long-exposure white and red car light trails sweeping around a dark highway curve at night"
+ },
+ {
+  "slug": "ai-readiness-governance",
+  "cat": "strategy",
+  "name": "AI Readiness & Governance Assessment",
+  "definition": "A paid assessment of how ready your organisation is for Claude — data, security, skills, and governance. You leave with a scored verdict, a risk register, and a plan to close the gaps.",
+  "included": [
+   [
+    "Readiness scorecard",
+    "Data, security, skills, and process maturity scored against what a live Claude rollout actually demands, not a generic maturity matrix."
+   ],
+   [
+    "Governance framework",
+    "Usage policies, review gates, and escalation paths that satisfy legal without strangling teams."
+   ],
+   [
+    "Risk register with named owners",
+    "The failure modes that matter in your industry — data leakage, hallucinated output, shadow usage — each with a concrete mitigation, not a heat map."
+   ]
+  ],
+  "steps": [
+   [
+    "Audit",
+    "Structured interviews and a systems review across security, data, and the teams who'll use Claude daily."
+   ],
+   [
+    "Assess",
+    "Findings scored against readiness criteria proven on real rollouts, ranked by what to fix first."
+   ],
+   [
+    "Equip",
+    "Policies, review gates, and a remediation plan ordered by risk — ready to hand straight to compliance."
+   ]
+  ],
+  "fit": [
+   "Every AI pilot dies in legal review, and nobody can tell you exactly why.",
+   "You're in a regulated industry and 'we use AI carefully' won't survive an audit.",
+   "Half the company is already pasting customer data into chatbots, and there's no policy."
+  ],
+  "img": "https://images.unsplash.com/photo-1768049994214-5df7d70fc078?auto=format&fit=crop&w=1600&q=80",
+  "img_alt": "Dim institutional hall with stone columns and a grand staircase rising toward a warmly lit doorway"
+ },
+ {
+  "slug": "use-case-portfolio",
+  "cat": "strategy",
+  "name": "Use-Case Portfolio & Business Case",
+  "definition": "A paid engagement that ranks your Claude use cases by return and builds the business case behind each one. You leave with numbers finance can interrogate and a portfolio ready to fund.",
+  "included": [
+   [
+    "Use-case inventory",
+    "Every candidate catalogued from the floor up — owner, workflow, and hours at stake — not invented in a slide deck."
+   ],
+   [
+    "Value modelling",
+    "Hours saved, revenue protected, cost avoided: quantified per use case, with every assumption written down for finance to test."
+   ],
+   [
+    "Investment case",
+    "A portfolio view finance can approve: quick wins funding the deeper builds."
+   ]
+  ],
+  "steps": [
+   [
+    "Harvest",
+    "Shadow the teams, log where the hours actually go, and surface every candidate worth counting."
+   ],
+   [
+    "Model",
+    "Put honest numbers on each candidate and stress-test them against what Claude can do today."
+   ],
+   [
+    "Rank",
+    "Sequence the portfolio by payback: what gets funded now, what waits, and what dies here."
+   ]
+  ],
+  "fit": [
+   "You have twenty AI ideas and budget for three.",
+   "Every department swears its use case is the urgent one.",
+   "Finance wants proof before the programme grows."
+  ],
+  "img": "https://images.unsplash.com/photo-1480944657103-7fed22359e1d?auto=format&fit=crop&w=1600&q=80",
+  "img_alt": "Dark office tower facade at night, a grid of windows glowing violet, pink and blue"
+ },
+ {
+  "slug": "internal-agentic-platform",
+  "cat": "build",
+  "name": "Internal Agentic Platform Build",
+  "definition": "We design and build your internal agentic platform on Claude: orchestration, governed connectors, and paved-road templates your engineers own. One set of rails, and every team ships agents on it.",
+  "included": [
+   [
+    "Platform architecture",
+    "Agent orchestration, tool permissions, memory, and guardrails, designed around your security model and documented so your engineers can extend it."
+   ],
+   [
+    "Connectors that matter",
+    "Your CRM, ERP, help desk, and data warehouse wired in with scoped credentials and audit logs — not API keys pasted into config files."
+   ],
+   [
+    "Paved-road templates",
+    "Working patterns your developers clone and adapt, so agent two ships faster than agent one — and agent ten ships without us."
+   ]
+  ],
+  "steps": [
+   [
+    "Design",
+    "Security model first, then architecture sized to your actual workloads, agreed with infosec before code."
+   ],
+   [
+    "Build",
+    "Platform core and your first production agent, shipped together — rails proven before other teams arrive."
+   ],
+   [
+    "Handover",
+    "Pairing sessions, runbooks, and a documented core until your engineers own the roadmap."
+   ]
+  ],
+  "fit": [
+   "Every team wants agents; every team is rebuilding the same auth, memory, and logging.",
+   "Security demands one governed gateway to the model.",
+   "You want the capability in-house, not rented from a vendor forever."
+  ],
+  "img": "https://images.unsplash.com/photo-1741524916134-48f00f42d925?auto=format&fit=crop&w=1600&q=80",
+  "img_alt": "Interlocking concrete ramps and walkways inside a dark brutalist building, lit by warm golden recessed lights"
+ },
+ {
+  "slug": "customer-facing-ai-product",
+  "cat": "build",
+  "name": "Customer-Facing AI Product Build",
+  "definition": "We build Claude into the product your customers use: production-grade AI features that hold up on the open internet. We've shipped this before — indoor event wayfinding and retail virtual try-on.",
+  "included": [
+   [
+    "Product-grade AI UX",
+    "Latency budgets, token streaming, graceful fallbacks, and tone — engineered so it feels like product, not demo."
+   ],
+   [
+    "Safety for strangers",
+    "Prompt-injection defence, content filtering, and rate controls — the open internet tests your feature harder than QA ever will."
+   ],
+   [
+    "Numbers from day one",
+    "Usage, drop-off, and cost per conversation instrumented at launch, so the feature earns its roadmap slot with evidence."
+   ]
+  ],
+  "steps": [
+   [
+    "Shape",
+    "One user job, one feature, explicit quality bars. Scope agreed before anyone writes code."
+   ],
+   [
+    "Ship",
+    "Production build behind feature flags, red-teamed against adversarial input before customers see it."
+   ],
+   [
+    "Sharpen",
+    "Prompts, guardrails, and UX tuned against real customer conversations, not synthetic test sets."
+   ]
+  ],
+  "fit": [
+   "Your customers are asking where your AI features are.",
+   "A competitor just shipped theirs, and the board noticed.",
+   "You have the product team but not the applied-AI depth."
+  ],
+  "img": "https://images.unsplash.com/photo-1783004834993-ffa314a777c8?auto=format&fit=crop&w=1600&q=80",
+  "img_alt": "Dark glass building facade at dusk with vertical panels glowing warm gold"
+ },
+ {
+  "slug": "prototype-poc",
+  "cat": "build",
+  "name": "Prototype & Proof of Concept",
+  "definition": "A contracted prototype or proof of concept delivered against a defined use case, so decisions get made on evidence.",
+  "included": [
+   [
+    "Working software",
+    "Real integration against your data, not a slideware mock — something your team can try to break."
+   ],
+   [
+    "Honest findings",
+    "A written record of what worked, what failed, and what production would actually cost in money, time, and risk."
+   ],
+   [
+    "A go/no-go you can trust",
+    "Evidence strong enough to kill the idea or fund it properly."
+   ]
+  ],
+  "steps": [
+   [
+    "Frame",
+    "One use case, one success metric, agreed in writing up front."
+   ],
+   [
+    "Prove",
+    "Two to four weeks of focused build against your real inputs. Short enough to stay honest."
+   ],
+   [
+    "Decide",
+    "A live demo, written findings, and a costed path to production. Or a clear reason to stop."
+   ]
+  ],
+  "fit": [
+   "Half the room says AI can do the job; the other half wants proof.",
+   "The bigger budget is there, but it won't move without evidence.",
+   "The use case is novel enough that nobody can quote it blind."
+  ],
+  "img": "https://images.unsplash.com/photo-1541428213843-059f9be2dbae?auto=format&fit=crop&w=1600&q=80",
+  "img_alt": "Long-exposure golden spark trails looping and scattering through a dark concrete tunnel"
+ },
+ {
+  "slug": "rollout-activation",
+  "cat": "deploy",
+  "name": "Rollout & Activation",
+  "definition": "We roll out Claude across your organisation: SSO and tenant setup, seat provisioning, champion training, and go-live support. Adoption treated as a project, not an email.",
+  "included": [
+   [
+    "Tenant done right",
+    "SSO wired to your identity provider, workspaces mapped to how you actually work, permissions your security team has already signed off."
+   ],
+   [
+    "A champion in every team",
+    "Power users trained before their team's wave lands, so help is in the room, not a ticket queue."
+   ],
+   [
+    "Launch week, staffed",
+    "We sit with you through go-live and the wobbles after it, fixing problems before they become tickets."
+   ]
+  ],
+  "steps": [
+   [
+    "Prepare",
+    "Tenant built, security review passed, seat plan signed off — before anyone gets a login."
+   ],
+   [
+    "Activate",
+    "Rollout in waves, team by team, with a trained champion already in the room when each goes live."
+   ],
+   [
+    "Embed",
+    "Usage reviewed at 30 days; laggard teams get direct help."
+   ]
+  ],
+  "fit": [
+   "You bought the licences six months ago and adoption is stuck at 20%.",
+   "IT will only sign off on a staged rollout with SSO and audit trails, not a free-for-all.",
+   "The board wants an AI progress update next quarter, and 'we bought licences' won't cut it."
+  ],
+  "img": "https://images.unsplash.com/photo-1755811717097-23fba595025d?auto=format&fit=crop&w=1600&q=80",
+  "img_alt": "Long-exposure light trails from vehicles streaking through a dark night road, warm streaks cutting across black"
+ },
+ {
+  "slug": "industry-accelerator-deployment",
+  "cat": "deploy",
+  "name": "Industry Solution Accelerator Deployment",
+  "definition": "A pre-built Claude accelerator for your industry, configured to your data and deployed inside your own cloud. You start from working software, not a blank page.",
+  "included": [
+   [
+    "Accelerator fit-out",
+    "Prompts, retrieval, and workflows tuned to your terminology, documents, and brand — not a vanilla demo wearing your logo."
+   ],
+   [
+    "Runs where your data lives",
+    "Installed in your cloud account, behind your SSO and network controls. Your perimeter, not ours."
+   ],
+   [
+    "Handover with keys",
+    "Admin access, runbooks, and architecture docs: everything your team needs to run it without ringing us."
+   ]
+  ],
+  "steps": [
+   [
+    "Select",
+    "The right accelerator matched to your industry problem."
+   ],
+   [
+    "Adapt",
+    "A configuration and integration sprint in your environment, on your data, under your controls."
+   ],
+   [
+    "Launch",
+    "Production cutover with your operators trained and a documented handover. No standing dependency on us."
+   ]
+  ],
+  "fit": [
+   "Your problem is common in your industry; no need to build bespoke.",
+   "Time-to-value matters more than owning every design choice.",
+   "Procurement prefers configured products over custom builds."
+  ],
+  "img": "https://images.unsplash.com/photo-1761509813751-383d689461da?auto=format&fit=crop&w=1600&q=80",
+  "img_alt": "Geometric grid of warmly illuminated square windows on a dark building facade at night"
+ },
+ {
+  "slug": "platform-migration-claude",
+  "cat": "deploy",
+  "name": "Platform Migration to Claude",
+  "definition": "Contracted migration of a production workload from another model or provider onto Claude, run by an Anthropic partner: baselined, proven in parallel, cut over without breaking what already works.",
+  "included": [
+   [
+    "Prompt & eval translation",
+    "Your prompts, chains, and eval suites rewritten for how Claude reasons — a proper port, not find-and-replace on the model name."
+   ],
+   [
+    "Side-by-side proof",
+    "Old and new run in parallel on live traffic until the numbers say switch. You keep the scorecard."
+   ],
+   [
+    "Zero-drama cutover",
+    "Staged traffic shift with a rehearsed rollback at every gate; one regression and you're back on the old path."
+   ]
+  ],
+  "steps": [
+   [
+    "Baseline",
+    "Accuracy, latency, and cost measured on your current stack, so 'as good or better' has numbers behind it."
+   ],
+   [
+    "Port",
+    "Prompts, tools, and guardrails rebuilt for Claude, then scored against the baseline until they clear it."
+   ],
+   [
+    "Cutover",
+    "Traffic shifts in stages with rollback armed; the old path retires only when Claude has beaten it."
+   ]
+  ],
+  "fit": [
+   "Your provider's costs or limits stopped making sense, but nobody wants to break production.",
+   "You built this on another model and want Claude's reasoning without a ground-up rewrite.",
+   "Compliance wants the switch contracted, documented, and provable — not a weekend experiment."
+  ],
+  "img": "https://images.unsplash.com/photo-1774388013568-abdb1eb1ad68?auto=format&fit=crop&w=1600&q=80",
+  "img_alt": "Abstract metallic tunnel of repeating ribbed lines converging toward a bright light at the far end"
+ },
+ {
+  "slug": "sustained-adoption-coe",
+  "cat": "run",
+  "name": "Sustained Adoption & CoE Program",
+  "definition": "We run your AI Centre of Excellence: triage, training, and governance, quarter after quarter, so adoption compounds instead of fading. Then we work ourselves out of the job.",
+  "included": [
+   [
+    "CoE operating rhythm",
+    "One intake queue, a scored backlog, and a fixed review cadence. Every AI request gets a decision and a date."
+   ],
+   [
+    "Enablement calendar",
+    "A published calendar of training, office hours, and internal showcases — so skills keep compounding instead of pooling in one team."
+   ],
+   [
+    "Governance in motion",
+    "A living policy register: rules reviewed and re-issued as models and usage change, and enforced — not filed and forgotten."
+   ]
+  ],
+  "steps": [
+   [
+    "Charter",
+    "CoE structure, roles, intake, and decision rights agreed with your leads before anything runs."
+   ],
+   [
+    "Operate",
+    "We chair reviews, run enablement, keep governance current, and report to leadership every quarter."
+   ],
+   [
+    "Transfer",
+    "Your people take the chairs one role at a time, until the CoE runs without us."
+   ]
+  ],
+  "fit": [
+   "Usage spiked at launch, then slid back to a handful of enthusiasts within months.",
+   "AI ideas arrive by email, Slack, and corridor; nobody triages, so nothing ships.",
+   "Leadership wants sustained capability, not a one-off project."
+  ],
+  "img": "https://images.unsplash.com/photo-1553959854-d9972f0a1ab9?auto=format&fit=crop&w=1600&q=80",
+  "img_alt": "Dark spiral staircase seen from above, its stone steps winding downward in a high-contrast circular pattern of black and grey"
+ },
+ {
+  "slug": "managed-ai-operations",
+  "cat": "run",
+  "name": "Managed AI Operations",
+  "definition": "Your Claude workloads run as a managed service: monitoring, incident response, and quality evals under SLAs we sign. We own production; your engineers get back to building.",
+  "included": [
+   [
+    "Operations with signed SLAs",
+    "24/7-grade monitoring, alerting, and incident response: commitments written into the contract, not onto a slide."
+   ],
+   [
+    "Quality watch",
+    "A standing eval suite catches output drift and regressions before your users do — failures become tickets, not complaints."
+   ],
+   [
+    "A monthly review worth reading",
+    "One report a month: usage, spend, incidents, and the improvements shipped. Honest enough to forward to your CFO."
+   ]
+  ],
+  "steps": [
+   [
+    "Onboard",
+    "Runbooks written, dashboards stood up, alert thresholds agreed with your team before we take the pager."
+   ],
+   [
+    "Operate",
+    "We carry the pager; you get the report."
+   ],
+   [
+    "Improve",
+    "Every incident becomes a hardening item, tracked to done in the next monthly review."
+   ]
+  ],
+  "fit": [
+   "It's in production, it matters, and nobody officially owns it at 2am.",
+   "Every vendor quotes an SLA; you need one somebody will actually sign.",
+   "The engineer who built it has been on call for it ever since."
+  ],
+  "img": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
+  "img_alt": "Dimly lit data-center server rack with dense rows of network cables and glowing status lights receding into darkness"
+ },
+ {
+  "slug": "cowork-claude-code-support",
+  "cat": "run",
+  "name": "Cowork & Claude Code Support",
+  "definition": "Tier-1/2 support and enablement for Cowork and Claude Code, from an Anthropic Claude partner: a named channel with response-time commitments, patterns for your stack, and clinics that unstick builders.",
+  "included": [
+   [
+    "Named support channel",
+    "A dedicated Slack or Teams channel with agreed response times, staffed by engineers who build with Claude Code daily — not a ticket queue."
+   ],
+   [
+    "Patterns for your stack",
+    "Working examples in your languages and repos — agent setups, CLAUDE.md files, MCP configs — updated as your stack and the models change."
+   ],
+   [
+    "Clinics, not webinars",
+    "Regular sessions built around what your builders actually hit, turning the questions everyone asks into things nobody asks twice."
+   ]
+  ],
+  "steps": [
+   [
+    "Baseline",
+    "A short audit of who uses what, where your builders are strong, and where they stall."
+   ],
+   [
+    "Support",
+    "Tier-1/2 questions answered in the channel; escalations owned to resolution, not bounced back to you."
+   ],
+   [
+    "Compound",
+    "Clinic themes and new patterns come straight from the ticket log — support that shrinks its own queue."
+   ]
+  ],
+  "fit": [
+   "A few developers are flying with Claude Code; the rest opened it once and went back to habit.",
+   "IT can reset passwords; it can't explain why the model ignored your CLAUDE.md.",
+   "You want enablement running without hiring for it."
+  ],
+  "img": "https://images.unsplash.com/photo-1528372444006-1bfc81acab02?auto=format&fit=crop&w=1600&q=80",
+  "img_alt": "Laptop showing code on a dark desk beside a window, the screen's glow set against a moody overcast sky at first light"
+ },
+ {
+  "slug": "claude-finops-optimisation",
+  "cat": "run",
+  "name": "Claude Consumption & FinOps Optimisation",
+  "definition": "Ongoing Claude cost and consumption optimisation: spend mapped per team and workload, levers applied in savings-to-risk order, budgets enforced — so the bill grows slower than the value it buys.",
+  "included": [
+   [
+    "Consumption map",
+    "A per-team, per-workload ledger: who spends what, on which models, and which spend earns nothing."
+   ],
+   [
+    "Optimisation levers",
+    "Model-tier fits, prompt caching, batching, and context diets — each checked against output quality before it ships."
+   ],
+   [
+    "Guardrails on spend",
+    "Hard budgets, spend alerts, and per-team limits — wired into your console before the surprise invoice."
+   ]
+  ],
+  "steps": [
+   [
+    "Measure",
+    "A full baseline: every request attributed to a team, a workload, and a model tier."
+   ],
+   [
+    "Optimise",
+    "Levers applied in strict savings-to-risk order; output quality checked before each change ships."
+   ],
+   [
+    "Hold",
+    "Monthly reviews and a rolling forecast. Efficiency decays when nobody is watching; we watch."
+   ]
+  ],
+  "fit": [
+   "The Claude invoice doubled and nobody can say exactly why.",
+   "Two teams buy the same outcome at wildly different effective rates.",
+   "Finance wants a forecast that survives contact with reality."
+  ],
+  "img": "https://images.unsplash.com/photo-1768203552123-2862dc0cf6fa?auto=format&fit=crop&w=1600&q=80",
+  "img_alt": "Abstract golden light trails streaking across a pure black background in a long-exposure sweep of fine luminous lines"
+ },
+ {
+  "slug": "claude-training-sessions",
+  "cat": "run",
+  "name": "Claude Training Sessions",
+  "definition": "Live, role-based Claude, Claude Code, and Cowork training from an Anthropic Claude partner. Built on your real workflows, measured before and after, so the effect shows up in the work, not the feedback form.",
+  "included": [
+   [
+    "Role-based curriculum",
+    "Separate tracks for builders, analysts, and leaders, each with its own exercises; nobody sits through the wrong course."
+   ],
+   [
+    "Hands-on by design",
+    "Exercises run on your real documents, code, and tickets; people leave with finished work and prompts they'll reuse on Monday."
+   ],
+   [
+    "Proof it worked",
+    "Pre- and post-assessment scores, reported in writing: you see what changed, by team, and where a refresher is worth it."
+   ]
+  ],
+  "steps": [
+   [
+    "Tailor",
+    "Curriculum built around your tools, data rules, and policies; every exercise uses work your teams actually do."
+   ],
+   [
+    "Teach",
+    "Live cohorts, capped at a size where everyone gets stuck and unstuck; no webinars, no recordings-as-training."
+   ],
+   [
+    "Certify",
+    "Final assessment, take-home materials, and a refresher path so skills survive the next model release."
+   ]
+  ],
+  "fit": [
+   "Everyone has a Claude licence; most people use it like a smarter search box.",
+   "Every new joiner learns Claude by rumour; onboarding should be the same course every time.",
+   "You'd rather build this skill in-house than rent consultants indefinitely."
+  ],
+  "img": "https://images.unsplash.com/photo-1677536849474-2819061389ed?auto=format&fit=crop&w=1600&q=80",
+  "img_alt": "Empty theatre auditorium in near darkness, rows of seats facing a stage under a rig of warm spotlights, shot on film"
+ }
+]
