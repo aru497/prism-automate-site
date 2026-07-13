@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prism Automate — Logo Versions</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Familjen+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f1f0f6; --ink: #16121f; --soft: #6b6579; --line: rgba(22,18,31,0.12);
+      --dark: #0d0a15; --violet: #6a5ae0; --gold: #d9a86a;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1rem/1.6 "Familjen Grotesk", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: clamp(2rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 600; letter-spacing: -0.02em; margin: 0; }
+    .lede { color: var(--soft); margin: 0.7rem 0 0; max-width: 60ch; }
+    .grid { margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 1.5rem; }
+    .card { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; }
+    .swatch { height: 240px; display: grid; place-items: center; padding: 1.5rem; }
+    .swatch.dark { background: radial-gradient(90% 120% at 50% 20%, #1c1530, var(--dark) 70%); }
+    .swatch.light { background: #fbfbfd; }
+    .swatch.photo { background: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=70') center/cover; }
+    .swatch img, .swatch object { max-width: 78%; max-height: 170px; }
+    .meta { padding: 1.1rem 1.3rem 1.3rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+    .meta b { font-weight: 600; font-size: 0.98rem; }
+    .meta small { display: block; color: var(--soft); margin-top: 0.15rem; font-size: 0.85rem; }
+    .meta a { color: var(--violet); font-weight: 600; font-size: 0.88rem; text-decoration: none; white-space: nowrap; }
+    .meta a:hover { text-decoration: underline; }
+    .note { margin-top: 2.5rem; padding: 1.2rem 1.4rem; border: 1px solid var(--line); border-radius: 12px; color: var(--soft); font-size: 0.93rem; background: #fff; }
+    .note b { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Prism Automate · logo versions</h1>
+    <p class="lede">Six vector treatments of the segmented-ring mark and wordmark, each on the surface it's built for. Every file is a real SVG: infinitely sharp, tiny, and editable.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="swatch dark"><img src="logo-stacked-dark.svg" alt="Stacked gradient logo on dark" /></div>
+        <div class="meta"><span><b>Stacked · gradient</b><small>Primary lockup for dark surfaces, hero, decks</small></span><a href="logo-stacked-dark.svg" download>Download SVG</a></div>
+      </div>
+      <div class="card">
+        <div class="swatch dark"><img src="logo-horizontal-dark.svg" alt="Horizontal gradient logo on dark" /></div>
+        <div class="meta"><span><b>Horizontal · gradient</b><small>Navigation bars, email signatures, footers</small></span><a href="logo-horizontal-dark.svg" download>Download SVG</a></div>
+      </div>
+      <div class="card">
+        <div class="swatch light"><img src="logo-mono-violet.svg" alt="Mono violet logo on light" /></div>
+        <div class="meta"><span><b>Mono · violet on light</b><small>Documents, invoices, light-mode UI</small></span><a href="logo-mono-violet.svg" download>Download SVG</a></div>
+      </div>
+      <div class="card">
+        <div class="swatch photo"><img src="logo-mono-white.svg" alt="Mono white logo over photography" /></div>
+        <div class="meta"><span><b>Mono · white</b><small>Over photography and video, event screens</small></span><a href="logo-mono-white.svg" download>Download SVG</a></div>
+      </div>
+      <div class="card">
+        <div class="swatch dark"><img src="logo-gold.svg" alt="Gold edition logo" /></div>
+        <div class="meta"><span><b>Gold edition</b><small>Foil print, awards, premium collateral</small></span><a href="logo-gold.svg" download>Download SVG</a></div>
+      </div>
+      <div class="card">
+        <div class="swatch light"><img src="app-icon.svg" alt="App icon" style="max-height:150px; border-radius:22%; box-shadow: 0 18px 40px rgba(22,18,31,0.18);" /></div>
+        <div class="meta"><span><b>App icon</b><small>Prism Events app, favicons, social avatars</small></span><a href="app-icon.svg" download>Download SVG</a></div>
+      </div>
+    </div>
+
+    <p class="note"><b>Production note:</b> the wordmark in these SVGs references the Audiowide webfont; before print or third-party use, outline the text to paths in Illustrator/Figma (or send me the original vector wordmark and I'll bake exact paths in). AI-rendered concept art of the mark (glassy 3D, foil-stamped photo mockups) is prepped and one click away once Higgsfield credits are added.</p>
+  </div>
+</body>
+</html>
