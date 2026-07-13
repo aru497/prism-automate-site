@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prism Automate | AI Automation & Claude Partner · Bengaluru, Dubai, Sydney</title>
-  <meta name="description" content="AI automation agency and Anthropic Claude partner serving India, the Middle East, and Australia. 14 Claude services, agentic platforms, event navigation, and virtual try-on, delivered from Bengaluru and Dubai for teams like Google and Unisys." />
+  <meta name="description" content="AI automation studio and Anthropic Claude partner serving India, the Middle East, and Australia. 14 Claude services, agentic platforms, event navigation, and virtual try-on, delivered from Bengaluru and Dubai for teams like Google and Unisys." />
   <!-- TODO: set canonical + og:url once the production domain is confirmed -->
   <!-- <link rel="canonical" href="https://www.prismautomate.com/" /> -->
   <meta property="og:type" content="website" />
@@ -12,12 +12,10 @@
   <meta property="og:description" content="Anthropic Claude partner: 14 Claude services, agentic platforms, event navigation, and virtual try-on for teams across India, the Middle East, and Australia." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#100f16" />
+  <meta name="theme-color" content="#050408" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -118,447 +116,572 @@
     ]
   }
   </script>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@200;300&family=Spectral:ital,wght@0,300;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f1f0f6;
+      --paper-2: #e7e5f0;
+      --ink: #16121f;
+      --ink-deep: #0d0a15;
+      --ink-soft: #6b6579;
+      --line: rgba(22, 18, 31, 0.12);
+      --line-dk: rgba(255, 255, 255, 0.14);
+      --violet: #6a5ae0;
+      --violet-lo: #a89ef1;
+      --gold: #d9a86a;
+      --cream-dim: rgba(255, 255, 255, 0.6);
+      --font: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+      --serif: "Spectral", Georgia, serif;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    * { box-sizing: border-box; }
+    html.inertia-scroll { scroll-behavior: auto; }
+    html { scroll-behavior: smooth; }
+    html.lenis, html.lenis body { height: auto; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 400 1.0625rem/1.6 var(--font);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: clip;
+    }
+    img, video { max-width: 100%; display: block; }
+    h1, h2, h3 { margin: 0; text-wrap: balance; letter-spacing: -0.02em; }
+    p { margin: 0; max-width: 62ch; }
+    a { color: inherit; }
+    em, .ser { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--violet); }
+    .wrap { max-width: 1280px; margin: 0 auto; padding-inline: clamp(1.25rem, 5vw, 3.5rem); }
+    .eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); }
+    .dark { background: var(--ink-deep); color: var(--paper); }
+    .dark .eyebrow { color: var(--violet-lo); }
+    .dark em, .dark .ser { color: var(--violet-lo); }
+
+    /* ---- Nav ---- */
+    .nav {
+      position: fixed; inset: 0 0 auto 0; z-index: 40; height: 74px;
+      display: flex; align-items: center; color: var(--paper);
+      transition: background 0.35s var(--ease), border-color 0.35s var(--ease);
+      border-bottom: 1px solid transparent;
+    }
+    .nav.is-solid { background: rgba(13, 10, 21, 0.72); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border-color: var(--line-dk); }
+    .nav .wrap { width: 100%; display: flex; align-items: center; gap: 2.4rem; }
+    .brand { font-size: 1.22rem; font-weight: 700; letter-spacing: -0.02em; text-decoration: none; white-space: nowrap; }
+    .brand .a { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; margin-left: auto; list-style: none; padding: 0; }
+    .nav-links a { text-decoration: none; color: inherit; opacity: 0.72; font-size: 0.94rem; font-weight: 500; transition: opacity 0.2s; }
+    .nav-links a:hover, .nav-links a:focus-visible { opacity: 1; }
+    .nav-cta { border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.3rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.9; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+
+    /* ---- Services mega menu (WAC pattern) ---- */
+    .mega-btn {
+      background: none; border: 0; padding: 0; cursor: pointer;
+      font: 500 0.94rem/1.6 var(--font); color: inherit; opacity: 0.72; transition: opacity 0.2s;
+    }
+    .mega-btn:hover, .mega-btn[aria-expanded="true"], .mega-btn:focus-visible { opacity: 1; }
+    .mega {
+      position: fixed; left: 0; right: 0; top: 74px; z-index: 39;
+      background: rgba(5, 4, 8, 0.92);
+      backdrop-filter: blur(22px) saturate(140%);
+      -webkit-backdrop-filter: blur(22px) saturate(140%);
+      border-bottom: 1px solid var(--line-dk);
+      color: var(--paper);
+      opacity: 0; visibility: hidden; transform: translateY(-10px);
+      transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0s linear 0.3s;
+    }
+    .mega.open { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+    .mega-grid {
+      display: grid; grid-template-columns: 1.1fr repeat(4, 1fr);
+      gap: clamp(1.5rem, 3.5vw, 3.5rem);
+      padding-block: clamp(2rem, 4.5vh, 3.5rem);
+    }
+    .mega-lead p { font-family: "Hanken Grotesk", var(--font); font-weight: 300; font-size: clamp(1.25rem, 1.9vw, 1.7rem); line-height: 1.35; max-width: 16em; }
+    .mega-lead .arrow-link { margin-top: 1.4rem; color: var(--gold); font-size: 0.92rem; }
+    .mega-col { display: grid; gap: 0.65rem; align-content: start; }
+    .mega-cat {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-weight: 600; font-size: 1.02rem; color: var(--paper);
+      text-decoration: none; margin-bottom: 0.5rem;
+    }
+    .mega-cat svg { transition: transform 0.25s var(--ease); }
+    .mega-cat:hover svg { transform: translateX(5px); }
+    .mega-col a:not(.mega-cat) {
+      color: var(--cream-dim); text-decoration: none; font-size: 0.93rem; transition: color 0.2s;
+    }
+    .mega-col a:not(.mega-cat):hover { color: var(--paper); }
+    .mega-dhq { border-top: 1px solid var(--line-dk); }
+    .mega-dhq a {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding-block: 1.05rem; text-decoration: none;
+      color: #ffffff; font-size: 0.98rem;
+    }
+    .mega-dhq b { font-weight: 700; }
+    .mega-dhq svg { transition: transform 0.25s var(--ease); }
+    .mega-dhq a:hover svg { transform: translateX(5px); }
+    @media (max-width: 900px) { .mega { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .mega { transition: none; } }
+
+    /* ---- Hero ---- */
+    .hero { position: relative; min-height: 100dvh; display: flex; align-items: flex-end; overflow: clip; background: var(--ink-deep); color: var(--paper); }
+    .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.72; pointer-events: none; will-change: transform; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 90% at 78% 30%, rgba(106,90,224,0.18), transparent 55%), linear-gradient(transparent 32%, rgba(13,10,21,0.82) 88%); }
+    .hero .wrap { position: relative; z-index: 1; padding-bottom: clamp(3rem, 8vh, 5.5rem); padding-top: 120px; }
+    .hero .eyebrow { color: var(--violet-lo); }
+    .hero h1 { margin-top: 1.4rem; font-size: clamp(2.5rem, 6.4vw, 5.4rem); font-weight: 500; line-height: 1.02; max-width: 15ch; }
+    .hero h1 em { color: var(--gold); }
+    .hero h1 .line { display: block; overflow: clip; }
+    .hero h1 .line > span { display: block; }
+    .hero-sub { margin-top: 1.6rem; max-width: 42ch; color: var(--cream-dim); font-size: clamp(1rem, 1.6vw, 1.2rem); }
+    .arrow-link { display: inline-flex; align-items: center; gap: 0.65rem; margin-top: 2rem; text-decoration: none; font-weight: 600; color: var(--paper); }
+    .arrow-link svg { transition: transform 0.28s var(--ease); }
+    .arrow-link:hover svg { transform: translateX(7px); }
+    .hero .arrow-link { color: var(--gold); }
+    .hero-foot { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; border-top: 1px solid var(--line-dk); }
+    .hero-foot .wrap { display: flex; justify-content: space-between; align-items: center; padding-block: 0.9rem; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-dim); }
+
+    /* ---- Manifesto (GSAP word scrub): full-screen pinned moment, like the reference ---- */
+    .intro { min-height: 100dvh; display: flex; align-items: center; background: #050408; color: #f1f0f6; }
+    .no-motion .intro { min-height: 0; padding-block: clamp(6rem, 15vh, 10rem); }
+    .intro .wrap { width: 100%; }
+    .scrub {
+      font-family: "Hanken Grotesk", var(--font);
+      font-size: clamp(2.1rem, 4.4vw, 4rem);
+      font-weight: 300;
+      line-height: 1.28;
+      letter-spacing: -0.012em;
+      max-width: 24em;
+      margin-left: clamp(0rem, 8vw, 9.5rem);
+    }
+    /* default = fully readable; JS dims then illuminates on scroll */
+    .scrub .word { color: #f1f0f6; }
+    .scrub em.word { color: var(--violet-lo); }
+
+    /* ---- Pinned chapters: blackish-purple interlude ---- */
+    .chapters {
+      position: relative;
+      border-bottom: 1px solid var(--line-dk);
+      background: #050408;
+      color: var(--paper);
+    }
+    .chapters .stage { position: sticky; top: 0; height: 100dvh; overflow: clip; display: flex; align-items: center; }
+    .chapters .stage .wrap { width: 100%; display: grid; grid-template-columns: 92px 1fr; gap: clamp(1.5rem, 5vw, 5rem); align-items: center; }
+    .rail { display: grid; gap: 1.1rem; align-content: center; }
+    .rail .num { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.18em; color: var(--cream-dim); opacity: 0.4; transition: opacity 0.3s, color 0.3s; }
+    .rail .num.on { opacity: 1; color: var(--violet-lo); }
+    .rail .track { width: 2px; height: 120px; background: var(--line-dk); border-radius: 2px; overflow: hidden; justify-self: start; margin-left: 4px; }
+    .rail .track i { display: block; width: 100%; height: 100%; background: var(--violet-lo); transform: scaleY(0); transform-origin: top; }
+    .panels { position: relative; min-height: 62vh; }
+    .panel { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; }
+    .panel h2 { font-family: "Hanken Grotesk", var(--font); font-size: clamp(3.6rem, 13vw, 11rem); font-weight: 200; line-height: 0.94; letter-spacing: -0.02em; position: relative; z-index: 1; }
+    .panel .obj {
+      position: absolute;
+      right: -2%;
+      top: 50%;
+      transform: translateY(-52%);
+      width: min(46%, 560px);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      pointer-events: none;
+      -webkit-mask-image: radial-gradient(ellipse 64% 64% at 50% 50%, black 38%, transparent 82%);
+      mask-image: radial-gradient(ellipse 64% 64% at 50% 50%, black 38%, transparent 82%);
+    }
+    .panel .desc { margin-top: 1.5rem; max-width: 46ch; position: relative; z-index: 1; }
+    .panel .desc .ser { display: block; font-size: clamp(1.2rem, 2.2vw, 1.7rem); color: var(--violet-lo); }
+    .panel .desc p { margin-top: 0.8rem; color: var(--cream-dim); }
+    .ch-icon { width: 44px; height: 44px; fill: var(--gold); margin-bottom: 1.3rem; opacity: 0.95; }
+    .no-motion .panel { position: relative; inset: auto; padding-block: 3.5rem; }
+    .no-motion .chapters .stage { position: static; height: auto; }
+    .no-motion .panels { min-height: 0; }
+
+    /* ---- Services ticker ---- */
+    .ticker { padding-block: clamp(2.6rem, 6vh, 4.2rem); overflow: clip; border-bottom: 1px solid var(--line); }
+    .ticker-row { display: flex; gap: 2.5rem; white-space: nowrap; width: max-content; }
+    .ticker-row span { font-size: clamp(1.4rem, 3.5vw, 2.6rem); font-weight: 500; letter-spacing: -0.02em; display: inline-flex; align-items: center; gap: 2.5rem; }
+    .ticker-row span::after { content: "✳"; color: var(--gold); font-size: 0.7em; }
+    @media (prefers-reduced-motion: no-preference) { .ticker-row { animation: slide 42s linear infinite; } }
+    @keyframes slide { to { transform: translateX(-50%); } }
+
+    /* ---- Selected work ---- */
+    .work { padding-block: clamp(5rem, 12vh, 8.5rem); }
+    .work-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .work-head h2 { font-size: clamp(2.2rem, 4.6vw, 3.9rem); font-weight: 500; }
+    .work-head h2 em { color: var(--violet); }
+    .case { margin-top: clamp(3.5rem, 8vh, 6rem); display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+    .case:nth-of-type(odd) .case-media { order: 2; }
+    .case-media { border-radius: 18px; overflow: clip; aspect-ratio: 4 / 3; background: var(--paper-2); position: relative; }
+    .case-media img { width: 100%; height: 118%; object-fit: cover; will-change: transform; }
+    .case-media .tag { position: absolute; top: 1rem; left: 1rem; z-index: 1; background: rgba(13,10,21,0.72); color: var(--paper); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.4rem 0.85rem; border-radius: 999px; backdrop-filter: blur(6px); }
+    .case-body .kind { color: var(--violet); font-weight: 600; font-size: 0.9rem; }
+    .case-body h3 { margin-top: 0.7rem; font-size: clamp(1.5rem, 2.8vw, 2.2rem); font-weight: 500; line-height: 1.2; }
+    .case-body h3 em { color: var(--violet); }
+    .case-body p { margin-top: 1.1rem; color: var(--ink-soft); }
+    .case-body .feat { margin: 1.4rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.55rem; }
+    .case-body .feat li { display: flex; gap: 0.6rem; color: var(--ink-soft); font-size: 0.97rem; }
+    .case-body .feat b { color: var(--ink); font-weight: 600; }
+    .case-body .feat svg { flex: none; margin-top: 0.35rem; color: var(--violet); }
+
+    /* ---- Stats ---- */
+    .stats { padding-block: clamp(4.5rem, 11vh, 7.5rem); }
+    .stats .lead { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 500; max-width: 20ch; line-height: 1.25; }
+    .stats .lead em { color: var(--violet-lo); }
+    .stat-grid { margin-top: clamp(2.5rem, 6vh, 4rem); display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+    .stat { border-top: 1px solid var(--line-dk); padding-top: 1.3rem; }
+    .stat b { display: block; font-size: clamp(2.6rem, 5.5vw, 4.4rem); font-weight: 400; line-height: 1; font-variant-numeric: tabular-nums; }
+    .stat b.spark { color: var(--gold); }
+    .stat span { display: block; margin-top: 0.7rem; color: var(--cream-dim); font-size: 0.95rem; line-height: 1.4; }
+
+    /* ---- Partner pull-quote ---- */
+    .partner { padding-block: clamp(5rem, 13vh, 9rem); text-align: center; }
+    .partner .badge { display: inline-flex; align-items: center; gap: 0.55rem; border: 1px solid var(--line); border-radius: 999px; padding: 0.45rem 1.1rem; font-size: 0.82rem; font-weight: 600; color: var(--ink-soft); }
+    .partner .badge img { height: 15px; width: 15px; }
+    .partner blockquote { margin: 1.8rem auto 0; max-width: 20ch; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.18; }
+    .partner blockquote b { font-style: normal; font-weight: 300; color: var(--violet); }
+    .partner .arrow-link { color: var(--violet); margin-top: 2rem; justify-content: center; }
+
+    /* ---- Humans strip ---- */
+    .humans { padding-block: clamp(4rem, 10vh, 7rem); border-top: 1px solid var(--line); overflow: clip; }
+    .humans .wrap > p.eyebrow { text-align: center; }
+    .human-row { margin-top: 2.6rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2.5vw, 2rem); align-items: start; }
+    .human-row figure { margin: 0; border-radius: 14px; overflow: clip; aspect-ratio: 4 / 5; }
+    .human-row figure:nth-child(2) { margin-top: 3rem; }
+    .human-row img { width: 100%; height: 116%; object-fit: cover; will-change: transform; }
+    .humans .caption { margin: 2.2rem auto 0; text-align: center; color: var(--ink-soft); max-width: 46ch; }
+    .humans .caption b { color: var(--ink); font-weight: 600; }
+
+    /* ---- Clients ---- */
+    .clients { padding-block: clamp(4rem, 9vh, 6rem); border-top: 1px solid var(--line); text-align: center; }
+    .logo-row { margin-top: 2.4rem; display: flex; justify-content: center; align-items: center; gap: clamp(2.5rem, 7vw, 5.5rem); flex-wrap: wrap; }
+    .logo-row img { height: 28px; }
+    .logo-row .word { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.02em; color: var(--ink); }
+
+    /* ---- CTA ---- */
+    .cta { padding-block: clamp(5.5rem, 14vh, 9rem); }
+    .cta .wrap { display: grid; grid-template-columns: 1fr auto; gap: 2.5rem; align-items: center; }
+    .cta h2 { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 500; line-height: 1.05; max-width: 16ch; }
+    .cta h2 em { color: var(--violet-lo); }
+    .cta small { display: block; margin-top: 1rem; color: var(--cream-dim); font-size: 1rem; }
+    .btn-solid { background: var(--paper); color: var(--ink); text-decoration: none; padding: 1.05rem 2.3rem; border-radius: 999px; font-weight: 600; white-space: nowrap; transition: transform 0.15s var(--ease), background 0.2s; display: inline-block; border: 0; cursor: pointer; font-family: var(--font); font-size: 1rem; }
+    .cta-grid { grid-template-columns: 1fr 1.05fr !important; }
+    #contact-form { display: grid; gap: 1rem; }
+    #contact-form label { display: grid; gap: 0.4rem; font-weight: 600; font-size: 0.92rem; color: var(--cream-dim); }
+    #contact-form .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    #contact-form input, #contact-form textarea {
+      background: rgba(255,255,255,0.05); border: 1px solid var(--line-dk); border-radius: 12px;
+      color: var(--paper); font: 400 1rem/1.4 var(--font); padding: 0.75rem 0.95rem; width: 100%;
+    }
+    #contact-form input:focus-visible, #contact-form textarea:focus-visible { outline: 2px solid var(--violet-lo); outline-offset: 1px; border-color: var(--violet-lo); }
+    #contact-form .btn-solid { justify-self: start; }
+    .f-note { color: var(--cream-dim); font-size: 0.86rem; }
+    @media (max-width: 900px) { .cta-grid { grid-template-columns: 1fr !important; } #contact-form .f-row { grid-template-columns: 1fr; } }
+    .btn-solid:active { transform: scale(0.97); }
+    .btn-solid:hover { background: var(--violet-lo); }
+
+    /* ---- Footer ---- */
+    footer { background: var(--ink-deep); color: var(--paper); padding-block: 3.5rem 2.2rem; border-top: 1px solid var(--line-dk); }
+    .foot { display: flex; justify-content: space-between; gap: 2.5rem; flex-wrap: wrap; }
+    .foot .brand { color: var(--paper); }
+    .foot .cols { display: flex; gap: 4rem; flex-wrap: wrap; }
+    .foot a { display: block; color: var(--cream-dim); text-decoration: none; font-size: 0.94rem; line-height: 2.1; }
+    .foot a:hover { color: var(--paper); }
+    .foot .t { color: var(--paper); font-weight: 600; margin-bottom: 0.3rem; }
+    .legal { margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--line-dk); color: var(--cream-dim); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+
+    /* ---- FAQ ---- */
+    .faq { padding-block: clamp(4rem, 10vh, 7rem); border-top: 1px solid var(--line); }
+    .faq .wrap { max-width: 880px; }
+    .faq .eyebrow { text-align: center; display: block; }
+    .faq-list { margin-top: 2.2rem; }
+    .faq details { border-bottom: 1px solid var(--line); }
+    .faq summary { cursor: pointer; list-style: none; padding: 1.25rem 0; font-weight: 600; font-size: 1.06rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; font-size: 1.35rem; font-weight: 300; color: var(--violet); transition: transform 0.25s var(--ease); flex: none; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { color: var(--ink-soft); padding-bottom: 1.25rem; }
+    @supports (interpolate-size: allow-keywords) {
+      .faq details::details-content { block-size: 0; overflow: clip; interpolate-size: allow-keywords; transition: block-size 300ms var(--ease), content-visibility 300ms allow-discrete; }
+      .faq details[open]::details-content { block-size: auto; }
+      @media (prefers-reduced-motion: reduce) { .faq details::details-content { transition: none; } }
+    }
+
+    /* ---- Generic reveal targets (GSAP sets initial state; static without JS) ---- */
+    .gr { will-change: transform, opacity; }
+
+    @media (min-height: 1400px) {
+      .hero { min-height: 940px; }
+      .chapters .stage { height: auto; position: static; }
+      .no-pin-fallback { display: block; }
+    }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .intro .wrap { grid-template-columns: 1fr; }
+      .intro .lead-label { position: static; }
+      .chapters .stage .wrap { grid-template-columns: 1fr; }
+      .rail { grid-auto-flow: column; justify-content: start; gap: 1.4rem; }
+      .rail .track { display: none; }
+      .panel h2 { font-size: clamp(3rem, 16vw, 5rem); }
+      .panel .obj { width: 78%; right: -18%; opacity: 0.5; }
+      .case, .case:nth-of-type(odd) .case-media { grid-template-columns: 1fr; order: 0; }
+      .case-media { order: -1 !important; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .cta .wrap { grid-template-columns: 1fr; }
+      .human-row figure:nth-child(2) { margin-top: 0; }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div id="top-sentinel" aria-hidden="true"></div>
-
   <nav class="nav" aria-label="Main">
     <div class="wrap">
-      <a class="brand" href="#top" aria-label="Prism Automate home">
-        <svg width="30" height="30" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="pa-ring" x1="10" y1="4" x2="40" y2="44" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#b9aef0"/>
-              <stop offset="1" stop-color="#4a3d9e"/>
-            </linearGradient>
-            <linearGradient id="pa-gold" x1="4" y1="8" x2="34" y2="36" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#d9b077"/>
-              <stop offset="0.65" stop-color="#8a7fd6"/>
-              <stop offset="1" stop-color="#4a3d9e"/>
-            </linearGradient>
-          </defs>
-          <circle cx="24" cy="24" r="18.5" stroke="url(#pa-ring)" stroke-width="5.5" pathLength="100" stroke-dasharray="37 13 37 13" stroke-dashoffset="6"/>
-          <circle cx="24" cy="24" r="11.5" stroke="url(#pa-gold)" stroke-width="5" pathLength="100" stroke-dasharray="40 10 30 20" stroke-dashoffset="58"/>
-        </svg>
-        <span class="brand-name"><span class="b1">Prism</span><span class="b2">Automate</span></span>
-      </a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#solutions">Solutions</a></li>
-        <li><a href="#events">Our work</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#partners">Partners</a></li>
+      <a class="brand" href="#top">Prism<span class="a">Automate</span></a>
+      <ul class="nav-links">
+        <li class="has-mega">
+          <button class="mega-btn" type="button" aria-expanded="false" aria-controls="mega">Services</button>
+        </li>
+        <li><a href="#chapters">What we do</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#partner">Claude</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
-      <a class="btn btn-signal" href="#contact">Work with us</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <path d="M3 6h14M3 10h14M3 14h14"/>
-        </svg>
-      </button>
+      <a class="nav-cta" href="#contact">Start a project</a>
     </div>
   </nav>
 
-  <main id="main">
-    <header class="hero" id="top">
-      <img class="beam" src="assets/ring-hero.png" alt="" aria-hidden="true" />
-      <div class="wrap">
-        <div>
-          <p class="product-tag">
-            <span class="sr-only">AI automation company and Anthropic Claude partner</span>
-            <span class="type-wrap" aria-hidden="true"><span id="type-text">AI Automation Company</span><span class="caret"></span></span>
-          </p>
-          <h1>Turning business into <span class="grad">AI&#8209;powered machines</span>.</h1>
-          <p class="hero-sub">A results-focused automation partner: we build the AI workflows, agents, and event technology that help you scale faster.</p>
-          <div class="hero-ctas">
-            <a class="btn btn-signal" href="#contact">Get a free strategy session</a>
-            <a class="btn btn-ghost" href="#solutions">Explore solutions</a>
-          </div>
-        </div>
-        <div class="hero-ring" aria-hidden="true">
-          <!-- the original site's neon ring render (fits its frame; the glassy one is source-cropped) -->
-          <video src="assets/ring-a.webm" autoplay muted loop playsinline preload="auto"></video>
-        </div>
+  <div class="mega" id="mega" aria-hidden="true">
+    <div class="wrap mega-grid">
+      <div class="mega-lead">
+        <p>The full Claude service catalogue, delivered by one accountable studio.</p>
+        <a class="arrow-link" href="services/">Go to overview
+          <svg width="20" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
       </div>
-    </header>
-
-    <section class="logos" aria-label="Clients">
-      <div class="wrap">
-        <span class="logos-label">Delivered for teams at</span>
-        <span class="logo-item">
-          <img src="https://cdn.simpleicons.org/google/eef0f6" alt="" width="26" height="26" loading="lazy" />
-          <span class="logo-word">Google</span>
-        </span>
-        <span class="logo-item">
-          <span class="logo-word">UNISYS</span>
-        </span>
+      <div class="mega-col">
+        <a class="mega-cat" href="services/">Strategy &amp; Advisory
+          <svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+        <a href="services/ai-strategy-roadmap/">AI Strategy &amp; Roadmap</a>
+        <a href="services/ai-readiness-governance/">AI Readiness &amp; Governance</a>
+        <a href="services/use-case-portfolio/">Use-Case Portfolio &amp; Business Case</a>
       </div>
-    </section>
-
-    <section class="pains" aria-label="The problem">
-      <div class="wrap">
-        <h2>Is This <span class="hl">You?</span></h2>
-        <div class="pain-field">
-          <div class="pain-slot">
-            <p class="pain">You need AI, but don't know where to start</p>
-          </div>
-          <div class="pain-slot">
-            <p class="pain">Your team wants agents, not another pilot</p>
-          </div>
-          <div class="pain-slot">
-            <p class="pain">Rollout stalls after the demo</p>
-          </div>
-          <div class="pain-slot">
-            <p class="pain">Nobody owns AI after launch</p>
-          </div>
-        </div>
+      <div class="mega-col">
+        <a class="mega-cat" href="services/">Build &amp; Engineering
+          <svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+        <a href="services/internal-agentic-platform/">Internal Agentic Platform Build</a>
+        <a href="services/customer-facing-ai-product/">Customer-Facing AI Product Build</a>
+        <a href="services/prototype-poc/">Prototype &amp; Proof of Concept</a>
       </div>
-    </section>
-
-    <section class="platform" id="solutions">
+      <div class="mega-col">
+        <a class="mega-cat" href="services/">Implementation &amp; Deployment
+          <svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+        <a href="services/rollout-activation/">Rollout &amp; Activation</a>
+        <a href="services/industry-accelerator-deployment/">Industry Accelerator Deployment</a>
+        <a href="services/platform-migration-claude/">Platform Migration to Claude</a>
+      </div>
+      <div class="mega-col">
+        <a class="mega-cat" href="services/">Ongoing &amp; Managed
+          <svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+        <a href="services/sustained-adoption-coe/">Sustained Adoption &amp; CoE</a>
+        <a href="services/managed-ai-operations/">Managed AI Operations</a>
+        <a href="services/cowork-claude-code-support/">Cowork &amp; Claude Code Support</a>
+        <a href="services/claude-finops-optimisation/">Claude FinOps Optimisation</a>
+        <a href="services/claude-training-sessions/">Claude Training Sessions</a>
+      </div>
+    </div>
+    <div class="mega-dhq">
       <div class="wrap">
-        <div class="sec-head reveal">
-          <h2>The full Claude <span class="hl">service catalogue</span></h2>
-          <p class="lede">Fourteen recognised services delivered as an Anthropic Claude partner: strategy, build, deployment, and managed operations under one roof.</p>
+        <a href="https://www.designhq.io" rel="noopener" target="_blank">
+          Need branding or design? <b>DesignHQ</b>, our design subscription partner
+          <svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero" id="top">
+    <video id="hero-video" src="assets/ring-b.webm" autoplay muted loop playsinline preload="auto"></video>
+    <div class="wrap" id="hero-inner">
+      <p class="eyebrow">AI Automation Studio · Anthropic Claude Partner</p>
+      <h1>
+        <span class="line"><span>We turn businesses</span></span>
+        <span class="line"><span>into <em>intelligent</em></span></span>
+        <span class="line"><span>machines.</span></span>
+      </h1>
+      <p class="hero-sub">A senior studio that advises, builds, deploys, and runs AI, from the boardroom strategy to the workloads running in production.</p>
+      <a class="arrow-link" href="#contact">Start a project
+        <svg width="24" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+      </a>
+    </div>
+    <div class="hero-foot" aria-hidden="true">
+      <div class="wrap"><span>Bengaluru · Dubai · Sydney</span><span>Est. with Google &amp; Unisys deliveries</span></div>
+    </div>
+  </header>
+
+  <section class="intro" aria-label="What we believe">
+    <div class="wrap">
+      <p class="scrub" id="scrub">
+        Most companies don't need more AI demos. They need one workflow that actually ships, then another, until the business runs <em>on its own intelligence.</em> That is the whole job.
+      </p>
+    </div>
+  </section>
+
+  <section class="chapters" id="chapters">
+    <div class="stage">
+      <div class="wrap">
+        <div class="rail" aria-hidden="true">
+          <span class="num on" data-i="0">01</span>
+          <span class="num" data-i="1">02</span>
+          <span class="num" data-i="2">03</span>
+          <span class="num" data-i="3">04</span>
+          <span class="track"><i id="rail-fill"></i></span>
         </div>
-        <div class="bento">
-          <article class="cell cell-strategy reveal">
-            <h3>Strategy and advisory</h3>
-            <p>Start with the business case, not the hype.</p>
-            <ul class="svc-list">
-              <li>AI Strategy and Roadmap</li>
-              <li>AI Readiness and Governance Assessment</li>
-              <li>Use-Case Portfolio and Business Case</li>
-            </ul>
-          </article>
-          <article class="cell cell-build reveal">
-            <div class="cell-art" aria-hidden="true">
-              <svg viewBox="0 0 400 130" preserveAspectRatio="xMidYMid slice">
-                <g stroke="oklch(100% 0 0 / 0.1)" stroke-width="1.5" fill="none">
-                  <rect x="20" y="18" width="110" height="90" rx="6"/>
-                  <rect x="150" y="18" width="80" height="90" rx="6"/>
-                  <rect x="250" y="18" width="130" height="90" rx="6"/>
-                </g>
-                <path d="M40 120 L40 64 L170 64 L170 40 L300 40" fill="none" stroke="var(--signal)" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 9"/>
-                <circle cx="300" cy="40" r="5" fill="var(--signal)"/>
-              </svg>
+        <div class="panels">
+          <div class="panel" data-panel="0">
+            <img class="obj" src="https://images.unsplash.com/photo-1783250972025-d900660fb9c5?auto=format&fit=crop&w=900&q=75" alt="" aria-hidden="true" loading="lazy" />
+            <svg class="ch-icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="m300-300 280-80 80-280-280 80-80 280Zm180-120q-25 0-42.5-17.5T420-480q0-25 17.5-42.5T480-540q25 0 42.5 17.5T540-480q0 25-17.5 42.5T480-420Zm0 340q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Zm0-320Z"/></svg>
+            <h2>Advise</h2>
+            <div class="desc">
+              <span class="ser">Start with the business case, not the hype.</span>
+              <p>AI strategy and roadmap, readiness and governance assessment, and a use-case portfolio with the numbers behind it.</p>
             </div>
-            <h3>Build and engineering</h3>
-            <ul class="svc-list">
-              <li>Internal Agentic Platform Build</li>
-              <li>Customer-Facing AI Product Build</li>
-              <li>Prototype and Proof-of-Concept Build</li>
-            </ul>
-          </article>
-          <article class="cell cell-deploy reveal">
-            <h3>Implementation and deployment</h3>
-            <ul class="svc-list">
-              <li>Rollout and Activation</li>
-              <li>Industry Solution Accelerator Deployment</li>
-              <li>Platform Migration to Claude</li>
-            </ul>
-          </article>
-          <article class="cell cell-managed reveal">
-            <h3>Ongoing and managed services</h3>
-            <ul class="svc-list two-col">
-              <li>Sustained Adoption and CoE Program</li>
-              <li>Managed AI Operations</li>
-              <li>Cowork and Claude Code Support</li>
-              <li>Claude Consumption and FinOps Optimisation</li>
-              <li>Claude Training Sessions</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="how" id="process">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <h2>From audit to launch in <span class="hl">three steps</span></h2>
-        </div>
-        <div class="steps">
-          <div class="step reveal">
-            <h3>Audit and strategy</h3>
-            <p>We map your workflows, venues, and bottlenecks, then scope the first automation with a clear return-on-investment case.</p>
           </div>
-          <div class="step reveal">
-            <h3>Build and integrate</h3>
-            <p>Our team ships the agents, apps, and integrations, wired into the tools you already use. No rip-and-replace.</p>
+          <div class="panel" data-panel="1">
+            <img class="obj" src="https://images.unsplash.com/photo-1743398665751-2cd5d3cc9d46?auto=format&fit=crop&w=900&q=75" alt="" aria-hidden="true" loading="lazy" />
+            <svg class="ch-icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="M440-183v-274L200-596v274l240 139Zm80 0 240-139v-274L520-457v274Zm-40-343 237-137-237-137-237 137 237 137ZM160-252q-19-11-29.5-29T120-321v-318q0-22 10.5-40t29.5-29l280-161q19-11 40-11t40 11l280 161q19 11 29.5 29t10.5 40v318q0 22-10.5 40T800-252L520-91q-19 11-40 11t-40-11L160-252Zm320-228Z"/></svg>
+            <h2>Build</h2>
+            <div class="desc">
+              <span class="ser">Agents that reach production, not another pilot.</span>
+              <p>Internal agentic platforms, customer-facing AI products, and proofs of concept, engineered on Claude and wired into your stack.</p>
+            </div>
           </div>
-          <div class="step reveal">
-            <h3>Launch and support</h3>
-            <p>We go live together, train your team, and stay on for tuning, new automations, and event-day support.</p>
+          <div class="panel" data-panel="2">
+            <img class="obj" src="https://images.unsplash.com/photo-1775656926048-16743f9a6c7a?auto=format&fit=crop&w=900&q=75" alt="" aria-hidden="true" loading="lazy" />
+            <svg class="ch-icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="m226-559 78 33q14-28 29-54t33-52l-56-11-84 84Zm142 83 114 113q42-16 90-49t90-75q70-70 109.5-155.5T806-800q-72-5-158 34.5T492-656q-42 42-75 90t-49 90Zm155-121.5q0-33.5 23-56.5t57-23q34 0 57 23t23 56.5q0 33.5-23 56.5t-57 23q-34 0-57-23t-23-56.5ZM565-220l84-84-11-56q-26 18-52 32.5T532-299l33 79Zm313-653q19 121-23.5 235.5T708-419l20 99q4 20-2 39t-20 33L538-80l-84-197-171-171-197-84 167-168q14-14 33.5-20t39.5-2l99 20q104-104 218-147t235-24ZM157-321q35-35 85.5-35.5T328-322q35 35 34.5 85.5T327-151q-25 25-83.5 43T82-76q14-103 32-161.5t43-83.5Zm57 56q-10 10-20 36.5T180-175q27-4 53.5-13.5T270-208q12-12 13-29t-11-29q-12-12-29-11.5T214-265Z"/></svg>
+            <h2>Deploy</h2>
+            <div class="desc">
+              <span class="ser">Rollout that survives the demo.</span>
+              <p>Activation and enablement, industry accelerator deployment, and contracted migration of workloads onto Claude.</p>
+            </div>
+          </div>
+          <div class="panel" data-panel="3">
+            <img class="obj" src="https://images.unsplash.com/photo-1771599940657-f9f151abed45?auto=format&fit=crop&w=900&q=75" alt="" aria-hidden="true" loading="lazy" />
+            <svg class="ch-icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="M120-120v-80l80-80v160h-80Zm160 0v-240l80-80v320h-80Zm160 0v-320l80 81v239h-80Zm160 0v-239l80-80v319h-80Zm160 0v-400l80-80v480h-80ZM120-327v-113l280-280 160 160 280-280v113L560-447 400-607 120-327Z"/></svg>
+            <h2>Run</h2>
+            <div class="desc">
+              <span class="ser">Someone owns it after launch.</span>
+              <p>Managed AI operations under SLAs, Claude FinOps and consumption tuning, plus Cowork and Claude Code enablement.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="claude-band" id="claude" aria-label="Anthropic Claude partnership">
-      <div class="wrap">
-        <div class="claude-card reveal">
-          <div class="claude-copy">
-            <span class="partner-badge">
-              <img src="https://cdn.simpleicons.org/anthropic/eef0f6" alt="" width="16" height="16" loading="lazy" />
-              Claude Partner · Anthropic affiliate program
-            </span>
-            <h2>Your partner for <span class="hl">everything Claude</span></h2>
-            <p class="lede">We sell, deploy, and operate Claude across the enterprise: from the first roadmap to production workloads running under SLAs.</p>
-            <ul class="ai-list">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg>
-                <span><strong>Migrations to Claude.</strong> Contracted moves of workloads from other models and providers, without breaking production.</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg>
-                <span><strong>Claude Code and Cowork enablement.</strong> Structured training plus tier-1/2 support for your builder teams.</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg>
-                <span><strong>Claude FinOps.</strong> Model selection, caching, and rightsizing so consumption stays efficient as usage grows.</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg>
-                <span><strong>Industry accelerators.</strong> Pre-built, industry-specific Claude solutions deployed into your environment.</span>
-              </li>
-            </ul>
-            <a class="btn btn-ghost" href="#solutions">See all fourteen services</a>
-          </div>
-          <div class="claude-mark" aria-hidden="true">
-            <img src="https://cdn.simpleicons.org/anthropic/a89ef1" alt="" loading="lazy" />
-          </div>
-        </div>
+  <section class="ticker" aria-hidden="true">
+    <div class="ticker-row">
+      <span>AI Strategy &amp; Roadmap</span><span>Agentic Platforms</span><span>AI Products</span><span>Migration to Claude</span><span>Managed Operations</span><span>FinOps</span><span>Event Navigation</span><span>Virtual Try-On</span>
+      <span>AI Strategy &amp; Roadmap</span><span>Agentic Platforms</span><span>AI Products</span><span>Migration to Claude</span><span>Managed Operations</span><span>FinOps</span><span>Event Navigation</span><span>Virtual Try-On</span>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="work-head gr">
+        <h2>Built, shipped, <em>running live.</em></h2>
+        <p class="eyebrow">Selected work</p>
       </div>
-    </section>
 
-    <section class="ai" id="events">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <h2>Built, shipped, and <span class="hl">running live</span></h2>
-          <p class="lede">Service solutions we've developed and executed end to end, from event floors to retail checkouts.</p>
+      <article class="case">
+        <div class="case-media">
+          <span class="tag">Events · Bengaluru</span>
+          <!-- TODO: swap for real Prism Events app screenshots from the UIP 17 build -->
+          <img data-parallax src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1100&q=80" alt="Delegates at a large corporate innovation summit, the kind Prism Events guides" loading="lazy" />
         </div>
-        <h3 class="work-title reveal">Prism Events · Virtual Positioning System</h3>
-        <div class="ai-grid">
-        <div class="map-shell reveal" role="img" aria-label="Live venue map showing a highlighted walking route from an attendee's position to the main stage, with an arrival estimate of four minutes.">
-          <svg viewBox="0 0 560 430" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect width="560" height="430" fill="oklch(17% 0.014 300)"/>
-            <g stroke="oklch(100% 0 0 / 0.13)" stroke-width="1.5" fill="oklch(100% 0 0 / 0.03)">
-              <rect x="36" y="34" width="200" height="128" rx="8"/>
-              <rect x="262" y="34" width="118" height="128" rx="8"/>
-              <rect x="406" y="34" width="118" height="200" rx="8"/>
-              <rect x="36" y="192" width="118" height="112" rx="8"/>
-              <rect x="180" y="192" width="200" height="112" rx="8"/>
-              <rect x="36" y="334" width="344" height="62" rx="8"/>
-              <rect x="406" y="264" width="118" height="132" rx="8"/>
-            </g>
-            <g fill="oklch(70% 0.01 300)" font-size="11" font-weight="600" letter-spacing="1.5" font-family="Plus Jakarta Sans, sans-serif">
-              <text x="52" y="58">HALL A</text>
-              <text x="278" y="58">HALL B</text>
-              <text x="422" y="58">MAIN STAGE</text>
-              <text x="52" y="216">LABS</text>
-              <text x="196" y="216">EXPO FLOOR</text>
-              <text x="126" y="358">REGISTRATION</text>
-              <text x="422" y="288">FOOD COURT</text>
-            </g>
-            <g fill="oklch(60% 0.01 300)">
-              <circle cx="120" cy="110" r="3.5"/>
-              <circle cx="320" cy="120" r="3.5"/>
-              <circle cx="230" cy="250" r="3.5"/>
-              <circle cx="330" cy="270" r="3.5"/>
-              <circle cx="450" cy="330" r="3.5"/>
-              <circle cx="150" cy="365" r="3.5"/>
-            </g>
-            <path class="route-path" d="M96 365 L96 322 L167 322 L167 178 L292 178 L292 148 L392 148 L392 120 L438 120"
-              fill="none" stroke="var(--signal)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 10"/>
-            <g>
-              <circle class="pin-pulse" cx="96" cy="365" r="9" fill="var(--signal)"/>
-              <circle cx="96" cy="365" r="6" fill="var(--signal)" stroke="oklch(17% 0.014 300)" stroke-width="2.5"/>
-            </g>
-            <g class="dest-marker">
-              <path d="M438 100 c-8 0-14 6-14 14 0 10 14 22 14 22 s14-12 14-22 c0-8-6-14-14-14z" fill="var(--signal)"/>
-              <circle cx="438" cy="114" r="5" fill="oklch(17% 0.014 300)"/>
-            </g>
-            <g class="eta-pill">
-              <rect x="352" y="380" width="184" height="34" rx="17" fill="oklch(23% 0.02 300)" stroke="oklch(100% 0 0 / 0.16)"/>
-              <text x="370" y="402" fill="oklch(94% 0.005 300)" font-size="13" font-weight="600" font-family="Plus Jakarta Sans, sans-serif">Main Stage · 4 min walk</text>
-            </g>
-          </svg>
+        <div class="case-body gr">
+          <span class="kind">Prism Events</span>
+          <h3>The companion app for the <em>Unisys Innovation Program</em></h3>
+          <p>For UIP Y17 2026 at RGA Tech Park, Bengaluru, we shipped the full event companion: a personalised home, a live agenda, wayfinding, and a shared photo archive, white-labelled to the event's own brand.</p>
+          <ul class="feat">
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg><span><b>Live agenda</b> with per-session speakers, venues, and real-time "Updated" changes attendees can save.</span></li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg><span><b>AR Video Map wayfinder</b> so nobody has to ask where the next room is.</span></li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg><span><b>Day-by-day photo galleries</b>, hundreds of images, browsable and downloadable on the spot.</span></li>
+          </ul>
         </div>
-          <div class="ai-copy reveal">
-            <span class="partner-badge">
-              <img src="https://cdn.simpleicons.org/anthropic/eef0f6" alt="" width="16" height="16" loading="lazy" />
-              Claude Partner · Anthropic affiliate program
-            </span>
-            <h3>Turn-by-turn navigation, plus an AI concierge that knows the floor plan</h3>
-            <p class="lede">Attendees follow a live route to any booth, seat, or session, and a concierge built on Claude answers the questions your info desk hears a thousand times a day.</p>
-            <ul class="ai-list">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg>
-                <span><strong>Blue-dot indoor navigation</strong> that keeps working where GPS gives up: basements, steel halls, saturated Wi-Fi.</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg>
-                <span><strong>Schedule-aware.</strong> It knows the keynote moved rooms and walks each attendee to the new one.</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg>
-                <span><strong>Live crowd flow</strong> for organizers: density heatmaps, targeted announcements, and rerouting around closures.</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+      </article>
 
-        <h3 class="work-title work-title-gap reveal">Virtual try-on for retail</h3>
-        <div class="ai-grid">
-          <div class="ai-copy reveal">
-            <h3>Shoppers try it on before they buy it</h3>
-            <p class="lede">A virtual try-on module we developed and executed for retail: shoppers preview apparel on themselves straight from the product page.</p>
-            <ul class="ai-list">
-              <li>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg>
-                <span><strong>AI garment mapping</strong> renders fit, drape, and color on the shopper's own photo.</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg>
-                <span><strong>Runs in the browser.</strong> No app install, drops into any storefront.</span>
-              </li>
-              <li>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg>
-                <span><strong>Fewer returns,</strong> more confident checkouts for the retailer.</span>
-              </li>
-            </ul>
-          </div>
-          <div class="work-visual reveal">
-            <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=80" alt="Fashion shopper layering a red tee under a black jacket, the kind of outfit the try-on module previews in the browser" loading="lazy" />
-          </div>
+      <article class="case">
+        <div class="case-media">
+          <span class="tag">Retail</span>
+          <img data-parallax src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1100&q=80" alt="A shopper layering a bright top under a jacket, the kind of look the try-on previews" loading="lazy" />
         </div>
+        <div class="case-body gr">
+          <span class="kind">Virtual try-on</span>
+          <h3>Shoppers see it on <em>themselves</em> before they buy</h3>
+          <p>A browser-based try-on module we developed and executed for retail, rendering fit, drape, and colour on the shopper's own photo, straight from the product page.</p>
+          <ul class="feat">
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg><span><b>No app install</b>, drops into any storefront.</span></li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg><span><b>Fewer returns</b>, more confident checkouts.</span></li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="stats dark" aria-label="By the numbers">
+    <div class="wrap">
+      <p class="lead gr">A small studio with a <em>full</em> service surface.</p>
+      <div class="stat-grid">
+        <div class="stat gr"><b><span data-count="14">14</span></b><span>Recognised Claude services</span></div>
+        <div class="stat gr"><b><span data-count="2">2</span></b><span>Products shipped and live</span></div>
+        <div class="stat gr"><b><span data-count="3">3</span></b><span>Regions: India, the GCC, Australia</span></div>
+        <div class="stat gr"><b class="spark"><span data-count="1">1</span></b><span>Senior team that owns the outcome</span></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="trust" aria-label="Why top brands trust us">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <h2>Why top brands <span class="hl">trust us</span></h2>
-        </div>
-        <div class="trust-grid">
-          <div class="trust-item reveal">
-            <span class="t-label"><i>[</i> Proven delivery <i>]</i></span>
-            <h3>Shipped for Google and Unisys</h3>
-            <p>Real deployments for two of the most demanding technology organisations on earth, on live show floors and in production.</p>
-          </div>
-          <div class="trust-item reveal">
-            <span class="t-label"><i>[</i> Partner-level Claude <i>]</i></span>
-            <h3>An Anthropic affiliate partner</h3>
-            <p>Fourteen recognised Claude services under one roof, from the first roadmap to workloads running under SLAs.</p>
-          </div>
-          <div class="trust-item reveal">
-            <span class="t-label"><i>[</i> Your stack, kept <i>]</i></span>
-            <h3>No rip-and-replace</h3>
-            <p>Everything we ship plugs into the CRMs, ERPs, help desks, and event platforms your team already runs.</p>
-          </div>
-          <div class="trust-item reveal">
-            <span class="t-label"><i>[</i> Beyond go-live <i>]</i></span>
-            <h3>Owned in production</h3>
-            <p>Managed operations, FinOps, and training keep every automation accountable long after launch day.</p>
-          </div>
-        </div>
+  <section class="partner" id="partner">
+    <div class="wrap gr">
+      <span class="badge">
+        <img src="https://cdn.simpleicons.org/anthropic/6b6579" alt="" width="15" height="15" loading="lazy" />
+        Anthropic Claude Partner
+      </span>
+      <blockquote>Your partner for <b>everything Claude</b>, from the first roadmap to the last invoice.</blockquote>
+      <a class="arrow-link" href="services/">Explore all fourteen services
+        <svg width="20" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="humans" aria-label="The team">
+    <div class="wrap">
+      <p class="eyebrow">The humans behind it</p>
+      <div class="human-row">
+        <!-- TODO: replace with real photos of Dharam Vir, Arun, and Varad at work -->
+        <figure><img data-drift="-8" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" alt="Two colleagues working through a problem at a whiteboard" loading="lazy" /></figure>
+        <figure><img data-drift="10" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="The team gathered around one laptop, mid-debate" loading="lazy" /></figure>
+        <figure><img data-drift="-6" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="A late working session over coffee and sticky notes" loading="lazy" /></figure>
       </div>
-    </section>
+      <p class="caption"><b>Dharam Vir Singh</b> (Founder), <b>Arun Kumar</b> (Partner, Delivery), and <b>Varad Joshi</b> (Partner, Engineering). You talk to the people who build.</p>
+    </div>
+  </section>
 
-    <section class="tech" id="stack" aria-label="Technology stack">
-      <div class="wrap">
-        <div class="sec-head centered reveal">
-          <h2>Our tech <span class="hl">stack</span></h2>
-        </div>
-        <div class="deck">
-          <div class="tcard" style="--i: -2">
-            <img src="https://cdn.simpleicons.org/python/eef0f6" alt="Python" loading="lazy" />
-            <span>Python</span>
-          </div>
-          <div class="tcard" style="--i: -1">
-            <img src="https://cdn.simpleicons.org/langchain/eef0f6" alt="LangChain" loading="lazy" />
-            <span>LangChain</span>
-          </div>
-          <div class="tcard" style="--i: 0">
-            <img src="https://cdn.simpleicons.org/anthropic/eef0f6" alt="Claude by Anthropic" loading="lazy" />
-            <span>Claude</span>
-          </div>
-          <div class="tcard" style="--i: 1">
-            <img src="https://cdn.simpleicons.org/zapier/eef0f6" alt="Zapier" loading="lazy" />
-            <span>Zapier</span>
-          </div>
-          <div class="tcard" style="--i: 2">
-            <img src="https://cdn.simpleicons.org/airtable/eef0f6" alt="Airtable" loading="lazy" />
-            <span>Airtable</span>
-          </div>
-        </div>
+  <section class="clients">
+    <div class="wrap">
+      <p class="eyebrow">Delivered for teams at</p>
+      <div class="logo-row">
+        <img src="https://cdn.simpleicons.org/google/16121f" alt="Google" loading="lazy" />
+        <span class="word">UNISYS</span>
+        <img src="https://cdn.simpleicons.org/anthropic/16121f" alt="Anthropic" loading="lazy" />
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="quote-band" aria-label="Client result">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <h2>What our <span class="hl">clients say</span></h2>
-        </div>
-        <!-- Placeholder quote: replace with an approved client quote before launch -->
-        <blockquote class="reveal">"The first event where <strong>nobody radioed ops</strong> to ask where anything was. Attendees <strong>just followed the dot</strong>."</blockquote>
-        <p class="quote-attr reveal"><span class="dotmark" aria-hidden="true"></span><span><strong>Event operations lead</strong> Global technology summit, 12,000 attendees</span></p>
-      </div>
-    </section>
-
-    <section class="team" aria-label="The team">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <h2>Meet the <span class="hl">experts</span></h2>
-          <p class="lede">A small senior team. You talk to the people who build, not to account managers.</p>
-        </div>
-        <div class="team-grid">
-          <!-- TODO: replace initials tiles with real portraits of Dharam Vir, Arun, and Varad when provided -->
-          <div class="member reveal">
-            <div class="avatar av-1"><span>DS</span></div>
-            <h3>Dharam Vir Singh</h3>
-            <p>Founder</p>
-          </div>
-          <div class="member reveal">
-            <div class="avatar av-2"><span>AK</span></div>
-            <h3>Arun Kumar</h3>
-            <p>Partner, Delivery</p>
-          </div>
-          <div class="member reveal">
-            <div class="avatar av-3"><span>VJ</span></div>
-            <h3>Varad Joshi</h3>
-            <p>Partner, Engineering</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="partners" id="partners">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <h2>Part of the Prism <span class="hl">partner network</span></h2>
-          <p class="lede">Prism Automate builds alongside a group that designs, engineers, and markets digital products end to end.</p>
-        </div>
-        <div class="partner-grid">
-          <a class="partner-card reveal" href="https://www.prismscale.com" rel="noopener" target="_blank">
-            <h3>PrismScale</h3>
-            <p>Strategy, marketing, and engineering under one roof. The group behind Marketing HQ, Design HQ, and Tech HQ.</p>
-            <span class="visit">prismscale.com</span>
-          </a>
-          <a class="partner-card reveal" href="https://www.designhq.io" rel="noopener" target="_blank">
-            <h3>DesignHQ</h3>
-            <p>The design subscription trusted by Amazon, Accenture, and Air India Express. Every visual asset your event needs, in 24 hours.</p>
-            <span class="visit">designhq.io</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="faq" id="faq">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <h2>Questions <span class="hl">clients ask</span></h2>
-        </div>
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <p class="eyebrow">Questions clients ask</p>
+      <div class="faq-list">
         <details>
           <summary>What does an AI automation company actually build?</summary>
           <p>The full Claude service catalogue: strategy and advisory, agentic platform and product builds, rollout and migration, plus managed operations and training. On top of that we ship complete solutions, like Prism Events for indoor event navigation and a virtual try-on module for retail.</p>
@@ -588,117 +711,242 @@
           <p>Project-based for defined builds, retainer for ongoing automation programs, and per-event pricing for Prism Events deployments. Every engagement starts with a free strategy session and a scoped quote.</p>
         </details>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="contact" id="contact">
-      <div class="wrap">
-        <div class="contact-copy reveal">
-          <h2>Ready to automate <span class="hl">your business?</span></h2>
-          <p class="lede">Tell us what slows your team down. A real person, usually Arun, replies within one business day with a scoped plan, and a live venue demo if it's an event.</p>
-          <ul class="contact-points">
-            <li>
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg>
-              A workflow audit with quick wins identified
-            </li>
-            <li>
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg>
-              A scoped plan with honest timelines
-            </li>
-            <li>
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M5.5 11.2 1.8 7.5l1.4-1.4 2.3 2.3 5.3-5.3 1.4 1.4z"/></svg>
-              Pricing matched to your project or event
-            </li>
-          </ul>
-          <p class="contact-loc">Based in Bengaluru, working across Dubai, the GCC, and Australia.</p>
-          <img class="contact-photo" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="The team gathered around one laptop, arguing about a workflow diagram in the best way" loading="lazy" />
-        </div>
-        <!-- TODO: wire the form to a backend (Formspree, edge function, or CRM). Currently opens a prefilled email. -->
-        <form id="demo-form" novalidate>
-          <div class="field-row">
-            <div class="field">
-              <label for="f-name">Name</label>
-              <input id="f-name" name="name" type="text" autocomplete="name" required />
-            </div>
-            <div class="field">
-              <label for="f-email">Work email</label>
-              <input id="f-email" name="email" type="email" autocomplete="email" required />
-            </div>
-          </div>
-          <div class="field">
-            <label for="f-company">Company or event</label>
-            <input id="f-company" name="company" type="text" placeholder="e.g. logistics firm, 200 staff, or annual summit, 3 halls" />
-          </div>
-          <div class="field">
-            <label for="f-msg">What should we automate or improve?</label>
-            <textarea id="f-msg" name="message" rows="4"></textarea>
-          </div>
-          <button class="btn btn-signal" type="submit">Get a free strategy session</button>
-          <p class="form-note" id="form-note">We reply within one business day.</p>
-        </form>
+  <section class="cta dark" id="contact">
+    <div class="wrap cta-grid">
+      <div class="gr">
+        <h2>Let's build your <em>AI core.</em></h2>
+        <small>Tell us what slows your team down. A real person, usually Arun, replies within one business day. Bengaluru · Dubai · Sydney.</small>
       </div>
-    </section>
-  </main>
+      <!-- TODO: wire to a real backend; currently opens a prefilled email -->
+      <form id="contact-form" class="gr" novalidate>
+        <div class="f-row">
+          <label>Name<input name="name" type="text" autocomplete="name" required /></label>
+          <label>Work email<input name="email" type="email" autocomplete="email" required /></label>
+        </div>
+        <label>What should we automate or improve?<textarea name="message" rows="4"></textarea></label>
+        <button class="btn-solid" type="submit">Start a project</button>
+        <p class="f-note" id="f-note">We reply within one business day.</p>
+      </form>
+    </div>
+  </section>
 
   <footer>
     <div class="wrap">
-      <div class="foot-grid">
-        <div class="foot-brand">
-          <a class="brand" href="#top">
-            <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <defs>
-                <linearGradient id="pa-ring-f" x1="10" y1="4" x2="40" y2="44" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="#b9aef0"/>
-                  <stop offset="1" stop-color="#4a3d9e"/>
-                </linearGradient>
-                <linearGradient id="pa-gold-f" x1="4" y1="8" x2="34" y2="36" gradientUnits="userSpaceOnUse">
-                  <stop offset="0" stop-color="#d9b077"/>
-                  <stop offset="0.65" stop-color="#8a7fd6"/>
-                  <stop offset="1" stop-color="#4a3d9e"/>
-                </linearGradient>
-              </defs>
-              <circle cx="24" cy="24" r="18.5" stroke="url(#pa-ring-f)" stroke-width="5.5" pathLength="100" stroke-dasharray="37 13 37 13" stroke-dashoffset="6"/>
-              <circle cx="24" cy="24" r="11.5" stroke="url(#pa-gold-f)" stroke-width="5" pathLength="100" stroke-dasharray="40 10 30 20" stroke-dashoffset="58"/>
-            </svg>
-            <span class="brand-name"><span class="b1">Prism</span><span class="b2">Automate</span></span>
-          </a>
-          <p>AI automation company. Builders of Prism Events, the Virtual Positioning System for event spaces. A Prism partner network company and Anthropic Claude affiliate partner.</p>
-          <!-- TODO: confirm the real inbox before launch -->
-          <a class="foot-email" href="mailto:hello@prismautomate.com">hello@prismautomate.com</a>
-        </div>
-        <ul class="foot-links">
-          <li>
-            <span class="col-title">Company</span>
-            <a href="#solutions">Solutions</a>
-            <a href="#events">Our work</a>
-            <a href="#process">Process</a>
-          </li>
-          <li>
-            <span class="col-title">More</span>
-            <a href="#partners">Partners</a>
-            <a href="#faq">FAQ</a>
+      <div class="foot">
+        <a class="brand" href="#top">Prism<span class="a">Automate</span></a>
+        <div class="cols">
+          <div>
+            <span class="t">Studio</span>
+            <a href="#chapters">What we do</a>
+            <a href="#work">Work</a>
             <a href="#contact">Contact</a>
-          </li>
-          <li>
-            <span class="col-title">Network</span>
+          </div>
+          <div>
+            <span class="t">Network</span>
             <a href="https://www.prismscale.com" rel="noopener" target="_blank">PrismScale</a>
             <a href="https://www.designhq.io" rel="noopener" target="_blank">DesignHQ</a>
-          </li>
-        </ul>
+          </div>
+          <div>
+            <span class="t">More</span>
+            <a href="services/">All services</a>
+            <a href="classic/">Classic design</a>
+          </div>
+        </div>
       </div>
-      <div class="foot-legal">
-        <span>&copy; 2026 Prism Automate. All rights reserved.</span>
+      <div class="legal">
+        <span>Prism Automate © 2026</span>
         <span>Bengaluru · Dubai · Sydney</span>
-        <span>Google and Unisys are trademarks of their respective owners.</span>
-      </div>
-      <div class="watermark" aria-hidden="true">
-        <div class="wm-text">Prism</div>
-        <!-- the original site's neon ring render -->
-        <video class="wm-ring" src="assets/ring-a.webm" muted loop playsinline preload="none"></video>
       </div>
     </div>
   </footer>
 
   <script src="assets/lenis.min.js" defer></script>
-  <script src="app.js" defer></script>
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Services mega menu: hover on fine pointers, click everywhere, Escape closes.
+    const mega = document.getElementById('mega');
+    const megaBtn = document.querySelector('.mega-btn');
+    const megaLi = document.querySelector('.has-mega');
+    let megaOpen = false;
+    const setMega = open => {
+      megaOpen = open;
+      mega.classList.toggle('open', open);
+      mega.setAttribute('aria-hidden', String(!open));
+      megaBtn.setAttribute('aria-expanded', String(open));
+      document.querySelector('.nav').classList.toggle('is-solid', open || !heroInView);
+      if (window.__lenis) { open ? window.__lenis.stop() : window.__lenis.start(); }
+    };
+    megaBtn.addEventListener('click', () => setMega(!megaOpen));
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      let closeTimer;
+      [megaLi, mega].forEach(el => {
+        el.addEventListener('mouseenter', () => { clearTimeout(closeTimer); setMega(true); });
+        el.addEventListener('mouseleave', () => { closeTimer = setTimeout(() => setMega(false), 180); });
+      });
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && megaOpen) setMega(false); });
+    mega.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMega(false)));
+
+    // Nav goes solid after the hero.
+    const nav = document.querySelector('.nav');
+    const sentinel = document.createElement('div');
+    Object.assign(sentinel.style, { position: 'absolute', top: '0', height: '70vh', width: '1px', pointerEvents: 'none' });
+    document.body.appendChild(sentinel);
+    let heroInView = true;
+    new IntersectionObserver(([e]) => {
+      heroInView = e.isIntersecting;
+      nav.classList.toggle('is-solid', !heroInView || megaOpen);
+    }).observe(sentinel);
+
+    // Contact form: mailto fallback until a backend is wired.
+    const cform = document.getElementById('contact-form');
+    if (cform) {
+      cform.addEventListener('submit', e => {
+        e.preventDefault();
+        const note = document.getElementById('f-note');
+        const name = cform.name.value.trim(), email = cform.email.value.trim();
+        if (!name || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+          note.textContent = 'Please add your name and a valid work email.';
+          note.style.color = '#a89ef1';
+          return;
+        }
+        const body = `Name: ${name}\nEmail: ${email}\n\n${cform.message.value.trim()}`;
+        location.href = `mailto:hello@prismscale.com?subject=${encodeURIComponent('Project enquiry: ' + name)}&body=${encodeURIComponent(body)}`;
+        note.textContent = 'Your email draft is ready to send. We reply within one business day.';
+        note.style.color = '';
+      });
+    }
+
+    if (reduce || typeof gsap === 'undefined') {
+      document.documentElement.classList.add('no-motion');
+      document.querySelectorAll('video').forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
+      return; // fully static page: everything already visible in the markup
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Lenis drives the scroll; ScrollTrigger listens to it (the WAC recipe).
+    document.documentElement.classList.add('inertia-scroll');
+    const lenis = window.__lenis = new Lenis({
+      duration: 1.2,
+      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      touchMultiplier: 2
+    });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        lenis.scrollTo(target, { offset: 0, duration: 1.3 });
+      });
+    });
+
+    // Hero: lines rise on load; content parallaxes away on scroll; video breathes.
+    gsap.from('.hero h1 .line > span', { yPercent: 110, duration: 1.1, ease: 'power4.out', stagger: 0.09, delay: 0.15 });
+    gsap.from('.hero .eyebrow, .hero-sub, .hero .arrow-link, .hero-foot', { autoAlpha: 0, y: 24, duration: 0.9, ease: 'power3.out', stagger: 0.08, delay: 0.5 });
+    gsap.to('#hero-inner', {
+      yPercent: 22, autoAlpha: 0.1, ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.6 }
+    });
+    gsap.fromTo('#hero-video', { scale: 1 }, {
+      scale: 1.1, ease: 'none',
+      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.8 }
+    });
+
+    // Manifesto: words brighten one by one, scrubbed.
+    const scrubEl = document.getElementById('scrub');
+    const walker = document.createTreeWalker(scrubEl, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+    textNodes.forEach(node => {
+      const frag = document.createDocumentFragment();
+      node.textContent.split(/(\s+)/).forEach(part => {
+        if (/^\s+$/.test(part) || part === '') { frag.appendChild(document.createTextNode(part)); return; }
+        const s = document.createElement('span');
+        s.className = 'word';
+        s.textContent = part;
+        frag.appendChild(s);
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+    const words = gsap.utils.toArray('#scrub .word');
+    gsap.set(words, { color: (i, el) => (el.closest('em') ? 'rgba(168,158,241,0.28)' : 'rgba(241,240,246,0.2)') });
+    gsap.to(words, {
+      color: i => (words[i].closest('em') ? '#a89ef1' : '#f1f0f6'),
+      stagger: 0.06, ease: 'none',
+      scrollTrigger: { trigger: '.intro', start: 'top top', end: '+=160%', pin: true, scrub: 0.4 }
+    });
+
+    // Pinned chapters: the WAC pin-and-swap, with Prism's own left rail.
+    const panels = gsap.utils.toArray('.panel');
+    const nums = gsap.utils.toArray('.rail .num');
+    gsap.set(panels.slice(1), { autoAlpha: 0, y: 80 });
+    const chTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.chapters', start: 'top top', end: '+=' + (panels.length * 90) + '%',
+        pin: '.chapters .stage', scrub: 0.6, pinSpacing: true,
+        onUpdate: self => {
+          const idx = Math.min(panels.length - 1, Math.floor(self.progress * panels.length));
+          nums.forEach((n, i) => n.classList.toggle('on', i === idx));
+        }
+      }
+    });
+    panels.forEach((p, i) => {
+      if (i === 0) return;
+      chTl.to(panels[i - 1], { autoAlpha: 0, y: -80, duration: 1, ease: 'power2.in' }, (i - 1) + 0.15)
+          .to(p, { autoAlpha: 1, y: 0, duration: 1, ease: 'power2.out' }, (i - 1) + 0.55);
+    });
+    gsap.to('#rail-fill', {
+      scaleY: 1, ease: 'none',
+      scrollTrigger: { trigger: '.chapters', start: 'top top', end: '+=' + (panels.length * 90) + '%', scrub: 0.6 }
+    });
+
+    // Case media parallax + soft reveals.
+    document.querySelectorAll('[data-parallax]').forEach(img => {
+      gsap.fromTo(img, { yPercent: -9 }, {
+        yPercent: 9, ease: 'none',
+        scrollTrigger: { trigger: img.closest('.case-media'), start: 'top bottom', end: 'bottom top', scrub: 0.8 }
+      });
+    });
+    gsap.utils.toArray('.gr').forEach(el => {
+      gsap.from(el, {
+        autoAlpha: 0, y: 44, duration: 1, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 82%', once: true }
+      });
+    });
+
+    // Stats count up once.
+    document.querySelectorAll('[data-count]').forEach(el => {
+      const target = parseInt(el.dataset.count, 10);
+      const obj = { v: 0 };
+      ScrollTrigger.create({
+        trigger: el, start: 'top 85%', once: true,
+        onEnter: () => gsap.to(obj, {
+          v: target, duration: 1.4, ease: 'power2.out',
+          onUpdate: () => { el.textContent = Math.round(obj.v); }
+        })
+      });
+    });
+
+    // Humans strip: photos drift at different speeds.
+    document.querySelectorAll('[data-drift]').forEach(img => {
+      gsap.fromTo(img, { yPercent: parseFloat(img.dataset.drift) }, {
+        yPercent: -parseFloat(img.dataset.drift), ease: 'none',
+        scrollTrigger: { trigger: img.closest('.human-row'), start: 'top bottom', end: 'bottom top', scrub: 0.9 }
+      });
+    });
+  });
+  </script>
 </body>
 </html>
