@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178 62" width="178" height="62">
+  <g transform="translate(6,7) scale(1.05)"><circle cx="24" cy="24" r="18.5" stroke="#ffffff" stroke-width="5.5" fill="none" pathLength="100" stroke-dasharray="37 13 37 13" stroke-dashoffset="6"/>
+  <circle cx="24" cy="24" r="11.5" stroke="#ffffff" stroke-width="5" fill="none" pathLength="100" stroke-dasharray="40 10 30 20" stroke-dashoffset="58"/></g>
+  <text x="66" y="27" font-family="Audiowide, Familjen Grotesk, Arial, sans-serif" font-size="15" letter-spacing="1.2" fill="#ffffff">PRISM</text>
+  <text x="66" y="47" font-family="Audiowide, Familjen Grotesk, Arial, sans-serif" font-size="15" letter-spacing="1.2" fill="#ffffff" opacity="0.85">AUTOMATE</text></svg>
