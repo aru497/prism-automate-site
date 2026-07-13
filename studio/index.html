@@ -260,7 +260,19 @@
     .cta h2 { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 500; line-height: 1.05; max-width: 16ch; }
     .cta h2 em { color: var(--violet-lo); }
     .cta small { display: block; margin-top: 1rem; color: var(--cream-dim); font-size: 1rem; }
-    .btn-solid { background: var(--paper); color: var(--ink); text-decoration: none; padding: 1.05rem 2.3rem; border-radius: 999px; font-weight: 600; white-space: nowrap; transition: transform 0.15s var(--ease), background 0.2s; display: inline-block; }
+    .btn-solid { background: var(--paper); color: var(--ink); text-decoration: none; padding: 1.05rem 2.3rem; border-radius: 999px; font-weight: 600; white-space: nowrap; transition: transform 0.15s var(--ease), background 0.2s; display: inline-block; border: 0; cursor: pointer; font-family: var(--font); font-size: 1rem; }
+    .cta-grid { grid-template-columns: 1fr 1.05fr !important; }
+    #contact-form { display: grid; gap: 1rem; }
+    #contact-form label { display: grid; gap: 0.4rem; font-weight: 600; font-size: 0.92rem; color: var(--cream-dim); }
+    #contact-form .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    #contact-form input, #contact-form textarea {
+      background: rgba(255,255,255,0.05); border: 1px solid var(--line-dk); border-radius: 12px;
+      color: var(--paper); font: 400 1rem/1.4 var(--font); padding: 0.75rem 0.95rem; width: 100%;
+    }
+    #contact-form input:focus-visible, #contact-form textarea:focus-visible { outline: 2px solid var(--violet-lo); outline-offset: 1px; border-color: var(--violet-lo); }
+    #contact-form .btn-solid { justify-self: start; }
+    .f-note { color: var(--cream-dim); font-size: 0.86rem; }
+    @media (max-width: 900px) { .cta-grid { grid-template-columns: 1fr !important; } #contact-form .f-row { grid-template-columns: 1fr; } }
     .btn-solid:active { transform: scale(0.97); }
     .btn-solid:hover { background: var(--violet-lo); }
 
@@ -312,7 +324,7 @@
         <li><a href="#partner">Claude</a></li>
         <li><a href="../">Main site</a></li>
       </ul>
-      <a class="nav-cta" href="../#contact">Start a project</a>
+      <a class="nav-cta" href="#contact">Start a project</a>
     </div>
   </nav>
 
@@ -320,12 +332,12 @@
     <div class="wrap mega-grid">
       <div class="mega-lead">
         <p>The full Claude service catalogue, delivered by one accountable studio.</p>
-        <a class="arrow-link" href="../#solutions">Go to overview
+        <a class="arrow-link" href="services/">Go to overview
           <svg width="20" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
       </div>
       <div class="mega-col">
-        <a class="mega-cat" href="../#solutions">Strategy &amp; Advisory
+        <a class="mega-cat" href="services/">Strategy &amp; Advisory
           <svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         <a href="services/ai-strategy-roadmap/">AI Strategy &amp; Roadmap</a>
@@ -333,7 +345,7 @@
         <a href="services/use-case-portfolio/">Use-Case Portfolio &amp; Business Case</a>
       </div>
       <div class="mega-col">
-        <a class="mega-cat" href="../#solutions">Build &amp; Engineering
+        <a class="mega-cat" href="services/">Build &amp; Engineering
           <svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         <a href="services/internal-agentic-platform/">Internal Agentic Platform Build</a>
@@ -341,7 +353,7 @@
         <a href="services/prototype-poc/">Prototype &amp; Proof of Concept</a>
       </div>
       <div class="mega-col">
-        <a class="mega-cat" href="../#solutions">Implementation &amp; Deployment
+        <a class="mega-cat" href="services/">Implementation &amp; Deployment
           <svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         <a href="services/rollout-activation/">Rollout &amp; Activation</a>
@@ -349,7 +361,7 @@
         <a href="services/platform-migration-claude/">Platform Migration to Claude</a>
       </div>
       <div class="mega-col">
-        <a class="mega-cat" href="../#solutions">Ongoing &amp; Managed
+        <a class="mega-cat" href="services/">Ongoing &amp; Managed
           <svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
         <a href="services/sustained-adoption-coe/">Sustained Adoption &amp; CoE</a>
@@ -379,7 +391,7 @@
         <span class="line"><span>machines.</span></span>
       </h1>
       <p class="hero-sub">A senior studio that advises, builds, deploys, and runs AI, from the boardroom strategy to the workloads running in production.</p>
-      <a class="arrow-link" href="../#contact">Start a project
+      <a class="arrow-link" href="#contact">Start a project
         <svg width="24" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
       </a>
     </div>
@@ -517,7 +529,7 @@
         Anthropic Claude Partner
       </span>
       <blockquote>Your partner for <b>everything Claude</b>, from the first roadmap to the last invoice.</blockquote>
-      <a class="arrow-link" href="../#solutions">Explore all fourteen services
+      <a class="arrow-link" href="services/">Explore all fourteen services
         <svg width="20" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
       </a>
     </div>
@@ -547,13 +559,22 @@
     </div>
   </section>
 
-  <section class="cta dark">
-    <div class="wrap">
+  <section class="cta dark" id="contact">
+    <div class="wrap cta-grid">
       <div class="gr">
         <h2>Let's build your <em>AI core.</em></h2>
-        <small>Tell us what slows your team down. A real person replies within one business day.</small>
+        <small>Tell us what slows your team down. A real person, usually Arun, replies within one business day. Bengaluru · Dubai · Sydney.</small>
       </div>
-      <a class="btn-solid" href="../#contact">Start a project</a>
+      <!-- TODO: wire to a real backend; currently opens a prefilled email -->
+      <form id="contact-form" class="gr" novalidate>
+        <div class="f-row">
+          <label>Name<input name="name" type="text" autocomplete="name" required /></label>
+          <label>Work email<input name="email" type="email" autocomplete="email" required /></label>
+        </div>
+        <label>What should we automate or improve?<textarea name="message" rows="4"></textarea></label>
+        <button class="btn-solid" type="submit">Start a project</button>
+        <p class="f-note" id="f-note">We reply within one business day.</p>
+      </form>
     </div>
   </section>
 
@@ -566,7 +587,7 @@
             <span class="t">Studio</span>
             <a href="#chapters">What we do</a>
             <a href="#work">Work</a>
-            <a href="../#faq">FAQ</a>
+            <a href="#contact">Contact</a>
           </div>
           <div>
             <span class="t">Network</span>
@@ -623,6 +644,25 @@
       heroInView = e.isIntersecting;
       nav.classList.toggle('is-solid', !heroInView || megaOpen);
     }).observe(sentinel);
+
+    // Contact form: mailto fallback until a backend is wired.
+    const cform = document.getElementById('contact-form');
+    if (cform) {
+      cform.addEventListener('submit', e => {
+        e.preventDefault();
+        const note = document.getElementById('f-note');
+        const name = cform.name.value.trim(), email = cform.email.value.trim();
+        if (!name || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+          note.textContent = 'Please add your name and a valid work email.';
+          note.style.color = '#a89ef1';
+          return;
+        }
+        const body = `Name: ${name}\nEmail: ${email}\n\n${cform.message.value.trim()}`;
+        location.href = `mailto:hello@prismscale.com?subject=${encodeURIComponent('Project enquiry: ' + name)}&body=${encodeURIComponent(body)}`;
+        note.textContent = 'Your email draft is ready to send. We reply within one business day.';
+        note.style.color = '';
+      });
+    }
 
     if (reduce || typeof gsap === 'undefined') {
       document.documentElement.classList.add('no-motion');
