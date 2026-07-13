@@ -334,8 +334,8 @@ PAGE = """<!DOCTYPE html>
   <nav class="nav" aria-label="Main">
     <div class="wrap">
       <a class="brand" href="../../">Prism<b>Automate</b></a>
-      <a class="back" href="../../">← All services</a>
-      <a class="nav-cta" href="../../../#contact">Start a project</a>
+      <a class="back" href="../">← All services</a>
+      <a class="nav-cta" href="../../#contact">Start a project</a>
     </div>
   </nav>
 
@@ -344,7 +344,7 @@ PAGE = """<!DOCTYPE html>
       <p class="eyebrow">{cat_name}</p>
       <h1>{name}</h1>
       <p class="lede">{definition}</p>
-      <a class="arrow-link" href="../../../#contact">Scope this with us
+      <a class="arrow-link" href="../../#contact">Scope this with us
         <svg width="22" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
       </a>
     </div>
@@ -396,7 +396,7 @@ PAGE = """<!DOCTYPE html>
         <h2>Let's scope <em>{name_lower}</em> for your team.</h2>
         <small>A real person replies within one business day. Bengaluru · Dubai · Sydney.</small>
       </div>
-      <a class="btn-solid" href="../../../#contact">Start a project</a>
+      <a class="btn-solid" href="../../#contact">Start a project</a>
     </div>
   </section>
 
@@ -430,3 +430,136 @@ for svc in S:
     print("wrote", svc["slug"])
 
 print(f"\n{len(S)} service pages generated")
+
+
+# ---------- Services overview page (/studio/services/) ----------
+OV_CARD = """        <a class="svc" href="{slug}/">
+          <span class="svc-name">{name}</span>
+          <span class="svc-def">{definition}</span>
+          <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>"""
+
+cat_order = ["strategy", "build", "deploy", "run"]
+cat_blurbs = {
+    "strategy": "Start with the business case, not the hype.",
+    "build": "Agents that reach production, not another pilot.",
+    "deploy": "Rollout that survives the demo.",
+    "run": "Someone owns it after launch.",
+}
+groups = ""
+for c in cat_order:
+    cards = "\n".join(OV_CARD.format(slug=x["slug"], name=esc(x["name"]), definition=esc(x["definition"])) for x in S if x["cat"] == c)
+    groups += f"""
+    <section class="cat">
+      <div class="wrap">
+        <div class="cat-head">
+          <h2>{esc(CATS[c])}</h2>
+          <p class="ser">{esc(cat_blurbs[c])}</p>
+        </div>
+        <div class="svc-grid">
+{cards}
+        </div>
+      </div>
+    </section>
+"""
+
+OVERVIEW = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | The Full Claude Catalogue | Prism Automate</title>
+  <meta name="description" content="All fourteen recognised Claude services delivered by Prism Automate, an Anthropic Claude partner: strategy, build, deployment, and managed operations for teams in India, the Middle East, and Australia." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="../../assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@200;300&family=Spectral:ital,wght@1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f1f0f6; --ink: #16121f; --ink-deep: #0d0a15; --ink-soft: #6b6579;
+      --line: rgba(22,18,31,0.12); --line-dk: rgba(255,255,255,0.14);
+      --violet: #6a5ae0; --violet-lo: #a89ef1; --gold: #d9a86a;
+      --cream-dim: rgba(255,255,255,0.6);
+      --font: "Familjen Grotesk", Arial, sans-serif; --serif: "Spectral", Georgia, serif;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 var(--font); -webkit-font-smoothing: antialiased; }
+    h1, h2 { margin: 0; letter-spacing: -0.02em; text-wrap: balance; }
+    p { margin: 0; }
+    a { color: inherit; }
+    .ser { font-family: var(--serif); font-style: italic; color: var(--violet); }
+    .wrap { max-width: 1160px; margin: 0 auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
+    .nav { position: fixed; inset: 0 0 auto 0; z-index: 40; height: 74px; display: flex; align-items: center; color: var(--paper); background: rgba(5,4,8,0.72); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line-dk); }
+    .nav .wrap { width: 100%; display: flex; align-items: center; gap: 2rem; }
+    .brand { font-size: 1.15rem; font-weight: 700; text-decoration: none; }
+    .brand b { color: var(--gold); }
+    .nav a.back { margin-left: auto; text-decoration: none; opacity: 0.75; font-size: 0.93rem; }
+    .nav a.back:hover { opacity: 1; }
+    .nav-cta { border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+    .nav-cta:hover { background: var(--paper); color: var(--ink); }
+    .hero { background: #050408; color: var(--paper); padding: 170px 0 clamp(4rem, 9vh, 6rem); }
+    .hero .eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--violet-lo); }
+    .hero h1 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.8rem, 7vw, 5.6rem); line-height: 1; margin-top: 1.1rem; }
+    .hero p.lede { margin-top: 1.4rem; color: var(--cream-dim); max-width: 52ch; font-size: 1.1rem; }
+    .cat { padding-block: clamp(3rem, 7vh, 5rem); border-bottom: 1px solid var(--line); }
+    .cat-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    .cat-head h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 500; }
+    .cat-head .ser { font-size: 1.1rem; }
+    .svc-grid { margin-top: 1.8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+    .svc { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 0.4rem 1.2rem; padding: 1.15rem 1.35rem; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; background: #fff; transition: border-color 0.25s var(--ease), transform 0.25s var(--ease); }
+    .svc:hover { border-color: var(--violet); transform: translateY(-2px); }
+    .svc-name { font-weight: 600; }
+    .svc-def { grid-column: 1 / -1; color: var(--ink-soft); font-size: 0.92rem; }
+    .svc svg { color: var(--violet); }
+    .cta { background: var(--ink-deep); color: var(--paper); padding-block: clamp(3.5rem, 8vh, 5.5rem); }
+    .cta .wrap { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+    .cta h2 { font-weight: 500; }
+    .btn-solid { background: var(--paper); color: var(--ink); text-decoration: none; padding: 1rem 2.2rem; border-radius: 999px; font-weight: 600; white-space: nowrap; }
+    .btn-solid:hover { background: var(--violet-lo); }
+    footer { background: var(--ink-deep); color: var(--cream-dim); border-top: 1px solid var(--line-dk); padding-block: 1.6rem; font-size: 0.86rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    @supports (animation-timeline: view()) {
+      @media (prefers-reduced-motion: no-preference) {
+        .svc { animation: rise 1ms ease-out both; animation-timeline: view(); animation-range: entry 4% cover 26%; }
+      }
+    }
+    @keyframes rise { from { opacity: 0; transform: translateY(26px); } }
+    @media (max-width: 820px) { .svc-grid { grid-template-columns: 1fr; } .cta .wrap { grid-template-columns: 1fr; } .nav a.back { display: none; } .nav .nav-cta { margin-left: auto; } }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Main">
+    <div class="wrap">
+      <a class="brand" href="../">Prism<b>Automate</b></a>
+      <a class="back" href="../">← Studio</a>
+      <a class="nav-cta" href="../#contact">Start a project</a>
+    </div>
+  </nav>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Anthropic Claude Partner</p>
+      <h1>Fourteen services. One studio.</h1>
+      <p class="lede">The full recognised Claude catalogue, from the first roadmap to workloads running under SLAs, delivered for teams across India, the Middle East, and Australia.</p>
+    </div>
+  </header>
+GROUPS_TOKEN
+  <section class="cta">
+    <div class="wrap">
+      <h2>Not sure where to start? That's the first service.</h2>
+      <a class="btn-solid" href="../#contact">Start a project</a>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">
+      <span>Prism Automate © 2026 · Anthropic Claude Partner</span>
+      <span><a href="../" style="color:inherit">Studio</a> · <a href="../../" style="color:inherit">Main site</a></span>
+    </div>
+  </footer>
+</body>
+</html>
+"""
+
+open(os.path.join(BASE, "index.html"), "w").write(OVERVIEW.replace("GROUPS_TOKEN", groups))
+print("wrote services overview index")
