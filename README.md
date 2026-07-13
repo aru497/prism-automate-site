@@ -1,0 +1,54 @@
+# Prism Automate — website
+
+AI automation studio and Anthropic Claude partner. Static site, zero build step.
+
+## Live
+
+- **Production candidate:** the `site/` directory, served as-is.
+- **Design directions** (both `noindex` until one is chosen as primary):
+  - `/` — brand direction (deep violet, faithful to the Prism logo).
+  - `/studio/` — editorial studio direction (light + ink-violet, serif accents).
+
+## Deploy to Vercel (one click)
+
+The repo is already Vercel-ready (`vercel.json` serves `site/` with clean URLs and
+long-lived asset caching — no build step). To go live:
+
+[**Deploy to Vercel →**](https://vercel.com/new/clone?repository-url=https://github.com/aru497/prism-automate-site)
+
+1. Click the button (or go to [vercel.com/new](https://vercel.com/new) and pick
+   `prism-automate-site`).
+2. Framework preset: **Other**. Build command: **none**. Output directory: **site**
+   (already set by `vercel.json` — leave the defaults).
+3. Deploy. Every future `git push` to `main` auto-deploys a production build, and
+   pull requests get preview URLs for free.
+
+Optional: add the custom domain under **Settings → Domains** once it's confirmed,
+then uncomment the `<link rel="canonical">` and update `sitemap.xml` / `robots.txt`.
+
+## Deploy from the CLI (alternative)
+
+```bash
+npm i -g vercel        # once
+vercel login           # once, opens the browser
+vercel --prod          # from the repo root; uses vercel.json
+```
+
+## Local preview
+
+```bash
+python3 -m http.server 4173 --directory site
+# open http://localhost:4173
+```
+
+## Staging
+
+A copy of `site/` is published to GitHub Pages on every push (the `gh-pages`
+branch): https://aru497.github.io/prism-automate-site/
+
+## Before launch
+
+- Confirm the production domain, then set the canonical tag + `sitemap.xml` host.
+- Wire the contact form to a real backend (currently a `mailto:` fallback).
+- Drop in real team portraits and, for the Prism Events case study, the actual
+  Unisys Innovation Program app screenshots.
