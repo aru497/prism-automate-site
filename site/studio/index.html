@@ -73,6 +73,54 @@
     .nav-cta { border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.3rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.9; transition: background 0.2s, color 0.2s; }
     .nav-cta:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
 
+    /* ---- Services mega menu (WAC pattern) ---- */
+    .mega-btn {
+      background: none; border: 0; padding: 0; cursor: pointer;
+      font: 500 0.94rem/1.6 var(--font); color: inherit; opacity: 0.72; transition: opacity 0.2s;
+    }
+    .mega-btn:hover, .mega-btn[aria-expanded="true"], .mega-btn:focus-visible { opacity: 1; }
+    .mega {
+      position: fixed; left: 0; right: 0; top: 74px; z-index: 39;
+      background: rgba(5, 4, 8, 0.92);
+      backdrop-filter: blur(22px) saturate(140%);
+      -webkit-backdrop-filter: blur(22px) saturate(140%);
+      border-bottom: 1px solid var(--line-dk);
+      color: var(--paper);
+      opacity: 0; visibility: hidden; transform: translateY(-10px);
+      transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0s linear 0.3s;
+    }
+    .mega.open { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+    .mega-grid {
+      display: grid; grid-template-columns: 1.1fr repeat(4, 1fr);
+      gap: clamp(1.5rem, 3.5vw, 3.5rem);
+      padding-block: clamp(2rem, 4.5vh, 3.5rem);
+    }
+    .mega-lead p { font-family: "Hanken Grotesk", var(--font); font-weight: 300; font-size: clamp(1.25rem, 1.9vw, 1.7rem); line-height: 1.35; max-width: 16em; }
+    .mega-lead .arrow-link { margin-top: 1.4rem; color: var(--gold); font-size: 0.92rem; }
+    .mega-col { display: grid; gap: 0.65rem; align-content: start; }
+    .mega-cat {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-weight: 600; font-size: 1.02rem; color: var(--paper);
+      text-decoration: none; margin-bottom: 0.5rem;
+    }
+    .mega-cat svg { transition: transform 0.25s var(--ease); }
+    .mega-cat:hover svg { transform: translateX(5px); }
+    .mega-col a:not(.mega-cat) {
+      color: var(--cream-dim); text-decoration: none; font-size: 0.93rem; transition: color 0.2s;
+    }
+    .mega-col a:not(.mega-cat):hover { color: var(--paper); }
+    .mega-dhq { border-top: 1px solid var(--line-dk); }
+    .mega-dhq a {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding-block: 1.05rem; text-decoration: none;
+      color: #ffffff; font-size: 0.98rem;
+    }
+    .mega-dhq b { font-weight: 700; }
+    .mega-dhq svg { transition: transform 0.25s var(--ease); }
+    .mega-dhq a:hover svg { transform: translateX(5px); }
+    @media (max-width: 900px) { .mega { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .mega { transition: none; } }
+
     /* ---- Hero ---- */
     .hero { position: relative; min-height: 100dvh; display: flex; align-items: flex-end; overflow: clip; background: var(--ink-deep); color: var(--paper); }
     .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.72; pointer-events: none; will-change: transform; }
@@ -256,6 +304,9 @@
     <div class="wrap">
       <a class="brand" href="#top">Prism<span class="a">Automate</span></a>
       <ul class="nav-links">
+        <li class="has-mega">
+          <button class="mega-btn" type="button" aria-expanded="false" aria-controls="mega">Services</button>
+        </li>
         <li><a href="#chapters">What we do</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#partner">Claude</a></li>
@@ -264,6 +315,59 @@
       <a class="nav-cta" href="../#contact">Start a project</a>
     </div>
   </nav>
+
+  <div class="mega" id="mega" aria-hidden="true">
+    <div class="wrap mega-grid">
+      <div class="mega-lead">
+        <p>The full Claude service catalogue, delivered by one accountable studio.</p>
+        <a class="arrow-link" href="../#solutions">Go to overview
+          <svg width="20" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+      </div>
+      <div class="mega-col">
+        <a class="mega-cat" href="../#solutions">Strategy &amp; Advisory
+          <svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+        <a href="../#solutions">AI Strategy &amp; Roadmap</a>
+        <a href="../#solutions">AI Readiness &amp; Governance</a>
+        <a href="../#solutions">Use-Case Portfolio &amp; Business Case</a>
+      </div>
+      <div class="mega-col">
+        <a class="mega-cat" href="../#solutions">Build &amp; Engineering
+          <svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+        <a href="../#solutions">Internal Agentic Platform Build</a>
+        <a href="../#solutions">Customer-Facing AI Product Build</a>
+        <a href="../#solutions">Prototype &amp; Proof of Concept</a>
+      </div>
+      <div class="mega-col">
+        <a class="mega-cat" href="../#solutions">Implementation &amp; Deployment
+          <svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+        <a href="../#solutions">Rollout &amp; Activation</a>
+        <a href="../#solutions">Industry Accelerator Deployment</a>
+        <a href="../#solutions">Platform Migration to Claude</a>
+      </div>
+      <div class="mega-col">
+        <a class="mega-cat" href="../#solutions">Ongoing &amp; Managed
+          <svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+        <a href="../#solutions">Sustained Adoption &amp; CoE</a>
+        <a href="../#solutions">Managed AI Operations</a>
+        <a href="../#solutions">Cowork &amp; Claude Code Support</a>
+        <a href="../#solutions">Claude FinOps Optimisation</a>
+        <a href="../#solutions">Claude Training Sessions</a>
+      </div>
+    </div>
+    <div class="mega-dhq">
+      <div class="wrap">
+        <a href="https://www.designhq.io" rel="noopener" target="_blank">
+          Need branding or design? <b>DesignHQ</b>, our design subscription partner
+          <svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <header class="hero" id="top">
     <video id="hero-video" src="../assets/ring-b.webm" autoplay muted loop playsinline preload="auto"></video>
@@ -485,12 +589,40 @@
   window.addEventListener('DOMContentLoaded', () => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    // Services mega menu: hover on fine pointers, click everywhere, Escape closes.
+    const mega = document.getElementById('mega');
+    const megaBtn = document.querySelector('.mega-btn');
+    const megaLi = document.querySelector('.has-mega');
+    let megaOpen = false;
+    const setMega = open => {
+      megaOpen = open;
+      mega.classList.toggle('open', open);
+      mega.setAttribute('aria-hidden', String(!open));
+      megaBtn.setAttribute('aria-expanded', String(open));
+      document.querySelector('.nav').classList.toggle('is-solid', open || !heroInView);
+      if (window.__lenis) { open ? window.__lenis.stop() : window.__lenis.start(); }
+    };
+    megaBtn.addEventListener('click', () => setMega(!megaOpen));
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      let closeTimer;
+      [megaLi, mega].forEach(el => {
+        el.addEventListener('mouseenter', () => { clearTimeout(closeTimer); setMega(true); });
+        el.addEventListener('mouseleave', () => { closeTimer = setTimeout(() => setMega(false), 180); });
+      });
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && megaOpen) setMega(false); });
+    mega.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMega(false)));
+
     // Nav goes solid after the hero.
     const nav = document.querySelector('.nav');
     const sentinel = document.createElement('div');
     Object.assign(sentinel.style, { position: 'absolute', top: '0', height: '70vh', width: '1px', pointerEvents: 'none' });
     document.body.appendChild(sentinel);
-    new IntersectionObserver(([e]) => nav.classList.toggle('is-solid', !e.isIntersecting)).observe(sentinel);
+    let heroInView = true;
+    new IntersectionObserver(([e]) => {
+      heroInView = e.isIntersecting;
+      nav.classList.toggle('is-solid', !heroInView || megaOpen);
+    }).observe(sentinel);
 
     if (reduce || typeof gsap === 'undefined') {
       document.documentElement.classList.add('no-motion');
@@ -502,7 +634,7 @@
 
     // Lenis drives the scroll; ScrollTrigger listens to it (the WAC recipe).
     document.documentElement.classList.add('inertia-scroll');
-    const lenis = new Lenis({
+    const lenis = window.__lenis = new Lenis({
       duration: 1.2,
       easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
