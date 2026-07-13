@@ -91,14 +91,22 @@
     .hero-foot { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; border-top: 1px solid var(--line-dk); }
     .hero-foot .wrap { display: flex; justify-content: space-between; align-items: center; padding-block: 0.9rem; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-dim); }
 
-    /* ---- Manifesto (GSAP word scrub), on black like the reference ---- */
-    .intro { padding-block: clamp(7rem, 18vh, 13rem); background: #050408; color: #f1f0f6; }
-    .intro .eyebrow { color: var(--violet-lo); }
-    .intro .wrap { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
-    .intro .lead-label { position: sticky; top: 120px; }
-    .scrub { font-family: "Hanken Grotesk", var(--font); font-size: clamp(1.7rem, 3.4vw, 2.7rem); font-weight: 300; line-height: 1.45; letter-spacing: -0.01em; }
-    .scrub .word { color: rgba(241, 240, 246, 0.22); }
-    .scrub em.word { color: rgba(168, 158, 241, 0.3); }
+    /* ---- Manifesto (GSAP word scrub): full-screen pinned moment, like the reference ---- */
+    .intro { min-height: 100dvh; display: flex; align-items: center; background: #050408; color: #f1f0f6; }
+    .no-motion .intro { min-height: 0; padding-block: clamp(6rem, 15vh, 10rem); }
+    .intro .wrap { width: 100%; }
+    .scrub {
+      font-family: "Hanken Grotesk", var(--font);
+      font-size: clamp(2.1rem, 4.4vw, 4rem);
+      font-weight: 300;
+      line-height: 1.28;
+      letter-spacing: -0.012em;
+      max-width: 24em;
+      margin-left: clamp(0rem, 8vw, 9.5rem);
+    }
+    /* default = fully readable; JS dims then illuminates on scroll */
+    .scrub .word { color: #f1f0f6; }
+    .scrub em.word { color: var(--violet-lo); }
 
     /* ---- Pinned chapters: blackish-purple interlude ---- */
     .chapters {
@@ -278,7 +286,6 @@
 
   <section class="intro" aria-label="What we believe">
     <div class="wrap">
-      <p class="eyebrow lead-label">What we believe</p>
       <p class="scrub" id="scrub">
         Most companies don't need more AI demos. They need one workflow that actually ships, then another, until the business runs <em>on its own intelligence.</em> That is the whole job.
       </p>
@@ -495,7 +502,12 @@
 
     // Lenis drives the scroll; ScrollTrigger listens to it (the WAC recipe).
     document.documentElement.classList.add('inertia-scroll');
-    const lenis = new Lenis({ lerp: 0.075 });
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      touchMultiplier: 2
+    });
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(t => lenis.raf(t * 1000));
     gsap.ticker.lagSmoothing(0);
@@ -536,12 +548,12 @@
       });
       node.parentNode.replaceChild(frag, node);
     });
-    const inkColor = '#f1f0f6';
-    const violet = '#a89ef1';
-    gsap.to('#scrub .word', {
-      color: i => (scrubEl.querySelectorAll('.word')[i].closest('em') ? violet : inkColor),
+    const words = gsap.utils.toArray('#scrub .word');
+    gsap.set(words, { color: (i, el) => (el.closest('em') ? 'rgba(168,158,241,0.28)' : 'rgba(241,240,246,0.2)') });
+    gsap.to(words, {
+      color: i => (words[i].closest('em') ? '#a89ef1' : '#f1f0f6'),
       stagger: 0.06, ease: 'none',
-      scrollTrigger: { trigger: '.intro', start: 'top 72%', end: 'bottom 55%', scrub: 0.5 }
+      scrollTrigger: { trigger: '.intro', start: 'top top', end: '+=160%', pin: true, scrub: 0.4 }
     });
 
     // Pinned chapters: the WAC pin-and-swap, with Prism's own left rail.
