@@ -3,7 +3,7 @@
 Content sourced from the recognised 14-service catalogue; design = studio identity."""
 import os, html
 
-BASE = "/Users/arunkumar/Documents/Claude/Projects/PrismEvents/site/studio/services"
+BASE = "/Users/arunkumar/Documents/Claude/Projects/PrismEvents/site/services"
 
 CATS = {
     "strategy": "Strategy & Advisory",
@@ -226,10 +226,8 @@ PAGE = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{name} | Claude Services | Prism Automate</title>
   <meta name="description" content="{meta_desc}" />
-  <meta name="robots" content="noindex" />
-  <!-- Service page in the studio design direction. noindex until a primary design
-       is chosen; flip to index + add canonical when the domain goes live. -->
-  <link rel="icon" type="image/png" href="../../../assets/favicon.png" />
+  <!-- TODO: add canonical once the production domain is confirmed -->
+  <link rel="icon" type="image/png" href="../../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@200;300&family=Spectral:ital,wght@1,300;1,400&display=swap" rel="stylesheet" />
@@ -403,7 +401,7 @@ PAGE = """<!DOCTYPE html>
   <footer>
     <div class="wrap">
       <span>Prism Automate © 2026 · Anthropic Claude Partner</span>
-      <span><a href="../../" style="color:inherit">Studio</a> · <a href="../../../" style="color:inherit">Main site</a></span>
+      <span><a href="../../" style="color:inherit">Home</a> · <a href="../" style="color:inherit">All services</a></span>
     </div>
   </footer>
 </body>
@@ -470,8 +468,8 @@ OVERVIEW = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | The Full Claude Catalogue | Prism Automate</title>
   <meta name="description" content="All fourteen recognised Claude services delivered by Prism Automate, an Anthropic Claude partner: strategy, build, deployment, and managed operations for teams in India, the Middle East, and Australia." />
-  <meta name="robots" content="noindex" />
-  <link rel="icon" type="image/png" href="../../assets/favicon.png" />
+  <!-- TODO: add canonical once the production domain is confirmed -->
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@200;300&family=Spectral:ital,wght@1,300;1,400&display=swap" rel="stylesheet" />
@@ -533,7 +531,7 @@ OVERVIEW = """<!DOCTYPE html>
   <nav class="nav" aria-label="Main">
     <div class="wrap">
       <a class="brand" href="../">Prism<b>Automate</b></a>
-      <a class="back" href="../">← Studio</a>
+      <a class="back" href="../">← Home</a>
       <a class="nav-cta" href="../#contact">Start a project</a>
     </div>
   </nav>
@@ -554,7 +552,7 @@ GROUPS_TOKEN
   <footer>
     <div class="wrap">
       <span>Prism Automate © 2026 · Anthropic Claude Partner</span>
-      <span><a href="../" style="color:inherit">Studio</a> · <a href="../../" style="color:inherit">Main site</a></span>
+      <span><a href="../" style="color:inherit">Home</a></span>
     </div>
   </footer>
 </body>
