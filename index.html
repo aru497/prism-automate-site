@@ -119,7 +119,7 @@
     }
     * { box-sizing: border-box; }
     html.inertia-scroll { scroll-behavior: auto; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; background: var(--ink-deep); }
     html.lenis, html.lenis body { height: auto; }
     body {
       margin: 0;
@@ -417,10 +417,13 @@
 
     /* ---- Clients ---- */
     .clients { padding-block: clamp(4rem, 9vh, 6rem); border-top: 1px solid var(--line); text-align: center; }
-    .logo-row { margin: 2.4rem auto 0; display: flex; justify-content: center; align-items: center; gap: clamp(1.2rem, 3.5vw, 2.6rem) clamp(1.4rem, 4vw, 3.2rem); flex-wrap: wrap; max-width: 62rem; }
-    .logo-row .clogo { height: 27px; width: auto; opacity: 0.66; transition: opacity 0.25s var(--ease); }
-    .logo-row .clogo.tall { height: 46px; }
-    .logo-row .clogo:hover { opacity: 0.95; }
+    .logo-marquee { margin-top: 2.6rem; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+    .marquee-track { display: flex; align-items: center; width: max-content; animation: logoscroll 48s linear infinite; }
+    .logo-marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-track .clogo { height: 26px; width: auto; opacity: 0.6; margin-inline: clamp(1.5rem, 3.2vw, 2.8rem); flex: none; }
+    .marquee-track .clogo.tall { height: 38px; }
+    @keyframes logoscroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; flex-wrap: wrap; justify-content: center; } }
     .logo-row .word { font-size: clamp(1.05rem, 1.6vw, 1.25rem); font-weight: 700; letter-spacing: 0.01em; color: var(--ink); opacity: .8; white-space: nowrap; }
     .clients-note { margin: 1.6rem auto 0; max-width: 60ch; font-size: 0.82rem; line-height: 1.5; color: var(--ink-soft); }
     /* ---- WAC-style full-bleed video brand moment ---- */
@@ -856,20 +859,35 @@
   <section class="clients">
     <div class="wrap">
       <p class="eyebrow">Brands the Prism family has shipped for</p>
-      <div class="logo-row">
-        <img class="clogo" src="assets/logos/google.webp" alt="Google" loading="lazy" />
-        <img class="clogo" src="assets/logos/amazon.webp" alt="Amazon" loading="lazy" />
-        <img class="clogo" src="assets/logos/accenture.webp" alt="Accenture" loading="lazy" />
-        <img class="clogo" src="assets/logos/phonepe.webp" alt="PhonePe" loading="lazy" />
-        <img class="clogo" src="assets/logos/twilio.webp" alt="Twilio" loading="lazy" />
-        <img class="clogo" src="assets/logos/intuit.webp" alt="Intuit" loading="lazy" />
-        <img class="clogo tall" src="assets/logos/novonordisk.webp" alt="Novo Nordisk" loading="lazy" />
-        <img class="clogo" src="assets/logos/ola.webp" alt="Ola" loading="lazy" />
-        <img class="clogo" src="assets/logos/airindia.webp" alt="Air India" loading="lazy" />
-        <img class="clogo" src="assets/logos/unisys.webp" alt="Unisys" loading="lazy" />
-        <img class="clogo" src="assets/logos/brookfield.webp" alt="Brookfield" loading="lazy" />
-        <img class="clogo tall" src="assets/logos/cognite.webp" alt="Cognite" loading="lazy" />
-        <img class="clogo" src="assets/logos/westbridge.webp" alt="WestBridge Capital" loading="lazy" />
+      <div class="logo-marquee">
+        <div class="marquee-track">
+          <img class="clogo" src="assets/logos/google.webp" alt="Google" loading="lazy" />
+          <img class="clogo" src="assets/logos/amazon.webp" alt="Amazon" loading="lazy" />
+          <img class="clogo" src="assets/logos/accenture.webp" alt="Accenture" loading="lazy" />
+          <img class="clogo" src="assets/logos/phonepe.webp" alt="PhonePe" loading="lazy" />
+          <img class="clogo" src="assets/logos/twilio.webp" alt="Twilio" loading="lazy" />
+          <img class="clogo" src="assets/logos/intuit.webp" alt="Intuit" loading="lazy" />
+          <img class="clogo tall" src="assets/logos/novonordisk.webp" alt="Novo Nordisk" loading="lazy" />
+          <img class="clogo" src="assets/logos/ola.webp" alt="Ola" loading="lazy" />
+          <img class="clogo" src="assets/logos/airindia.webp" alt="Air India" loading="lazy" />
+          <img class="clogo" src="assets/logos/unisys.webp" alt="Unisys" loading="lazy" />
+          <img class="clogo" src="assets/logos/brookfield.webp" alt="Brookfield" loading="lazy" />
+          <img class="clogo tall" src="assets/logos/cognite.webp" alt="Cognite" loading="lazy" />
+          <img class="clogo" src="assets/logos/westbridge.webp" alt="WestBridge Capital" loading="lazy" />
+          <img class="clogo" src="assets/logos/google.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="clogo" src="assets/logos/amazon.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="clogo" src="assets/logos/accenture.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="clogo" src="assets/logos/phonepe.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="clogo" src="assets/logos/twilio.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="clogo" src="assets/logos/intuit.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="clogo tall" src="assets/logos/novonordisk.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="clogo" src="assets/logos/ola.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="clogo" src="assets/logos/airindia.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="clogo" src="assets/logos/unisys.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="clogo" src="assets/logos/brookfield.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="clogo tall" src="assets/logos/cognite.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img class="clogo" src="assets/logos/westbridge.webp" alt="" aria-hidden="true" loading="lazy" />
+        </div>
       </div>
       <p class="clients-note">Google and Unisys through Prism Automate; Amazon, Accenture, PhonePe, Twilio, Intuit, Novo Nordisk, Ola, Air India, Brookfield, Cognite and WestBridge Capital across Prism Scale and DesignHQ.</p>
     </div>
