@@ -184,8 +184,8 @@ PAGE = """<!DOCTYPE html>
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav class="mm-nav" aria-label="Mobile">
       <a class="mm-link" href="../">Services</a>
-      <a class="mm-link" href="../../solutions/">Solutions <span class="ar" aria-hidden="true">&#8599;</span></a>
-      <a class="mm-link" href="../../claude/">Claude <span class="ar" aria-hidden="true">&#8599;</span></a>
+      <a class="mm-link" href="../../solutions/">Solutions <svg class="ar" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      <a class="mm-link" href="../../claude/">Claude <svg class="ar" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       <a class="mm-cta" href="../../claude/#interest">I'm Interested</a>
     </nav>
     <p class="mm-foot">Bengaluru · Dubai · Sydney</p>
@@ -446,8 +446,8 @@ OVERVIEW = """<!DOCTYPE html>
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav class="mm-nav" aria-label="Mobile">
       <a class="mm-link" href="./">Services</a>
-      <a class="mm-link" href="../solutions/">Solutions <span class="ar" aria-hidden="true">&#8599;</span></a>
-      <a class="mm-link" href="../claude/">Claude <span class="ar" aria-hidden="true">&#8599;</span></a>
+      <a class="mm-link" href="../solutions/">Solutions <svg class="ar" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      <a class="mm-link" href="../claude/">Claude <svg class="ar" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       <a class="mm-cta" href="../claude/#interest">I'm Interested</a>
     </nav>
     <p class="mm-foot">Bengaluru · Dubai · Sydney</p>
