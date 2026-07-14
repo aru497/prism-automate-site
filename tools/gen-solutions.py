@@ -13,7 +13,8 @@ SOL = [
  dict(slug="prism-events", name="Prism Events", status="live",
    tagline="Indoor navigation for live events",
    img="1505373877841-8d25f7d46678",
-   img_alt="A speaker on stage before a large glowing screen in a darkened conference hall, the audience seated in silhouette.",
+   img_full="../assets/uip/prism-events-showcase.png",
+   img_alt="Three Prism Events app screens from the Unisys UIP deployment: the live agenda, the home dashboard with a live poll and venue map, and the event photo gallery.",
    desc="GPS dies the moment attendees walk indoors. Prism Events doesn't. Our Virtual Positioning System puts every visitor's live location on the floor plan and gives turn-by-turn directions to any booth, stage, or session, wrapped in a live agenda and day-tabbed galleries. Shipped and running at the Unisys Innovation Program in Bengaluru.",
    pills=["AR video-map wayfinder","Turn-by-turn routing","Live agenda","Booth & stage finder","Day photo galleries","Works where GPS won't"],
    cta=("See the deployment","../#work"), related=None),
@@ -101,7 +102,7 @@ def sol_section(s, i):
         </a>
       </div>
       <div class="sol-main">
-        <figure class="sol-media"><img src="{IMG.format(id=s['img'])}" alt="{escq(s['img_alt'])}" loading="lazy" /></figure>
+        <figure class="sol-media"><img src="{s.get('img_full') or IMG.format(id=s['img'])}" alt="{escq(s['img_alt'])}" loading="lazy" /></figure>
         <p class="sol-tag">{esc(s['tagline'])}</p>
         <p class="sol-desc">{esc(s['desc'])}</p>
         <ul class="pills">
