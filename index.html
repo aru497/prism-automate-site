@@ -418,9 +418,21 @@
     /* ---- Clients ---- */
     .clients { padding-block: clamp(4rem, 9vh, 6rem); border-top: 1px solid var(--line); text-align: center; }
     .logo-row { margin: 2.4rem auto 0; display: flex; justify-content: center; align-items: center; gap: clamp(1.2rem, 3.5vw, 2.6rem) clamp(1.4rem, 4vw, 3.2rem); flex-wrap: wrap; max-width: 62rem; }
-    .logo-row img { height: 26px; opacity: .85; }
+    .logo-row .clogo { height: 27px; width: auto; opacity: 0.66; transition: opacity 0.25s var(--ease); }
+    .logo-row .clogo.tall { height: 46px; }
+    .logo-row .clogo:hover { opacity: 0.95; }
     .logo-row .word { font-size: clamp(1.05rem, 1.6vw, 1.25rem); font-weight: 700; letter-spacing: 0.01em; color: var(--ink); opacity: .8; white-space: nowrap; }
     .clients-note { margin: 1.6rem auto 0; max-width: 60ch; font-size: 0.82rem; line-height: 1.5; color: var(--ink-soft); }
+    /* ---- WAC-style full-bleed video brand moment ---- */
+    .reel { position: relative; min-height: 86vh; display: flex; align-items: center; overflow: clip; background: #050408; color: var(--paper); border-block: 1px solid var(--line-dk); }
+    .reel-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; pointer-events: none; }
+    .reel::after { content: ""; position: absolute; inset: 0; background: radial-gradient(95% 95% at 50% 50%, transparent, #050408 80%), linear-gradient(180deg, rgba(5,4,8,0.42), rgba(5,4,8,0.72)); }
+    .reel .wrap { position: relative; z-index: 1; text-align: center; }
+    .reel .eyebrow { color: var(--violet-lo); }
+    .reel h2 { margin-top: 1.2rem; font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.6rem, 7vw, 6rem); line-height: 1.0; letter-spacing: -0.02em; }
+    .reel h2 em { font-family: "Spectral", Georgia, serif; font-weight: 400; font-style: italic; color: var(--gold); }
+    .reel .btn-line { margin-top: 2.4rem; color: var(--gold); }
+    @media (min-height: 1400px) { .reel { min-height: 940px; } }
 
     /* ---- Where we work ---- */
     .regions { padding-block: clamp(4rem, 10vh, 7rem); border-top: 1px solid var(--line); }
@@ -531,9 +543,9 @@
 
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav class="mm-nav" aria-label="Mobile">
-      <a class="mm-link" href="services/">Services <span class="ar" aria-hidden="true">&#8599;</span></a>
-      <a class="mm-link" href="solutions/">Solutions <span class="ar" aria-hidden="true">&#8599;</span></a>
-      <a class="mm-link" href="claude/">Claude <span class="ar" aria-hidden="true">&#8599;</span></a>
+      <a class="mm-link" href="services/">Services <svg class="ar" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      <a class="mm-link" href="solutions/">Solutions <svg class="ar" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      <a class="mm-link" href="claude/">Claude <svg class="ar" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
       <a class="mm-cta" href="claude/#interest">I'm Interested</a>
     </nav>
     <p class="mm-foot">Bengaluru · Dubai · Sydney</p>
@@ -760,6 +772,17 @@
     </div>
   </section>
 
+  <section class="reel" aria-label="In production">
+    <video class="reel-bg" poster="assets/orb-poster.webp" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/orb.mp4" type="video/mp4" /></video>
+    <div class="wrap">
+      <p class="eyebrow">In production, not in a deck</p>
+      <h2>We don't demo intelligence.<br>We <em>ship</em> it.</h2>
+      <a class="btn-line" href="solutions/">See what's live
+        <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+      </a>
+    </div>
+  </section>
+
   <section class="stats dark" aria-label="By the numbers">
     <div class="wrap">
       <p class="lead gr">A small studio with a <em>full</em> service surface.</p>
@@ -834,19 +857,19 @@
     <div class="wrap">
       <p class="eyebrow">Brands the Prism family has shipped for</p>
       <div class="logo-row">
-        <span class="word">Google</span>
-        <span class="word">Amazon</span>
-        <span class="word">Accenture</span>
-        <span class="word">PhonePe</span>
-        <span class="word">Twilio</span>
-        <span class="word">Intuit</span>
-        <span class="word">Novo&nbsp;Nordisk</span>
-        <span class="word">Ola</span>
-        <span class="word">Air&nbsp;India</span>
-        <span class="word">Unisys</span>
-        <span class="word">Brookfield</span>
-        <span class="word">Cognite</span>
-        <span class="word">WestBridge</span>
+        <img class="clogo" src="assets/logos/google.webp" alt="Google" loading="lazy" />
+        <img class="clogo" src="assets/logos/amazon.webp" alt="Amazon" loading="lazy" />
+        <img class="clogo" src="assets/logos/accenture.webp" alt="Accenture" loading="lazy" />
+        <img class="clogo" src="assets/logos/phonepe.webp" alt="PhonePe" loading="lazy" />
+        <img class="clogo" src="assets/logos/twilio.webp" alt="Twilio" loading="lazy" />
+        <img class="clogo" src="assets/logos/intuit.webp" alt="Intuit" loading="lazy" />
+        <img class="clogo tall" src="assets/logos/novonordisk.webp" alt="Novo Nordisk" loading="lazy" />
+        <img class="clogo" src="assets/logos/ola.webp" alt="Ola" loading="lazy" />
+        <img class="clogo" src="assets/logos/airindia.webp" alt="Air India" loading="lazy" />
+        <img class="clogo" src="assets/logos/unisys.webp" alt="Unisys" loading="lazy" />
+        <img class="clogo" src="assets/logos/brookfield.webp" alt="Brookfield" loading="lazy" />
+        <img class="clogo tall" src="assets/logos/cognite.webp" alt="Cognite" loading="lazy" />
+        <img class="clogo" src="assets/logos/westbridge.webp" alt="WestBridge Capital" loading="lazy" />
       </div>
       <p class="clients-note">Google and Unisys through Prism Automate; Amazon, Accenture, PhonePe, Twilio, Intuit, Novo Nordisk, Ola, Air India, Brookfield, Cognite and WestBridge Capital across Prism Scale and DesignHQ.</p>
     </div>
@@ -1097,8 +1120,10 @@
     });
     panels.forEach((p, i) => {
       if (i === 0) return;
-      chTl.to(panels[i - 1], { autoAlpha: 0, y: -80, duration: 1, ease: 'power2.in' }, (i - 1) + 0.15)
-          .to(p, { autoAlpha: 1, y: 0, duration: 1, ease: 'power2.out' }, (i - 1) + 0.55);
+      // Crisp swap: the outgoing panel is almost gone before the incoming
+      // arrives, so pausing mid-scroll never shows two chapters overlapping.
+      chTl.to(panels[i - 1], { autoAlpha: 0, y: -120, duration: 0.5, ease: 'power2.in' }, (i - 1) + 0.15)
+          .to(p, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power2.out' }, (i - 1) + 0.52);
     });
     gsap.to('#rail-fill', {
       scaleY: 1, ease: 'none',
