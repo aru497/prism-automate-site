@@ -204,6 +204,11 @@
     .chips a { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border: 1px solid var(--line-dk); border-radius: 999px; text-decoration: none; font-size: 0.88rem; color: rgba(241,240,246,0.85); transition: border-color 0.2s, background 0.2s; }
     .chips a::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--violet-lo); }
     .chips a:hover { border-color: var(--violet-lo); background: rgba(168,158,241,0.08); }
+    .scroll-cue { position: absolute; left: 50%; bottom: 2.2rem; transform: translateX(-50%); z-index: 2; color: var(--cream-dim); display: grid; place-items: center; width: 42px; height: 42px; text-decoration: none; }
+    .scroll-cue svg { animation: cue 1.9s var(--ease) infinite; }
+    .scroll-cue:hover { color: var(--paper); }
+    @keyframes cue { 0%, 100% { transform: translateY(-3px); opacity: 0.5; } 50% { transform: translateY(4px); opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .scroll-cue svg { animation: none; } }
 
     /* Solution sections */
     .sol { border-top: 1px solid var(--line-dk); }
@@ -313,6 +318,9 @@
           <a href="#document-intelligence">Document Intelligence</a>
       </nav>
     </div>
+    <a class="scroll-cue" href="#prism-events" aria-label="Scroll to the solutions">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
   </header>
 
   <section class="sol" id="prism-events">
