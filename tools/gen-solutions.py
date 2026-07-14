@@ -423,6 +423,7 @@ PAGE = f"""<!DOCTYPE html>
   <script src="../assets/vendor/gsap.min.js"></script>
   <script src="../assets/vendor/ScrollTrigger.min.js"></script>
   <script src="../assets/lenis.min.js"></script>
+  <script src="../assets/interest.js" defer></script>
   <script>
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

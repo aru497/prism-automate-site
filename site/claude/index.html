@@ -158,7 +158,10 @@
 
     /* Interest form */
     .interest { padding-block: clamp(5rem, 12vh, 9rem); }
-    .interest .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: start; }
+    .interest .wrap { max-width: 62ch; margin: 0 auto; text-align: center; }
+    .interest h2 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.4rem, 5.5vw, 4.4rem); line-height: 1; }
+    .interest > .wrap > p { margin: 1.3rem auto 0; color: var(--cream-dim); font-size: 1.1rem; line-height: 1.6; }
+    .interest .wrap .btn { margin-top: 2.2rem; }
     .interest .lhs h2 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.4rem, 5.5vw, 4.4rem); line-height: 1; }
     .interest .lhs p { margin-top: 1.3rem; color: var(--cream-dim); font-size: 1.1rem; line-height: 1.6; max-width: 40ch; }
     .interest .lhs .meta { margin-top: 2rem; display: grid; gap: 0.6rem; color: var(--cream-dim); font-size: 0.95rem; }
@@ -365,39 +368,11 @@
 
   <section class="interest" id="interest">
     <div class="wrap">
-      <div class="lhs">
-        <h2>Interested? Let's not overthink it.</h2>
-        <p>Tell us what's eating your team's time. We'll tell you, honestly, whether Claude can kill it — and what it would take.</p>
-        <div class="meta">
-          <span><b>A real person</b> replies within one business day.</span>
-          <span><b>Bengaluru · Dubai · Sydney.</b> Remote-first, on-site when it counts.</span>
-          <span>No deck required. Bad handwriting on a napkin is fine.</span>
-        </div>
-      </div>
-      <form class="interest-form" id="interest-form" novalidate>
-        <div class="two-col">
-          <div class="field">
-            <label for="if-name">Name</label>
-            <input id="if-name" name="name" type="text" autocomplete="name" required />
-          </div>
-          <div class="field">
-            <label for="if-email">Work email</label>
-            <input id="if-email" name="email" type="email" autocomplete="email" required />
-          </div>
-        </div>
-        <div class="field">
-          <label for="if-company">Company</label>
-          <input id="if-company" name="company" type="text" autocomplete="organization" />
-        </div>
-        <div class="field">
-          <label for="if-msg">What should Claude take off your plate?</label>
-          <textarea id="if-msg" name="message" placeholder="e.g. our support team answers the same 30 questions all day…"></textarea>
-        </div>
-        <button type="submit">I'm Interested
-          <svg width="20" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
-        </button>
-        <p class="form-note" id="if-note" role="status" aria-live="polite"></p>
-      </form>
+      <h2>Interested? Let's not overthink it.</h2>
+      <p>Tell us what's eating your team's time. We'll tell you, honestly, whether Claude can kill it — and what it would take. A real person replies within one business day. No deck required; bad handwriting on a napkin is fine.</p>
+      <a class="btn btn-solid" href="#interest" data-interest>I'm Interested
+        <svg width="22" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+      </a>
     </div>
   </section>
 
@@ -435,6 +410,7 @@
   <script src="../assets/vendor/gsap.min.js"></script>
   <script src="../assets/vendor/ScrollTrigger.min.js"></script>
   <script src="../assets/lenis.min.js"></script>
+  <script src="../assets/interest.js" defer></script>
   <script>
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

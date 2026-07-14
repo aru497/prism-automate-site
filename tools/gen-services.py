@@ -243,6 +243,7 @@ PAGE = """<!DOCTYPE html>
     </div>
   </footer>
   <script src="../../assets/nav.js" defer></script>
+  <script src="../../assets/interest.js" defer></script>
 </body>
 </html>
 """
@@ -437,6 +438,7 @@ GROUPS_TOKEN
     </div>
   </footer>
   <script src="../assets/nav.js" defer></script>
+  <script src="../assets/interest.js" defer></script>
 </body>
 </html>
 """
