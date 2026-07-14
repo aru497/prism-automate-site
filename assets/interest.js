@@ -3,15 +3,19 @@
 // to open a modal, so no page needs an inline fill-in form. Progressive
 // enhancement: with JS the modal opens; without it, the link still resolves.
 //
-// Submit path: POSTs the fields to FormSubmit (https://formsubmit.co), which
-// emails every submission straight to the addresses below — no mail client
-// needed. If that request fails (e.g. before the address is activated once, or
-// offline) it falls back to opening a pre-filled mailto so a lead is never lost.
+// Submit path: POSTs the fields to Formspree (https://formspree.io), which
+// emails every submission straight to your inbox and logs it in a dashboard —
+// no mail client needed. If the request fails (or the form ID below is still
+// the placeholder) it falls back to a pre-filled mailto so a lead is never lost.
+//
+// SETUP (one time): create a free form at https://formspree.io, then paste its
+// ID below. The ID is the last part of the endpoint it gives you —
+// e.g. for https://formspree.io/f/mqkzabcd the ID is "mqkzabcd".
 (function () {
-  var PRIMARY = 'dharam@prismscale.com';        // submissions land here
-  var CC = 'arun@prismscale.com';               // and are cc'd here
-  var ENDPOINT = 'https://formsubmit.co/ajax/' + PRIMARY;
-  var MAILTO = PRIMARY + ',' + CC;              // fallback only
+  var FORMSPREE_ID = 'YOUR_FORM_ID';            // <-- paste your Formspree form ID here
+  var CC = 'arun@prismscale.com';               // second recipient (add in Formspree dashboard too)
+  var ENDPOINT = 'https://formspree.io/f/' + FORMSPREE_ID;
+  var MAILTO = 'dharam@prismscale.com,' + CC;   // fallback only
 
   var css =
     '.pi-overlay{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:1.25rem;background:rgba(5,4,8,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .28s cubic-bezier(.16,1,.3,1),visibility 0s linear .28s;}' +
@@ -123,14 +127,20 @@
       }
       var payload = {
         name: name,
-        email: email,
+        email: email,                                  // Formspree uses this as reply-to
         company: form.company.value.trim(),
         message: form.message.value.trim(),
         _subject: 'New enquiry from ' + name + ' — prismautomate.com',
-        _cc: CC,
-        _template: 'table',
-        _captcha: 'false'
+        _cc: CC
       };
+
+      // Not configured yet → skip the network round-trip, go straight to email.
+      if (FORMSPREE_ID === 'YOUR_FORM_ID') {
+        mailtoFallback(name, payload);
+        note.textContent = 'Opening your email app to send — one moment.';
+        return;
+      }
+
       var btn = form.querySelector('.pi-submit');
       var label = btn.textContent;
       submitting = true; btn.disabled = true; btn.textContent = 'Sending…';
@@ -141,13 +151,13 @@
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload)
       })
-        .then(function (r) { return r.json().catch(function () { return {}; }); })
-        .then(function (data) {
-          if (data && (data.success === true || data.success === 'true')) {
+        .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, data: d }; }, function () { return { ok: r.ok, data: {} }; }); })
+        .then(function (res) {
+          if (res.ok && (!res.data || !res.data.errors)) {
             form.reset();
             note.textContent = 'Got it — thank you. A real person replies within one business day.';
           } else {
-            // Address not activated yet, or endpoint issue — don't lose the lead.
+            // Endpoint issue — don't lose the lead.
             mailtoFallback(name, payload);
             note.textContent = 'Finishing in your email app — just hit send.';
           }

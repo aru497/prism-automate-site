@@ -405,7 +405,8 @@
     /* ---- Humans strip ---- */
     .humans { padding-block: clamp(4rem, 10vh, 7rem); border-top: 1px solid var(--line); overflow: clip; }
     .humans .wrap > p.eyebrow { text-align: center; }
-    .human-row { margin-top: 2.6rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2.5vw, 1.8rem); align-items: start; }
+    .human-row { margin-top: 2.6rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem, 2.2vw, 1.6rem); align-items: start; }
+    @media (max-width: 900px) { .human-row { grid-template-columns: repeat(2, 1fr); } }
     .human-row figure { margin: 0; }
     .human-row figure > img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 1px solid var(--line); }
     .human-row figcaption { margin-top: 1rem; }
@@ -508,7 +509,7 @@
       .case-media, .showcase { order: -1; }
       .stat-grid { grid-template-columns: 1fr 1fr; }
       .cta .wrap { grid-template-columns: 1fr; }
-      .human-row figure:nth-child(2) { margin-top: 0; }
+      .human-row { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -814,6 +815,10 @@
         <figure>
           <img src="assets/team/rohan.webp" width="760" height="950" alt="Rohan, Partner for Operations &amp; Design" loading="lazy" />
           <figcaption><b>Rohan</b><span>Partner · Operations &amp; Design</span></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/team/varad.webp" width="760" height="950" alt="Varad Joshi, Partner for Engineering" loading="lazy" />
+          <figcaption><b>Varad Joshi</b><span>Partner · Engineering</span></figcaption>
         </figure>
       </div>
       <p class="caption">You talk to the people who build — no account managers, no handoffs.</p>
