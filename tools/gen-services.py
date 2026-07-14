@@ -62,7 +62,8 @@ PAGE = """<!DOCTYPE html>
           {{ "@type": "ListItem", "position": 2, "name": "{cat_name}" }},
           {{ "@type": "ListItem", "position": 3, "name": "{name}" }}
         ]
-      }}
+      }},
+      {{ "@type": "FAQPage", "mainEntity": {faq_json} }}
     ]
   }}
   </script>
@@ -129,6 +130,13 @@ PAGE = """<!DOCTYPE html>
     .step h3 {{ font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 1.35rem; margin-top: 0.5rem; }}
     .step p {{ margin-top: 0.5rem; color: var(--ink-soft); font-size: 0.96rem; }}
     .fit ul {{ margin: 1.6rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.8rem; max-width: 56ch; }}
+    .svc-faq .faq-list {{ margin-top: 2rem; max-width: 820px; }}
+    .svc-faq details {{ border-bottom: 1px solid var(--line); }}
+    .svc-faq summary {{ cursor: pointer; list-style: none; padding: 1.25rem 0; font-weight: 600; font-size: 1.05rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }}
+    .svc-faq summary::-webkit-details-marker {{ display: none; }}
+    .svc-faq summary::after {{ content: "+"; font-size: 1.45rem; font-weight: 300; color: var(--violet); transition: transform 0.25s var(--ease); flex: none; line-height: 1; }}
+    .svc-faq details[open] summary::after {{ transform: rotate(45deg); }}
+    .svc-faq details p {{ color: var(--ink-soft); padding-bottom: 1.25rem; line-height: 1.7; max-width: 74ch; }}
     .fit li {{ display: flex; gap: 0.7rem; color: var(--ink-soft); }}
     .fit li::before {{ content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--violet-lo); margin-top: 0.5rem; }}
     .rel-row {{ display: grid; gap: 0.4rem; margin-top: 2rem; max-width: 620px; }}
@@ -234,6 +242,16 @@ PAGE = """<!DOCTYPE html>
     </div>
   </section>
 
+  <section class="svc-faq">
+    <div class="wrap">
+      <span class="sec-label">Questions</span>
+      <h2>Frequently asked</h2>
+      <div class="faq-list">
+{faq_html}
+      </div>
+    </div>
+  </section>
+
   <section class="cta">
     <div class="wrap">
       <div>
@@ -264,6 +282,13 @@ for svc in S:
         f'        <div class="step"><h3>{esc(t)}</h3><p>{esc(d)}</p></div>'
         for t, d in svc["steps"])
     fit = "\n".join(f'        <li>{esc(x)}</li>' for x in svc["fit"])
+    faq_pairs = svc.get("faq", [])
+    faq_html = "\n".join(
+        f'        <details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>'
+        for q, a in faq_pairs)
+    faq_json = json.dumps(
+        [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+         for q, a in faq_pairs], ensure_ascii=False)
     meta = svc["definition"] + " Delivered by Prism Automate, an Anthropic Claude partner serving India, the Middle East, and Australia."
     media = ""
     if svc.get("img"):
@@ -277,7 +302,7 @@ for svc in S:
         cat_name=esc(CATS[svc["cat"]]), definition=esc(svc["definition"]),
         meta_desc=esc(meta.replace('"', "'")),
         canonical=f"{BASE_URL}/services/{svc['slug']}/",
-        media_html=media,
+        media_html=media, faq_html=faq_html, faq_json=faq_json,
         included_html=inc, steps_html=steps, fit_html=fit, related_html=related(svc))
     outdir = os.path.join(BASE, svc["slug"])
     os.makedirs(outdir, exist_ok=True)

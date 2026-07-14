@@ -281,6 +281,14 @@ PAGE = f"""<!DOCTYPE html>
     .std h3::before {{ content: ""; display: block; width: 34px; height: 2px; background: var(--gold); margin-bottom: 1rem; }}
     .std p {{ margin-top: 0.7rem; color: var(--cream-dim); font-size: 0.97rem; line-height: 1.6; }}
     @media (max-width: 820px) {{ .std-grid {{ grid-template-columns: 1fr; }} }}
+    .process {{ border-top: 1px solid var(--line-dk); padding-block: clamp(4.5rem, 11vh, 8rem); }}
+    .proc-grid {{ margin-top: 3rem; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line-dk); border-left: 1px solid var(--line-dk); }}
+    .proc {{ padding: clamp(1.6rem, 3vw, 2.4rem); border-right: 1px solid var(--line-dk); border-bottom: 1px solid var(--line-dk); }}
+    .proc .n {{ font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: 2.2rem; color: var(--violet-lo); line-height: 1; }}
+    .proc h3 {{ margin-top: 1rem; font-size: 1.2rem; font-weight: 600; }}
+    .proc p {{ margin-top: 0.7rem; color: var(--cream-dim); font-size: 0.96rem; line-height: 1.6; }}
+    @media (max-width: 900px) {{ .proc-grid {{ grid-template-columns: 1fr 1fr; }} }}
+    @media (max-width: 520px) {{ .proc-grid {{ grid-template-columns: 1fr; }} }}
 
     /* Clients */
     .clients {{ border-top: 1px solid var(--line-dk); padding-block: clamp(3.5rem, 8vh, 5.5rem); text-align: center; }}
@@ -357,6 +365,21 @@ PAGE = f"""<!DOCTYPE html>
   </header>
 
 {sections}
+
+  <section class="process">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How an engagement runs</p>
+        <h2>Four steps from "we should" to "it's live."</h2>
+      </div>
+      <div class="proc-grid">
+        <div class="proc"><span class="n">01</span><h3>Scope</h3><p>We start with the workflow eating your team's time, not a feature wishlist. One call, an honest assessment, and a scoped plan with numbers.</p></div>
+        <div class="proc"><span class="n">02</span><h3>Prototype</h3><p>A working proof against your real data in weeks — evidence strong enough to fund it properly or kill it cheaply. No slideware.</p></div>
+        <div class="proc"><span class="n">03</span><h3>Ship</h3><p>Production build with the safety, evals, and fallbacks that survive real users on a bad day. Behind your SSO, inside your cloud.</p></div>
+        <div class="proc"><span class="n">04</span><h3>Run</h3><p>We carry the pager under an SLA, or hand you the keys with runbooks. Either way, someone owns it after launch.</p></div>
+      </div>
+    </div>
+  </section>
 
   <section class="standard">
     <div class="wrap">

@@ -38,7 +38,17 @@
    "The board wants a plan with numbers, not enthusiasm."
   ],
   "img": "https://images.unsplash.com/photo-1501290301209-7a0323622985?auto=format&fit=crop&w=1600&q=80",
-  "img_alt": "Long-exposure white and red car light trails sweeping around a dark highway curve at night"
+  "img_alt": "Long-exposure white and red car light trails sweeping around a dark highway curve at night",
+  "faq": [
+   [
+    "How is this different from a strategy deck we could buy anywhere?",
+    "A deck ends at 'you should do AI.' Ours ends with a sequenced, costed roadmap and the first build already scoped to start on sign-off — priorities, owners, and kill criteria included."
+   ],
+   [
+    "How long does the roadmap engagement take?",
+    "Usually two to four weeks: workshops with the people who own the workflows, every candidate use case scored, then a plan your board can fund. Fast, because the first build shouldn't wait."
+   ]
+  ]
  },
  {
   "slug": "ai-readiness-governance",
@@ -79,7 +89,17 @@
    "Half the company is already pasting customer data into chatbots, and there's no policy."
   ],
   "img": "https://images.unsplash.com/photo-1768049994214-5df7d70fc078?auto=format&fit=crop&w=1600&q=80",
-  "img_alt": "Dim institutional hall with stone columns and a grand staircase rising toward a warmly lit doorway"
+  "img_alt": "Dim institutional hall with stone columns and a grand staircase rising toward a warmly lit doorway",
+  "faq": [
+   [
+    "Will this slow our teams down with red tape?",
+    "The opposite. The point is guardrails that let teams move faster with confidence — usage policies, review gates, and escalation paths that satisfy legal without becoming a bottleneck."
+   ],
+   [
+    "We're in a regulated industry — can you handle that?",
+    "Yes. We build the risk register and paper trail around your specific obligations, so 'we use AI carefully' becomes something that survives an audit."
+   ]
+  ]
  },
  {
   "slug": "use-case-portfolio",
@@ -120,7 +140,17 @@
    "Finance wants proof before the programme grows."
   ],
   "img": "https://images.unsplash.com/photo-1480944657103-7fed22359e1d?auto=format&fit=crop&w=1600&q=80",
-  "img_alt": "Dark office tower facade at night, a grid of windows glowing violet, pink and blue"
+  "img_alt": "Dark office tower facade at night, a grid of windows glowing violet, pink and blue",
+  "faq": [
+   [
+    "How do you decide which use cases are worth it?",
+    "We shadow the teams, log where the hours actually go, and put honest numbers — hours saved, revenue protected, cost avoided — on each candidate, with assumptions finance can test."
+   ],
+   [
+    "What if most of our ideas don't survive?",
+    "Good. Killing weak ideas cheaply is half the value. You leave with a funded shortlist ordered by payback, not twenty maybes."
+   ]
+  ]
  },
  {
   "slug": "internal-agentic-platform",
@@ -161,7 +191,17 @@
    "You want the capability in-house, not rented from a vendor forever."
   ],
   "img": "https://images.unsplash.com/photo-1741524916134-48f00f42d925?auto=format&fit=crop&w=1600&q=80",
-  "img_alt": "Interlocking concrete ramps and walkways inside a dark brutalist building, lit by warm golden recessed lights"
+  "img_alt": "Interlocking concrete ramps and walkways inside a dark brutalist building, lit by warm golden recessed lights",
+  "faq": [
+   [
+    "Why a platform instead of building agents one by one?",
+    "Because every team otherwise rebuilds the same auth, memory, connectors, and logging. One governed platform means agent two ships faster than agent one — and agent ten ships without us."
+   ],
+   [
+    "Do we own it, or are we locked in?",
+    "You own it. It runs in your cloud, behind your SSO, and we hand over runbooks and paved-road templates so your engineers extend it themselves."
+   ]
+  ]
  },
  {
   "slug": "customer-facing-ai-product",
@@ -202,7 +242,17 @@
    "You have the product team but not the applied-AI depth."
   ],
   "img": "https://images.unsplash.com/photo-1783004834993-ffa314a777c8?auto=format&fit=crop&w=1600&q=80",
-  "img_alt": "Dark glass building facade at dusk with vertical panels glowing warm gold"
+  "img_alt": "Dark glass building facade at dusk with vertical panels glowing warm gold",
+  "faq": [
+   [
+    "How do you keep a public AI feature from going off the rails?",
+    "Prompt-injection defence, content filtering, rate controls, and adversarial testing before launch, plus fallbacks and streaming so it feels like product, not a fragile demo."
+   ],
+   [
+    "Have you actually shipped customer-facing AI?",
+    "Yes — indoor event wayfinding (Prism Events) and a retail virtual try-on are both live in the field, not slideware."
+   ]
+  ]
  },
  {
   "slug": "prototype-poc",
@@ -243,7 +293,17 @@
    "The use case is novel enough that nobody can quote it blind."
   ],
   "img": "https://images.unsplash.com/photo-1541428213843-059f9be2dbae?auto=format&fit=crop&w=1600&q=80",
-  "img_alt": "Long-exposure golden spark trails looping and scattering through a dark concrete tunnel"
+  "img_alt": "Long-exposure golden spark trails looping and scattering through a dark concrete tunnel",
+  "faq": [
+   [
+    "What do we actually get at the end?",
+    "Working software integrated against your real data, honest findings on what worked and what didn't, and a costed go/no-go you can take to a budget meeting."
+   ],
+   [
+    "How fast is a proof of concept?",
+    "Two to four weeks against one use case with one success metric agreed up front. Short enough to stay honest, long enough to prove it."
+   ]
+  ]
  },
  {
   "slug": "rollout-activation",
@@ -284,7 +344,17 @@
    "The board wants an AI progress update next quarter, and 'we bought licences' won't cut it."
   ],
   "img": "https://images.unsplash.com/photo-1755811717097-23fba595025d?auto=format&fit=crop&w=1600&q=80",
-  "img_alt": "Long-exposure light trails from vehicles streaking through a dark night road, warm streaks cutting across black"
+  "img_alt": "Long-exposure light trails from vehicles streaking through a dark night road, warm streaks cutting across black",
+  "faq": [
+   [
+    "We bought licences but nobody uses them. Can you fix that?",
+    "That's exactly the problem this solves. Staged rollout by team, champions trained ahead of each wave, and usage reviewed at 30 days so laggard teams get direct help."
+   ],
+   [
+    "Will IT sign off on this?",
+    "Yes — SSO, workspace structure, and permissions are set up to your security team's satisfaction before anyone gets a login."
+   ]
+  ]
  },
  {
   "slug": "industry-accelerator-deployment",
@@ -325,7 +395,17 @@
    "Procurement prefers configured products over custom builds."
   ],
   "img": "https://images.unsplash.com/photo-1761509813751-383d689461da?auto=format&fit=crop&w=1600&q=80",
-  "img_alt": "Geometric grid of warmly illuminated square windows on a dark building facade at night"
+  "img_alt": "Geometric grid of warmly illuminated square windows on a dark building facade at night",
+  "faq": [
+   [
+    "What's an 'accelerator' exactly?",
+    "A pre-built, industry-specific Claude solution we configure to your data and deploy in your cloud — so you start from working software instead of a blank page."
+   ],
+   [
+    "How much of it is bespoke vs. configured?",
+    "Mostly configured, which is the point: faster time-to-value. We adapt prompts, retrieval, and workflows to your terminology and brand, without a ground-up build."
+   ]
+  ]
  },
  {
   "slug": "platform-migration-claude",
@@ -366,7 +446,17 @@
    "Compliance wants the switch contracted, documented, and provable — not a weekend experiment."
   ],
   "img": "https://images.unsplash.com/photo-1774388013568-abdb1eb1ad68?auto=format&fit=crop&w=1600&q=80",
-  "img_alt": "Abstract metallic tunnel of repeating ribbed lines converging toward a bright light at the far end"
+  "img_alt": "Abstract metallic tunnel of repeating ribbed lines converging toward a bright light at the far end",
+  "faq": [
+   [
+    "How do you migrate without breaking production?",
+    "We baseline your current stack, run old and new side-by-side on live traffic until the numbers say switch, then shift traffic in stages with a rehearsed rollback at every gate."
+   ],
+   [
+    "Will Claude actually do better on our workload?",
+    "We prove it with numbers before anything changes — accuracy, latency, and cost measured against your baseline, so 'as good or better' isn't a promise, it's a scorecard."
+   ]
+  ]
  },
  {
   "slug": "sustained-adoption-coe",
@@ -407,7 +497,17 @@
    "Leadership wants sustained capability, not a one-off project."
   ],
   "img": "https://images.unsplash.com/photo-1553959854-d9972f0a1ab9?auto=format&fit=crop&w=1600&q=80",
-  "img_alt": "Dark spiral staircase seen from above, its stone steps winding downward in a high-contrast circular pattern of black and grey"
+  "img_alt": "Dark spiral staircase seen from above, its stone steps winding downward in a high-contrast circular pattern of black and grey",
+  "faq": [
+   [
+    "Adoption spiked at launch then died. Why will this be different?",
+    "Because we run the rhythm that keeps it alive — intake, prioritisation, enablement, and governance, quarter after quarter — instead of leaving it to fade after the launch buzz."
+   ],
+   [
+    "Do you run it forever?",
+    "No. We stand it up, operate it with you, then hand the chairs to your people one role at a time until the CoE runs without us."
+   ]
+  ]
  },
  {
   "slug": "managed-ai-operations",
@@ -448,7 +548,17 @@
    "The engineer who built it has been on call for it ever since."
   ],
   "img": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80",
-  "img_alt": "Dimly lit data-center server rack with dense rows of network cables and glowing status lights receding into darkness"
+  "img_alt": "Dimly lit data-center server rack with dense rows of network cables and glowing status lights receding into darkness",
+  "faq": [
+   [
+    "What does 'managed' actually cover?",
+    "Monitoring, alerting, incident response, and a standing eval suite that catches output drift before your users do — under SLAs we sign, with one honest report a month."
+   ],
+   [
+    "Who carries the pager?",
+    "We do. Your engineers built it; they shouldn't be stuck babysitting it at 2am. That's our job."
+   ]
+  ]
  },
  {
   "slug": "cowork-claude-code-support",
@@ -489,7 +599,17 @@
    "You want enablement running without hiring for it."
   ],
   "img": "https://images.unsplash.com/photo-1528372444006-1bfc81acab02?auto=format&fit=crop&w=1600&q=80",
-  "img_alt": "Laptop showing code on a dark desk beside a window, the screen's glow set against a moody overcast sky at first light"
+  "img_alt": "Laptop showing code on a dark desk beside a window, the screen's glow set against a moody overcast sky at first light",
+  "faq": [
+   [
+    "Our devs adopted Claude Code unevenly. Can you help?",
+    "Yes — a named support channel with response-time commitments, working patterns for your stack, and clinics built from your actual ticket log turn stuck users into power users."
+   ],
+   [
+    "Isn't this just IT support?",
+    "IT can reset a password; it can't explain why the model ignored your CLAUDE.md. This is model-specific enablement, staffed by people who build with Claude Code daily."
+   ]
+  ]
  },
  {
   "slug": "claude-finops-optimisation",
@@ -530,7 +650,17 @@
    "Finance wants a forecast that survives contact with reality."
   ],
   "img": "https://images.unsplash.com/photo-1768203552123-2862dc0cf6fa?auto=format&fit=crop&w=1600&q=80",
-  "img_alt": "Abstract golden light trails streaking across a pure black background in a long-exposure sweep of fine luminous lines"
+  "img_alt": "Abstract golden light trails streaking across a pure black background in a long-exposure sweep of fine luminous lines",
+  "faq": [
+   [
+    "Our Claude bill jumped and nobody knows why. Can you find out?",
+    "That's the first deliverable: a per-team, per-workload ledger showing who spends what, on which models, and which spend earns nothing."
+   ],
+   [
+    "Will cutting cost hurt quality?",
+    "No — every lever (model-tier fits, caching, batching, context diets) is checked against output quality before it ships. The bill grows slower than the value, not the results."
+   ]
+  ]
  },
  {
   "slug": "claude-training-sessions",
@@ -571,6 +701,16 @@
    "You'd rather build this skill in-house than rent consultants indefinitely."
   ],
   "img": "https://images.unsplash.com/photo-1677536849474-2819061389ed?auto=format&fit=crop&w=1600&q=80",
-  "img_alt": "Empty theatre auditorium in near darkness, rows of seats facing a stage under a rig of warm spotlights, shot on film"
+  "img_alt": "Empty theatre auditorium in near darkness, rows of seats facing a stage under a rig of warm spotlights, shot on film",
+  "faq": [
+   [
+    "How is this different from watching a tutorial?",
+    "It's live, role-based, and built on your real workflows — builders, analysts, and leaders each get their own track, and people leave with finished work, not notes."
+   ],
+   [
+    "How do you know the training worked?",
+    "Pre- and post-assessment scores, reported in writing, so you see what changed by team and where a refresher is worth it."
+   ]
+  ]
  }
 ]
