@@ -12,7 +12,7 @@
 // ID below. The ID is the last part of the endpoint it gives you —
 // e.g. for https://formspree.io/f/mqkzabcd the ID is "mqkzabcd".
 (function () {
-  var FORMSPREE_ID = 'YOUR_FORM_ID';            // <-- paste your Formspree form ID here
+  var FORMSPREE_ID = 'xkodgjkv';                // Formspree form (add arun@ as a 2nd recipient in the dashboard)
   var CC = 'arun@prismscale.com';               // second recipient (add in Formspree dashboard too)
   var ENDPOINT = 'https://formspree.io/f/' + FORMSPREE_ID;
   var MAILTO = 'dharam@prismscale.com,' + CC;   // fallback only
