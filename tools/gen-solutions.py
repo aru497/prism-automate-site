@@ -399,6 +399,7 @@ PAGE = f"""<!DOCTYPE html>
             <a href="../">Home</a>
             <a href="../services/">All services</a>
             <a href="#top">Solutions</a>
+            <a href="../faq/">FAQ</a>
           </div>
           <div>
             <span class="t">Company</span>

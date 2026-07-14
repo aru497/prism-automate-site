@@ -247,7 +247,7 @@ PAGE = """<!DOCTYPE html>
   <footer>
     <div class="wrap">
       <span>Prism Automate © 2026 · Anthropic Claude Partner</span>
-      <span><a href="../../" style="color:inherit">Home</a> · <a href="../" style="color:inherit">All services</a></span>
+      <span><a href="../../" style="color:inherit">Home</a> · <a href="../" style="color:inherit">All services</a> · <a href="../../faq/" style="color:inherit">FAQ</a></span>
     </div>
   </footer>
   <script src="../../assets/nav.js" defer></script>
@@ -445,7 +445,7 @@ GROUPS_TOKEN
   <footer>
     <div class="wrap">
       <span>Prism Automate © 2026 · Anthropic Claude Partner</span>
-      <span><a href="../" style="color:inherit">Home</a></span>
+      <span><a href="../" style="color:inherit">Home</a> · <a href="../faq/" style="color:inherit">FAQ</a></span>
     </div>
   </footer>
   <script src="../assets/nav.js" defer></script>
