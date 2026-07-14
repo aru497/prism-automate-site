@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 
-# TODO: update host once the production domain is confirmed
-Sitemap: https://www.prismautomate.com/sitemap.xml
+Disallow: /classic/
+Disallow: /brand/
+Disallow: /studio/
+
+Sitemap: https://aru497.github.io/prism-automate-site/sitemap.xml
