@@ -596,7 +596,10 @@
   </div>
 
   <header class="hero" id="top">
-    <video id="hero-video" src="assets/ring-b.webm" autoplay muted loop playsinline preload="auto"></video>
+    <video id="hero-video" poster="assets/ring-b-poster.webp" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="assets/ring-b.webm" type="video/webm" />
+      <source src="assets/ring-b.mp4" type="video/mp4" />
+    </video>
     <div class="wrap" id="hero-inner">
       <p class="eyebrow">AI Automation Studio · Anthropic Claude Partner</p>
       <h1>
@@ -646,7 +649,7 @@
         </div>
         <div class="panels">
           <div class="panel" data-panel="0">
-            <img class="obj" src="https://images.unsplash.com/photo-1783250972025-d900660fb9c5?auto=format&fit=crop&w=900&q=75" alt="" aria-hidden="true" loading="lazy" />
+            <video class="obj" poster="assets/chapter-advise-poster.webp" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/chapter-advise.mp4" type="video/mp4" /></video>
             <svg class="ch-icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="m300-300 280-80 80-280-280 80-80 280Zm180-120q-25 0-42.5-17.5T420-480q0-25 17.5-42.5T480-540q25 0 42.5 17.5T540-480q0 25-17.5 42.5T480-420Zm0 340q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Zm0-320Z"/></svg>
             <h2>Advise</h2>
             <div class="desc">
@@ -655,7 +658,7 @@
             </div>
           </div>
           <div class="panel" data-panel="1">
-            <img class="obj" src="https://images.unsplash.com/photo-1743398665751-2cd5d3cc9d46?auto=format&fit=crop&w=900&q=75" alt="" aria-hidden="true" loading="lazy" />
+            <video class="obj" poster="assets/chapter-build-poster.webp" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/chapter-build.mp4" type="video/mp4" /></video>
             <svg class="ch-icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="M440-183v-274L200-596v274l240 139Zm80 0 240-139v-274L520-457v274Zm-40-343 237-137-237-137-237 137 237 137ZM160-252q-19-11-29.5-29T120-321v-318q0-22 10.5-40t29.5-29l280-161q19-11 40-11t40 11l280 161q19 11 29.5 29t10.5 40v318q0 22-10.5 40T800-252L520-91q-19 11-40 11t-40-11L160-252Zm320-228Z"/></svg>
             <h2>Build</h2>
             <div class="desc">
@@ -664,7 +667,7 @@
             </div>
           </div>
           <div class="panel" data-panel="2">
-            <img class="obj" src="https://images.unsplash.com/photo-1775656926048-16743f9a6c7a?auto=format&fit=crop&w=900&q=75" alt="" aria-hidden="true" loading="lazy" />
+            <video class="obj" poster="assets/chapter-deploy-poster.webp" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/chapter-deploy.mp4" type="video/mp4" /></video>
             <svg class="ch-icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="m226-559 78 33q14-28 29-54t33-52l-56-11-84 84Zm142 83 114 113q42-16 90-49t90-75q70-70 109.5-155.5T806-800q-72-5-158 34.5T492-656q-42 42-75 90t-49 90Zm155-121.5q0-33.5 23-56.5t57-23q34 0 57 23t23 56.5q0 33.5-23 56.5t-57 23q-34 0-57-23t-23-56.5ZM565-220l84-84-11-56q-26 18-52 32.5T532-299l33 79Zm313-653q19 121-23.5 235.5T708-419l20 99q4 20-2 39t-20 33L538-80l-84-197-171-171-197-84 167-168q14-14 33.5-20t39.5-2l99 20q104-104 218-147t235-24ZM157-321q35-35 85.5-35.5T328-322q35 35 34.5 85.5T327-151q-25 25-83.5 43T82-76q14-103 32-161.5t43-83.5Zm57 56q-10 10-20 36.5T180-175q27-4 53.5-13.5T270-208q12-12 13-29t-11-29q-12-12-29-11.5T214-265Z"/></svg>
             <h2>Deploy</h2>
             <div class="desc">
@@ -673,7 +676,7 @@
             </div>
           </div>
           <div class="panel" data-panel="3">
-            <img class="obj" src="https://images.unsplash.com/photo-1771599940657-f9f151abed45?auto=format&fit=crop&w=900&q=75" alt="" aria-hidden="true" loading="lazy" />
+            <video class="obj" poster="assets/chapter-run-poster.webp" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/chapter-run.mp4" type="video/mp4" /></video>
             <svg class="ch-icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="M120-120v-80l80-80v160h-80Zm160 0v-240l80-80v320h-80Zm160 0v-320l80 81v239h-80Zm160 0v-239l80-80v319h-80Zm160 0v-400l80-80v480h-80ZM120-327v-113l280-280 160 160 280-280v113L560-447 400-607 120-327Z"/></svg>
             <h2>Run</h2>
             <div class="desc">
@@ -793,7 +796,10 @@
         </a>
       </div>
       <div class="story-visual gr">
-        <video src="assets/ring-a.webm" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+        <video poster="assets/ring-a-poster.webp" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="assets/ring-a.webm" type="video/webm" />
+          <source src="assets/ring-a.mp4" type="video/mp4" />
+        </video>
         <div class="chip chip-a"><b>589+</b><span>projects across the Prism family</span></div>
         <div class="chip chip-b"><b>4.9/5</b><span>average client satisfaction</span></div>
       </div>
