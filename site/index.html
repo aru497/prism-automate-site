@@ -417,9 +417,9 @@
 
     /* ---- Clients ---- */
     .clients { padding-block: clamp(4rem, 9vh, 6rem); border-top: 1px solid var(--line); text-align: center; }
-    .logo-row { margin-top: 2.4rem; display: flex; justify-content: center; align-items: center; gap: clamp(1.6rem, 5vw, 4rem); flex-wrap: wrap; }
+    .logo-row { margin: 2.4rem auto 0; display: flex; justify-content: center; align-items: center; gap: clamp(1.2rem, 3.5vw, 2.6rem) clamp(1.4rem, 4vw, 3.2rem); flex-wrap: wrap; max-width: 62rem; }
     .logo-row img { height: 26px; opacity: .85; }
-    .logo-row .word { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.02em; color: var(--ink); opacity: .85; }
+    .logo-row .word { font-size: clamp(1.05rem, 1.6vw, 1.25rem); font-weight: 700; letter-spacing: 0.01em; color: var(--ink); opacity: .8; white-space: nowrap; }
     .clients-note { margin: 1.6rem auto 0; max-width: 60ch; font-size: 0.82rem; line-height: 1.5; color: var(--ink-soft); }
 
     /* ---- Where we work ---- */
@@ -596,9 +596,8 @@
   </div>
 
   <header class="hero" id="top">
-    <video id="hero-video" poster="assets/ring-b-poster.webp" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-      <source src="assets/ring-b.webm" type="video/webm" />
-      <source src="assets/ring-b.mp4" type="video/mp4" />
+    <video id="hero-video" poster="assets/prism-ring-poster.webp" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="assets/prism-ring.mp4" type="video/mp4" />
     </video>
     <div class="wrap" id="hero-inner">
       <p class="eyebrow">AI Automation Studio · Anthropic Claude Partner</p>
@@ -835,15 +834,21 @@
     <div class="wrap">
       <p class="eyebrow">Brands the Prism family has shipped for</p>
       <div class="logo-row">
-        <img src="https://cdn.simpleicons.org/google/16121f" alt="Google" loading="lazy" />
-        <img src="https://cdn.simpleicons.org/accenture/16121f" alt="Accenture" loading="lazy" />
-        <span class="word">UNISYS</span>
-        <img src="https://cdn.simpleicons.org/phonepe/16121f" alt="PhonePe" loading="lazy" />
-        <span class="word">BROOKFIELD</span>
-        <img src="https://cdn.simpleicons.org/airindia/16121f" alt="Air India" loading="lazy" />
-        <span class="word">COGNITE</span>
+        <span class="word">Google</span>
+        <span class="word">Amazon</span>
+        <span class="word">Accenture</span>
+        <span class="word">PhonePe</span>
+        <span class="word">Twilio</span>
+        <span class="word">Intuit</span>
+        <span class="word">Novo&nbsp;Nordisk</span>
+        <span class="word">Ola</span>
+        <span class="word">Air&nbsp;India</span>
+        <span class="word">Unisys</span>
+        <span class="word">Brookfield</span>
+        <span class="word">Cognite</span>
+        <span class="word">WestBridge</span>
       </div>
-      <p class="clients-note">Google and Unisys through Prism Automate; Accenture, PhonePe, Air India, Brookfield and Cognite across Prism Scale and DesignHQ.</p>
+      <p class="clients-note">Google and Unisys through Prism Automate; Amazon, Accenture, PhonePe, Twilio, Intuit, Novo Nordisk, Ola, Air India, Brookfield, Cognite and WestBridge Capital across Prism Scale and DesignHQ.</p>
     </div>
   </section>
 
@@ -1099,6 +1104,17 @@
       scaleY: 1, ease: 'none',
       scrollTrigger: { trigger: '.chapters', start: 'top top', end: '+=' + (panels.length * 90) + '%', scrub: 0.6 }
     });
+
+    // Parallax touch on the final "Run" step: its object floats up with depth
+    // (baseline translateY(-52%) folded into the yPercent range) and settles as
+    // the panel arrives — a beat the other three chapters don't get.
+    var runObj = document.querySelector('.panel[data-panel="3"] .obj');
+    if (runObj) {
+      gsap.fromTo(runObj,
+        { yPercent: -30, scale: 1.16 },
+        { yPercent: -74, scale: 1, ease: 'none',
+          scrollTrigger: { trigger: '.chapters', start: 'top top', end: '+=' + (panels.length * 90) + '%', scrub: 0.9 } });
+    }
 
     // Case media parallax + soft reveals.
     document.querySelectorAll('[data-parallax]').forEach(img => {
