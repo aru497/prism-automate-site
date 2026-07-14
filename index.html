@@ -440,6 +440,9 @@
     .cta h2 { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 500; line-height: 1.05; max-width: 16ch; }
     .cta h2 em { color: var(--violet-lo); }
     .cta small { display: block; margin-top: 1rem; color: var(--cream-dim); font-size: 1rem; }
+    .cta .wrap.cta-band { display: block; text-align: center; max-width: 640px; }
+    .cta-band h2 { max-width: none; margin-inline: auto; }
+    .cta-band .btn-solid { margin-top: 2rem; }
     .btn-solid { background: var(--paper); color: var(--ink); text-decoration: none; padding: 1.05rem 2.3rem; border-radius: 999px; font-weight: 600; white-space: nowrap; transition: transform 0.15s var(--ease), background 0.2s; display: inline-block; border: 0; cursor: pointer; font-family: var(--font); font-size: 1rem; }
     .cta-grid { grid-template-columns: 1fr 1.05fr !important; }
     #contact-form { display: grid; gap: 1rem; }
@@ -849,21 +852,10 @@
   </section>
 
   <section class="cta dark" id="contact">
-    <div class="wrap cta-grid">
-      <div class="gr">
-        <h2>Let's build your <em>AI core.</em></h2>
-        <small>Tell us what slows your team down. A real person, usually Arun, replies within one business day. Bengaluru · Dubai · Sydney.</small>
-      </div>
-      <!-- TODO: wire to a real backend; currently opens a prefilled email -->
-      <form id="contact-form" class="gr" novalidate>
-        <div class="f-row">
-          <label>Name<input name="name" type="text" autocomplete="name" required /></label>
-          <label>Work email<input name="email" type="email" autocomplete="email" required /></label>
-        </div>
-        <label>What should we automate or improve?<textarea name="message" rows="4"></textarea></label>
-        <button class="btn-solid" type="submit">Start a project</button>
-        <p class="f-note" id="f-note">We reply within one business day.</p>
-      </form>
+    <div class="wrap cta-band gr">
+      <h2>Let's build your <em>AI core.</em></h2>
+      <small>Tell us what slows your team down. A real person, usually Arun, replies within one business day. Bengaluru · Dubai · Sydney.</small>
+      <a class="btn-solid" href="#contact" data-interest>Start a project</a>
     </div>
   </section>
 
@@ -901,6 +893,7 @@
   <script src="assets/lenis.min.js" defer></script>
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/interest.js" defer></script>
   <script>
   window.addEventListener('DOMContentLoaded', () => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
