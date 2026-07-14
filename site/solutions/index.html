@@ -79,7 +79,7 @@
             "item": {
               "@type": "Service",
               "name": "Virtual Try-On",
-              "description": "Let shoppers see the product on themselves before they commit. Our retail AR module renders items in real time on any device, lifting confidence and cutting the returns that quietly eat margin. Built, shipped, and embeddable in an afternoon.",
+              "description": "Let shoppers see the product on themselves before they commit. Our retail try-on blends pose detection and generative AI to render garments on any body in real time \u2014 no photo shoot required \u2014 lifting confidence and cutting the returns that quietly eat margin. One of the fastest, most cost-effective diffusion-and-segmentation try-on engines in e-commerce.",
               "provider": {
                 "@type": "Organization",
                 "name": "Prism Automate"
@@ -104,6 +104,90 @@
           {
             "@type": "ListItem",
             "position": 3,
+            "item": {
+              "@type": "Service",
+              "name": "Codey",
+              "description": "A terminal-first AI coding assistant that lives where developers already work. Codey reads the whole repo, writes and refactors across files, runs commands, and ships working changes with intelligent, autonomous support \u2014 turning intent into merged code without leaving the shell.",
+              "provider": {
+                "@type": "Organization",
+                "name": "Prism Automate"
+              },
+              "areaServed": [
+                "India",
+                "United Arab Emirates",
+                "Saudi Arabia",
+                "Qatar",
+                "Australia",
+                "Singapore",
+                "Philippines",
+                "Rwanda",
+                "Kenya",
+                "Nigeria",
+                "South Africa",
+                "Egypt",
+                "Brazil"
+              ]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Service",
+              "name": "AI Facial Recognition",
+              "description": "Verify who's who in real time. Our facial-recognition module confirms identity through a live face scan wrapped in a seamless, form-based booking and check-in flow \u2014 fast, contactless, and accurate, so the right person gets through and no one else does.",
+              "provider": {
+                "@type": "Organization",
+                "name": "Prism Automate"
+              },
+              "areaServed": [
+                "India",
+                "United Arab Emirates",
+                "Saudi Arabia",
+                "Qatar",
+                "Australia",
+                "Singapore",
+                "Philippines",
+                "Rwanda",
+                "Kenya",
+                "Nigeria",
+                "South Africa",
+                "Egypt",
+                "Brazil"
+              ]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Service",
+              "name": "AR Furniture Visualization",
+              "description": "Let shoppers drop furniture into their own space before they buy. Our AR module renders products at true scale in the real room through any phone camera, so customers place, resize, and preview with confidence \u2014 lifting conversion and cutting the returns that come from guessing.",
+              "provider": {
+                "@type": "Organization",
+                "name": "Prism Automate"
+              },
+              "areaServed": [
+                "India",
+                "United Arab Emirates",
+                "Saudi Arabia",
+                "Qatar",
+                "Australia",
+                "Singapore",
+                "Philippines",
+                "Rwanda",
+                "Kenya",
+                "Nigeria",
+                "South Africa",
+                "Egypt",
+                "Brazil"
+              ]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
             "item": {
               "@type": "Service",
               "name": "AI Concierge & Chatbot",
@@ -131,7 +215,7 @@
           },
           {
             "@type": "ListItem",
-            "position": 4,
+            "position": 7,
             "item": {
               "@type": "Service",
               "name": "AI Voice Agent",
@@ -159,7 +243,7 @@
           },
           {
             "@type": "ListItem",
-            "position": 5,
+            "position": 8,
             "item": {
               "@type": "Service",
               "name": "Agentic Internal Platform",
@@ -187,7 +271,7 @@
           },
           {
             "@type": "ListItem",
-            "position": 6,
+            "position": 9,
             "item": {
               "@type": "Service",
               "name": "Document Intelligence",
@@ -298,6 +382,7 @@
     .badge::before { content: ""; width: 8px; height: 8px; border-radius: 0; flex: none; }
     .badge.live::before { background: var(--gold); }
     .badge.build::before { background: var(--violet-lo); }
+    .badge.product::before { background: var(--gold); }
     .sol-cta { display: flex; align-items: center; gap: 0.6rem; margin-top: 1.8rem; text-decoration: none; font-weight: 600; color: var(--paper); width: fit-content; }
     .sol-cta svg { transition: transform 0.25s var(--ease); }
     .sol-cta:hover svg { transform: translateX(6px); }
@@ -404,6 +489,9 @@
       <nav class="chips" aria-label="Jump to a solution">
           <a href="#prism-events">Prism Events</a>
           <a href="#virtual-try-on">Virtual Try-On</a>
+          <a href="#codey">Codey</a>
+          <a href="#facial-recognition">AI Facial Recognition</a>
+          <a href="#ar-furniture">AR Furniture Visualization</a>
           <a href="#ai-concierge">AI Concierge &amp; Chatbot</a>
           <a href="#ai-voice-agent">AI Voice Agent</a>
           <a href="#agentic-platform">Agentic Internal Platform</a>
@@ -451,24 +539,100 @@
         </a>
       </div>
       <div class="sol-main">
-        <figure class="sol-media"><img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=1600&q=80" alt="A hand holding up a smartphone, its camera viewfinder glowing against a dark blue interior." loading="lazy" /></figure>
+        <figure class="sol-media"><img src="../assets/products/virtual-try-on.webp" alt="A smartphone showing a live virtual try-on — a person wearing a jacket rendered with a violet AR pose-detection overlay." loading="lazy" /></figure>
         <p class="sol-tag">See it before you buy it</p>
-        <p class="sol-desc">Let shoppers see the product on themselves before they commit. Our retail AR module renders items in real time on any device, lifting confidence and cutting the returns that quietly eat margin. Built, shipped, and embeddable in an afternoon.</p>
+        <p class="sol-desc">Let shoppers see the product on themselves before they commit. Our retail try-on blends pose detection and generative AI to render garments on any body in real time — no photo shoot required — lifting confidence and cutting the returns that quietly eat margin. One of the fastest, most cost-effective diffusion-and-segmentation try-on engines in e-commerce.</p>
         <ul class="pills">
-          <li>Real-time AR</li>
+          <li>Pose detection + genAI</li>
+          <li>Real-time on any body</li>
+          <li>No photo shoot</li>
           <li>Cross-device</li>
-          <li>Accurate rendering</li>
-          <li>Fewer returns</li>
           <li>Drop-in embed</li>
-          <li>Engagement analytics</li>
+          <li>Fewer returns</li>
         </ul>
       </div>
     </div>
   </section>
-  <section class="sol" id="ai-concierge">
+  <section class="sol" id="codey">
     <div class="wrap sol-grid">
       <div class="sol-rail">
         <span class="sol-num">03</span>
+        <h2 class="sol-name">Codey</h2>
+        <span class="badge product">Prism AI product</span>
+        <a class="sol-cta" href="../#contact">Talk to us
+          <svg width="20" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+      </div>
+      <div class="sol-main">
+        <figure class="sol-media"><img src="../assets/products/codey.webp" alt="A dark terminal window glowing with soft violet lines of code and a bright cursor." loading="lazy" /></figure>
+        <p class="sol-tag">A terminal-first AI coding assistant</p>
+        <p class="sol-desc">A terminal-first AI coding assistant that lives where developers already work. Codey reads the whole repo, writes and refactors across files, runs commands, and ships working changes with intelligent, autonomous support — turning intent into merged code without leaving the shell.</p>
+        <ul class="pills">
+          <li>Terminal-native</li>
+          <li>Repo-aware</li>
+          <li>Writes &amp; refactors</li>
+          <li>Runs commands</li>
+          <li>Autonomous edits</li>
+          <li>Ship faster</li>
+        </ul>
+        <a class="rel-svc" href="../services/cowork-claude-code-support/">Part of our Cowork &amp; Claude Code Support service<svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+  </section>
+  <section class="sol rev" id="facial-recognition">
+    <div class="wrap sol-grid">
+      <div class="sol-rail">
+        <span class="sol-num">04</span>
+        <h2 class="sol-name">AI Facial Recognition</h2>
+        <span class="badge product">Prism AI product</span>
+        <a class="sol-cta" href="../#contact">Talk to us
+          <svg width="20" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+      </div>
+      <div class="sol-main">
+        <figure class="sol-media"><img src="../assets/products/facial-recognition.webp" alt="A face scanned by a glowing violet biometric mesh with gold scan points in a dark space." loading="lazy" /></figure>
+        <p class="sol-tag">Identity, verified in a glance</p>
+        <p class="sol-desc">Verify who's who in real time. Our facial-recognition module confirms identity through a live face scan wrapped in a seamless, form-based booking and check-in flow — fast, contactless, and accurate, so the right person gets through and no one else does.</p>
+        <ul class="pills">
+          <li>Real-time face scan</li>
+          <li>Liveness detection</li>
+          <li>Form-based booking</li>
+          <li>Contactless check-in</li>
+          <li>Fast &amp; accurate</li>
+          <li>Privacy-aware</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="sol" id="ar-furniture">
+    <div class="wrap sol-grid">
+      <div class="sol-rail">
+        <span class="sol-num">05</span>
+        <h2 class="sol-name">AR Furniture Visualization</h2>
+        <span class="badge product">Prism AI product</span>
+        <a class="sol-cta" href="../#contact">Talk to us
+          <svg width="20" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+        </a>
+      </div>
+      <div class="sol-main">
+        <figure class="sol-media"><img src="../assets/products/ar-furniture.webp" alt="A smartphone showing a designer armchair placed into a real living room via augmented reality." loading="lazy" /></figure>
+        <p class="sol-tag">Place it before you buy it</p>
+        <p class="sol-desc">Let shoppers drop furniture into their own space before they buy. Our AR module renders products at true scale in the real room through any phone camera, so customers place, resize, and preview with confidence — lifting conversion and cutting the returns that come from guessing.</p>
+        <ul class="pills">
+          <li>AR in real rooms</li>
+          <li>True-to-scale</li>
+          <li>Place &amp; resize</li>
+          <li>Any phone camera</li>
+          <li>Higher conversion</li>
+          <li>Fewer returns</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="sol rev" id="ai-concierge">
+    <div class="wrap sol-grid">
+      <div class="sol-rail">
+        <span class="sol-num">06</span>
         <h2 class="sol-name">AI Concierge &amp; Chatbot</h2>
         <span class="badge build">We build this</span>
         <a class="sol-cta" href="../#contact">Scope a build
@@ -491,10 +655,10 @@
       </div>
     </div>
   </section>
-  <section class="sol rev" id="ai-voice-agent">
+  <section class="sol" id="ai-voice-agent">
     <div class="wrap sol-grid">
       <div class="sol-rail">
-        <span class="sol-num">04</span>
+        <span class="sol-num">07</span>
         <h2 class="sol-name">AI Voice Agent</h2>
         <span class="badge build">We build this</span>
         <a class="sol-cta" href="../#contact">Scope a build
@@ -517,10 +681,10 @@
       </div>
     </div>
   </section>
-  <section class="sol" id="agentic-platform">
+  <section class="sol rev" id="agentic-platform">
     <div class="wrap sol-grid">
       <div class="sol-rail">
-        <span class="sol-num">05</span>
+        <span class="sol-num">08</span>
         <h2 class="sol-name">Agentic Internal Platform</h2>
         <span class="badge build">We build this</span>
         <a class="sol-cta" href="../#contact">Scope a build
@@ -543,10 +707,10 @@
       </div>
     </div>
   </section>
-  <section class="sol rev" id="document-intelligence">
+  <section class="sol" id="document-intelligence">
     <div class="wrap sol-grid">
       <div class="sol-rail">
-        <span class="sol-num">06</span>
+        <span class="sol-num">09</span>
         <h2 class="sol-name">Document Intelligence</h2>
         <span class="badge build">We build this</span>
         <a class="sol-cta" href="../#contact">Scope a build

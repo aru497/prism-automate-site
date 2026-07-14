@@ -21,11 +21,35 @@ SOL = [
 
  dict(slug="virtual-try-on", name="Virtual Try-On", status="live",
    tagline="See it before you buy it",
-   img="1565849904461-04a58ad377e0",
-   img_alt="A hand holding up a smartphone, its camera viewfinder glowing against a dark blue interior.",
-   desc="Let shoppers see the product on themselves before they commit. Our retail AR module renders items in real time on any device, lifting confidence and cutting the returns that quietly eat margin. Built, shipped, and embeddable in an afternoon.",
-   pills=["Real-time AR","Cross-device","Accurate rendering","Fewer returns","Drop-in embed","Engagement analytics"],
+   img_full="../assets/products/virtual-try-on.webp",
+   img_alt="A smartphone showing a live virtual try-on — a person wearing a jacket rendered with a violet AR pose-detection overlay.",
+   desc="Let shoppers see the product on themselves before they commit. Our retail try-on blends pose detection and generative AI to render garments on any body in real time — no photo shoot required — lifting confidence and cutting the returns that quietly eat margin. One of the fastest, most cost-effective diffusion-and-segmentation try-on engines in e-commerce.",
+   pills=["Pose detection + genAI","Real-time on any body","No photo shoot","Cross-device","Drop-in embed","Fewer returns"],
    cta=("Book a demo","../#contact"), related=None),
+
+ dict(slug="codey", name="Codey", status="product",
+   tagline="A terminal-first AI coding assistant",
+   img_full="../assets/products/codey.webp",
+   img_alt="A dark terminal window glowing with soft violet lines of code and a bright cursor.",
+   desc="A terminal-first AI coding assistant that lives where developers already work. Codey reads the whole repo, writes and refactors across files, runs commands, and ships working changes with intelligent, autonomous support — turning intent into merged code without leaving the shell.",
+   pills=["Terminal-native","Repo-aware","Writes & refactors","Runs commands","Autonomous edits","Ship faster"],
+   cta=("Talk to us","../#contact"), related=("cowork-claude-code-support","Cowork & Claude Code Support")),
+
+ dict(slug="facial-recognition", name="AI Facial Recognition", status="product",
+   tagline="Identity, verified in a glance",
+   img_full="../assets/products/facial-recognition.webp",
+   img_alt="A face scanned by a glowing violet biometric mesh with gold scan points in a dark space.",
+   desc="Verify who's who in real time. Our facial-recognition module confirms identity through a live face scan wrapped in a seamless, form-based booking and check-in flow — fast, contactless, and accurate, so the right person gets through and no one else does.",
+   pills=["Real-time face scan","Liveness detection","Form-based booking","Contactless check-in","Fast & accurate","Privacy-aware"],
+   cta=("Talk to us","../#contact"), related=None),
+
+ dict(slug="ar-furniture", name="AR Furniture Visualization", status="product",
+   tagline="Place it before you buy it",
+   img_full="../assets/products/ar-furniture.webp",
+   img_alt="A smartphone showing a designer armchair placed into a real living room via augmented reality.",
+   desc="Let shoppers drop furniture into their own space before they buy. Our AR module renders products at true scale in the real room through any phone camera, so customers place, resize, and preview with confidence — lifting conversion and cutting the returns that come from guessing.",
+   pills=["AR in real rooms","True-to-scale","Place & resize","Any phone camera","Higher conversion","Fewer returns"],
+   cta=("Talk to us","../#contact"), related=None),
 
  dict(slug="ai-concierge", name="AI Concierge & Chatbot", status="build",
    tagline="A concierge that never sleeps",
@@ -79,6 +103,8 @@ def escq(t): return html.escape(t, quote=True)
 def badge(status):
     if status == "live":
         return '<span class="badge live">Live in production</span>'
+    if status == "product":
+        return '<span class="badge product">Prism AI product</span>'
     return '<span class="badge build">We build this</span>'
 
 def sol_section(s, i):
@@ -252,6 +278,7 @@ PAGE = f"""<!DOCTYPE html>
     .badge::before {{ content: ""; width: 8px; height: 8px; border-radius: 0; flex: none; }}
     .badge.live::before {{ background: var(--gold); }}
     .badge.build::before {{ background: var(--violet-lo); }}
+    .badge.product::before {{ background: var(--gold); }}
     .sol-cta {{ display: flex; align-items: center; gap: 0.6rem; margin-top: 1.8rem; text-decoration: none; font-weight: 600; color: var(--paper); width: fit-content; }}
     .sol-cta svg {{ transition: transform 0.25s var(--ease); }}
     .sol-cta:hover svg {{ transform: translateX(6px); }}
