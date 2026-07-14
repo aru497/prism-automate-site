@@ -2,8 +2,16 @@
 // Auto-wires any link to #interest or #contact (and any [data-interest] element)
 // to open a modal, so no page needs an inline fill-in form. Progressive
 // enhancement: with JS the modal opens; without it, the link still resolves.
+//
+// Submit path: POSTs the fields to FormSubmit (https://formsubmit.co), which
+// emails every submission straight to the addresses below — no mail client
+// needed. If that request fails (e.g. before the address is activated once, or
+// offline) it falls back to opening a pre-filled mailto so a lead is never lost.
 (function () {
-  var MAILTO = 'dharam@prismscale.com,arun@prismscale.com';
+  var PRIMARY = 'dharam@prismscale.com';        // submissions land here
+  var CC = 'arun@prismscale.com';               // and are cc'd here
+  var ENDPOINT = 'https://formsubmit.co/ajax/' + PRIMARY;
+  var MAILTO = PRIMARY + ',' + CC;              // fallback only
 
   var css =
     '.pi-overlay{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:1.25rem;background:rgba(5,4,8,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .28s cubic-bezier(.16,1,.3,1),visibility 0s linear .28s;}' +
@@ -48,6 +56,7 @@
         '</div>' +
         '<div class="pi-field"><label for="pi-company">Company</label><input id="pi-company" name="company" type="text" autocomplete="organization"></div>' +
         '<div class="pi-field"><label for="pi-msg">What should Claude take off your plate?</label><textarea id="pi-msg" name="message"></textarea></div>' +
+        '<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">' +
         '<button type="submit" class="pi-submit">I’m Interested →</button>' +
         '<p class="pi-note" role="status" aria-live="polite"></p>' +
       '</form>' +
@@ -94,18 +103,62 @@
       t.addEventListener('click', function (e) { e.preventDefault(); open(); }, true);
     });
 
+    function mailtoFallback(name, payload) {
+      var body = 'Name: ' + payload.name + '\nEmail: ' + payload.email +
+        '\nCompany: ' + payload.company + '\n\n' + payload.message;
+      location.href = 'mailto:' + MAILTO + '?subject=' +
+        encodeURIComponent('Enquiry from ' + name) + '&body=' + encodeURIComponent(body);
+    }
+
+    var submitting = false;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (submitting) return;
+      if (form._honey && form._honey.value) return;          // bot trap
       var name = form.name.value.trim(), email = form.email.value.trim();
       if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
         note.textContent = 'Add your name and a valid work email and we’re good to go.';
         note.style.color = '#a89ef1';
         return;
       }
-      var body = 'Name: ' + name + '\nEmail: ' + email + '\nCompany: ' + form.company.value.trim() + '\n\n' + form.message.value.trim();
-      location.href = 'mailto:' + MAILTO + '?subject=' + encodeURIComponent('Enquiry from ' + name) + '&body=' + encodeURIComponent(body);
-      note.textContent = 'Your email draft is ready to send. We reply within one business day.';
-      note.style.color = '';
+      var payload = {
+        name: name,
+        email: email,
+        company: form.company.value.trim(),
+        message: form.message.value.trim(),
+        _subject: 'New enquiry from ' + name + ' — prismautomate.com',
+        _cc: CC,
+        _template: 'table',
+        _captcha: 'false'
+      };
+      var btn = form.querySelector('.pi-submit');
+      var label = btn.textContent;
+      submitting = true; btn.disabled = true; btn.textContent = 'Sending…';
+      note.style.color = ''; note.textContent = '';
+
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (r) { return r.json().catch(function () { return {}; }); })
+        .then(function (data) {
+          if (data && (data.success === true || data.success === 'true')) {
+            form.reset();
+            note.textContent = 'Got it — thank you. A real person replies within one business day.';
+          } else {
+            // Address not activated yet, or endpoint issue — don't lose the lead.
+            mailtoFallback(name, payload);
+            note.textContent = 'Finishing in your email app — just hit send.';
+          }
+        })
+        .catch(function () {
+          mailtoFallback(name, payload);
+          note.textContent = 'Finishing in your email app — just hit send.';
+        })
+        .finally(function () {
+          submitting = false; btn.disabled = false; btn.textContent = label;
+        });
     });
   });
 })();
