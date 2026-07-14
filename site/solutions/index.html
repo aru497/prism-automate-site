@@ -294,11 +294,9 @@
     .sol-rail { position: sticky; top: 108px; }
     .sol-num { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.15em; color: var(--violet); }
     .sol-name { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.4rem, 4.6vw, 4rem); line-height: 1; margin-top: 0.7rem; }
-    .badge { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.3rem; padding: 0.4rem 0.95rem; border-radius: 0; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em; border: 1px solid transparent; }
-    .badge::before { content: ""; width: 7px; height: 7px; border-radius: 50%; }
-    .badge.live { color: var(--gold); border-color: rgba(217,168,106,0.4); background: rgba(217,168,106,0.08); }
-    .badge.live::before { background: var(--gold); box-shadow: 0 0 8px var(--gold); }
-    .badge.build { color: var(--violet-lo); border-color: rgba(168,158,241,0.4); background: rgba(168,158,241,0.08); }
+    .badge { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 1.3rem; padding: 0.4rem 0.9rem; border-radius: 0; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; border: 1px solid var(--line-dk); background: none; color: var(--cream-dim); }
+    .badge::before { content: ""; width: 8px; height: 8px; border-radius: 0; flex: none; }
+    .badge.live::before { background: var(--gold); }
     .badge.build::before { background: var(--violet-lo); }
     .sol-cta { display: flex; align-items: center; gap: 0.6rem; margin-top: 1.8rem; text-decoration: none; font-weight: 600; color: var(--paper); width: fit-content; }
     .sol-cta svg { transition: transform 0.25s var(--ease); }
