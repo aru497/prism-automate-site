@@ -201,7 +201,7 @@ PAGE = f"""<!DOCTYPE html>
     .nav-links {{ list-style: none; margin: 0; padding: 0; display: flex; gap: 1.7rem; margin-left: auto; }}
     .nav-links a {{ text-decoration: none; font-size: 0.95rem; color: rgba(241,240,246,0.82); transition: color 0.2s; }}
     .nav-links a:hover, .nav-links a.active {{ color: var(--paper); }}
-    .nav-cta {{ border: 1px solid rgba(241,240,246,0.4); border-radius: 999px; padding: 0.5rem 1.2rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: background 0.2s, color 0.2s; }}
+    .nav-cta {{ border: 1px solid rgba(241,240,246,0.4); padding: 0.55rem 1.2rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: background 0.2s, color 0.2s; }}
     .nav-cta:hover {{ background: var(--paper); color: var(--ink); border-color: var(--paper); }}
     .nav-toggle {{ display: none; margin-left: auto; background: none; border: 0; padding: 0.55rem 0.3rem; cursor: pointer; color: inherit; }}
     .nav-toggle span {{ display: block; width: 25px; height: 2px; background: currentColor; border-radius: 2px; transition: transform 0.3s var(--ease), opacity 0.2s; }}
@@ -214,7 +214,7 @@ PAGE = f"""<!DOCTYPE html>
     .mobile-menu .mm-nav {{ display: flex; flex-direction: column; }}
     .mobile-menu a.mm-link {{ color: var(--paper); text-decoration: none; font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(1.9rem,8vw,2.7rem); letter-spacing: -0.02em; padding: 0.7rem 0; border-bottom: 1px solid var(--line-dk); display: flex; justify-content: space-between; align-items: center; }}
     .mobile-menu a.mm-link .ar {{ color: var(--violet-lo); opacity: 0.7; font-size: 0.7em; }}
-    .mm-cta {{ margin-top: 2rem; background: var(--paper); color: var(--ink); text-align: center; padding: 1.05rem; border-radius: 999px; font-weight: 600; text-decoration: none; font-size: 1rem; }}
+    .mm-cta {{ margin-top: 2rem; background: var(--paper); color: var(--ink); text-align: center; padding: 1.05rem; font-weight: 600; text-decoration: none; font-size: 1rem; }}
     .mm-foot {{ margin-top: 1.6rem; color: var(--cream-dim); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }}
     @media (min-width: 901px) {{ .mobile-menu {{ display: none; }} }}
     @media (max-width: 900px) {{ .nav-links {{ display: none; }} .nav-cta {{ display: none; }} .nav-toggle {{ display: block; }} }}
@@ -321,25 +321,21 @@ PAGE = f"""<!DOCTYPE html>
     <div class="wrap">
       <a class="brand" href="../"><img src="../assets/logo-wordmark.png" alt="Prism Automate" width="115" height="30" /></a>
       <ul class="nav-links">
-        <li><a href="../">Home</a></li>
         <li><a href="../services/">Services</a></li>
         <li><a href="#top" class="active">Solutions</a></li>
-        <li><a href="../#work">Work</a></li>
-        <li><a href="../#faq">FAQ</a></li>
+        <li><a href="../claude/">Claude</a></li>
       </ul>
-      <a class="nav-cta" href="../#contact">Start a project</a>
+      <a class="nav-cta" href="../claude/#interest">I'm Interested</a>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <nav class="mm-nav" aria-label="Mobile">
-      <a class="mm-link" href="../">Home</a>
       <a class="mm-link" href="../services/">Services <span class="ar" aria-hidden="true">&#8599;</span></a>
       <a class="mm-link" href="#top">Solutions</a>
-      <a class="mm-link" href="../#work">Work</a>
-      <a class="mm-link" href="../#faq">FAQ</a>
-      <a class="mm-cta" href="../#contact">Start a project</a>
+      <a class="mm-link" href="../claude/">Claude <span class="ar" aria-hidden="true">&#8599;</span></a>
+      <a class="mm-cta" href="../claude/#interest">I'm Interested</a>
     </nav>
     <p class="mm-foot">Bengaluru · Dubai · Sydney</p>
   </div>

@@ -79,10 +79,24 @@ PAGE = """<!DOCTYPE html>
     .brand {{ font-size: 1.15rem; font-weight: 700; text-decoration: none; }}
     .brand b {{ color: var(--gold); font-weight: 700; }}
     .brand img {{ height: 26px; width: auto; display: block; }}
-    .nav a.back {{ margin-left: auto; text-decoration: none; opacity: 0.75; font-size: 0.93rem; }}
-    .nav a.back:hover {{ opacity: 1; }}
-    .nav-cta {{ border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }}
+    .nav-links {{ list-style: none; margin: 0 0 0 auto; padding: 0; display: flex; gap: 1.9rem; }}
+    .nav-links a {{ text-decoration: none; font-size: 0.95rem; font-weight: 500; color: rgba(241,240,246,0.72); transition: color 0.2s; }}
+    .nav-links a:hover, .nav-links a.active {{ color: var(--paper); }}
+    .nav-cta {{ border: 1px solid currentColor; padding: 0.55rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }}
     .nav-cta:hover {{ background: var(--paper); color: var(--ink); }}
+    .nav-toggle {{ display: none; margin-left: auto; background: none; border: 0; padding: 0.55rem 0.3rem; cursor: pointer; color: inherit; }}
+    .nav-toggle span {{ display: block; width: 25px; height: 2px; background: currentColor; transition: transform 0.3s, opacity 0.2s; }}
+    .nav-toggle span + span {{ margin-top: 6px; }}
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) {{ transform: translateY(8px) rotate(45deg); }}
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) {{ opacity: 0; }}
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) {{ transform: translateY(-8px) rotate(-45deg); }}
+    .mobile-menu {{ position: fixed; inset: 0; z-index: 45; background: rgba(5,4,8,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: flex; flex-direction: column; padding: 96px clamp(1.5rem,7vw,3rem) 2.4rem; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 0.32s var(--ease), transform 0.32s var(--ease), visibility 0s linear 0.32s; overflow-y: auto; }}
+    .mobile-menu.open {{ opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }}
+    .mobile-menu a.mm-link {{ color: var(--paper); text-decoration: none; font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(1.9rem,8vw,2.7rem); letter-spacing: -0.02em; padding: 0.7rem 0; border-bottom: 1px solid var(--line-dk); display: flex; justify-content: space-between; align-items: center; }}
+    .mobile-menu a.mm-link .ar {{ color: var(--violet-lo); opacity: 0.7; font-size: 0.7em; }}
+    .mm-cta {{ margin-top: 2rem; background: var(--paper); color: var(--ink); text-align: center; padding: 1.05rem; font-weight: 600; text-decoration: none; }}
+    .mm-foot {{ margin-top: 1.6rem; color: var(--cream-dim); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }}
+    @media (min-width: 861px) {{ .mobile-menu {{ display: none; }} }}
     .hero {{ background: #050408; color: var(--paper); padding: 170px 0 clamp(4rem, 10vh, 6.5rem); }}
     .hero .eyebrow {{ color: var(--violet-lo); }}
     .hero h1 {{ font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: 1.02; margin-top: 1.1rem; max-width: 15ch; }}
@@ -131,8 +145,9 @@ PAGE = """<!DOCTYPE html>
     @media (max-width: 860px) {{
       .inc-grid, .step-grid {{ grid-template-columns: 1fr; }}
       .cta .wrap {{ grid-template-columns: 1fr; }}
-      .nav a.back {{ display: none; }}
-      .nav .nav-cta {{ margin-left: auto; }}
+      .nav-links {{ display: none; }}
+      .nav-cta {{ display: none; }}
+      .nav-toggle {{ display: block; }}
     }}
   </style>
 </head>
@@ -140,10 +155,25 @@ PAGE = """<!DOCTYPE html>
   <nav class="nav" aria-label="Main">
     <div class="wrap">
       <a class="brand" href="../../"><img src="../../assets/logo-wordmark.png" alt="Prism Automate" width="115" height="30" /></a>
-      <a class="back" href="../">← All services</a>
-      <a class="nav-cta" href="../../#contact">Start a project</a>
+      <ul class="nav-links">
+        <li><a href="../" class="active">Services</a></li>
+        <li><a href="../../solutions/">Solutions</a></li>
+        <li><a href="../../claude/">Claude</a></li>
+      </ul>
+      <a class="nav-cta" href="../../claude/#interest">I'm Interested</a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav class="mm-nav" aria-label="Mobile">
+      <a class="mm-link" href="../">Services</a>
+      <a class="mm-link" href="../../solutions/">Solutions <span class="ar" aria-hidden="true">&#8599;</span></a>
+      <a class="mm-link" href="../../claude/">Claude <span class="ar" aria-hidden="true">&#8599;</span></a>
+      <a class="mm-cta" href="../../claude/#interest">I'm Interested</a>
+    </nav>
+    <p class="mm-foot">Bengaluru · Dubai · Sydney</p>
+  </div>
 
   <header class="hero">
     <div class="wrap">
@@ -212,6 +242,7 @@ PAGE = """<!DOCTYPE html>
       <span><a href="../../" style="color:inherit">Home</a> · <a href="../" style="color:inherit">All services</a></span>
     </div>
   </footer>
+  <script src="../../assets/nav.js" defer></script>
 </body>
 </html>
 """
@@ -313,10 +344,24 @@ OVERVIEW = """<!DOCTYPE html>
     .media-band { background: linear-gradient(#050408 0 55%, var(--paper) 55% 100%); }
     .media-band figure { margin: 0; border-radius: 18px; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }
     .media-band img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .nav a.back { margin-left: auto; text-decoration: none; opacity: 0.75; font-size: 0.93rem; }
-    .nav a.back:hover { opacity: 1; }
-    .nav-cta { border: 1px solid currentColor; border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+    .nav-links { list-style: none; margin: 0 0 0 auto; padding: 0; display: flex; gap: 1.9rem; }
+    .nav-links a { text-decoration: none; font-size: 0.95rem; font-weight: 500; color: rgba(241,240,246,0.72); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--paper); }
+    .nav-cta { border: 1px solid currentColor; padding: 0.55rem 1.25rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
     .nav-cta:hover { background: var(--paper); color: var(--ink); }
+    .nav-toggle { display: none; margin-left: auto; background: none; border: 0; padding: 0.55rem 0.3rem; cursor: pointer; color: inherit; }
+    .nav-toggle span { display: block; width: 25px; height: 2px; background: currentColor; transition: transform 0.3s, opacity 0.2s; }
+    .nav-toggle span + span { margin-top: 6px; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .mobile-menu { position: fixed; inset: 0; z-index: 45; background: rgba(5,4,8,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); display: flex; flex-direction: column; padding: 96px clamp(1.5rem,7vw,3rem) 2.4rem; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 0.32s ease, transform 0.32s ease, visibility 0s linear 0.32s; overflow-y: auto; }
+    .mobile-menu.open { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+    .mobile-menu a.mm-link { color: var(--paper); text-decoration: none; font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(1.9rem,8vw,2.7rem); letter-spacing: -0.02em; padding: 0.7rem 0; border-bottom: 1px solid var(--line-dk); display: flex; justify-content: space-between; align-items: center; }
+    .mobile-menu a.mm-link .ar { color: var(--violet-lo); opacity: 0.7; font-size: 0.7em; }
+    .mm-cta { margin-top: 2rem; background: var(--paper); color: var(--ink); text-align: center; padding: 1.05rem; font-weight: 600; text-decoration: none; }
+    .mm-foot { margin-top: 1.6rem; color: var(--cream-dim); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    @media (min-width: 861px) { .mobile-menu { display: none; } }
     .hero { background: #050408; color: var(--paper); padding: 170px 0 clamp(4rem, 9vh, 6rem); }
     .hero .eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--violet-lo); }
     .hero h1 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.8rem, 7vw, 5.6rem); line-height: 1; margin-top: 1.1rem; }
@@ -344,17 +389,32 @@ OVERVIEW = """<!DOCTYPE html>
       }
     }
     @keyframes rise { from { opacity: 0; transform: translateY(26px); } }
-    @media (max-width: 820px) { .svc-grid { grid-template-columns: 1fr; } .cta .wrap { grid-template-columns: 1fr; } .nav a.back { display: none; } .nav .nav-cta { margin-left: auto; } }
+    @media (max-width: 820px) { .svc-grid { grid-template-columns: 1fr; } .cta .wrap { grid-template-columns: 1fr; } .nav-links { display: none; } .nav-cta { display: none; } .nav-toggle { display: block; } }
   </style>
 </head>
 <body>
   <nav class="nav" aria-label="Main">
     <div class="wrap">
       <a class="brand" href="../"><img src="../assets/logo-wordmark.png" alt="Prism Automate" width="115" height="30" /></a>
-      <a class="back" href="../">← Home</a>
-      <a class="nav-cta" href="../#contact">Start a project</a>
+      <ul class="nav-links">
+        <li><a href="./" class="active">Services</a></li>
+        <li><a href="../solutions/">Solutions</a></li>
+        <li><a href="../claude/">Claude</a></li>
+      </ul>
+      <a class="nav-cta" href="../claude/#interest">I'm Interested</a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav class="mm-nav" aria-label="Mobile">
+      <a class="mm-link" href="./">Services</a>
+      <a class="mm-link" href="../solutions/">Solutions <span class="ar" aria-hidden="true">&#8599;</span></a>
+      <a class="mm-link" href="../claude/">Claude <span class="ar" aria-hidden="true">&#8599;</span></a>
+      <a class="mm-cta" href="../claude/#interest">I'm Interested</a>
+    </nav>
+    <p class="mm-foot">Bengaluru · Dubai · Sydney</p>
+  </div>
   <header class="hero">
     <div class="wrap">
       <p class="eyebrow">Anthropic Claude Partner</p>
@@ -376,6 +436,7 @@ GROUPS_TOKEN
       <span><a href="../" style="color:inherit">Home</a></span>
     </div>
   </footer>
+  <script src="../assets/nav.js" defer></script>
 </body>
 </html>
 """
