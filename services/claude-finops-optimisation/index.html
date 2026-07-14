@@ -35,7 +35,8 @@
           { "@type": "ListItem", "position": 2, "name": "Ongoing &amp; Managed Services" },
           { "@type": "ListItem", "position": 3, "name": "Claude Consumption &amp; FinOps Optimisation" }
         ]
-      }
+      },
+      { "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Our Claude bill jumped and nobody knows why. Can you find out?", "acceptedAnswer": {"@type": "Answer", "text": "That's the first deliverable: a per-team, per-workload ledger showing who spends what, on which models, and which spend earns nothing."}}, {"@type": "Question", "name": "Will cutting cost hurt quality?", "acceptedAnswer": {"@type": "Answer", "text": "No — every lever (model-tier fits, caching, batching, context diets) is checked against output quality before it ships. The bill grows slower than the value, not the results."}}] }
     ]
   }
   </script>
@@ -102,6 +103,13 @@
     .step h3 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 1.35rem; margin-top: 0.5rem; }
     .step p { margin-top: 0.5rem; color: var(--ink-soft); font-size: 0.96rem; }
     .fit ul { margin: 1.6rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.8rem; max-width: 56ch; }
+    .svc-faq .faq-list { margin-top: 2rem; max-width: 820px; }
+    .svc-faq details { border-bottom: 1px solid var(--line); }
+    .svc-faq summary { cursor: pointer; list-style: none; padding: 1.25rem 0; font-weight: 600; font-size: 1.05rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .svc-faq summary::-webkit-details-marker { display: none; }
+    .svc-faq summary::after { content: "+"; font-size: 1.45rem; font-weight: 300; color: var(--violet); transition: transform 0.25s var(--ease); flex: none; line-height: 1; }
+    .svc-faq details[open] summary::after { transform: rotate(45deg); }
+    .svc-faq details p { color: var(--ink-soft); padding-bottom: 1.25rem; line-height: 1.7; max-width: 74ch; }
     .fit li { display: flex; gap: 0.7rem; color: var(--ink-soft); }
     .fit li::before { content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--violet-lo); margin-top: 0.5rem; }
     .rel-row { display: grid; gap: 0.4rem; margin-top: 2rem; max-width: 620px; }
@@ -216,6 +224,17 @@
         <a class="rel" href="../managed-ai-operations/"><span>Managed AI Operations</span><svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg></a>
         <a class="rel" href="../cowork-claude-code-support/"><span>Cowork &amp; Claude Code Support</span><svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg></a>
         <a class="rel" href="../claude-training-sessions/"><span>Claude Training Sessions</span><svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-faq">
+    <div class="wrap">
+      <span class="sec-label">Questions</span>
+      <h2>Frequently asked</h2>
+      <div class="faq-list">
+        <details><summary>Our Claude bill jumped and nobody knows why. Can you find out?</summary><p>That's the first deliverable: a per-team, per-workload ledger showing who spends what, on which models, and which spend earns nothing.</p></details>
+        <details><summary>Will cutting cost hurt quality?</summary><p>No — every lever (model-tier fits, caching, batching, context diets) is checked against output quality before it ships. The bill grows slower than the value, not the results.</p></details>
       </div>
     </div>
   </section>

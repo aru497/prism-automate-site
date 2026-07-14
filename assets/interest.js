@@ -17,11 +17,12 @@
     '.pi-sub{margin:.6rem 0 1.4rem;color:rgba(255,255,255,.62);font-size:.97rem;line-height:1.5;}' +
     '.pi-field{display:grid;gap:.4rem;margin-bottom:.9rem;}' +
     '.pi-field label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);}' +
-    '.pi-field input,.pi-field textarea{font:inherit;color:#f1f0f6;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.14);padding:.8rem .9rem;border-radius:0;}' +
-    '.pi-field input:focus,.pi-field textarea:focus{outline:none;border-color:#a89ef1;background:rgba(168,158,241,.06);}' +
+    '.pi-field input,.pi-field textarea{width:100%;font:inherit;color:#f1f0f6;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.32);padding:.85rem .9rem;border-radius:0;}' +
+    '.pi-field input::placeholder,.pi-field textarea::placeholder{color:rgba(255,255,255,.4);}' +
+    '.pi-field input:focus,.pi-field textarea:focus{outline:none;border-color:#a89ef1;background:rgba(168,158,241,.08);}' +
     '.pi-field textarea{resize:vertical;min-height:96px;}' +
     '.pi-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;}' +
-    '@media(max-width:480px){.pi-row{grid-template-columns:1fr;}}' +
+    '@media(max-width:560px){.pi-row{grid-template-columns:1fr;}}' +
     '.pi-submit{margin-top:.3rem;width:100%;background:#d9a86a;color:#16121f;border:1px solid #d9a86a;padding:1rem;font:600 1rem/1 "Familjen Grotesk",sans-serif;cursor:pointer;}' +
     '.pi-submit:hover{background:#e7bd86;}' +
     '.pi-note{margin:.7rem 0 0;font-size:.88rem;color:rgba(255,255,255,.6);min-height:1.1em;}';
