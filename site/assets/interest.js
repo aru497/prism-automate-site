@@ -3,7 +3,7 @@
 // to open a modal, so no page needs an inline fill-in form. Progressive
 // enhancement: with JS the modal opens; without it, the link still resolves.
 (function () {
-  var MAILTO = 'hello@prismscale.com';
+  var MAILTO = 'dharam@prismscale.com,arun@prismscale.com';
 
   var css =
     '.pi-overlay{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:1.25rem;background:rgba(5,4,8,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .28s cubic-bezier(.16,1,.3,1),visibility 0s linear .28s;}' +

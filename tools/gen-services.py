@@ -4,6 +4,8 @@ Content sourced from the recognised 14-service catalogue; design = studio identi
 import os, html, json
 
 BASE = "/Users/arunkumar/Documents/Claude/Projects/PrismEvents/site/services"
+# Live host for canonical/sitemap. Swap to the custom domain when it goes live.
+BASE_URL = "https://aru497.github.io/prism-automate-site"
 
 CATS = {
     "strategy": "Strategy & Advisory",
@@ -30,7 +32,13 @@ PAGE = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{name} | Claude Services | Prism Automate</title>
   <meta name="description" content="{meta_desc}" />
-  <!-- TODO: add canonical once the production domain is confirmed -->
+  <link rel="canonical" href="{canonical}" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{canonical}" />
+  <meta property="og:title" content="{name} | Claude Services | Prism Automate" />
+  <meta property="og:description" content="{meta_desc}" />
+  <meta name="geo.placename" content="Bengaluru, India" />
   <link rel="icon" type="image/png" href="../../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,7 +53,7 @@ PAGE = """<!DOCTYPE html>
         "serviceType": "{name}",
         "description": "{meta_desc}",
         "provider": {{ "@type": "Organization", "name": "Prism Automate" }},
-        "areaServed": ["India", "United Arab Emirates", "Australia"]
+        "areaServed": ["India", "United Arab Emirates", "Saudi Arabia", "Qatar", "Australia", "Singapore", "Philippines", "Rwanda", "Kenya", "Nigeria", "South Africa", "Egypt", "Brazil"]
       }},
       {{
         "@type": "BreadcrumbList",
@@ -102,7 +110,7 @@ PAGE = """<!DOCTYPE html>
     .hero h1 {{ font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: 1.02; margin-top: 1.1rem; max-width: 15ch; }}
     .hero .lede {{ margin-top: 1.5rem; color: var(--cream-dim); font-size: clamp(1.05rem, 1.7vw, 1.25rem); max-width: 46ch; }}
     .media-band {{ background: linear-gradient(#050408 0 55%, var(--paper) 55% 100%); }}
-    .media-band figure {{ margin: 0; border-radius: 18px; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }}
+    .media-band figure {{ margin: 0; border-radius: 0; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }}
     .media-band img {{ width: 100%; height: 100%; object-fit: cover; display: block; }}
     .arrow-link {{ display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 2rem; text-decoration: none; font-weight: 600; color: var(--gold); }}
     .arrow-link svg {{ transition: transform 0.25s var(--ease); }}
@@ -132,7 +140,7 @@ PAGE = """<!DOCTYPE html>
     .cta h2 {{ font-weight: 500; max-width: 17ch; }}
     .cta h2 em {{ font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--violet-lo); }}
     .cta small {{ display: block; margin-top: 0.8rem; color: var(--cream-dim); }}
-    .btn-solid {{ background: var(--paper); color: var(--ink); text-decoration: none; padding: 1rem 2.2rem; border-radius: 999px; font-weight: 600; white-space: nowrap; }}
+    .btn-solid {{ background: var(--paper); color: var(--ink); text-decoration: none; padding: 1rem 2.2rem; border-radius: 0; font-weight: 600; white-space: nowrap; }}
     .btn-solid:hover {{ background: var(--violet-lo); }}
     footer {{ background: var(--ink-deep); color: var(--cream-dim); border-top: 1px solid var(--line-dk); padding-block: 1.6rem; font-size: 0.86rem; }}
     footer .wrap {{ display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }}
@@ -268,6 +276,7 @@ for svc in S:
         name=esc(svc["name"]), name_lower=esc(svc["name"][0].lower() + svc["name"][1:]),
         cat_name=esc(CATS[svc["cat"]]), definition=esc(svc["definition"]),
         meta_desc=esc(meta.replace('"', "'")),
+        canonical=f"{BASE_URL}/services/{svc['slug']}/",
         media_html=media,
         included_html=inc, steps_html=steps, fit_html=fit, related_html=related(svc))
     outdir = os.path.join(BASE, svc["slug"])
@@ -316,7 +325,9 @@ OVERVIEW = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | The Full Claude Catalogue | Prism Automate</title>
   <meta name="description" content="All fourteen recognised Claude services delivered by Prism Automate, an Anthropic Claude partner: strategy, build, deployment, and managed operations for teams in India, the Middle East, and Australia." />
-  <!-- TODO: add canonical once the production domain is confirmed -->
+  <link rel="canonical" href="https://aru497.github.io/prism-automate-site/services/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="geo.placename" content="Bengaluru, India" />
   <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -343,7 +354,7 @@ OVERVIEW = """<!DOCTYPE html>
     .brand b { color: var(--gold); }
     .brand img { height: 26px; width: auto; display: block; }
     .media-band { background: linear-gradient(#050408 0 55%, var(--paper) 55% 100%); }
-    .media-band figure { margin: 0; border-radius: 18px; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }
+    .media-band figure { margin: 0; border-radius: 0; overflow: clip; aspect-ratio: 21 / 9; box-shadow: 0 30px 80px rgba(5, 4, 8, 0.35); }
     .media-band img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .nav-links { list-style: none; margin: 0 0 0 auto; padding: 0; display: flex; gap: 1.9rem; }
     .nav-links a { text-decoration: none; font-size: 0.95rem; font-weight: 500; color: rgba(241,240,246,0.72); transition: color 0.2s; }
@@ -372,7 +383,7 @@ OVERVIEW = """<!DOCTYPE html>
     .cat-head h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 500; }
     .cat-head .ser { font-size: 1.1rem; }
     .svc-grid { margin-top: 1.8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
-    .svc { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 0.4rem 1.2rem; padding: 1.15rem 1.35rem; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; background: #fff; transition: border-color 0.25s var(--ease), transform 0.25s var(--ease); }
+    .svc { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 0.4rem 1.2rem; padding: 1.15rem 1.35rem; border: 1px solid var(--line); border-radius: 0; text-decoration: none; background: #fff; transition: border-color 0.25s var(--ease), transform 0.25s var(--ease); }
     .svc:hover { border-color: var(--violet); transform: translateY(-2px); }
     .svc-name { font-weight: 600; }
     .svc-def { grid-column: 1 / -1; color: var(--ink-soft); font-size: 0.92rem; }
@@ -380,7 +391,7 @@ OVERVIEW = """<!DOCTYPE html>
     .cta { background: var(--ink-deep); color: var(--paper); padding-block: clamp(3.5rem, 8vh, 5.5rem); }
     .cta .wrap { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
     .cta h2 { font-weight: 500; }
-    .btn-solid { background: var(--paper); color: var(--ink); text-decoration: none; padding: 1rem 2.2rem; border-radius: 999px; font-weight: 600; white-space: nowrap; }
+    .btn-solid { background: var(--paper); color: var(--ink); text-decoration: none; padding: 1rem 2.2rem; border-radius: 0; font-weight: 600; white-space: nowrap; }
     .btn-solid:hover { background: var(--violet-lo); }
     footer { background: var(--ink-deep); color: var(--cream-dim); border-top: 1px solid var(--line-dk); padding-block: 1.6rem; font-size: 0.86rem; }
     footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
