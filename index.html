@@ -405,18 +405,21 @@
     /* ---- Humans strip ---- */
     .humans { padding-block: clamp(4rem, 10vh, 7rem); border-top: 1px solid var(--line); overflow: clip; }
     .humans .wrap > p.eyebrow { text-align: center; }
-    .human-row { margin-top: 2.6rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2.5vw, 2rem); align-items: start; }
-    .human-row figure { margin: 0; border-radius: 0; overflow: clip; aspect-ratio: 4 / 5; }
-    .human-row figure:nth-child(2) { margin-top: 3rem; }
-    .human-row img { width: 100%; height: 116%; object-fit: cover; will-change: transform; }
+    .human-row { margin-top: 2.6rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2.5vw, 1.8rem); align-items: start; }
+    .human-row figure { margin: 0; }
+    .human-row figure > img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 1px solid var(--line); }
+    .human-row figcaption { margin-top: 1rem; }
+    .human-row figcaption b { display: block; font-size: 1.12rem; font-weight: 600; color: var(--ink); letter-spacing: -.01em; }
+    .human-row figcaption span { display: block; margin-top: .18rem; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--violet); }
     .humans .caption { margin: 2.2rem auto 0; text-align: center; color: var(--ink-soft); max-width: 46ch; }
     .humans .caption b { color: var(--ink); font-weight: 600; }
 
     /* ---- Clients ---- */
     .clients { padding-block: clamp(4rem, 9vh, 6rem); border-top: 1px solid var(--line); text-align: center; }
-    .logo-row { margin-top: 2.4rem; display: flex; justify-content: center; align-items: center; gap: clamp(2.5rem, 7vw, 5.5rem); flex-wrap: wrap; }
-    .logo-row img { height: 28px; }
-    .logo-row .word { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.02em; color: var(--ink); }
+    .logo-row { margin-top: 2.4rem; display: flex; justify-content: center; align-items: center; gap: clamp(1.6rem, 5vw, 4rem); flex-wrap: wrap; }
+    .logo-row img { height: 26px; opacity: .85; }
+    .logo-row .word { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.02em; color: var(--ink); opacity: .85; }
+    .clients-note { margin: 1.6rem auto 0; max-width: 60ch; font-size: 0.82rem; line-height: 1.5; color: var(--ink-soft); }
 
     /* ---- Where we work ---- */
     .regions { padding-block: clamp(4rem, 10vh, 7rem); border-top: 1px solid var(--line); }
@@ -783,15 +786,15 @@
     <div class="wrap story-grid">
       <div class="story-copy">
         <h2 class="gr">Our story</h2>
-        <p class="gr">Prism Automate grew out of the <b>Prism family</b>, the Bengaluru crew behind <a href="https://prismscale.com" target="_blank" rel="noopener">Prismscale</a> and <a href="https://www.designhq.io" target="_blank" rel="noopener">DesignHQ</a>, the design headquarters that ships for Amazon, Accenture, and Air India Express on a 24-hour clock. A thousand projects through that studio taught us one thing: the teams that pull ahead are the teams that <em>automate</em>. So we became that company, an Anthropic Claude partner that turns everyday operations into intelligent machines, from Bengaluru to Dubai to Sydney.</p>
+        <p class="gr">Prism Automate is the AI arm of the <b>Prism family</b> — the Bengaluru crew behind <a href="https://prismscale.com" target="_blank" rel="noopener">Prism Scale</a> and <a href="https://www.designhq.io" target="_blank" rel="noopener">DesignHQ</a>. Prism Scale was built to end agency chaos: designers who didn't talk to marketers, developers who shipped off-brand, growth that stalled because nothing moved in harmony. The answer was <em>one home, three divisions, zero chaos</em> — and <b>589+ projects</b> later, for teams from PhonePe and Accenture to Air India and Brookfield, one lesson kept repeating: the teams that pull ahead are the ones that automate. So we made that lesson a company — an Anthropic Claude partner that turns everyday operations into intelligent systems, on a 24-hour clock, from Bengaluru to Dubai to Sydney.</p>
         <a class="btn-line gr" href="#team">Meet the humans
           <svg width="18" height="11" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
         </a>
       </div>
       <div class="story-visual gr">
         <video src="assets/ring-a.webm" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
-        <div class="chip chip-a"><b>1k+</b><span>projects across the Prism family</span></div>
-        <div class="chip chip-b"><b>24h</b><span>design turnaround at DesignHQ</span></div>
+        <div class="chip chip-a"><b>589+</b><span>projects across the Prism family</span></div>
+        <div class="chip chip-b"><b>4.9/5</b><span>average client satisfaction</span></div>
       </div>
     </div>
   </section>
@@ -800,23 +803,36 @@
     <div class="wrap">
       <p class="eyebrow">The humans behind it</p>
       <div class="human-row">
-        <!-- TODO: replace with real photos of Dharam Vir, Arun, and Varad at work -->
-        <figure><img data-drift="-8" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" alt="Two colleagues working through a problem at a whiteboard" loading="lazy" /></figure>
-        <figure><img data-drift="10" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="The team gathered around one laptop, mid-debate" loading="lazy" /></figure>
-        <figure><img data-drift="-6" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="A late working session over coffee and sticky notes" loading="lazy" /></figure>
+        <figure>
+          <img src="assets/team/dharam.webp" width="760" height="950" alt="Dharam Vir Singh, Founder of Prism Automate" loading="lazy" />
+          <figcaption><b>Dharam Vir Singh</b><span>Founder</span></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/team/arun.webp" width="760" height="950" alt="Arun Kumar, Partner for Delivery" loading="lazy" />
+          <figcaption><b>Arun Kumar</b><span>Partner · Delivery</span></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/team/rohan.webp" width="760" height="950" alt="Rohan, Partner for Operations &amp; Design" loading="lazy" />
+          <figcaption><b>Rohan</b><span>Partner · Operations &amp; Design</span></figcaption>
+        </figure>
       </div>
-      <p class="caption"><b>Dharam Vir Singh</b> (Founder), <b>Arun Kumar</b> (Partner, Delivery), and <b>Varad Joshi</b> (Partner, Engineering). You talk to the people who build.</p>
+      <p class="caption">You talk to the people who build — no account managers, no handoffs.</p>
     </div>
   </section>
 
   <section class="clients">
     <div class="wrap">
-      <p class="eyebrow">Delivered for teams at</p>
+      <p class="eyebrow">Brands the Prism family has shipped for</p>
       <div class="logo-row">
         <img src="https://cdn.simpleicons.org/google/16121f" alt="Google" loading="lazy" />
+        <img src="https://cdn.simpleicons.org/accenture/16121f" alt="Accenture" loading="lazy" />
         <span class="word">UNISYS</span>
-        <img src="https://cdn.simpleicons.org/anthropic/16121f" alt="Anthropic" loading="lazy" />
+        <img src="https://cdn.simpleicons.org/phonepe/16121f" alt="PhonePe" loading="lazy" />
+        <span class="word">BROOKFIELD</span>
+        <img src="https://cdn.simpleicons.org/airindia/16121f" alt="Air India" loading="lazy" />
+        <span class="word">COGNITE</span>
       </div>
+      <p class="clients-note">Google and Unisys through Prism Automate; Accenture, PhonePe, Air India, Brookfield and Cognite across Prism Scale and DesignHQ.</p>
     </div>
   </section>
 
