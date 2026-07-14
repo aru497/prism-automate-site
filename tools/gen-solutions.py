@@ -193,8 +193,8 @@ PAGE = f"""<!DOCTYPE html>
     .eyebrow {{ font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--violet-lo); }}
 
     /* Nav */
-    .nav {{ position: fixed; inset: 0 0 auto 0; z-index: 40; height: 74px; display: flex; align-items: center; color: var(--paper); transition: background 0.35s var(--ease), border-color 0.35s var(--ease); border-bottom: 1px solid transparent; }}
-    .nav.is-solid {{ background: rgba(13,10,21,0.72); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border-color: var(--line-dk); }}
+    .nav {{ position: fixed; inset: 0 0 auto 0; z-index: 50; height: 74px; display: flex; align-items: center; color: var(--paper); transition: background 0.35s var(--ease), border-color 0.35s var(--ease); border-bottom: 1px solid transparent; }}
+    .nav.is-solid {{ background: rgba(5,4,8,0.72); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); border-color: var(--line-dk); }}
     .nav .wrap {{ width: 100%; display: flex; align-items: center; gap: 2.2rem; }}
     .brand {{ text-decoration: none; }}
     .brand img {{ height: 28px; width: auto; }}
@@ -203,7 +203,21 @@ PAGE = f"""<!DOCTYPE html>
     .nav-links a:hover, .nav-links a.active {{ color: var(--paper); }}
     .nav-cta {{ border: 1px solid rgba(241,240,246,0.4); border-radius: 999px; padding: 0.5rem 1.2rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: background 0.2s, color 0.2s; }}
     .nav-cta:hover {{ background: var(--paper); color: var(--ink); border-color: var(--paper); }}
-    @media (max-width: 820px) {{ .nav-links {{ display: none; }} .nav-cta {{ margin-left: auto; }} }}
+    .nav-toggle {{ display: none; margin-left: auto; background: none; border: 0; padding: 0.55rem 0.3rem; cursor: pointer; color: inherit; }}
+    .nav-toggle span {{ display: block; width: 25px; height: 2px; background: currentColor; border-radius: 2px; transition: transform 0.3s var(--ease), opacity 0.2s; }}
+    .nav-toggle span + span {{ margin-top: 6px; }}
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) {{ transform: translateY(8px) rotate(45deg); }}
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) {{ opacity: 0; }}
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) {{ transform: translateY(-8px) rotate(-45deg); }}
+    .mobile-menu {{ position: fixed; inset: 0; z-index: 45; background: rgba(5,4,8,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); color: var(--paper); display: flex; flex-direction: column; padding: 96px clamp(1.5rem,7vw,3rem) 2.4rem; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 0.32s var(--ease), transform 0.32s var(--ease), visibility 0s linear 0.32s; overflow-y: auto; }}
+    .mobile-menu.open {{ opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }}
+    .mobile-menu .mm-nav {{ display: flex; flex-direction: column; }}
+    .mobile-menu a.mm-link {{ color: var(--paper); text-decoration: none; font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(1.9rem,8vw,2.7rem); letter-spacing: -0.02em; padding: 0.7rem 0; border-bottom: 1px solid var(--line-dk); display: flex; justify-content: space-between; align-items: center; }}
+    .mobile-menu a.mm-link .ar {{ color: var(--violet-lo); opacity: 0.7; font-size: 0.7em; }}
+    .mm-cta {{ margin-top: 2rem; background: var(--paper); color: var(--ink); text-align: center; padding: 1.05rem; border-radius: 999px; font-weight: 600; text-decoration: none; font-size: 1rem; }}
+    .mm-foot {{ margin-top: 1.6rem; color: var(--cream-dim); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }}
+    @media (min-width: 901px) {{ .mobile-menu {{ display: none; }} }}
+    @media (max-width: 900px) {{ .nav-links {{ display: none; }} .nav-cta {{ display: none; }} .nav-toggle {{ display: block; }} }}
 
     /* Hero */
     .hero {{ position: relative; min-height: 90vh; display: flex; align-items: center; overflow: clip; padding: 120px 0 6rem; }}
@@ -314,8 +328,21 @@ PAGE = f"""<!DOCTYPE html>
         <li><a href="../#faq">FAQ</a></li>
       </ul>
       <a class="nav-cta" href="../#contact">Start a project</a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav class="mm-nav" aria-label="Mobile">
+      <a class="mm-link" href="../">Home</a>
+      <a class="mm-link" href="../services/">Services <span class="ar" aria-hidden="true">&#8599;</span></a>
+      <a class="mm-link" href="#top">Solutions</a>
+      <a class="mm-link" href="../#work">Work</a>
+      <a class="mm-link" href="../#faq">FAQ</a>
+      <a class="mm-cta" href="../#contact">Start a project</a>
+    </nav>
+    <p class="mm-foot">Bengaluru · Dubai · Sydney</p>
+  </div>
 
   <header class="hero">
     <div class="hero-bg"><video src="../assets/ring-b.webm" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video></div>
@@ -409,6 +436,23 @@ PAGE = f"""<!DOCTYPE html>
     Object.assign(sentinel.style, {{ position: 'absolute', top: '0', height: '80vh', width: '1px', pointerEvents: 'none' }});
     document.body.appendChild(sentinel);
     new IntersectionObserver(([e]) => nav.classList.toggle('is-solid', !e.isIntersecting)).observe(sentinel);
+
+    // Mobile menu
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {{
+      const setMobile = open => {{
+        navToggle.setAttribute('aria-expanded', String(open));
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        mobileMenu.classList.toggle('open', open);
+        mobileMenu.setAttribute('aria-hidden', String(!open));
+        document.documentElement.style.overflow = open ? 'hidden' : '';
+        if (window.__lenis) {{ open ? window.__lenis.stop() : window.__lenis.start(); }}
+      }};
+      navToggle.addEventListener('click', () => setMobile(!mobileMenu.classList.contains('open')));
+      mobileMenu.addEventListener('click', e => {{ if (e.target.closest('a')) setMobile(false); }}, true);
+      document.addEventListener('keydown', e => {{ if (e.key === 'Escape' && mobileMenu.classList.contains('open')) setMobile(false); }});
+    }}
 
     if (reduce || typeof gsap === 'undefined' || typeof Lenis === 'undefined') {{
       document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {{
