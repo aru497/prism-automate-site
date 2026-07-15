@@ -78,7 +78,7 @@
     .mobile-menu a.mm-link .ar { color: var(--violet-lo); opacity: 0.7; font-size: 0.7em; }
     .mm-cta { margin-top: 2rem; background: var(--paper); color: var(--ink); text-align: center; padding: 1.05rem; font-weight: 600; text-decoration: none; }
     .mm-foot { margin-top: 1.6rem; color: var(--cream-dim); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }
-    @media (min-width: 861px) { .mobile-menu { display: none; } }
+    @media (min-width: 901px) { .mobile-menu { display: none; } }
     .hero { background: #050408; color: var(--paper); padding: 170px 0 clamp(4rem, 10vh, 6.5rem); }
     .hero .eyebrow { color: var(--violet-lo); }
     .hero h1 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: 1.02; margin-top: 1.1rem; max-width: 15ch; }
@@ -92,7 +92,7 @@
     section { padding-block: clamp(3.5rem, 8vh, 6rem); }
     .sec-label { color: var(--violet); font-weight: 600; font-size: 0.9rem; }
     h2 { font-size: clamp(1.7rem, 3.2vw, 2.5rem); font-weight: 500; margin-top: 0.6rem; }
-    .inc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.25rem, 3vw, 2.5rem); margin-top: 2.2rem; }
+    .inc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: clamp(1.25rem, 3vw, 2.5rem); margin-top: 2.2rem; }
     .inc h3 { font-size: 1.12rem; font-weight: 600; }
     .inc h3::before { content: ""; display: block; width: 34px; height: 2px; background: var(--gold); margin-bottom: 0.9rem; }
     .inc p { margin-top: 0.55rem; color: var(--ink-soft); font-size: 0.97rem; }
@@ -112,6 +112,11 @@
     .svc-faq details p { color: var(--ink-soft); padding-bottom: 1.25rem; line-height: 1.7; max-width: 74ch; }
     .fit li { display: flex; gap: 0.7rem; color: var(--ink-soft); }
     .fit li::before { content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--violet-lo); margin-top: 0.5rem; }
+    .deliv { border-block: 1px solid var(--line); }
+    .deliv ul { margin: 1.6rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.85rem; max-width: 60ch; }
+    .deliv li { display: flex; gap: 0.7rem; color: var(--ink-soft); }
+    .deliv li::before { content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); margin-top: 0.5rem; }
+    .deliv li b { color: var(--ink); font-weight: 600; }
     .rel-row { display: grid; gap: 0.4rem; margin-top: 2rem; max-width: 620px; }
     .rel { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); text-decoration: none; font-weight: 600; }
     .rel svg { color: var(--violet); transition: transform 0.25s var(--ease); }
@@ -131,7 +136,7 @@
       }
     }
     @keyframes rise { from { opacity: 0; transform: translateY(30px); } }
-    @media (max-width: 860px) {
+    @media (max-width: 900px) {
       .inc-grid, .step-grid { grid-template-columns: 1fr; }
       .cta .wrap { grid-template-columns: 1fr; }
       .nav-links { display: none; }
@@ -215,6 +220,7 @@
     </div>
   </section>
 
+
   <section>
     <div class="wrap">
       <span class="sec-label">Strategy &amp; Advisory</span>
@@ -240,7 +246,7 @@
   <section class="cta">
     <div class="wrap">
       <div>
-        <h2>Let's scope <em>aI Strategy &amp; Roadmap</em> for your team.</h2>
+        <h2>Let's scope <em>AI Strategy &amp; Roadmap</em> for your team.</h2>
         <small>A real person replies within one business day. Bengaluru · Dubai · Sydney.</small>
       </div>
       <a class="btn-solid" href="../../#contact">Start a project</a>

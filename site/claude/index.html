@@ -168,22 +168,6 @@
     .interest h2 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.4rem, 5.5vw, 4.4rem); line-height: 1; }
     .interest > .wrap > p { margin: 1.3rem auto 0; color: var(--cream-dim); font-size: 1.1rem; line-height: 1.6; }
     .interest .wrap .btn { margin-top: 2.2rem; }
-    .interest .lhs h2 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.4rem, 5.5vw, 4.4rem); line-height: 1; }
-    .interest .lhs p { margin-top: 1.3rem; color: var(--cream-dim); font-size: 1.1rem; line-height: 1.6; max-width: 40ch; }
-    .interest .lhs .meta { margin-top: 2rem; display: grid; gap: 0.6rem; color: var(--cream-dim); font-size: 0.95rem; }
-    .interest .lhs .meta b { color: var(--paper); font-weight: 600; }
-    form.interest-form { display: grid; gap: 1.1rem; }
-    .field { display: grid; gap: 0.5rem; }
-    .field label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream-dim); }
-    .field input, .field textarea { font: inherit; color: var(--paper); background: rgba(255,255,255,0.03); border: 1px solid var(--line-dk); padding: 0.9rem 1rem; border-radius: 0; transition: border-color 0.2s, background 0.2s; }
-    .field input:focus, .field textarea:focus { outline: none; border-color: var(--violet-lo); background: rgba(168,158,241,0.06); }
-    .field textarea { resize: vertical; min-height: 120px; }
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
-    form.interest-form button { justify-self: start; margin-top: 0.4rem; background: var(--gold); color: var(--ink); border: 1px solid var(--gold); padding: 1.05rem 2.2rem; font: 600 1rem var(--font); cursor: pointer; display: inline-flex; align-items: center; gap: 0.6rem; transition: background 0.2s, transform 0.15s var(--ease); }
-    form.interest-form button:hover { background: #e7bd86; }
-    form.interest-form button:active { transform: scale(0.98); }
-    .form-note { margin-top: 0.3rem; font-size: 0.9rem; color: var(--cream-dim); min-height: 1.2em; }
-    @media (max-width: 860px) { .interest .wrap { grid-template-columns: 1fr; } .two-col { grid-template-columns: 1fr; } }
 
     /* Footer */
     footer { background: var(--ink-deep); padding-block: 3rem 2.2rem; }
@@ -197,7 +181,7 @@
 
     @supports (animation-timeline: view()) {
       @media (prefers-reduced-motion: no-preference) {
-        .svc, .cap, .why-cell, .impact-grid .cell, .interest-form { animation: rise 1ms both; animation-timeline: view(); animation-range: entry 3% cover 26%; }
+        .svc, .cap, .why-cell, .impact-grid .cell { animation: rise 1ms both; animation-timeline: view(); animation-range: entry 3% cover 26%; }
       }
     }
     @keyframes rise { from { opacity: 0; transform: translateY(26px); } }
@@ -256,6 +240,7 @@
         <div class="cell"><b>14</b><span>recognised Claude services, from the first roadmap to workloads running under SLAs.</span></div>
         <div class="cell"><b class="spark">weeks</b><span>to a first scoped thing in production. Not quarters. Not "sometime after the reorg."</span></div>
       </div>
+      <p style="margin-top:2rem;color:var(--cream-dim);max-width:60ch;font-size:1.02rem;line-height:1.6;">Two live products is where <em style="font-style:normal;color:var(--paper);">Prism Automate</em> starts, not where the track record does. We're the AI arm of the Prism family — 589+ shipped projects, a 4.9/5 average across them, for teams from Google and Unisys to PhonePe and Air India. The discipline that shipped those is the discipline we point at Claude.</p>
     </div>
   </section>
 
@@ -360,6 +345,32 @@
     </div>
   </section>
 
+  <section class="caps">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Why Claude, specifically</p>
+        <h2>We didn't pick a model. We picked the one that behaves under pressure.</h2>
+      </div>
+      <div class="cap-grid">
+        <div class="cap">
+          <span class="n">01</span>
+          <h3>It follows instructions you can audit</h3>
+          <p>Claude holds a long, complex brief and does what the brief says — which is the whole game for agents that touch real systems. When it isn't sure, it says so instead of inventing an answer, and that honesty is what lets us put it in front of customers and finance alike.</p>
+        </div>
+        <div class="cap">
+          <span class="n">02</span>
+          <h3>It reasons over long, messy context</h3>
+          <p>Whole repositories, hundred-page contracts, a sprawling support history — Claude keeps the thread. That is why the workloads we build on it, from document intelligence to repo-aware coding, hold up on the real inputs rather than the tidy demo ones.</p>
+        </div>
+        <div class="cap">
+          <span class="n">03</span>
+          <h3>We build on it as a partner, not a bystander</h3>
+          <p>As an Anthropic Claude partner we build on the model deliberately — tracking what each Claude generation does well, tuning consumption so the bill stays sane, and defending the edges with prompt-injection controls and evals. We know this model's behaviour because we ship on it every week.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="proof">
     <div class="wrap">
       <p class="eyebrow">Delivered for teams at</p>
@@ -374,8 +385,8 @@
   <section class="interest" id="interest">
     <div class="wrap">
       <h2>Interested? Let's not overthink it.</h2>
-      <p>Tell us what's eating your team's time. We'll tell you, honestly, whether Claude can kill it — and what it would take. A real person replies within one business day. No deck required; bad handwriting on a napkin is fine.</p>
-      <a class="btn btn-solid" href="#interest" data-interest>I'm Interested
+      <p>Tell us what's eating your team's time — a workflow, a queue, a phone line no one wants to staff. On a first call we'll tell you honestly whether Claude can kill it, what it would take, and what it shouldn't touch. You'll leave with a straight answer either way, not a proposal to schedule the proposal. A real person, usually Arun, replies within one business day. No deck required; bad handwriting on a napkin is fine.</p>
+      <a class="btn btn-solid" href="mailto:dharam@prismscale.com,arun@prismscale.com?subject=I%27m%20interested%20in%20Claude">I'm Interested
         <svg width="22" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
       </a>
     </div>
@@ -441,25 +452,6 @@
       navToggle.addEventListener('click', () => setMobile(!mobileMenu.classList.contains('open')));
       mobileMenu.addEventListener('click', e => { if (e.target.closest('a')) setMobile(false); }, true);
       document.addEventListener('keydown', e => { if (e.key === 'Escape' && mobileMenu.classList.contains('open')) setMobile(false); });
-    }
-
-    // Interest form: mailto fallback until a backend is wired.
-    const iform = document.getElementById('interest-form');
-    if (iform) {
-      iform.addEventListener('submit', e => {
-        e.preventDefault();
-        const note = document.getElementById('if-note');
-        const name = iform.name.value.trim(), email = iform.email.value.trim();
-        if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-          note.textContent = 'Add your name and a valid work email and we’re good to go.';
-          note.style.color = 'var(--violet-lo)';
-          return;
-        }
-        const body = 'Name: ' + name + '\nEmail: ' + email + '\nCompany: ' + iform.company.value.trim() + '\n\n' + iform.message.value.trim();
-        location.href = 'mailto:dharam@prismscale.com,arun@prismscale.com?subject=' + encodeURIComponent('I’m interested in Claude: ' + name) + '&body=' + encodeURIComponent(body);
-        note.textContent = 'Your email draft is ready to send. We reply within one business day.';
-        note.style.color = '';
-      });
     }
 
     // Smooth scroll + Lenis.

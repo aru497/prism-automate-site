@@ -105,7 +105,7 @@ PAGE = """<!DOCTYPE html>
     .mobile-menu a.mm-link .ar {{ color: var(--violet-lo); opacity: 0.7; font-size: 0.7em; }}
     .mm-cta {{ margin-top: 2rem; background: var(--paper); color: var(--ink); text-align: center; padding: 1.05rem; font-weight: 600; text-decoration: none; }}
     .mm-foot {{ margin-top: 1.6rem; color: var(--cream-dim); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }}
-    @media (min-width: 861px) {{ .mobile-menu {{ display: none; }} }}
+    @media (min-width: 901px) {{ .mobile-menu {{ display: none; }} }}
     .hero {{ background: #050408; color: var(--paper); padding: 170px 0 clamp(4rem, 10vh, 6.5rem); }}
     .hero .eyebrow {{ color: var(--violet-lo); }}
     .hero h1 {{ font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.6rem, 6.4vw, 5.2rem); line-height: 1.02; margin-top: 1.1rem; max-width: 15ch; }}
@@ -119,7 +119,7 @@ PAGE = """<!DOCTYPE html>
     section {{ padding-block: clamp(3.5rem, 8vh, 6rem); }}
     .sec-label {{ color: var(--violet); font-weight: 600; font-size: 0.9rem; }}
     h2 {{ font-size: clamp(1.7rem, 3.2vw, 2.5rem); font-weight: 500; margin-top: 0.6rem; }}
-    .inc-grid {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.25rem, 3vw, 2.5rem); margin-top: 2.2rem; }}
+    .inc-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: clamp(1.25rem, 3vw, 2.5rem); margin-top: 2.2rem; }}
     .inc h3 {{ font-size: 1.12rem; font-weight: 600; }}
     .inc h3::before {{ content: ""; display: block; width: 34px; height: 2px; background: var(--gold); margin-bottom: 0.9rem; }}
     .inc p {{ margin-top: 0.55rem; color: var(--ink-soft); font-size: 0.97rem; }}
@@ -139,6 +139,11 @@ PAGE = """<!DOCTYPE html>
     .svc-faq details p {{ color: var(--ink-soft); padding-bottom: 1.25rem; line-height: 1.7; max-width: 74ch; }}
     .fit li {{ display: flex; gap: 0.7rem; color: var(--ink-soft); }}
     .fit li::before {{ content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--violet-lo); margin-top: 0.5rem; }}
+    .deliv {{ border-block: 1px solid var(--line); }}
+    .deliv ul {{ margin: 1.6rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.85rem; max-width: 60ch; }}
+    .deliv li {{ display: flex; gap: 0.7rem; color: var(--ink-soft); }}
+    .deliv li::before {{ content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); margin-top: 0.5rem; }}
+    .deliv li b {{ color: var(--ink); font-weight: 600; }}
     .rel-row {{ display: grid; gap: 0.4rem; margin-top: 2rem; max-width: 620px; }}
     .rel {{ display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); text-decoration: none; font-weight: 600; }}
     .rel svg {{ color: var(--violet); transition: transform 0.25s var(--ease); }}
@@ -158,7 +163,7 @@ PAGE = """<!DOCTYPE html>
       }}
     }}
     @keyframes rise {{ from {{ opacity: 0; transform: translateY(30px); }} }}
-    @media (max-width: 860px) {{
+    @media (max-width: 900px) {{
       .inc-grid, .step-grid {{ grid-template-columns: 1fr; }}
       .cta .wrap {{ grid-template-columns: 1fr; }}
       .nav-links {{ display: none; }}
@@ -232,6 +237,7 @@ PAGE = """<!DOCTYPE html>
     </div>
   </section>
 
+{deliverables_html}
   <section>
     <div class="wrap">
       <span class="sec-label">{cat_name}</span>
@@ -282,6 +288,22 @@ for svc in S:
         f'        <div class="step"><h3>{esc(t)}</h3><p>{esc(d)}</p></div>'
         for t, d in svc["steps"])
     fit = "\n".join(f'        <li>{esc(x)}</li>' for x in svc["fit"])
+    deliverables = svc.get("deliverables", [])
+    if deliverables:
+        deliv_items = "\n".join(
+            f'        <li><b>{esc(t)}</b> — {esc(d)}</li>' for t, d in deliverables)
+        deliverables_html = (
+            '  <section class="deliv">\n'
+            '    <div class="wrap">\n'
+            '      <span class="sec-label">What you leave with</span>\n'
+            '      <h2>The things you keep</h2>\n'
+            '      <ul>\n'
+            f'{deliv_items}\n'
+            '      </ul>\n'
+            '    </div>\n'
+            '  </section>\n')
+    else:
+        deliverables_html = ""
     faq_pairs = svc.get("faq", [])
     faq_html = "\n".join(
         f'        <details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>'
@@ -298,12 +320,13 @@ for svc in S:
             f'alt="{html.escape(svc.get("img_alt", svc["name"]), quote=True)}" loading="lazy" /></figure></div>\n'
             '  </div>\n')
     page = PAGE.format(
-        name=esc(svc["name"]), name_lower=esc(svc["name"][0].lower() + svc["name"][1:]),
+        name=esc(svc["name"]), name_lower=esc(svc["name"]),
         cat_name=esc(CATS[svc["cat"]]), definition=esc(svc["definition"]),
         meta_desc=esc(meta.replace('"', "'")),
         canonical=f"{BASE_URL}/services/{svc['slug']}/",
         media_html=media, faq_html=faq_html, faq_json=faq_json,
-        included_html=inc, steps_html=steps, fit_html=fit, related_html=related(svc))
+        included_html=inc, steps_html=steps, fit_html=fit, related_html=related(svc),
+        deliverables_html=deliverables_html)
     outdir = os.path.join(BASE, svc["slug"])
     os.makedirs(outdir, exist_ok=True)
     open(os.path.join(outdir, "index.html"), "w").write(page)
@@ -398,7 +421,7 @@ OVERVIEW = """<!DOCTYPE html>
     .mobile-menu a.mm-link .ar { color: var(--violet-lo); opacity: 0.7; font-size: 0.7em; }
     .mm-cta { margin-top: 2rem; background: var(--paper); color: var(--ink); text-align: center; padding: 1.05rem; font-weight: 600; text-decoration: none; }
     .mm-foot { margin-top: 1.6rem; color: var(--cream-dim); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }
-    @media (min-width: 861px) { .mobile-menu { display: none; } }
+    @media (min-width: 901px) { .mobile-menu { display: none; } }
     .hero { background: #050408; color: var(--paper); padding: 170px 0 clamp(4rem, 9vh, 6rem); }
     .hero .eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--violet-lo); }
     .hero h1 { font-family: "Hanken Grotesk", var(--font); font-weight: 200; font-size: clamp(2.8rem, 7vw, 5.6rem); line-height: 1; margin-top: 1.1rem; }
@@ -408,6 +431,7 @@ OVERVIEW = """<!DOCTYPE html>
     .cat-head h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 500; }
     .cat-head .ser { font-size: 1.1rem; }
     .svc-grid { margin-top: 1.8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+    .svc-grid > .svc:last-child:nth-child(odd) { grid-column: 1 / -1; }
     .svc { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 0.4rem 1.2rem; padding: 1.15rem 1.35rem; border: 1px solid var(--line); border-radius: 0; text-decoration: none; background: #fff; transition: border-color 0.25s var(--ease), transform 0.25s var(--ease); }
     .svc:hover { border-color: var(--violet); transform: translateY(-2px); }
     .svc-name { font-weight: 600; }
@@ -426,7 +450,8 @@ OVERVIEW = """<!DOCTYPE html>
       }
     }
     @keyframes rise { from { opacity: 0; transform: translateY(26px); } }
-    @media (max-width: 820px) { .svc-grid { grid-template-columns: 1fr; } .cta .wrap { grid-template-columns: 1fr; } .nav-links { display: none; } .nav-cta { display: none; } .nav-toggle { display: block; } }
+    @media (max-width: 900px) { .nav-links { display: none; } .nav-cta { display: none; } .nav-toggle { display: block; } }
+    @media (max-width: 820px) { .svc-grid { grid-template-columns: 1fr; } .cta .wrap { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>

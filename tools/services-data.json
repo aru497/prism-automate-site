@@ -67,6 +67,10 @@
    [
     "Risk register with named owners",
     "The failure modes that matter in your industry — data leakage, hallucinated output, shadow usage — each with a concrete mitigation, not a heat map."
+   ],
+   [
+    "The shadow-usage picture",
+    "An honest map of what's already happening off the books — the teams pasting customer data into public chatbots, the unsanctioned tools, the workarounds — because you can't govern what you can't see, and the risk you don't know about is the one that bites."
    ]
   ],
   "steps": [
@@ -98,6 +102,28 @@
    [
     "We're in a regulated industry — can you handle that?",
     "Yes. We build the risk register and paper trail around your specific obligations, so 'we use AI carefully' becomes something that survives an audit."
+   ],
+   [
+    "How long does the assessment take, and how disruptive is it?",
+    "Typically two to three weeks. The load on your teams is a handful of scheduled interviews and read-only access to the systems we review — no freeze on work, no tooling to install. You get the scored verdict and remediation plan at the end, not a months-long audit that outlives its own findings."
+   ]
+  ],
+  "deliverables": [
+   [
+    "A readiness scorecard",
+    "data, security, skills, and process maturity scored against a live rollout"
+   ],
+   [
+    "A governance framework",
+    "usage policies, review gates, and escalation paths, drafted ready to adopt"
+   ],
+   [
+    "A risk register",
+    "each failure mode named, owned, and paired with a concrete mitigation"
+   ],
+   [
+    "A prioritised remediation plan",
+    "gaps ordered by risk, ready to hand to compliance"
    ]
   ]
  },
@@ -118,6 +144,10 @@
    [
     "Investment case",
     "A portfolio view finance can approve: quick wins funding the deeper builds."
+   ],
+   [
+    "Numbers you can trace",
+    "Every figure links back to a source — a logged hour, a current contract rate, a documented volume — so finance can follow any claim to its origin and challenge the ones they doubt. No black-box spreadsheet, no round numbers pulled from the air."
    ]
   ],
   "steps": [
@@ -149,6 +179,24 @@
    [
     "What if most of our ideas don't survive?",
     "Good. Killing weak ideas cheaply is half the value. You leave with a funded shortlist ordered by payback, not twenty maybes."
+   ],
+   [
+    "Where do the savings figures actually come from?",
+    "From your own operation, not benchmarks. We log where hours go today, take current rates and volumes from your systems, and model the change Claude makes to each — then write down every assumption so finance can test it. Where we can't measure it, we say so rather than guess."
+   ]
+  ],
+  "deliverables": [
+   [
+    "A ranked use-case portfolio",
+    "every candidate scored by payback, sequenced into fund-now / wait / stop"
+   ],
+   [
+    "A per-use-case business case",
+    "value, cost, and assumptions on one page each, ready for a budget meeting"
+   ],
+   [
+    "An assumptions log",
+    "every input traced to a source finance can interrogate"
    ]
   ]
  },
@@ -258,11 +306,11 @@
   "slug": "prototype-poc",
   "cat": "build",
   "name": "Prototype & Proof of Concept",
-  "definition": "A contracted prototype or proof of concept delivered against a defined use case, so decisions get made on evidence.",
+  "definition": "A contracted prototype or proof of concept, built against one defined use case on your real data, so the go/no-go decision rests on evidence instead of opinion. You leave with working software your team can try to break, an honest account of what held up and what didn't, and a costed path to production.",
   "included": [
    [
     "Working software",
-    "Real integration against your data, not a slideware mock — something your team can try to break."
+    "A real, running build wired to your own data and systems — not a slideware mock or a scripted happy path. Something your team can push on, poke holes in, and judge for themselves."
    ],
    [
     "Honest findings",
@@ -271,6 +319,10 @@
    [
     "A go/no-go you can trust",
     "Evidence strong enough to kill the idea or fund it properly."
+   ],
+   [
+    "Scope held on purpose",
+    "One use case, one success metric, a fixed two-to-four-week window. The discipline is the deliverable: a proof narrow enough to finish and honest enough to trust, with no scope creep smuggling a half-built product in through the back door."
    ]
   ],
   "steps": [
@@ -302,6 +354,28 @@
    [
     "How fast is a proof of concept?",
     "Two to four weeks against one use case with one success metric agreed up front. Short enough to stay honest, long enough to prove it."
+   ],
+   [
+    "Who owns what we build?",
+    "You do. The code, the prompts, and the findings are yours to keep, extend, or shelve — whether the decision is go or no-go. A proof of concept that you can't take forward isn't proof of anything."
+   ]
+  ],
+  "deliverables": [
+   [
+    "A running prototype",
+    "deployed against your real inputs, with access details handed to your team"
+   ],
+   [
+    "A written findings memo",
+    "what worked, what failed, and the honest limits we hit"
+   ],
+   [
+    "A costed production estimate",
+    "money, time, and risk to take it live — or the clear reason not to"
+   ],
+   [
+    "A go/no-go recommendation",
+    "our call, with the evidence laid out so you can overrule it"
    ]
   ]
  },
@@ -373,6 +447,10 @@
    [
     "Handover with keys",
     "Admin access, runbooks, and architecture docs: everything your team needs to run it without ringing us."
+   ],
+   [
+    "Room to diverge",
+    "An accelerator is a head start, not a straitjacket. Where your process genuinely differs from the pattern, we adapt the workflow rather than force your business to bend to the software — the speed of a product, with an escape hatch when you need one."
    ]
   ],
   "steps": [
@@ -404,6 +482,24 @@
    [
     "How much of it is bespoke vs. configured?",
     "Mostly configured, which is the point: faster time-to-value. We adapt prompts, retrieval, and workflows to your terminology and brand, without a ground-up build."
+   ],
+   [
+    "What if our process doesn't match the accelerator?",
+    "Then we adapt it. The accelerator sets the starting line — prompts, retrieval, and workflows already built — and we tune it to where your operation actually differs. You still start weeks ahead of a blank page; you just aren't locked into someone else's idea of how your work should run."
+   ]
+  ],
+  "deliverables": [
+   [
+    "A configured accelerator",
+    "tuned to your terminology, documents, and brand, running in your cloud"
+   ],
+   [
+    "Admin access and runbooks",
+    "everything your operators need to run it without ringing us"
+   ],
+   [
+    "Architecture documentation",
+    "how it's wired, so your team can extend it later"
    ]
   ]
  },
@@ -526,6 +622,10 @@
    [
     "A monthly review worth reading",
     "One report a month: usage, spend, incidents, and the improvements shipped. Honest enough to forward to your CFO."
+   ],
+   [
+    "Your stack, not ours",
+    "We operate the workload where it already lives — inside your cloud account, behind your SSO and network controls. We hold the pager and the runbooks; you keep the perimeter, the data, and the keys."
    ]
   ],
   "steps": [
@@ -557,6 +657,24 @@
    [
     "Who carries the pager?",
     "We do. Your engineers built it; they shouldn't be stuck babysitting it at 2am. That's our job."
+   ],
+   [
+    "Does our data or code leave our environment?",
+    "No. We manage the workload in place — your cloud, your tenancy, your access controls. Our engineers work through scoped, audited access, so you get someone owning production at 2am without handing custody of your systems to a third party."
+   ]
+  ],
+  "deliverables": [
+   [
+    "Signed SLAs",
+    "monitoring, alerting, and incident-response commitments written into the contract"
+   ],
+   [
+    "A standing eval suite",
+    "catches output drift and regressions before your users do"
+   ],
+   [
+    "A monthly operations report",
+    "usage, spend, incidents, and improvements — honest enough to forward to the CFO"
    ]
   ]
  },
@@ -577,6 +695,10 @@
    [
     "Clinics, not webinars",
     "Regular sessions built around what your builders actually hit, turning the questions everyone asks into things nobody asks twice."
+   ],
+   [
+    "Escalation that ends somewhere",
+    "When a question is genuinely a model or platform issue rather than a usage one, we own the escalation to resolution instead of bouncing it back to you. As an Anthropic Claude partner, we know where the line is and who to reach across it."
    ]
   ],
   "steps": [
@@ -608,6 +730,24 @@
    [
     "Isn't this just IT support?",
     "IT can reset a password; it can't explain why the model ignored your CLAUDE.md. This is model-specific enablement, staffed by people who build with Claude Code daily."
+   ],
+   [
+    "What counts as tier-1/2, and what gets escalated?",
+    "Tier-1/2 is the day-to-day: why the model ignored your CLAUDE.md, how to structure an agent, which MCP config to use, why a build stalled. Genuine platform faults or account issues we escalate on your behalf and track to resolution. The channel is staffed by engineers who build with Claude Code daily, so most questions never need to leave it."
+   ]
+  ],
+  "deliverables": [
+   [
+    "A named support channel",
+    "dedicated Slack or Teams, agreed response times, real engineers"
+   ],
+   [
+    "Patterns for your stack",
+    "working agent setups, CLAUDE.md files, and MCP configs in your languages"
+   ],
+   [
+    "Regular clinics",
+    "built from your actual ticket log, so common questions stop recurring"
    ]
   ]
  },
@@ -679,6 +819,10 @@
    [
     "Proof it worked",
     "Pre- and post-assessment scores, reported in writing: you see what changed, by team, and where a refresher is worth it."
+   ],
+   [
+    "Delivered where your team is",
+    "On-site, remote, or split across time zones — Bengaluru, Dubai, or Sydney hours to suit a distributed team. Cohorts are capped small enough that everyone gets stuck and unstuck in the room, not left behind in a webinar of two hundred."
    ]
   ],
   "steps": [
@@ -710,6 +854,24 @@
    [
     "How do you know the training worked?",
     "Pre- and post-assessment scores, reported in writing, so you see what changed by team and where a refresher is worth it."
+   ],
+   [
+    "Is this a one-off, or something ongoing?",
+    "Either. Most teams start with a focused set of role-based cohorts, then add a refresher path so skills survive the next model release and new joiners learn the same course rather than by rumour. If you want it running continuously, it pairs naturally with our Centre of Excellence programme."
+   ]
+  ],
+  "deliverables": [
+   [
+    "Role-based curriculum",
+    "separate tracks for builders, analysts, and leaders, built on your real workflows"
+   ],
+   [
+    "Take-home materials",
+    "prompts, exercises, and reference sheets people reuse on Monday"
+   ],
+   [
+    "Before-and-after scores",
+    "pre- and post-assessment results reported by team, showing what changed"
    ]
   ]
  }

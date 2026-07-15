@@ -248,7 +248,7 @@
     .scroll-cue:hover { color: var(--paper); }
     @keyframes cue { 0%, 100% { transform: translateY(-3px); opacity: 0.5; } 50% { transform: translateY(4px); opacity: 1; } }
     /* Hero featured card */
-    .hero-feat { position: absolute; right: clamp(1.25rem, 5vw, 3rem); bottom: clamp(4.2rem, 8vh, 5.8rem); z-index: 3; display: flex; align-items: center; gap: 0.85rem; width: min(322px, 80vw); padding: 0.7rem 0.95rem 1.15rem; border-radius: 0; background: rgba(13,10,21,0.5); border: 1px solid var(--line-dk); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); text-decoration: none; color: var(--paper); overflow: hidden; transition: border-color 0.25s, transform 0.25s var(--ease); }
+    .hero-feat { position: absolute; right: max(clamp(1.25rem, 5vw, 3.5rem), calc(50% - 640px + clamp(1.25rem, 5vw, 3.5rem))); bottom: clamp(4.2rem, 8vh, 5.8rem); z-index: 3; display: flex; align-items: center; gap: 0.85rem; width: min(322px, 80vw); padding: 0.7rem 0.95rem 1.15rem; border-radius: 0; background: rgba(13,10,21,0.5); border: 1px solid var(--line-dk); backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); text-decoration: none; color: var(--paper); overflow: hidden; transition: border-color 0.25s, transform 0.25s var(--ease); }
     .hero-feat:hover { border-color: var(--violet-lo); transform: translateY(-3px); }
     .hf-thumb { flex: none; width: 52px; height: 52px; border-radius: 0; overflow: hidden; background: #000; }
     .hf-thumb img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.35s; }
@@ -452,7 +452,6 @@
 
     /* ---- CTA ---- */
     .cta { padding-block: clamp(5.5rem, 14vh, 9rem); }
-    .cta .wrap { display: grid; grid-template-columns: 1fr auto; gap: 2.5rem; align-items: center; }
     .cta h2 { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 500; line-height: 1.05; max-width: 16ch; }
     .cta h2 em { color: var(--violet-lo); }
     .cta small { display: block; margin-top: 1rem; color: var(--cream-dim); font-size: 1rem; }
@@ -460,18 +459,6 @@
     .cta-band h2 { max-width: none; margin-inline: auto; }
     .cta-band .btn-solid { margin-top: 2rem; }
     .btn-solid { background: var(--paper); color: var(--ink); text-decoration: none; padding: 1.05rem 2.3rem; border-radius: 0; font-weight: 600; white-space: nowrap; transition: transform 0.15s var(--ease), background 0.2s; display: inline-block; border: 0; cursor: pointer; font-family: var(--font); font-size: 1rem; }
-    .cta-grid { grid-template-columns: 1fr 1.05fr !important; }
-    #contact-form { display: grid; gap: 1rem; }
-    #contact-form label { display: grid; gap: 0.4rem; font-weight: 600; font-size: 0.92rem; color: var(--cream-dim); }
-    #contact-form .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    #contact-form input, #contact-form textarea {
-      background: rgba(255,255,255,0.05); border: 1px solid var(--line-dk); border-radius: 0;
-      color: var(--paper); font: 400 1rem/1.4 var(--font); padding: 0.75rem 0.95rem; width: 100%;
-    }
-    #contact-form input:focus-visible, #contact-form textarea:focus-visible { outline: 2px solid var(--violet-lo); outline-offset: 1px; border-color: var(--violet-lo); }
-    #contact-form .btn-solid { justify-self: start; }
-    .f-note { color: var(--cream-dim); font-size: 0.86rem; }
-    @media (max-width: 900px) { .cta-grid { grid-template-columns: 1fr !important; } #contact-form .f-row { grid-template-columns: 1fr; } }
     .btn-solid:active { transform: scale(0.97); }
     .btn-solid:hover { background: var(--violet-lo); }
 
@@ -524,7 +511,6 @@
       .case { grid-template-columns: 1fr; }
       .case-media, .showcase { order: -1; }
       .stat-grid { grid-template-columns: 1fr 1fr; }
-      .cta .wrap { grid-template-columns: 1fr; }
       .human-row { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
@@ -647,7 +633,7 @@
   <section class="intro" aria-label="What we believe">
     <div class="wrap">
       <p class="scrub" id="scrub">
-        Most companies don't need more AI demos. They need one workflow that actually ships, then another, until the business runs <em>on its own intelligence.</em> That is the whole job.
+        Most companies don't need more AI demos. They need one workflow that actually ships, then another, until the business runs <em>on its own intelligence.</em> We advise, build, deploy, and run it — one senior team, on Anthropic's Claude, accountable from the first roadmap to the workloads live in production. That is the whole job.
       </p>
     </div>
   </section>
@@ -853,7 +839,23 @@
           <figcaption><b>Varad Joshi</b><span>Partner · Engineering</span></figcaption>
         </figure>
       </div>
-      <p class="caption">You talk to the people who build — no account managers, no handoffs.</p>
+      <p class="caption">You talk to the people who build — no account managers, no handoffs, no junior team quietly assigned after the sale. Four partners who between them have shipped across 589+ Prism-family projects, for teams from Google and Unisys to PhonePe and Air India. The person who scopes your work is the person who ships it.</p>
+    </div>
+  </section>
+
+  <section class="regions" aria-label="How we work">
+    <div class="wrap">
+      <p class="eyebrow">How we work</p>
+      <h2 class="gr">Small team, <em>short chain of command.</em></h2>
+      <p class="regions-lede gr">Four partners, no account layer between you and the people who build. Every engagement runs the same honest arc: we scope the workflow that actually costs you money, prove it against your own data, ship it behind your SSO, then decide together who owns the pager. You always know who is doing what, because it is one of four of us.</p>
+      <div class="regions-grid">
+        <div class="region"><b>One accountable owner</b><span>Arun runs delivery end to end. No hand-off from the people who pitched to the people who build — they are the same people.</span></div>
+        <div class="region"><b>Proof before spend</b><span>We prove the highest-value workflow in production in weeks, so you fund what works and kill what doesn't before it becomes a programme.</span></div>
+        <div class="region"><b>Your cloud, your keys</b><span>We build inside your environment, behind your SSO, with an audit trail on every action. You keep the platform; we don't rent it back.</span></div>
+        <div class="region"><b>Built on Claude on purpose</b><span>As an Anthropic Claude partner we build on the model deliberately — not bolted onto one we don't understand and hoping it holds.</span></div>
+        <div class="region"><b>The Prism 24-hour cadence</b><span>The turnaround the Prism family is known for across 589+ projects carries into how fast we reply, scope, and move.</span></div>
+        <div class="region"><b>Someone owns it after launch</b><span>Managed operations under an SLA, or a clean hand-over with runbooks. A launch is the start of the work, not the end.</span></div>
+      </div>
     </div>
   </section>
 
@@ -913,8 +915,8 @@
   <section class="cta dark" id="contact">
     <div class="wrap cta-band gr">
       <h2>Let's build your <em>AI core.</em></h2>
-      <small>Tell us what slows your team down. A real person, usually Arun, replies within one business day. Bengaluru · Dubai · Sydney.</small>
-      <a class="btn-solid" href="#contact" data-interest>Start a project</a>
+      <small>Tell us the workflow that quietly costs your team the most hours. We'll tell you, honestly, whether Claude can take it off their plate and what shipping it would take — no deck required, no obligation to proceed. A real person, usually Arun, replies within one business day. Bengaluru · Dubai · Sydney.</small>
+      <a class="btn-solid" href="claude/#interest">Start a project</a>
     </div>
   </section>
 
@@ -1039,25 +1041,6 @@
       feat.addEventListener('mouseleave', start);
       start();
     })();
-
-    // Contact form: mailto fallback until a backend is wired.
-    const cform = document.getElementById('contact-form');
-    if (cform) {
-      cform.addEventListener('submit', e => {
-        e.preventDefault();
-        const note = document.getElementById('f-note');
-        const name = cform.name.value.trim(), email = cform.email.value.trim();
-        if (!name || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-          note.textContent = 'Please add your name and a valid work email.';
-          note.style.color = '#a89ef1';
-          return;
-        }
-        const body = `Name: ${name}\nEmail: ${email}\n\n${cform.message.value.trim()}`;
-        location.href = `mailto:dharam@prismscale.com,arun@prismscale.com?subject=${encodeURIComponent('Project enquiry: ' + name)}&body=${encodeURIComponent(body)}`;
-        note.textContent = 'Your email draft is ready to send. We reply within one business day.';
-        note.style.color = '';
-      });
-    }
 
     if (reduce || typeof gsap === 'undefined') {
       document.documentElement.classList.add('no-motion');

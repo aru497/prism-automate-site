@@ -17,6 +17,7 @@ SOL = [
    img_alt="Three Prism Events app screens from the Unisys UIP deployment: the live agenda, the home dashboard with a live poll and venue map, and the event photo gallery.",
    desc="GPS dies the moment attendees walk indoors. Prism Events doesn't. Our Virtual Positioning System puts every visitor's live location on the floor plan and gives turn-by-turn directions to any booth, stage, or session, wrapped in a live agenda and day-tabbed galleries. Shipped and running at the Unisys Innovation Program in Bengaluru.",
    pills=["AR video-map wayfinder","Turn-by-turn routing","Live agenda","Booth & stage finder","Day photo galleries","Works where GPS won't"],
+   why="Under the wayfinder is a Virtual Positioning System — venue beacons, sensor fusion, and a calibrated map that locates a phone where GPS gives up. For the organiser it's one live console: push an agenda change, watch footfall move, seed the shared gallery. For the attendee it's the difference between 'somewhere on level two' and a green arrow that says the room is 11 metres ahead.",
    cta=("See the deployment","../#work"), related=None),
 
  dict(slug="virtual-try-on", name="PrismScale Wear", status="live",
@@ -25,6 +26,7 @@ SOL = [
    img_alt="A smartphone showing a live virtual try-on — a person wearing a jacket rendered with a violet AR pose-detection overlay.",
    desc="Let shoppers see the product on themselves before they commit. Our retail try-on blends pose detection and generative AI to render garments on any body in real time — no photo shoot required — lifting confidence and cutting the returns that quietly eat margin. One of the fastest, most cost-effective diffusion-and-segmentation try-on engines in e-commerce.",
    pills=["Pose detection + genAI","Real-time on any body","No photo shoot","Cross-device","Drop-in embed","Fewer returns"],
+   why="Returns are the quiet tax on online retail, and most of them come from a customer guessing at fit. Rendering the garment on the shopper's own body — in the browser, with no app install and no photo shoot — turns that guess into a decision. It's one of the fastest, most cost-effective diffusion-and-segmentation engines in e-commerce, and it drops into the product page you already have.",
    cta=("Book a demo","../#contact"), related=None),
 
  dict(slug="codey", name="Codey", status="product",
@@ -75,6 +77,7 @@ SOL = [
    img_alt="Racks of network servers in a dark room, lit by rows of green status lights.",
    desc="One governed platform where every team ships agents on Claude: orchestration, connectors to your CRM, ERP, and help desk, memory, and paved-road templates your own engineers own and extend. Built inside your cloud, behind your SSO, with an audit trail on every action.",
    pills=["Agent orchestration","Governed connectors","Memory & tools","Paved-road templates","SSO & audit","Runs in your cloud"],
+   why="The trap most teams fall into is ten pilots on ten different stacks, none of them governed. One platform ends that: shared orchestration, shared connectors, shared audit — so every team ships on the same paved road and security only has one thing to sign off. Your engineers own and extend it, inside your cloud, behind your SSO.",
    cta=("Scope a build","../#contact"),
    related=("internal-agentic-platform","Internal Agentic Platform Build")),
 
@@ -84,14 +87,15 @@ SOL = [
    img_alt="A rolling ladder against towering shelves of old leather-bound books in a dim library.",
    desc="Point Claude at the contracts, invoices, and forms clogging your queue. It reads, classifies, and extracts at scale, routes the genuine exceptions to a human, and syncs clean data back to your systems, with an audit trail behind every decision.",
    pills=["Extract & classify","Any format","Human-in-the-loop","Full audit trail","System sync","Accuracy evals"],
+   why="The failure mode of document AI is confident nonsense on the one contract that mattered. We design for the opposite: Claude routes the genuine exceptions to a human, logs the reasoning behind every decision, and runs against accuracy evals so you can see where it's strong before you trust it wide. Clean data flows back to your systems; the audit trail stays behind it.",
    cta=("Scope a build","../#contact"),
    related=("internal-agentic-platform","Internal Agentic Platform Build")),
 ]
 
 STANDARD = [
- ("Claude-native","Built on Anthropic's Claude as a partner, not bolted onto a model we don't understand."),
+ ("Claude-native","Built on Anthropic's Claude as a partner, on purpose — for the instruction-following, long-context reasoning, and honest 'I'm not sure' that production agents actually need."),
  ("Production-grade","Latency, fallbacks, safety, and evals handled, so it survives real users, not just a demo."),
- ("Owned end-to-end","One accountable team from the first roadmap to the pager at 2am. No hand-offs, no finger-pointing."),
+ ("Owned end-to-end","One accountable team of four partners from the first roadmap to the pager at 2am. The people who scope it are the people who ship it — no hand-offs, no finger-pointing."),
  ("Secure by design","Runs in your cloud, behind your SSO, with audit trails and prompt-injection defence built in."),
  ("Ships in weeks","A first scoped solution reaches production in weeks, then grows from proof, not slideware."),
  ("Multi-region","Delivered across Bengaluru, Dubai and the GCC, and Sydney. Remote-first, on-site when it counts."),
@@ -123,6 +127,7 @@ def sol_section(s, i):
                f'{esc(rname)} service'
                f'<svg width="16" height="10" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg></a>')
     cta_txt, cta_href = s["cta"]
+    why = f'\n        <p class="sol-desc">{esc(s["why"])}</p>' if s.get("why") else ""
     rev = " rev" if i % 2 == 1 else ""
     return f"""  <section class="sol{rev}" id="{s['slug']}">
     <div class="wrap sol-grid">
@@ -137,7 +142,7 @@ def sol_section(s, i):
       <div class="sol-main">
         <figure class="sol-media">{media_el(s)}</figure>
         <p class="sol-tag">{esc(s['tagline'])}</p>
-        <p class="sol-desc">{esc(s['desc'])}</p>
+        <p class="sol-desc">{esc(s['desc'])}</p>{why}
         <ul class="pills">
 {pills}
         </ul>{rel}
@@ -397,6 +402,20 @@ PAGE = f"""<!DOCTYPE html>
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
     </a>
   </header>
+
+  <section class="standard" aria-label="How to read this page">
+    <div class="wrap">
+      <div class="head" style="max-width:46ch;">
+        <h2>Three kinds of thing on this page.</h2>
+        <p>We label honestly, so you always know what's real.</p>
+      </div>
+      <div class="std-grid">
+        <div class="std"><h3>Live in production</h3><p>Shipped and running for real users — Prism Events at the Unisys Innovation Program, and our retail virtual try-on. Not a prototype, not a promise.</p></div>
+        <div class="std"><h3>Prism AI product</h3><p>Products from our own line — Codey, facial recognition, AR furniture — that we adapt and deploy for you rather than build from a blank page.</p></div>
+        <div class="std"><h3>We build this</h3><p>Patterns we've engineered before and will build on Claude for your stack: concierges, voice agents, agentic platforms, document intelligence.</p></div>
+      </div>
+    </div>
+  </section>
 
 {sections}
 
