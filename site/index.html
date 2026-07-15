@@ -1153,8 +1153,8 @@
     var runPanel = document.querySelector('.panel[data-panel="3"]');
     if (runPanel) {
       var runST = { trigger: '.chapters', start: 'top top', end: '+=' + (panels.length * 90) + '%', scrub: 0.85 };
-      gsap.fromTo(runPanel.querySelectorAll('h2, .desc'),
-        { yPercent: 30 }, { yPercent: -55, ease: 'none', scrollTrigger: runST });
+      gsap.fromTo(runPanel.querySelectorAll('.ch-icon, h2, .desc'),
+        { y: 55 }, { y: -85, ease: 'none', scrollTrigger: runST });
       var runObj = runPanel.querySelector('.obj');
       if (runObj) gsap.fromTo(runObj,
         { yPercent: -46 }, { yPercent: -60, ease: 'none', scrollTrigger: runST });
