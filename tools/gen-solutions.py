@@ -21,7 +21,7 @@ SOL = [
 
  dict(slug="virtual-try-on", name="PrismScale Wear", status="live",
    tagline="Virtual try-on — see it before you buy it",
-   img_full="../assets/products/virtual-try-on.webp",
+   img_full="../assets/products/virtual-try-on.webp", video="../assets/products/virtual-try-on.mp4",
    img_alt="A smartphone showing a live virtual try-on — a person wearing a jacket rendered with a violet AR pose-detection overlay.",
    desc="Let shoppers see the product on themselves before they commit. Our retail try-on blends pose detection and generative AI to render garments on any body in real time — no photo shoot required — lifting confidence and cutting the returns that quietly eat margin. One of the fastest, most cost-effective diffusion-and-segmentation try-on engines in e-commerce.",
    pills=["Pose detection + genAI","Real-time on any body","No photo shoot","Cross-device","Drop-in embed","Fewer returns"],
@@ -29,7 +29,7 @@ SOL = [
 
  dict(slug="codey", name="Codey", status="product",
    tagline="A terminal-first AI coding assistant",
-   img_full="../assets/products/codey.webp",
+   img_full="../assets/products/codey.webp", video="../assets/products/codey.mp4",
    img_alt="A dark terminal window glowing with soft violet lines of code and a bright cursor.",
    desc="A terminal-first AI coding assistant that lives where developers already work. Codey reads the whole repo, writes and refactors across files, runs commands, and ships working changes with intelligent, autonomous support — turning intent into merged code without leaving the shell.",
    pills=["Terminal-native","Repo-aware","Writes & refactors","Runs commands","Autonomous edits","Ship faster"],
@@ -37,7 +37,7 @@ SOL = [
 
  dict(slug="facial-recognition", name="AI Facial Recognition", status="product",
    tagline="Identity, verified in a glance",
-   img_full="../assets/products/facial-recognition.webp",
+   img_full="../assets/products/facial-recognition.webp", video="../assets/products/facial-recognition.mp4",
    img_alt="A face scanned by a glowing violet biometric mesh with gold scan points in a dark space.",
    desc="Verify who's who in real time. Our facial-recognition module confirms identity through a live face scan wrapped in a seamless, form-based booking and check-in flow — fast, contactless, and accurate, so the right person gets through and no one else does.",
    pills=["Real-time face scan","Identity verification","Form-based booking","Contactless check-in","Fast & accurate","Privacy-aware"],
@@ -45,7 +45,7 @@ SOL = [
 
  dict(slug="ar-furniture", name="AR Furniture Visualization", status="product",
    tagline="Place it before you buy it",
-   img_full="../assets/products/ar-furniture.webp",
+   img_full="../assets/products/ar-furniture.webp", video="../assets/products/ar-furniture.mp4",
    img_alt="A smartphone showing a designer armchair placed into a real living room via augmented reality.",
    desc="Let shoppers drop furniture into their own space before they buy. Our AR module renders products at true scale in the real room through any phone camera, so customers place, resize, and preview with confidence — lifting conversion and cutting the returns that come from guessing.",
    pills=["AR in real rooms","True-to-scale","Place & resize","Any phone camera","Higher conversion","Fewer returns"],
@@ -107,6 +107,13 @@ def badge(status):
         return '<span class="badge product">Prism AI product</span>'
     return '<span class="badge build">We build this</span>'
 
+def media_el(s):
+    poster = s.get('img_full') or IMG.format(id=s['img'])
+    if s.get('video'):
+        return (f'<video class="sol-vid" poster="{poster}" autoplay muted loop playsinline '
+                f'preload="metadata" aria-hidden="true"><source src="{s["video"]}" type="video/mp4" /></video>')
+    return f'<img src="{poster}" alt="{escq(s["img_alt"])}" loading="lazy" />'
+
 def sol_section(s, i):
     pills = "\n".join(f'          <li>{esc(p)}</li>' for p in s["pills"])
     rel = ""
@@ -128,7 +135,7 @@ def sol_section(s, i):
         </a>
       </div>
       <div class="sol-main">
-        <figure class="sol-media"><img src="{s.get('img_full') or IMG.format(id=s['img'])}" alt="{escq(s['img_alt'])}" loading="lazy" /></figure>
+        <figure class="sol-media">{media_el(s)}</figure>
         <p class="sol-tag">{esc(s['tagline'])}</p>
         <p class="sol-desc">{esc(s['desc'])}</p>
         <ul class="pills">
@@ -283,7 +290,7 @@ PAGE = f"""<!DOCTYPE html>
     .sol-cta svg {{ transition: transform 0.25s var(--ease); }}
     .sol-cta:hover svg {{ transform: translateX(6px); }}
     .sol-media {{ margin: 0; border-radius: 0; overflow: clip; aspect-ratio: 16 / 10; box-shadow: 0 30px 90px rgba(0,0,0,0.5); }}
-    .sol-media img {{ width: 100%; height: 100%; object-fit: cover; }}
+    .sol-media img, .sol-media video {{ width: 100%; height: 100%; object-fit: cover; }}
     .sol-tag {{ margin-top: 1.6rem; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(1.3rem, 2.4vw, 1.9rem); color: var(--violet-lo); }}
     .sol-desc {{ margin-top: 1rem; color: rgba(241,240,246,0.76); font-size: 1.06rem; line-height: 1.7; max-width: 60ch; }}
     .pills {{ list-style: none; margin: 1.8rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.55rem; }}
@@ -520,7 +527,7 @@ PAGE = f"""<!DOCTYPE html>
         if (!t) return; e.preventDefault(); lenis.scrollTo(t, {{ offset: id === '#top' ? -200 : -80, duration: 1.2 }});
       }}));
       // Subtle parallax on each solution image.
-      gsap.utils.toArray('.sol-media img').forEach(img => {{
+      gsap.utils.toArray('.sol-media img, .sol-media video').forEach(img => {{
         gsap.fromTo(img, {{ yPercent: -6 }}, {{ yPercent: 6, ease: 'none', scrollTrigger: {{ trigger: img.closest('.sol-media'), start: 'top bottom', end: 'bottom top', scrub: 0.8 }} }});
       }});
     }}
