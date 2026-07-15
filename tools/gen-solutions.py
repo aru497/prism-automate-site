@@ -19,8 +19,8 @@ SOL = [
    pills=["AR video-map wayfinder","Turn-by-turn routing","Live agenda","Booth & stage finder","Day photo galleries","Works where GPS won't"],
    cta=("See the deployment","../#work"), related=None),
 
- dict(slug="virtual-try-on", name="Virtual Try-On", status="live",
-   tagline="See it before you buy it",
+ dict(slug="virtual-try-on", name="PrismScale Wear", status="live",
+   tagline="Virtual try-on — see it before you buy it",
    img_full="../assets/products/virtual-try-on.webp",
    img_alt="A smartphone showing a live virtual try-on — a person wearing a jacket rendered with a violet AR pose-detection overlay.",
    desc="Let shoppers see the product on themselves before they commit. Our retail try-on blends pose detection and generative AI to render garments on any body in real time — no photo shoot required — lifting confidence and cutting the returns that quietly eat margin. One of the fastest, most cost-effective diffusion-and-segmentation try-on engines in e-commerce.",
