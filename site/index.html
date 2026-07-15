@@ -408,7 +408,8 @@
     .human-row { margin-top: 2.6rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem, 2.2vw, 1.6rem); align-items: start; }
     @media (max-width: 900px) { .human-row { grid-template-columns: repeat(2, 1fr); } }
     .human-row figure { margin: 0; }
-    .human-row figure > img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border: 1px solid var(--line); }
+    .human-row figure > img { width: 100%; height: clamp(300px, 23vw, 400px); object-fit: cover; object-position: center 24%; display: block; border: 1px solid var(--line); }
+    @media (max-width: 900px) { .human-row figure > img { height: clamp(260px, 46vw, 340px); } }
     .human-row figcaption { margin-top: 1rem; }
     .human-row figcaption b { display: block; font-size: 1.12rem; font-weight: 600; color: var(--ink); letter-spacing: -.01em; }
     .human-row figcaption span { display: block; margin-top: .18rem; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--violet); }
