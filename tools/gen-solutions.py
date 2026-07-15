@@ -190,10 +190,10 @@ PAGE = f"""<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solutions | AI Products Built on Claude | Prism Automate</title>
   <meta name="description" content="AI solutions from Prism Automate, an Anthropic Claude partner: Prism Events indoor event navigation and a retail virtual try-on, both live in production; Prism AI products Codey, AI facial recognition, and AR furniture visualisation; plus AI concierge, voice agents, agentic platforms, and document intelligence for teams in India, the GCC, and Australia." />
-  <link rel="canonical" href="https://aru497.github.io/prism-automate-site/solutions/" />
+  <link rel="canonical" href="https://www.prismautomate.com/solutions/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="geo.placename" content="Bengaluru, India" />
-  <meta property="og:url" content="https://aru497.github.io/prism-automate-site/solutions/" />
+  <meta property="og:url" content="https://www.prismautomate.com/solutions/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Solutions | AI Products Built on Claude | Prism Automate" />
   <meta property="og:description" content="Two products live in production, three Prism AI products, and four we build on Claude, for teams across India, the GCC, and Australia." />

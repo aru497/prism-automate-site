@@ -4,8 +4,8 @@ Content sourced from the recognised 14-service catalogue; design = studio identi
 import os, html, json
 
 BASE = "/Users/arunkumar/Documents/Claude/Projects/PrismEvents/site/services"
-# Live host for canonical/sitemap. Swap to the custom domain when it goes live.
-BASE_URL = "https://aru497.github.io/prism-automate-site"
+# Canonical host for canonical/sitemap tags (apex 308-redirects to www).
+BASE_URL = "https://www.prismautomate.com"
 
 CATS = {
     "strategy": "Strategy & Advisory",
@@ -350,7 +350,7 @@ OVERVIEW = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | The Full Claude Catalogue | Prism Automate</title>
   <meta name="description" content="All fourteen recognised Claude services delivered by Prism Automate, an Anthropic Claude partner: strategy, build, deployment, and managed operations for teams in India, the Middle East, and Australia." />
-  <link rel="canonical" href="https://aru497.github.io/prism-automate-site/services/" />
+  <link rel="canonical" href="https://www.prismautomate.com/services/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="geo.placename" content="Bengaluru, India" />
   <link rel="icon" type="image/png" href="../assets/favicon.png" />

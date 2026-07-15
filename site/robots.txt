@@ -5,4 +5,4 @@ Disallow: /classic/
 Disallow: /brand/
 Disallow: /studio/
 
-Sitemap: https://aru497.github.io/prism-automate-site/sitemap.xml
+Sitemap: https://www.prismautomate.com/sitemap.xml
