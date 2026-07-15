@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate the Solutions page at site/solutions/index.html.
 Original copy + Prism Automate studio design; structural inspiration only.
-Two products are live in production; four are build offerings, labelled honestly."""
+Two products live in production, three Prism AI products, and four build offerings, all labelled honestly."""
 import os, html, json
 
 OUT = "/Users/arunkumar/Documents/Claude/Projects/PrismEvents/site/solutions/index.html"
@@ -40,7 +40,7 @@ SOL = [
    img_full="../assets/products/facial-recognition.webp",
    img_alt="A face scanned by a glowing violet biometric mesh with gold scan points in a dark space.",
    desc="Verify who's who in real time. Our facial-recognition module confirms identity through a live face scan wrapped in a seamless, form-based booking and check-in flow — fast, contactless, and accurate, so the right person gets through and no one else does.",
-   pills=["Real-time face scan","Liveness detection","Form-based booking","Contactless check-in","Fast & accurate","Privacy-aware"],
+   pills=["Real-time face scan","Identity verification","Form-based booking","Contactless check-in","Fast & accurate","Privacy-aware"],
    cta=("Talk to us","../#contact"), related=None),
 
  dict(slug="ar-furniture", name="AR Furniture Visualization", status="product",
@@ -89,7 +89,7 @@ SOL = [
 ]
 
 STANDARD = [
- ("Claude-native","Built on Anthropic's Claude as an official partner, not bolted onto a model we don't understand."),
+ ("Claude-native","Built on Anthropic's Claude as a partner, not bolted onto a model we don't understand."),
  ("Production-grade","Latency, fallbacks, safety, and evals handled, so it survives real users, not just a demo."),
  ("Owned end-to-end","One accountable team from the first roadmap to the pager at 2am. No hand-offs, no finger-pointing."),
  ("Secure by design","Runs in your cloud, behind your SSO, with audit trails and prompt-injection defence built in."),
@@ -166,7 +166,7 @@ ldjson = {
         ]},
         {"@type": "CollectionPage",
          "name": "Solutions | Prism Automate",
-         "description": "AI solutions from Prism Automate, an Anthropic Claude partner: Prism Events indoor navigation and a retail virtual try-on, both live in production, plus AI concierge, voice agents, agentic platforms, and document intelligence built on Claude for teams in India, the GCC, and Australia.",
+         "description": "AI solutions from Prism Automate, an Anthropic Claude partner: Prism Events indoor navigation and a retail virtual try-on, both live in production; Prism AI products Codey, AI facial recognition, and AR furniture visualisation; plus AI concierge, voice agents, agentic platforms, and document intelligence built on Claude for teams in India, the GCC, and Australia.",
          "mainEntity": {"@type": "ItemList", "itemListElement": items}},
     ],
 }
@@ -182,14 +182,14 @@ PAGE = f"""<!DOCTYPE html>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solutions | AI Products Built on Claude | Prism Automate</title>
-  <meta name="description" content="AI solutions from Prism Automate, an Anthropic Claude partner: Prism Events indoor event navigation and a retail virtual try-on, both live in production, plus AI concierge, voice agents, agentic platforms, and document intelligence for teams in India, the GCC, and Australia." />
+  <meta name="description" content="AI solutions from Prism Automate, an Anthropic Claude partner: Prism Events indoor event navigation and a retail virtual try-on, both live in production; Prism AI products Codey, AI facial recognition, and AR furniture visualisation; plus AI concierge, voice agents, agentic platforms, and document intelligence for teams in India, the GCC, and Australia." />
   <link rel="canonical" href="https://aru497.github.io/prism-automate-site/solutions/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="geo.placename" content="Bengaluru, India" />
   <meta property="og:url" content="https://aru497.github.io/prism-automate-site/solutions/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Solutions | AI Products Built on Claude | Prism Automate" />
-  <meta property="og:description" content="Two products live in production and four we build on Claude, for teams across India, the GCC, and Australia." />
+  <meta property="og:description" content="Two products live in production, three Prism AI products, and four we build on Claude, for teams across India, the GCC, and Australia." />
   <meta property="og:image" content="{IMG.format(id=SOL[0]['img'])}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#050408" />
@@ -381,7 +381,7 @@ PAGE = f"""<!DOCTYPE html>
     <div class="wrap">
       <p class="eyebrow">Solutions</p>
       <h1>AI solutions, built to <em>ship</em>.</h1>
-      <p class="lede">Two products already live in the field, and four more we build on Claude for teams across India, the GCC, and Australia. Every one designed to reach production, not the demo shelf.</p>
+      <p class="lede">Two products live in production, three more from our Prism AI line, and four we build on Claude for teams across India, the GCC, and Australia. Every one designed to reach production, not the demo shelf.</p>
       <nav class="chips" aria-label="Jump to a solution">
 {chips}
       </nav>
