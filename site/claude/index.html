@@ -479,6 +479,19 @@
         const id = a.getAttribute('href'); const t = document.querySelector(id);
         if (!t) return; e.preventDefault(); lenis.scrollTo(t, { offset: id === '#top' ? -200 : -60, duration: 1.2 });
       }));
+
+      // Hero ring tilts toward the cursor — 3D "mouse navigation" (fine pointers only).
+      var chRing = document.querySelector('.hero-bg video');
+      if (chRing && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        gsap.set(chRing, { transformPerspective: 1100, transformOrigin: 'center center' });
+        var chRotX = gsap.quickTo(chRing, 'rotationX', { duration: 0.7, ease: 'power2.out' });
+        var chRotY = gsap.quickTo(chRing, 'rotationY', { duration: 0.7, ease: 'power2.out' });
+        window.addEventListener('mousemove', function (e) {
+          var dx = (e.clientX / window.innerWidth) * 2 - 1;
+          var dy = (e.clientY / window.innerHeight) * 2 - 1;
+          chRotY(dx * 11); chRotX(-dy * 8);
+        }, { passive: true });
+      }
     }
   </script>
 </body>
