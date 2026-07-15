@@ -1,117 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Host = live GitHub Pages site. When the custom domain (e.g. www.prismautomate.com) goes live, swap the base URL here and in robots.txt + the pages' canonical tags. -->
+<!-- Canonical host: https://www.prismautomate.com (apex 308-redirects to www). Keep this in sync with robots.txt and every page's canonical tag. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/solutions/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/solutions/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/claude/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/claude/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/faq/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/faq/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/ai-strategy-roadmap/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/ai-strategy-roadmap/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/ai-readiness-governance/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/ai-readiness-governance/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/use-case-portfolio/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/use-case-portfolio/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/internal-agentic-platform/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/internal-agentic-platform/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/customer-facing-ai-product/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/customer-facing-ai-product/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/prototype-poc/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/prototype-poc/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/rollout-activation/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/rollout-activation/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/industry-accelerator-deployment/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/industry-accelerator-deployment/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/platform-migration-claude/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/platform-migration-claude/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/sustained-adoption-coe/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/sustained-adoption-coe/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/managed-ai-operations/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/managed-ai-operations/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/cowork-claude-code-support/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/cowork-claude-code-support/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/claude-finops-optimisation/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/claude-finops-optimisation/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aru497.github.io/prism-automate-site/services/claude-training-sessions/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <loc>https://www.prismautomate.com/services/claude-training-sessions/</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
