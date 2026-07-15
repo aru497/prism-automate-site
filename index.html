@@ -1148,16 +1148,31 @@
       scrollTrigger: { trigger: '.chapters', start: 'top top', end: '+=' + (panels.length * 90) + '%', scrub: 0.6 }
     });
 
-    // Parallax touch on the final "Run" step: its object floats up with depth
-    // (baseline translateY(-52%) folded into the yPercent range) and settles as
-    // the panel arrives — a beat the other three chapters don't get.
-    var runObj = document.querySelector('.panel[data-panel="3"] .obj');
-    if (runObj) {
-      gsap.fromTo(runObj,
-        { yPercent: -30, scale: 1.16 },
-        { yPercent: -74, scale: 1, ease: 'none',
-          scrollTrigger: { trigger: '.chapters', start: 'top top', end: '+=' + (panels.length * 90) + '%', scrub: 0.9 } });
+    // "Run" (final chapter) — WAC-style parallax: the name + copy rise as you
+    // scroll through it, while its object drifts only gently so it stays in view.
+    var runPanel = document.querySelector('.panel[data-panel="3"]');
+    if (runPanel) {
+      var runST = { trigger: '.chapters', start: 'top top', end: '+=' + (panels.length * 90) + '%', scrub: 0.85 };
+      gsap.fromTo(runPanel.querySelectorAll('h2, .desc'),
+        { yPercent: 30 }, { yPercent: -55, ease: 'none', scrollTrigger: runST });
+      var runObj = runPanel.querySelector('.obj');
+      if (runObj) gsap.fromTo(runObj,
+        { yPercent: -46 }, { yPercent: -60, ease: 'none', scrollTrigger: runST });
     }
+
+    // Hero ring tilts toward the cursor — 3D "mouse navigation" (fine pointers only).
+    (function () {
+      var ring = document.getElementById('hero-video');
+      if (!ring || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+      gsap.set(ring, { transformPerspective: 1100, transformOrigin: 'center center' });
+      var rotX = gsap.quickTo(ring, 'rotationX', { duration: 0.7, ease: 'power2.out' });
+      var rotY = gsap.quickTo(ring, 'rotationY', { duration: 0.7, ease: 'power2.out' });
+      window.addEventListener('mousemove', function (e) {
+        var dx = (e.clientX / window.innerWidth) * 2 - 1;
+        var dy = (e.clientY / window.innerHeight) * 2 - 1;
+        rotY(dx * 11); rotX(-dy * 8);
+      }, { passive: true });
+    })();
 
     // Case media parallax + soft reveals.
     document.querySelectorAll('[data-parallax]').forEach(img => {
